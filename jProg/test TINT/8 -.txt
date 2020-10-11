@@ -1,0 +1,1230 @@
+parsing:
+Ho visto il film ma non so se sono mai stati scritti dei libri a proposito o se la storia è stata inventata di sana pianta.
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 28 tokens at 1555,6 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 124,
+      "text": "Ho visto il film ma non so se sono mai stati scritti dei libri a proposito o se la storia Ã¨ stata inventata di sana pianta.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "film",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 4,
+          "dependentGloss": "film"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 5,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "neg",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 7,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "mark",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 8,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "aux",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 9,
+          "dependentGloss": "sono"
+        },
+        {
+          "dep": "advmod",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 10,
+          "dependentGloss": "mai"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 11,
+          "dependentGloss": "stati"
+        },
+        {
+          "dep": "advcl",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 12,
+          "dependentGloss": "scritti"
+        },
+        {
+          "dep": "case",
+          "governor": 14,
+          "governorGloss": "libri",
+          "dependent": 13,
+          "dependentGloss": "dei"
+        },
+        {
+          "dep": "nmod",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 14,
+          "dependentGloss": "libri"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "proposito",
+          "dependent": 15,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 16,
+          "dependentGloss": "proposito"
+        },
+        {
+          "dep": "cc",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 17,
+          "dependentGloss": "o"
+        },
+        {
+          "dep": "mark",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 18,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "det",
+          "governor": 20,
+          "governorGloss": "storia",
+          "dependent": 19,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 20,
+          "dependentGloss": "storia"
+        },
+        {
+          "dep": "aux",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 21,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "name",
+          "governor": 21,
+          "governorGloss": "Ã",
+          "dependent": 22,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 23,
+          "dependentGloss": "stata"
+        },
+        {
+          "dep": "conj",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 24,
+          "dependentGloss": "inventata"
+        },
+        {
+          "dep": "case",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 25,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "amod",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 26,
+          "dependentGloss": "sana"
+        },
+        {
+          "dep": "nmod",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 27,
+          "dependentGloss": "pianta"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 28,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "film",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 4,
+          "dependentGloss": "film"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 5,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "neg",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 7,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "mark",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 8,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "aux",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 9,
+          "dependentGloss": "sono"
+        },
+        {
+          "dep": "advmod",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 10,
+          "dependentGloss": "mai"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 11,
+          "dependentGloss": "stati"
+        },
+        {
+          "dep": "advcl",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 12,
+          "dependentGloss": "scritti"
+        },
+        {
+          "dep": "case",
+          "governor": 14,
+          "governorGloss": "libri",
+          "dependent": 13,
+          "dependentGloss": "dei"
+        },
+        {
+          "dep": "nmod:dei",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 14,
+          "dependentGloss": "libri"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "proposito",
+          "dependent": 15,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 16,
+          "dependentGloss": "proposito"
+        },
+        {
+          "dep": "cc",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 17,
+          "dependentGloss": "o"
+        },
+        {
+          "dep": "mark",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 18,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "det",
+          "governor": 20,
+          "governorGloss": "storia",
+          "dependent": 19,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 20,
+          "dependentGloss": "storia"
+        },
+        {
+          "dep": "aux",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 21,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "name",
+          "governor": 21,
+          "governorGloss": "Ã",
+          "dependent": 22,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 23,
+          "dependentGloss": "stata"
+        },
+        {
+          "dep": "conj:o",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 24,
+          "dependentGloss": "inventata"
+        },
+        {
+          "dep": "case",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 25,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "amod",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 26,
+          "dependentGloss": "sana"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 27,
+          "dependentGloss": "pianta"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 28,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "film",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 4,
+          "dependentGloss": "film"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 5,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "neg",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 7,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "mark",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 8,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "aux",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 9,
+          "dependentGloss": "sono"
+        },
+        {
+          "dep": "advmod",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 10,
+          "dependentGloss": "mai"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 11,
+          "dependentGloss": "stati"
+        },
+        {
+          "dep": "advcl",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 12,
+          "dependentGloss": "scritti"
+        },
+        {
+          "dep": "case",
+          "governor": 14,
+          "governorGloss": "libri",
+          "dependent": 13,
+          "dependentGloss": "dei"
+        },
+        {
+          "dep": "nmod:dei",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 14,
+          "dependentGloss": "libri"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "proposito",
+          "dependent": 15,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 16,
+          "dependentGloss": "proposito"
+        },
+        {
+          "dep": "cc",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 17,
+          "dependentGloss": "o"
+        },
+        {
+          "dep": "mark",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 18,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "det",
+          "governor": 20,
+          "governorGloss": "storia",
+          "dependent": 19,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 20,
+          "dependentGloss": "storia"
+        },
+        {
+          "dep": "aux",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 21,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "name",
+          "governor": 21,
+          "governorGloss": "Ã",
+          "dependent": 22,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 23,
+          "dependentGloss": "stata"
+        },
+        {
+          "dep": "advcl",
+          "governor": 7,
+          "governorGloss": "so",
+          "dependent": 24,
+          "dependentGloss": "inventata"
+        },
+        {
+          "dep": "conj:o",
+          "governor": 12,
+          "governorGloss": "scritti",
+          "dependent": 24,
+          "dependentGloss": "inventata"
+        },
+        {
+          "dep": "case",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 25,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "amod",
+          "governor": 27,
+          "governorGloss": "pianta",
+          "dependent": 26,
+          "dependentGloss": "sana"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 24,
+          "governorGloss": "inventata",
+          "dependent": 27,
+          "dependentGloss": "pianta"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 28,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ho",
+          "originalText": "Ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "visto",
+          "originalText": "visto",
+          "lemma": "vistare",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 8,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "visto vistare+v+indic+pres+nil+1+sing visto+n+m+sing",
+          "selected_morpho": "vistare+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 11,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "film",
+          "originalText": "film",
+          "lemma": "film",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 16,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "film film+n+m+plur film+n+m+sing",
+          "selected_morpho": "film+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "ma",
+          "originalText": "ma",
+          "lemma": "ma",
+          "characterOffsetBegin": 17,
+          "characterOffsetEnd": 19,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "ma ma+conj",
+          "selected_morpho": "ma+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 23,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "so",
+          "originalText": "so",
+          "lemma": "sapere",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 26,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "so sapere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "sapere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "se",
+          "originalText": "se",
+          "lemma": "se",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 29,
+          "pos": "CS",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "se se+conj se+pron+accdat+_+3+_+clit se+pron+acc+m+3+sing+clit",
+          "selected_morpho": "se+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 9,
+          "word": "sono",
+          "originalText": "sono",
+          "lemma": "essere",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 34,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "sono essere+v+indic+pres+nil+1+sing essere+v+indic+pres+nil+3+plur",
+          "selected_morpho": "essere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "mai",
+          "originalText": "mai",
+          "lemma": "mai",
+          "characterOffsetBegin": 35,
+          "characterOffsetEnd": 38,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "mai mai+adv",
+          "selected_morpho": "mai+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 11,
+          "word": "stati",
+          "originalText": "stati",
+          "lemma": "stare",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 44,
+          "pos": "VA",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "stati essere+v+part+pass+m+nil+plur stare+v+part+pass+m+nil+plur stato+n+m+plur",
+          "selected_morpho": "stare+v+part+pass+m+nil+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "word": "scritti",
+          "originalText": "scritti",
+          "lemma": "scrivere",
+          "characterOffsetBegin": 45,
+          "characterOffsetEnd": 52,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "scritti scritto+adj+m+plur+pst scrivere+v+part+pass+m+nil+plur",
+          "selected_morpho": "scrivere+v+part+pass+m+nil+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "dei",
+          "originalText": "dei",
+          "lemma": "del",
+          "characterOffsetBegin": 53,
+          "characterOffsetEnd": 56,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "dei del~del+prep/gli~det+art+m+plur dio+n+m+plur",
+          "selected_morpho": "del~del+prep/gli~det+art+m+plur",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 14,
+          "word": "libri",
+          "originalText": "libri",
+          "lemma": "libro",
+          "characterOffsetBegin": 57,
+          "characterOffsetEnd": 62,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "libri librare+v+indic+pres+nil+2+sing librare+v+cong+pres+nil+1+sing librare+v+cong+pres+nil+2+sing librare+v+cong+pres+nil+3+sing libro+n+m+plur",
+          "selected_morpho": "libro+n+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "word": "a",
+          "originalText": "a",
+          "lemma": "a",
+          "characterOffsetBegin": 63,
+          "characterOffsetEnd": 64,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "a a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 16,
+          "word": "proposito",
+          "originalText": "proposito",
+          "lemma": "proposito",
+          "characterOffsetBegin": 65,
+          "characterOffsetEnd": 74,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "proposito proposito+n+m+sing",
+          "selected_morpho": "proposito+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 17,
+          "word": "o",
+          "originalText": "o",
+          "lemma": "o",
+          "characterOffsetBegin": 75,
+          "characterOffsetEnd": 76,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "o o+conj",
+          "selected_morpho": "o+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 18,
+          "word": "se",
+          "originalText": "se",
+          "lemma": "se",
+          "characterOffsetBegin": 77,
+          "characterOffsetEnd": 79,
+          "pos": "CS",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "se se+conj se+pron+accdat+_+3+_+clit se+pron+acc+m+3+sing+clit",
+          "selected_morpho": "se+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 19,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 80,
+          "characterOffsetEnd": 82,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 20,
+          "word": "storia",
+          "originalText": "storia",
+          "lemma": "storia",
+          "characterOffsetBegin": 83,
+          "characterOffsetEnd": 89,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "storia storia+n+f+sing",
+          "selected_morpho": "storia+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 21,
+          "word": "Ã",
+          "originalText": "Ã",
+          "lemma": "Ã",
+          "characterOffsetBegin": 90,
+          "characterOffsetEnd": 91,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "Ã",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 22,
+          "word": "¨",
+          "originalText": "¨",
+          "lemma": "¨",
+          "characterOffsetBegin": 91,
+          "characterOffsetEnd": 92,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "¨",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 23,
+          "word": "stata",
+          "originalText": "stata",
+          "lemma": "stare",
+          "characterOffsetBegin": 93,
+          "characterOffsetEnd": 98,
+          "pos": "VA",
+          "featuresText": "Gender\u003dFem|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "stata essere+v+part+pass+f+nil+sing stare+v+part+pass+f+nil+sing",
+          "selected_morpho": "stare+v+part+pass+f+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 24,
+          "word": "inventata",
+          "originalText": "inventata",
+          "lemma": "inventare",
+          "characterOffsetBegin": 99,
+          "characterOffsetEnd": 108,
+          "pos": "V",
+          "featuresText": "Gender\u003dFem|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "inventata inventare+v+part+pass+f+nil+sing inventato+adj+f+sing+pst",
+          "selected_morpho": "inventare+v+part+pass+f+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 25,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 109,
+          "characterOffsetEnd": 111,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 26,
+          "word": "sana",
+          "originalText": "sana",
+          "lemma": "sano",
+          "characterOffsetBegin": 112,
+          "characterOffsetEnd": 116,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "sana sanare+v+imp+pres+nil+2+sing sanare+v+indic+pres+nil+3+sing sano+adj+f+sing+pst",
+          "selected_morpho": "sano+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 27,
+          "word": "pianta",
+          "originalText": "pianta",
+          "lemma": "pianta",
+          "characterOffsetBegin": 117,
+          "characterOffsetEnd": 123,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "pianta piangere+v+part+pass+f+nil+sing pianta+n+f+sing piantare+v+imp+pres+nil+2+sing piantare+v+indic+pres+nil+3+sing pianto+adj+f+sing+pst",
+          "selected_morpho": "pianta+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 28,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 123,
+          "characterOffsetEnd": 124,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 32 milliseconds.

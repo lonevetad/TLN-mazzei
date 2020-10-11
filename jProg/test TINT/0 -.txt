@@ -1,0 +1,290 @@
+parsing:
+I topi non avevano nipoti.
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 6 tokens at 500,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 26,
+      "text": "I topi non avevano nipoti.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "avevano"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "topi",
+          "dependent": 1,
+          "dependentGloss": "I"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 2,
+          "dependentGloss": "topi"
+        },
+        {
+          "dep": "neg",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 3,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "dobj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 5,
+          "dependentGloss": "nipoti"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "avevano"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "topi",
+          "dependent": 1,
+          "dependentGloss": "I"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 2,
+          "dependentGloss": "topi"
+        },
+        {
+          "dep": "neg",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 3,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "dobj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 5,
+          "dependentGloss": "nipoti"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "avevano"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "topi",
+          "dependent": 1,
+          "dependentGloss": "I"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 2,
+          "dependentGloss": "topi"
+        },
+        {
+          "dep": "neg",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 3,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "dobj",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 5,
+          "dependentGloss": "nipoti"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "avevano",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "I",
+          "originalText": "I",
+          "lemma": "il",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dPlur|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "I il+art+m+plur",
+          "selected_morpho": "il+art+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "topi",
+          "originalText": "topi",
+          "lemma": "topo",
+          "characterOffsetBegin": 2,
+          "characterOffsetEnd": 6,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "topi topo+n+m+plur",
+          "selected_morpho": "topo+n+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 7,
+          "characterOffsetEnd": 10,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "avevano",
+          "originalText": "avevano",
+          "lemma": "avere",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 18,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dPlur|Person\u003d3|Tense\u003dImp|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "avevano avere+v+indic+imperf+nil+3+plur",
+          "selected_morpho": "avere+v+indic+imperf+nil+3+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Imp"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "nipoti",
+          "originalText": "nipoti",
+          "lemma": "nipote",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 25,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "nipoti nipote+n+f+plur nipote+n+m+plur",
+          "selected_morpho": "nipote+n+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 25,
+          "characterOffsetEnd": 26,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 129 milliseconds.

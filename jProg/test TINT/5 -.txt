@@ -1,0 +1,850 @@
+parsing:
+Ma a per mio, una nave cotale, renderebbe ques'altra un po' superflua, non è vero?
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 488,4 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 83,
+      "text": "Ma a per mio, una nave cotale, renderebbe ques\u0027altra un po\u0027 superflua, non Ã¨ vero?",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 1,
+          "dependentGloss": "Ma"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 3,
+          "dependentGloss": "per"
+        },
+        {
+          "dep": "nmod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "mark",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "ques\u0027"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "cop",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 18,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 19,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 1,
+          "dependentGloss": "Ma"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 3,
+          "dependentGloss": "per"
+        },
+        {
+          "dep": "nmod:per",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "mark",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "ques\u0027"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "cop",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 18,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 19,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 1,
+          "dependentGloss": "Ma"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 3,
+          "dependentGloss": "per"
+        },
+        {
+          "dep": "nmod:per",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mio",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "mark",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "ques\u0027"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "cop",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 18,
+          "dependentGloss": "Ã"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 19,
+          "dependentGloss": "¨"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 18,
+          "governorGloss": "Ã",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ma",
+          "originalText": "Ma",
+          "lemma": "ma",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "Ma ma+conj",
+          "selected_morpho": "ma+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "a",
+          "originalText": "a",
+          "lemma": "a",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 4,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "a a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "per",
+          "originalText": "per",
+          "lemma": "per",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 8,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "per per+prep",
+          "selected_morpho": "per+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": "mio",
+          "originalText": "mio",
+          "lemma": "mio",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 12,
+          "pos": "PP",
+          "featuresText": "PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "mio mio+adj+m+sing+pst+poss mio+pron+m+sing+pst+poss",
+          "selected_morpho": "mio+pron+m+sing+pst+poss",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 13,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "una",
+          "originalText": "una",
+          "lemma": "una",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 17,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "una una+pron+_+f+3+sing+ind una+art+f+sing",
+          "selected_morpho": "una+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "nave",
+          "originalText": "nave",
+          "lemma": "nave",
+          "characterOffsetBegin": 18,
+          "characterOffsetEnd": 22,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "nave nave+n+f+sing",
+          "selected_morpho": "nave+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "cotale",
+          "originalText": "cotale",
+          "lemma": "cotale",
+          "characterOffsetBegin": 23,
+          "characterOffsetEnd": 29,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "cotale",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 29,
+          "characterOffsetEnd": 30,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 10,
+          "word": "renderebbe",
+          "originalText": "renderebbe",
+          "lemma": "rendere",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 41,
+          "pos": "V",
+          "featuresText": "Mood\u003dCnd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "renderebbe rendere+v+cond+pres+nil+3+sing",
+          "selected_morpho": "rendere+v+cond+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Cnd"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": "ques\u0027",
+          "originalText": "ques\u0027",
+          "lemma": "ques\u0027",
+          "characterOffsetBegin": 42,
+          "characterOffsetEnd": 47,
+          "pos": "CS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "ques\u0027",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 12,
+          "word": "altra",
+          "originalText": "altra",
+          "lemma": "altro",
+          "characterOffsetBegin": 47,
+          "characterOffsetEnd": 52,
+          "pos": "DI",
+          "featuresText": "Gender\u003dFem|Number\u003dSing|PronType\u003dInd",
+          "ner": "O",
+          "full_morpho": "altra altra+pron+_+f+3+sing+ind altro+adj+f+sing+pst altro+pron+_+f+3+sing+neg",
+          "selected_morpho": "altro+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Ind"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 53,
+          "characterOffsetEnd": 55,
+          "pos": "N",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 14,
+          "word": "po\u0027",
+          "originalText": "po\u0027",
+          "lemma": "po\u0027",
+          "characterOffsetBegin": 56,
+          "characterOffsetEnd": 59,
+          "pos": "B",
+          "ner": "O",
+          "full_morpho": "po\u0027 po\u0027+pron+_+m+3+sing+ind po\u0027+pron+_+m+3+sing+ind",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 15,
+          "word": "superflua",
+          "originalText": "superflua",
+          "lemma": "superfluo",
+          "characterOffsetBegin": 60,
+          "characterOffsetEnd": 69,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "superflua superfluo+adj+f+sing+pst",
+          "selected_morpho": "superfluo+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 16,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 69,
+          "characterOffsetEnd": 70,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 17,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 71,
+          "characterOffsetEnd": 74,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 18,
+          "word": "Ã",
+          "originalText": "Ã",
+          "lemma": "Ã",
+          "characterOffsetBegin": 75,
+          "characterOffsetEnd": 76,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "Ã",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 19,
+          "word": "¨",
+          "originalText": "¨",
+          "lemma": "¨",
+          "characterOffsetBegin": 76,
+          "characterOffsetEnd": 77,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "¨",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 20,
+          "word": "vero",
+          "originalText": "vero",
+          "lemma": "vero",
+          "characterOffsetBegin": 78,
+          "characterOffsetEnd": 82,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "vero vero+adj+m+sing+pst vero+n+m+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 21,
+          "word": "?",
+          "originalText": "?",
+          "lemma": "?",
+          "characterOffsetBegin": 82,
+          "characterOffsetEnd": 83,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "? [PUNCT] [PUNCT]",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 127 milliseconds.

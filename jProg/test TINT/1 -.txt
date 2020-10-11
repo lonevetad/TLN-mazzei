@@ -1,0 +1,322 @@
+parsing:
+Ho sostenuto l'esame con successo.
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 875,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 34,
+      "text": "Ho sostenuto l\u0027esame con successo.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "sostenuto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 3,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 4,
+          "dependentGloss": "esame"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "successo",
+          "dependent": 5,
+          "dependentGloss": "con"
+        },
+        {
+          "dep": "nmod",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 6,
+          "dependentGloss": "successo"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "sostenuto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 3,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 4,
+          "dependentGloss": "esame"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "successo",
+          "dependent": 5,
+          "dependentGloss": "con"
+        },
+        {
+          "dep": "nmod:con",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 6,
+          "dependentGloss": "successo"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "sostenuto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 3,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 4,
+          "dependentGloss": "esame"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "successo",
+          "dependent": 5,
+          "dependentGloss": "con"
+        },
+        {
+          "dep": "nmod:con",
+          "governor": 4,
+          "governorGloss": "esame",
+          "dependent": 6,
+          "dependentGloss": "successo"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "sostenuto",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ho",
+          "originalText": "Ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "sostenuto",
+          "originalText": "sostenuto",
+          "lemma": "sostenere",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 12,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "sostenuto sostenere+v+part+pass+m+nil+sing sostenuto+adj+m+sing+pst",
+          "selected_morpho": "sostenere+v+part+pass+m+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "l\u0027",
+          "originalText": "l\u0027",
+          "lemma": "l\u0027",
+          "characterOffsetBegin": 13,
+          "characterOffsetEnd": 15,
+          "pos": "RD",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "l\u0027 l\u0027+pron+accdat+_+3+_+clit l\u0027+pron+acc+m+3+sing+clit",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": "esame",
+          "originalText": "esame",
+          "lemma": "esame",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "esame esame+n+m+sing",
+          "selected_morpho": "esame+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "con",
+          "originalText": "con",
+          "lemma": "con",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 24,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "con con+prep",
+          "selected_morpho": "con+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "successo",
+          "originalText": "successo",
+          "lemma": "successo",
+          "characterOffsetBegin": 25,
+          "characterOffsetEnd": 33,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "successo succedere+v+part+pass+f+nil+plur succedere+v+part+pass+m+nil+plur succedere+v+part+pass+f+nil+sing succedere+v+part+pass+m+nil+sing successo+n+m+sing",
+          "selected_morpho": "successo+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 34,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 18 milliseconds.

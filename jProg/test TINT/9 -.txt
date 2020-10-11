@@ -1,0 +1,187 @@
+parsing:
+Paolo ama Francesca.
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 800,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 20,
+      "text": "Paolo ama Francesca.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 3,
+          "dependentGloss": "Francesca"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 3,
+          "dependentGloss": "Francesca"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 3,
+          "dependentGloss": "Francesca"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Paolo",
+          "originalText": "Paolo",
+          "lemma": "Paolo",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 5,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Paolo",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "ama",
+          "originalText": "ama",
+          "lemma": "amare",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 9,
+          "pos": "V",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ama amare+v+imp+pres+nil+2+sing amare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "amare+v+imp+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "Francesca",
+          "originalText": "Francesca",
+          "lemma": "Francesca",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 19,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Francesca",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 20,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 12 milliseconds.

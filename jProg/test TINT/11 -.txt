@@ -1,0 +1,322 @@
+parsing:
+Paolo ha una carenza di calcio.
+
+{
+  "docDate": "2020-10-11",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1166,7 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 31,
+      "text": "Paolo ha una carenza di calcio.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ha"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 3,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 4,
+          "dependentGloss": "carenza"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "calcio",
+          "dependent": 5,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 6,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ha"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 3,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 4,
+          "dependentGloss": "carenza"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "calcio",
+          "dependent": 5,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 6,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ha"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 3,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 4,
+          "dependentGloss": "carenza"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "calcio",
+          "dependent": 5,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 4,
+          "governorGloss": "carenza",
+          "dependent": 6,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ha",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Paolo",
+          "originalText": "Paolo",
+          "lemma": "Paolo",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 5,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Paolo",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "ha",
+          "originalText": "ha",
+          "lemma": "avere",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 8,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ha avere+v+indic+pres+nil+3+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "una",
+          "originalText": "una",
+          "lemma": "una",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 12,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "una una+pron+_+f+3+sing+ind una+art+f+sing",
+          "selected_morpho": "una+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "carenza",
+          "originalText": "carenza",
+          "lemma": "carenza",
+          "characterOffsetBegin": 13,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "carenza carenza+n+f+sing",
+          "selected_morpho": "carenza+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 23,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "calcio",
+          "originalText": "calcio",
+          "lemma": "calcio",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 30,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "calcio calciare+v+indic+pres+nil+1+sing calcio+n+m+sing",
+          "selected_morpho": "calcio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 31,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 13 milliseconds.
