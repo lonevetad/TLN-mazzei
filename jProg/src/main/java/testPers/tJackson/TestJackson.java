@@ -1,11 +1,9 @@
-package testPers;
+package testPers.tJackson;
 
 import java.io.File;
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import testPers.tJackson.Car;
 
 public class TestJackson {
 
