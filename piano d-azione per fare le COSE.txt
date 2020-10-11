@@ -1,0 +1,16 @@
+Esercizio 1
+Linguaggio: JAVA
+
+
+1) con Tint estraiamo dalla frase rozza e grezza l'albero sintattico
+1.1) MA è un sentence plan
+1.2) MA è un JSON
+1.2.1) conversione stringa -> oggetto con la libreria Jackson
+1.2.2) La libreria SimpleNLG avrà sicuramente bisogno di un oggetto particolare con una classe particolare ..
+		conversione JsonObject -> QuelCheE'
+
+2) usando la patacca di Sentence Plan (inglese) così ricavata, si usa SimpleNLG per trasformare il Sentence Plan ad una in italiano.
+
+3) convertire le singole parole o i "modi di dire" (definendo un metodo che restituisce la stringa o la concatenazione di ogni parte del "modo di dire") nella lingua target (italiano)
+
+4) concatenare le parole con una visita in-order
