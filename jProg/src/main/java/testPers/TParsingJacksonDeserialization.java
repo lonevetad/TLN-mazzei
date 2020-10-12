@@ -1,15 +1,24 @@
 package testPers;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.tint.runner.TintPipeline;
+import eu.fbk.dh.tint.runner.TintRunner;
+import lel.TintParserOutput;
 
 public class TParsingJacksonDeserialization {
 
 	public static void main(String[] args) {
 		OutputStream os;
 		String[] textes;
+		OSForJson toJsonCollector;
 		textes = MockedData.SENTENCES;
 
 		TintPipeline pipeline = new TintPipeline();
@@ -25,9 +34,74 @@ public class TParsingJacksonDeserialization {
 
 			// Load the models
 			pipeline.load();
+
+			// AND NOW
+			toJsonCollector = new OSForJson();
+			InputStream stream = new ByteArrayInputStream(textes[textes.length - 1].getBytes(StandardCharsets.UTF_8));
+			Annotation annotation = pipeline.run(stream, toJsonCollector, TintRunner.OutputFormat.JSON);
+
+			System.out.println("collected a json");
+			String jsonCollected = toJsonCollector.toString();
+			toJsonCollector = null;
+			System.gc();
+			System.out.println(jsonCollected);
+			System.out.println("now deserialize");
+			TintParserOutput parsifiedStringRepresentation;
+			parsifiedStringRepresentation = (new ObjectMapper()).readValue(jsonCollected, TintParserOutput.class);
+			System.out.println("done:");
+			System.out.println(parsifiedStringRepresentation);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	//
+
+	static class OSForJson extends OutputStream {
+//		ObjectOutputStream oos;
+		StringBuilder sb;
+
+		OSForJson() { this(16); }
+
+		OSForJson(int startSize) { sb = new StringBuilder(startSize); }
+
+		@Override
+		public void write(int b) throws IOException { sb.append((char) b); }
+
+		@Override
+		public String toString() { return sb.toString(); }
+//		public String toString() { return "OSForJson [sb=" + sb.toString() + "]"; }
+	}
+
+	static class OSForJson1 extends OutputStream {
+		// ObjectOutputStream
+		int size;
+		int[] backArray; // like arraylist
+
+		OSForJson1() { this(16); }
+
+		OSForJson1(int startSize) {
+			this.size = 0;
+			this.backArray = new int[Math.max(4, startSize)];
+		}
+
+		@Override
+		public void write(int b) throws IOException {
+			try {
+				int i;
+				int[] ba;
+				ba = backArray;
+				if ((i = size) == ba.length) {
+					ba = new int[i + (i >> 1)];
+					System.arraycopy(backArray, 0, ba, 0, i); // grow
+					this.backArray = ba;
+				}
+				ba[size++] = b;
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new IOException(e);
+			}
+		}
+
+	}
 }

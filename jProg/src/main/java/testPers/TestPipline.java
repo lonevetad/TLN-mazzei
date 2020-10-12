@@ -66,14 +66,4 @@ public class TestPipline {
 			e.printStackTrace();
 		}
 	}
-
-	//
-
-	static class OSForJson extends OutputStream {
-		// ObjectOutputStream
-
-		@Override
-		public void write(int b) throws IOException {}
-
-	}
 }

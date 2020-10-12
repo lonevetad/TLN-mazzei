@@ -17,6 +17,6 @@ public class MockedData {
 			"Ho un amico di penna.", //
 			"Il giorno in cui passerò l'esame mi ubriacherò.", //
 			"Ho imparato a risolvere il cubo di Rubik agilmente durante le scuole superiori.", //
-			"Ho poca fantasia." //
-	};
+			"Ho poca fantasia.", //
+			"Se io fossi un genio studierei informatica efficacemente." };
 }
