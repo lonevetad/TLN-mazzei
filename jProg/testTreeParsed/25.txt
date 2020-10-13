@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1000,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1166,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -332,10 +332,10 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=mago, indexID=4, dep=ROOT, isRoot=T, father=none :D, children= [1-Tu, 2-sei, 3-un, 5-,, 6-Harry, 7-.]
-	NDTTint [gloss=Tu, indexID=1, dep=nsubj, isRoot=F, father=4-mago, children= []
-	NDTTint [gloss=sei, indexID=2, dep=cop, isRoot=F, father=4-mago, children= []
-	NDTTint [gloss=un, indexID=3, dep=det, isRoot=F, father=4-mago, children= []
-	NDTTint [gloss=,, indexID=5, dep=punct, isRoot=F, father=4-mago, children= []
-	NDTTint [gloss=Harry, indexID=6, dep=nmod, isRoot=F, father=4-mago, children= []
-	NDTTint [gloss=., indexID=7, dep=punct, isRoot=F, father=4-mago, children= []
+NDTTint [gloss= mago , indexID=4, dep= ROOT , isRoot=T, father=none :D, children= [1-Tu, 2-sei, 3-un, 5-,, 6-Harry, 7-.]
+	NDTTint [gloss= Tu , indexID=1, dep= nsubj , isRoot=F, father=4-mago, children= []
+	NDTTint [gloss= sei , indexID=2, dep= cop , isRoot=F, father=4-mago, children= []
+	NDTTint [gloss= un , indexID=3, dep= det , isRoot=F, father=4-mago, children= []
+	NDTTint [gloss= , , indexID=5, dep= punct , isRoot=F, father=4-mago, children= []
+	NDTTint [gloss= Harry , indexID=6, dep= nmod , isRoot=F, father=4-mago, children= []
+	NDTTint [gloss= . , indexID=7, dep= punct , isRoot=F, father=4-mago, children= []

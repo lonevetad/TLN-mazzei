@@ -194,7 +194,7 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=ama, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Paolo, 3-Francesca, 4-.]
-	NDTTint [gloss=Paolo, indexID=1, dep=nsubj, isRoot=F, father=2-ama, children= []
-	NDTTint [gloss=Francesca, indexID=3, dep=dobj, isRoot=F, father=2-ama, children= []
-	NDTTint [gloss=., indexID=4, dep=punct, isRoot=F, father=2-ama, children= []
+NDTTint [gloss= ama , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Paolo, 3-Francesca, 4-.]
+	NDTTint [gloss= Paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ama, children= []
+	NDTTint [gloss= Francesca , indexID=3, dep= dobj , isRoot=F, father=2-ama, children= []
+	NDTTint [gloss= . , indexID=4, dep= punct , isRoot=F, father=2-ama, children= []

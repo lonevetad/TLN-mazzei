@@ -250,8 +250,8 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=ama, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Paolo, 4-calcio, 5-.]
-	NDTTint [gloss=Paolo, indexID=1, dep=nsubj, isRoot=F, father=2-ama, children= []
-	NDTTint [gloss=calcio, indexID=4, dep=dobj, isRoot=F, father=2-ama, children= [3-il]
-		NDTTint [gloss=il, indexID=3, dep=det, isRoot=F, father=4-calcio, children= []
-	NDTTint [gloss=., indexID=5, dep=punct, isRoot=F, father=2-ama, children= []
+NDTTint [gloss= ama , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Paolo, 4-calcio, 5-.]
+	NDTTint [gloss= Paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ama, children= []
+	NDTTint [gloss= calcio , indexID=4, dep= dobj , isRoot=F, father=2-ama, children= [3-il]
+		NDTTint [gloss= il , indexID=3, dep= det , isRoot=F, father=4-calcio, children= []
+	NDTTint [gloss= . , indexID=5, dep= punct , isRoot=F, father=2-ama, children= []

@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 571,4 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 800,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -518,14 +518,14 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=giorno, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Il, 10-ubriacher?, 12-.]
-	NDTTint [gloss=Il, indexID=1, dep=det, isRoot=F, father=2-giorno, children= []
-	NDTTint [gloss=ubriacher?, indexID=10, dep=acl:relcl, isRoot=F, father=2-giorno, children= [4-cui, 5-passer?, 8-esame, 9-mi, 11-?]
-		NDTTint [gloss=cui, indexID=4, dep=nmod, isRoot=F, father=10-ubriacher?, children= [3-in]
-			NDTTint [gloss=in, indexID=3, dep=case, isRoot=F, father=4-cui, children= []
-		NDTTint [gloss=passer?, indexID=5, dep=nmod, isRoot=F, father=10-ubriacher?, children= []
-		NDTTint [gloss=esame, indexID=8, dep=nsubj, isRoot=F, father=10-ubriacher?, children= [7-l']
-			NDTTint [gloss=l', indexID=7, dep=det, isRoot=F, father=8-esame, children= []
-		NDTTint [gloss=mi, indexID=9, dep=expl, isRoot=F, father=10-ubriacher?, children= []
-		NDTTint [gloss=?, indexID=11, dep=dobj, isRoot=F, father=10-ubriacher?, children= []
-	NDTTint [gloss=., indexID=12, dep=punct, isRoot=F, father=2-giorno, children= []
+NDTTint [gloss= giorno , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Il, 10-ubriacher?, 12-.]
+	NDTTint [gloss= Il , indexID=1, dep= det , isRoot=F, father=2-giorno, children= []
+	NDTTint [gloss= ubriacher? , indexID=10, dep= acl:relcl , isRoot=F, father=2-giorno, children= [4-cui, 5-passer?, 8-esame, 9-mi, 11-?]
+		NDTTint [gloss= cui , indexID=4, dep= nmod , isRoot=F, father=10-ubriacher?, children= [3-in]
+			NDTTint [gloss= in , indexID=3, dep= case , isRoot=F, father=4-cui, children= []
+		NDTTint [gloss= passer? , indexID=5, dep= nmod , isRoot=F, father=10-ubriacher?, children= []
+		NDTTint [gloss= esame , indexID=8, dep= nsubj , isRoot=F, father=10-ubriacher?, children= [7-l']
+			NDTTint [gloss= l' , indexID=7, dep= det , isRoot=F, father=8-esame, children= []
+		NDTTint [gloss= mi , indexID=9, dep= expl , isRoot=F, father=10-ubriacher?, children= []
+		NDTTint [gloss= ? , indexID=11, dep= dobj , isRoot=F, father=10-ubriacher?, children= []
+	NDTTint [gloss= . , indexID=12, dep= punct , isRoot=F, father=2-giorno, children= []

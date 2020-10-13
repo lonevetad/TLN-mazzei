@@ -345,10 +345,10 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=Sembra, indexID=1, dep=ROOT, isRoot=T, father=none :D, children= [6-difficile, 7-.]
-	NDTTint [gloss=difficile, indexID=6, dep=ccomp, isRoot=F, father=1-Sembra, children= [2-che, 4-laboratorio, 5-sia]
-		NDTTint [gloss=che, indexID=2, dep=mark, isRoot=F, father=6-difficile, children= []
-		NDTTint [gloss=laboratorio, indexID=4, dep=nsubj, isRoot=F, father=6-difficile, children= [3-il]
-			NDTTint [gloss=il, indexID=3, dep=det, isRoot=F, father=4-laboratorio, children= []
-		NDTTint [gloss=sia, indexID=5, dep=cop, isRoot=F, father=6-difficile, children= []
-	NDTTint [gloss=., indexID=7, dep=punct, isRoot=F, father=1-Sembra, children= []
+NDTTint [gloss= Sembra , indexID=1, dep= ROOT , isRoot=T, father=none :D, children= [6-difficile, 7-.]
+	NDTTint [gloss= difficile , indexID=6, dep= ccomp , isRoot=F, father=1-Sembra, children= [2-che, 4-laboratorio, 5-sia]
+		NDTTint [gloss= che , indexID=2, dep= mark , isRoot=F, father=6-difficile, children= []
+		NDTTint [gloss= laboratorio , indexID=4, dep= nsubj , isRoot=F, father=6-difficile, children= [3-il]
+			NDTTint [gloss= il , indexID=3, dep= det , isRoot=F, father=4-laboratorio, children= []
+		NDTTint [gloss= sia , indexID=5, dep= cop , isRoot=F, father=6-difficile, children= []
+	NDTTint [gloss= . , indexID=7, dep= punct , isRoot=F, father=1-Sembra, children= []

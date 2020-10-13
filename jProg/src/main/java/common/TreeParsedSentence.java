@@ -1,11 +1,15 @@
 package common;
 
+import java.util.Collection;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.function.Consumer;
 
 import common.TintParserOutput.SentenceDependencyTint;
 import common.TintParserOutput.SentenceTint;
+import common.TintParserOutput.SentenceTokenTint;
 import dataStructures.MapTreeAVL;
+import edu.emory.mathcs.backport.java.util.Arrays;
 import tools.Misc;
 
 /** Do it for a SINGLE sentence. */
@@ -54,7 +58,8 @@ public class TreeParsedSentence {
 		}
 		allPartsAsNode = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.STRING_COMPARATOR);
 
-		// first collect all nodes, then wire them
+		// first collect all nodes, then wire them, then enrich with "token"
+		// informations
 
 		// 1) produce node
 		for (SentenceDependencyTint sdt : dependencies) {
@@ -73,6 +78,22 @@ public class TreeParsedSentence {
 			}
 		});
 
+		// 3) enrich with info
+
+		sentence.forEachToken(sentToken -> {
+			NodeDependencyTree relatedNode;
+			// it's required to retrieve the node... start using "originalText" field
+			relatedNode = allPartsAsNode.get(sentToken.originalText);
+			if (relatedNode == null) { // if it fails, try with "word" field
+				relatedNode = allPartsAsNode.get(sentToken.word);
+			}
+			if (relatedNode != null) { // got it?
+				NDTTint nnnn;
+				nnnn = (NDTTint) relatedNode;
+				nnnn.setFromTintToken(sentToken);
+			}
+		});
+
 		// done :D
 	}
 
@@ -85,11 +106,14 @@ public class TreeParsedSentence {
 	protected abstract class NodeDependencyTree {
 		protected final boolean isRoot;
 		protected final Integer indexID; // just a simpleID
-		protected final String dep; // took from Tint
+		protected final String dep; // is it a PoS? Probably. (took from Tint' "dependency".)
 		protected final String gloss;
+		protected String lemma;
+		protected String pos; // what is this difference from "dep"? (took from Tint' "tokens".)
 		protected String glossFather;
 		protected NodeDependencyTree father;
 		protected Map<Integer, NodeDependencyTree> children;
+		protected Map<String, String[]> features;
 
 		protected NodeDependencyTree(Integer indexID, String dep, String gloss, String glossFather) {
 			super();
@@ -100,13 +124,49 @@ public class TreeParsedSentence {
 			this.isRoot = this.checkIsRoot();
 			this.father = null;
 			this.children = null;
+			this.features = null;
 		}
 
-		protected boolean isRoot() { return this.isRoot; }
+		// getter
+
+		public boolean isRoot() { return this.isRoot; }
+
+		public Integer getIndexID() { return indexID; }
+
+		public String getDep() { return dep; }
+
+		public String getGloss() { return gloss; }
+
+		public String getGlossFather() { return glossFather; }
+
+		public NodeDependencyTree getFather() { return father; }
+
+		public Map<Integer, NodeDependencyTree> getChildren() { return children; }
+
+		public Map<String, String[]> getFeatures() { return features; }
+
+		public String getLemma() { return lemma; }
+
+		public String getPos() { return pos; }
+
+		// setter
+
+		public void setLemma(String lemma) { this.lemma = lemma; }
+
+		public void setPos(String pos) { this.pos = pos; }
+
+		public void setGlossFather(String glossFather) { this.glossFather = glossFather; }
+
+		public void setFeatures(Map<String, String[]> features) { this.features = features; }
 
 		protected void checkChildren() {
 			if (children == null)
 				children = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.INTEGER_COMPARATOR);
+		}
+
+		protected void checkFreature() {
+			if (features == null)
+				this.features = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.STRING_COMPARATOR);
 		}
 
 		protected void setFather(NodeDependencyTree f) {
@@ -136,6 +196,38 @@ public class TreeParsedSentence {
 
 		protected abstract boolean checkIsRoot();
 
+		public void addFeatures(String featureName, String[] featureValuess) {
+			checkFreature();
+			this.features.put(featureName, featureValuess);
+		}
+
+		public void addFeatures(String featureName, Object featureVal) {
+			if (featureVal instanceof String[]) {
+				addFeatures(featureName, (String[]) featureVal);
+			} else if (featureVal instanceof String) {
+				addFeatures(featureName, new String[] { (String) featureVal });
+			} else if (featureVal instanceof Collection<?>) {
+				Collection<?> c;
+				c = ((Collection<?>) featureVal);
+				addFeatures(featureName, c.toArray(new String[c.size()]));
+			} else if (featureVal instanceof Iterable<?>) {
+				Iterable<?> i;
+				LinkedList<String> l;
+				i = (Iterable<?>) featureVal;
+				l = new LinkedList<>();
+				for (Object o : i) {
+					if (o instanceof String)
+						l.add((String) o);
+				}
+				addFeatures(featureName, l.toArray(new String[l.size()]));
+			}
+		}
+
+		protected void forEachFeature(Consumer<String[]> action) {
+			if (this.features != null && features.size() > 0) { features.forEach((fn, fs) -> action.accept(fs)); }
+		}
+
+		//
 		public String toMiniString() { return indexID + "-" + gloss; }
 
 		@Override
@@ -147,6 +239,10 @@ public class TreeParsedSentence {
 			sb.append(" [");
 			sb.append("gloss= ");
 			sb.append(gloss);
+			sb.append(", pos= ");
+			sb.append(pos);
+			sb.append(" , lemma=");
+			sb.append(lemma);
 			sb.append(" , indexID=");
 			sb.append(indexID);
 			sb.append(", dep= ");
@@ -159,6 +255,17 @@ public class TreeParsedSentence {
 			} else {
 				sb.append(father.toMiniString());
 			}
+			sb.append(", features= [");
+			this.forEachFeature(//
+					(k) -> {
+						if (isNotFirst[0]) {
+							sb.append(", ");
+						} else {
+							isNotFirst[0] = true;
+						}
+						sb.append(Arrays.toString(k));
+					});
+			isNotFirst[0] = false;
 			sb.append(", children= [");
 			this.forEachChild(//
 					(k) -> {
@@ -168,9 +275,7 @@ public class TreeParsedSentence {
 							isNotFirst[0] = true;
 						}
 						sb.append(k.toMiniString());
-					}
-//					sb::append
-			);
+					});
 			sb.append(']');
 			return sb.toString();
 		}
@@ -187,6 +292,12 @@ public class TreeParsedSentence {
 
 		@Override
 		protected boolean checkIsRoot() { return SentenceDependencyTint.GLOSS_ROOT.equals(this.glossFather); }
+
+		protected void setFromTintToken(SentenceTokenTint token) {
+			super.setLemma(token.lemma);
+			token.features.forEach((featureName, featureVal) -> { super.addFeatures(featureName, featureVal); });
+			super.setPos(token.pos);
+		}
 	}
 
 	//

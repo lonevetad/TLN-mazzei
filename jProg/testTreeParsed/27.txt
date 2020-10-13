@@ -247,8 +247,8 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=Ricordati, indexID=1, dep=ROOT, isRoot=T, father=none :D, children= [4-morire, 5-.]
-	NDTTint [gloss=morire, indexID=4, dep=ccomp, isRoot=F, father=1-Ricordati, children= [2-che, 3-devi]
-		NDTTint [gloss=che, indexID=2, dep=mark, isRoot=F, father=4-morire, children= []
-		NDTTint [gloss=devi, indexID=3, dep=aux, isRoot=F, father=4-morire, children= []
-	NDTTint [gloss=., indexID=5, dep=punct, isRoot=F, father=1-Ricordati, children= []
+NDTTint [gloss= Ricordati , indexID=1, dep= ROOT , isRoot=T, father=none :D, children= [4-morire, 5-.]
+	NDTTint [gloss= morire , indexID=4, dep= ccomp , isRoot=F, father=1-Ricordati, children= [2-che, 3-devi]
+		NDTTint [gloss= che , indexID=2, dep= mark , isRoot=F, father=4-morire, children= []
+		NDTTint [gloss= devi , indexID=3, dep= aux , isRoot=F, father=4-morire, children= []
+	NDTTint [gloss= . , indexID=5, dep= punct , isRoot=F, father=1-Ricordati, children= []

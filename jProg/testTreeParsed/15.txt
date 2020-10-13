@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 1076,9 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 933,3 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -617,17 +617,17 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=imparato, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Ho, 4-risolvere, 14-.]
-	NDTTint [gloss=Ho, indexID=1, dep=aux, isRoot=F, father=2-imparato, children= []
-	NDTTint [gloss=risolvere, indexID=4, dep=xcomp, isRoot=F, father=2-imparato, children= [3-a, 6-cubo, 12-scuole]
-		NDTTint [gloss=a, indexID=3, dep=mark, isRoot=F, father=4-risolvere, children= []
-		NDTTint [gloss=cubo, indexID=6, dep=dobj, isRoot=F, father=4-risolvere, children= [5-il, 8-Rubik]
-			NDTTint [gloss=il, indexID=5, dep=det, isRoot=F, father=6-cubo, children= []
-			NDTTint [gloss=Rubik, indexID=8, dep=nmod, isRoot=F, father=6-cubo, children= [7-di]
-				NDTTint [gloss=di, indexID=7, dep=case, isRoot=F, father=8-Rubik, children= []
-		NDTTint [gloss=scuole, indexID=12, dep=nmod, isRoot=F, father=4-risolvere, children= [9-agilmente, 10-durante, 11-le, 13-superiori]
-			NDTTint [gloss=agilmente, indexID=9, dep=advmod, isRoot=F, father=12-scuole, children= []
-			NDTTint [gloss=durante, indexID=10, dep=case, isRoot=F, father=12-scuole, children= []
-			NDTTint [gloss=le, indexID=11, dep=det, isRoot=F, father=12-scuole, children= []
-			NDTTint [gloss=superiori, indexID=13, dep=amod, isRoot=F, father=12-scuole, children= []
-	NDTTint [gloss=., indexID=14, dep=punct, isRoot=F, father=2-imparato, children= []
+NDTTint [gloss= imparato , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Ho, 4-risolvere, 14-.]
+	NDTTint [gloss= Ho , indexID=1, dep= aux , isRoot=F, father=2-imparato, children= []
+	NDTTint [gloss= risolvere , indexID=4, dep= xcomp , isRoot=F, father=2-imparato, children= [3-a, 6-cubo, 12-scuole]
+		NDTTint [gloss= a , indexID=3, dep= mark , isRoot=F, father=4-risolvere, children= []
+		NDTTint [gloss= cubo , indexID=6, dep= dobj , isRoot=F, father=4-risolvere, children= [5-il, 8-Rubik]
+			NDTTint [gloss= il , indexID=5, dep= det , isRoot=F, father=6-cubo, children= []
+			NDTTint [gloss= Rubik , indexID=8, dep= nmod , isRoot=F, father=6-cubo, children= [7-di]
+				NDTTint [gloss= di , indexID=7, dep= case , isRoot=F, father=8-Rubik, children= []
+		NDTTint [gloss= scuole , indexID=12, dep= nmod , isRoot=F, father=4-risolvere, children= [9-agilmente, 10-durante, 11-le, 13-superiori]
+			NDTTint [gloss= agilmente , indexID=9, dep= advmod , isRoot=F, father=12-scuole, children= []
+			NDTTint [gloss= durante , indexID=10, dep= case , isRoot=F, father=12-scuole, children= []
+			NDTTint [gloss= le , indexID=11, dep= det , isRoot=F, father=12-scuole, children= []
+			NDTTint [gloss= superiori , indexID=13, dep= amod , isRoot=F, father=12-scuole, children= []
+	NDTTint [gloss= . , indexID=14, dep= punct , isRoot=F, father=2-imparato, children= []

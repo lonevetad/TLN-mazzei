@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 17 tokens at 894,7 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 17 tokens at 1062,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -710,11 +710,11 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss=film, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Il, 6-frase]
-	NDTTint [gloss=Il, indexID=1, dep=det, isRoot=F, father=2-film, children= []
-	NDTTint [gloss=frase, indexID=6, dep=nmod, isRoot=F, father=2-film, children= [4-cui, 5-la, 7-precedente, 17-.]
-		NDTTint [gloss=cui, indexID=4, dep=nmod, isRoot=F, father=6-frase, children= [3-da]
-			NDTTint [gloss=da, indexID=3, dep=case, isRoot=F, father=4-cui, children= []
-		NDTTint [gloss=la, indexID=5, dep=det, isRoot=F, father=6-frase, children= []
-		NDTTint [gloss=precedente, indexID=7, dep=amod, isRoot=F, father=6-frase, children= []
-		NDTTint [gloss=., indexID=17, dep=punct, isRoot=F, father=6-frase, children= []
+NDTTint [gloss= film , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Il, 6-frase]
+	NDTTint [gloss= Il , indexID=1, dep= det , isRoot=F, father=2-film, children= []
+	NDTTint [gloss= frase , indexID=6, dep= nmod , isRoot=F, father=2-film, children= [4-cui, 5-la, 7-precedente, 17-.]
+		NDTTint [gloss= cui , indexID=4, dep= nmod , isRoot=F, father=6-frase, children= [3-da]
+			NDTTint [gloss= da , indexID=3, dep= case , isRoot=F, father=4-cui, children= []
+		NDTTint [gloss= la , indexID=5, dep= det , isRoot=F, father=6-frase, children= []
+		NDTTint [gloss= precedente , indexID=7, dep= amod , isRoot=F, father=6-frase, children= []
+		NDTTint [gloss= . , indexID=17, dep= punct , isRoot=F, father=6-frase, children= []

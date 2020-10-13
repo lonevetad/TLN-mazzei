@@ -4,6 +4,7 @@ import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.function.Consumer;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -56,9 +57,9 @@ public class TintParserOutput implements Serializable {
 		}
 
 		//
-		protected int index;
-		protected int characterOffsetBegin;
-		protected int characterOffsetEnd;
+		protected int index; // indice (partendo da 1) nell'array "tokens"
+		protected int characterOffsetBegin; // estremo INCLUSO
+		protected int characterOffsetEnd; // estremo ESCLUSO
 		protected String text;
 		@JsonAlias({ "basic-dependencies" })
 		protected SentenceDependencyTint[] basicDependencies;
@@ -146,6 +147,11 @@ public class TintParserOutput implements Serializable {
 		public void setCollapsedCcprocessedDependencies2(SentenceDependencyTint[] collapsedCcprocessedDependencies) {
 			this.collapsedCcprocessedDependencies = collapsedCcprocessedDependencies;
 		}
+
+		public void forEachToken(Consumer<SentenceTokenTint> action) {
+			for (SentenceTokenTint t : tokens)
+				action.accept(t);
+		}
 	}
 
 	//
@@ -187,27 +193,19 @@ public class TintParserOutput implements Serializable {
 	//
 	public static class SentenceTokenTint implements Serializable {
 		private static final long serialVersionUID = 86540524040544L;
-		/** Starts from 1 */
+		/** Starts from 1, index on array "tokens. */
 		protected int index;
 		protected String word;
 		protected String originalText;
 		protected String lemma;
-		protected int characterOffsetBegin;
-		protected int characterOffsetEnd;
+		protected int characterOffsetBegin; // estremo INCLUSO
+		protected int characterOffsetEnd; // estremo ESCLUSO
 		protected String pos;
 		protected String featuresText;
 		protected String ner;
 		protected String full_morpho;
 		protected String selected_morpho;
 		protected boolean guessed_lemma;
-//	
-//		protected Map<String, String[]> features = new TreeMap<>(Misc.STRING_COMPARATOR);;
-//		@JsonAnyGetter
-//		public Map<String, String[]> getFeatures() { return this.features; }
-//		@JsonAnySetter
-//		public void add(String key, String[] value) { features.put(key, value); }
-//		public void setFeature(String key, String[] value) { add(key, value); }
-
 		protected Map<String, Object> features = new TreeMap<>(Misc.STRING_COMPARATOR);;
 
 		public Object getFeature(String featureName) { return this.features.get(featureName); }
@@ -215,6 +213,14 @@ public class TintParserOutput implements Serializable {
 		public String[] getFeatureAsArrayString(String featureName) {
 			return (String[]) this.features.get(featureName);
 		}
+
+		//
+//		protected Map<String, String[]> features = new TreeMap<>(Misc.STRING_COMPARATOR);;
+//		@JsonAnyGetter
+//		public Map<String, String[]> getFeatures() { return this.features; }
+//		@JsonAnySetter
+//		public void add(String key, String[] value) { features.put(key, value); }
+//		public void setFeature(String key, String[] value) { add(key, value); }
 
 		//
 
@@ -278,7 +284,28 @@ public class TintParserOutput implements Serializable {
 		//
 
 		@JsonAnySetter
-		public void add(String key, Object value) { features.put(key, value); }
+		public void add(String key, Object value) {
+			if (value instanceof String) {
+				boolean notPut = true;
+				if (features.containsKey(key)) {
+					Object oldVal;
+					oldVal = features.get(key);
+					if (oldVal instanceof String[]) {
+						String[] old, newSet;
+						// add the stuff
+						old = (String[]) oldVal;
+						newSet = new String[old.length + 1];
+						System.arraycopy(old, 0, newSet, 0, old.length);
+						newSet[old.length] = (String) value;
+						notPut = false;
+						features.remove(key);
+						features.put(key, newSet);
+					}
+				}
+				if (notPut) { features.put(key, new String[] { (String) value }); }
+			} else
+				features.put(key, value);
+		}
 
 		public void setFeature(String key, Object value) { add(key, value); }
 
