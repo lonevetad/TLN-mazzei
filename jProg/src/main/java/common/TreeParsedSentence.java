@@ -140,6 +140,7 @@ public class TreeParsedSentence {
 
 		@Override
 		public String toString() {
+			boolean[] isNotFirst = { false };
 			StringBuilder sb;
 			sb = new StringBuilder();
 			sb.append(this.getClass().getSimpleName());
@@ -161,7 +162,14 @@ public class TreeParsedSentence {
 			}
 			sb.append(", children= [");
 			this.forEachChild(//
-					(k) -> sb.append(k.toMiniString())
+					(k) -> {
+						if (isNotFirst[0]) {
+							sb.append(", ");
+						} else {
+							isNotFirst[0] = true;
+						}
+						sb.append(k.toMiniString());
+					}
 //					sb::append
 			);
 			sb.append(']');
@@ -205,8 +213,8 @@ public class TreeParsedSentence {
 			return;
 		}
 		sb.append('\n');
+		addTab(sb, level, false);
 		sb.append(n.toString());
-		addTab(sb, level);
 		newLevel = level + 1;
 		n.forEachChild((child) -> toStringNode(sb, child, newLevel));
 	}

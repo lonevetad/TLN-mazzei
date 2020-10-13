@@ -1,0 +1,473 @@
+START
+start parsifying text:
+Così muore la Repubblica: sotto scroscianti applausi.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 10 tokens at 1000,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 26,
+      "text": "Cos?? muore la Repubblica:",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "muore"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 1,
+          "dependentGloss": "Cos?"
+        },
+        {
+          "dep": "name",
+          "governor": 1,
+          "governorGloss": "Cos?",
+          "dependent": 2,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "Repubblica",
+          "dependent": 4,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 5,
+          "dependentGloss": "Repubblica"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 6,
+          "dependentGloss": ":"
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "muore"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 1,
+          "dependentGloss": "Cos?"
+        },
+        {
+          "dep": "name",
+          "governor": 1,
+          "governorGloss": "Cos?",
+          "dependent": 2,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "Repubblica",
+          "dependent": 4,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 5,
+          "dependentGloss": "Repubblica"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 6,
+          "dependentGloss": ":"
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "muore"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 1,
+          "dependentGloss": "Cos?"
+        },
+        {
+          "dep": "name",
+          "governor": 1,
+          "governorGloss": "Cos?",
+          "dependent": 2,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "Repubblica",
+          "dependent": 4,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 5,
+          "dependentGloss": "Repubblica"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "muore",
+          "dependent": 6,
+          "dependentGloss": ":"
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Cos?",
+          "originalText": "Cos?",
+          "lemma": "Cos?",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 4,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "Cos?",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "?",
+          "originalText": "?",
+          "lemma": "?",
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 5,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "?",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "muore",
+          "originalText": "muore",
+          "lemma": "morire",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 11,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "muore morire+v+indic+pres+nil+3+sing",
+          "selected_morpho": "morire+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 14,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "Repubblica",
+          "originalText": "Repubblica",
+          "lemma": "repubblica",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 25,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "LOC",
+          "full_morpho": "Repubblica repubblica+n+f+sing",
+          "selected_morpho": "repubblica+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": ":",
+          "originalText": ":",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 25,
+          "characterOffsetEnd": 26,
+          "pos": "FC",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ": [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "characterOffsetBegin": 27,
+      "characterOffsetEnd": 54,
+      "text": "sotto scroscianti applausi.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "applausi"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 1,
+          "dependentGloss": "sotto"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 2,
+          "dependentGloss": "scroscianti"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "applausi"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 1,
+          "dependentGloss": "sotto"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 2,
+          "dependentGloss": "scroscianti"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "applausi"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 1,
+          "dependentGloss": "sotto"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 2,
+          "dependentGloss": "scroscianti"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "applausi",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "sotto",
+          "originalText": "sotto",
+          "lemma": "sotto",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 32,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "sotto sotto+adj+f+plur+pst sotto+adj+f+sing+pst sotto+adj+m+plur+pst sotto+adj+m+sing+pst sotto+adv sotto+prep",
+          "selected_morpho": "sotto+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "scroscianti",
+          "originalText": "scroscianti",
+          "lemma": "scrosciante",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 44,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "scroscianti scrosciante+adj+f+plur+pst scrosciante+adj+m+plur+pst scrosciare+v+part+pres+nil+nil+plur scrosciare+v+part+pres+nil+nil+plur",
+          "selected_morpho": "scrosciante+adj+m+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "applausi",
+          "originalText": "applausi",
+          "lemma": "applauso",
+          "characterOffsetBegin": 45,
+          "characterOffsetEnd": 53,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "applausi applauso+n+m+plur",
+          "selected_morpho": "applauso+n+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 53,
+          "characterOffsetEnd": 54,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [isRoot=T, indexID=3, dep=ROOT, gloss=muore, father=none :D, children= [1-Cos?, 5-Repubblica, 6-:]
+
+NDTTint [isRoot=F, indexID=1, dep=nsubj, gloss=Cos?, father=3-muore, children= [2-?]
+	
+NDTTint [isRoot=F, indexID=2, dep=name, gloss=?, father=1-Cos?, children= []
+		
+NDTTint [isRoot=F, indexID=5, dep=dobj, gloss=Repubblica, father=3-muore, children= [4-la]
+	
+NDTTint [isRoot=F, indexID=4, dep=det, gloss=la, father=5-Repubblica, children= []
+		
+NDTTint [isRoot=F, indexID=6, dep=punct, gloss=:, father=3-muore, children= []
+	

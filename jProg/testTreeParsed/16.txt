@@ -1,0 +1,221 @@
+START
+start parsifying text:
+Ho poca fantasia.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 444,4 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 17,
+      "text": "Ho poca fantasia.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "fantasia",
+          "dependent": 2,
+          "dependentGloss": "poca"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 3,
+          "dependentGloss": "fantasia"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "fantasia",
+          "dependent": 2,
+          "dependentGloss": "poca"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 3,
+          "dependentGloss": "fantasia"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "fantasia",
+          "dependent": 2,
+          "dependentGloss": "poca"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 3,
+          "dependentGloss": "fantasia"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ho",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ho",
+          "originalText": "Ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "poca",
+          "originalText": "poca",
+          "lemma": "poco",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 7,
+          "pos": "DI",
+          "featuresText": "Gender\u003dFem|Number\u003dSing|PronType\u003dInd",
+          "ner": "O",
+          "full_morpho": "poca poco+adj+f+sing+pst poco+pron+_+f+3+sing+neg",
+          "selected_morpho": "poco+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Ind"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "fantasia",
+          "originalText": "fantasia",
+          "lemma": "fantasia",
+          "characterOffsetBegin": 8,
+          "characterOffsetEnd": 16,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "fantasia fantasia+n+f+sing",
+          "selected_morpho": "fantasia+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 17,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [isRoot=T, indexID=1, dep=ROOT, gloss=Ho, father=none :D, children= [3-fantasia, 4-.]
+
+NDTTint [isRoot=F, indexID=3, dep=dobj, gloss=fantasia, father=1-Ho, children= [2-poca]
+	
+NDTTint [isRoot=F, indexID=2, dep=det, gloss=poca, father=3-fantasia, children= []
+		
+NDTTint [isRoot=F, indexID=4, dep=punct, gloss=., father=1-Ho, children= []
+	

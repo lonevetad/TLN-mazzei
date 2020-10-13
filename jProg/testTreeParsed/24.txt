@@ -1,0 +1,594 @@
+START
+start parsifying text:
+Alle prime luci del quinto giorno, all'alba guarda ad est!
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 13 tokens at 1625,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 58,
+      "text": "Alle prime luci del quinto giorno, all\u0027alba guarda ad est!",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 10,
+          "dependentGloss": "guarda"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 1,
+          "dependentGloss": "Alle"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 2,
+          "dependentGloss": "prime"
+        },
+        {
+          "dep": "nmod",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 3,
+          "dependentGloss": "luci"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 4,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 5,
+          "dependentGloss": "quinto"
+        },
+        {
+          "dep": "nmod",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 6,
+          "dependentGloss": "giorno"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 7,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "alba",
+          "dependent": 8,
+          "dependentGloss": "all\u0027"
+        },
+        {
+          "dep": "nmod",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 9,
+          "dependentGloss": "alba"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "est",
+          "dependent": 11,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "nmod",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 12,
+          "dependentGloss": "est"
+        },
+        {
+          "dep": "punct",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 13,
+          "dependentGloss": "!"
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 10,
+          "dependentGloss": "guarda"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 1,
+          "dependentGloss": "Alle"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 2,
+          "dependentGloss": "prime"
+        },
+        {
+          "dep": "nmod:alle",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 3,
+          "dependentGloss": "luci"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 4,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 5,
+          "dependentGloss": "quinto"
+        },
+        {
+          "dep": "nmod:del",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 6,
+          "dependentGloss": "giorno"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 7,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "alba",
+          "dependent": 8,
+          "dependentGloss": "all\u0027"
+        },
+        {
+          "dep": "nmod:all\u0027",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 9,
+          "dependentGloss": "alba"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "est",
+          "dependent": 11,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "nmod:ad",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 12,
+          "dependentGloss": "est"
+        },
+        {
+          "dep": "punct",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 13,
+          "dependentGloss": "!"
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 10,
+          "dependentGloss": "guarda"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 1,
+          "dependentGloss": "Alle"
+        },
+        {
+          "dep": "amod",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 2,
+          "dependentGloss": "prime"
+        },
+        {
+          "dep": "nmod:alle",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 3,
+          "dependentGloss": "luci"
+        },
+        {
+          "dep": "case",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 4,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "giorno",
+          "dependent": 5,
+          "dependentGloss": "quinto"
+        },
+        {
+          "dep": "nmod:del",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 6,
+          "dependentGloss": "giorno"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "luci",
+          "dependent": 7,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "alba",
+          "dependent": 8,
+          "dependentGloss": "all\u0027"
+        },
+        {
+          "dep": "nmod:all\u0027",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 9,
+          "dependentGloss": "alba"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "est",
+          "dependent": 11,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "nmod:ad",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 12,
+          "dependentGloss": "est"
+        },
+        {
+          "dep": "punct",
+          "governor": 10,
+          "governorGloss": "guarda",
+          "dependent": 13,
+          "dependentGloss": "!"
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Alle",
+          "originalText": "Alle",
+          "lemma": "alla",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 4,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "Alle alla~alla+prep/le~det+art+f+plur",
+          "selected_morpho": "alla~alla+prep/le~det+art+f+plur",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "prime",
+          "originalText": "prime",
+          "lemma": "primo",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 10,
+          "pos": "NO",
+          "featuresText": "Gender\u003dFem|NumType\u003dOrd|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "prime primo+adj+f+plur+pst",
+          "selected_morpho": "primo+adj+f+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "NumType": [
+              "Ord"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "luci",
+          "originalText": "luci",
+          "lemma": "luce",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 15,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "luci luce+n+f+plur lucere+v+imp+pres+nil+2+sing lucere+v+indic+pres+nil+2+sing",
+          "selected_morpho": "luce+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "del",
+          "originalText": "del",
+          "lemma": "del",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 19,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "del del~del+prep/il~det+art+m+sing",
+          "selected_morpho": "del~del+prep/il~det+art+m+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "quinto",
+          "originalText": "quinto",
+          "lemma": "quinto",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 26,
+          "pos": "NO",
+          "featuresText": "Gender\u003dMasc|NumType\u003dOrd|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "quinto quinto+adj+m+sing+pst quinto+n+m+sing",
+          "selected_morpho": "quinto+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "NumType": [
+              "Ord"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "giorno",
+          "originalText": "giorno",
+          "lemma": "giorno",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 33,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "giorno giorno+n+m+sing",
+          "selected_morpho": "giorno+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 34,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 8,
+          "word": "all\u0027",
+          "originalText": "all\u0027",
+          "lemma": "all\u0027",
+          "characterOffsetBegin": 35,
+          "characterOffsetEnd": 39,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "all\u0027 all\u0027~all\u0027+prep/la~det+art+f+sing all\u0027~all\u0027+prep/il~det+art+m+sing",
+          "selected_morpho": "all\u0027~all\u0027+prep/il~det+art+m+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 9,
+          "word": "alba",
+          "originalText": "alba",
+          "lemma": "alba",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 43,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "alba alba+n+f+sing",
+          "selected_morpho": "alba+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "guarda",
+          "originalText": "guarda",
+          "lemma": "guardare",
+          "characterOffsetBegin": 44,
+          "characterOffsetEnd": 50,
+          "pos": "V",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "guarda guardare+v+imp+pres+nil+2+sing guardare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "guardare+v+imp+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": "ad",
+          "originalText": "ad",
+          "lemma": "ad",
+          "characterOffsetBegin": 51,
+          "characterOffsetEnd": 53,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "ad ad+prep",
+          "selected_morpho": "ad+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 12,
+          "word": "est",
+          "originalText": "est",
+          "lemma": "est",
+          "characterOffsetBegin": 54,
+          "characterOffsetEnd": 57,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "est",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "!",
+          "originalText": "!",
+          "lemma": "!",
+          "characterOffsetBegin": 57,
+          "characterOffsetEnd": 58,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "! [PUNCT] [PUNCT]",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [isRoot=T, indexID=10, dep=ROOT, gloss=guarda, father=none :D, children= [3-luci, 9-alba, 12-est, 13-!]
+
+NDTTint [isRoot=F, indexID=3, dep=nmod, gloss=luci, father=10-guarda, children= [1-Alle, 2-prime, 6-giorno, 7-,]
+	
+NDTTint [isRoot=F, indexID=1, dep=case, gloss=Alle, father=3-luci, children= []
+		
+NDTTint [isRoot=F, indexID=2, dep=amod, gloss=prime, father=3-luci, children= []
+		
+NDTTint [isRoot=F, indexID=6, dep=nmod, gloss=giorno, father=3-luci, children= [4-del, 5-quinto]
+		
+NDTTint [isRoot=F, indexID=4, dep=case, gloss=del, father=6-giorno, children= []
+			
+NDTTint [isRoot=F, indexID=5, dep=amod, gloss=quinto, father=6-giorno, children= []
+			
+NDTTint [isRoot=F, indexID=7, dep=punct, gloss=,, father=3-luci, children= []
+		
+NDTTint [isRoot=F, indexID=9, dep=nmod, gloss=alba, father=10-guarda, children= [8-all']
+	
+NDTTint [isRoot=F, indexID=8, dep=case, gloss=all', father=9-alba, children= []
+		
+NDTTint [isRoot=F, indexID=12, dep=nmod, gloss=est, father=10-guarda, children= [11-ad]
+	
+NDTTint [isRoot=F, indexID=11, dep=case, gloss=ad, father=12-est, children= []
+		
+NDTTint [isRoot=F, indexID=13, dep=punct, gloss=!, father=10-guarda, children= []
+	

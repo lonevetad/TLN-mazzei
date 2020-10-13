@@ -1,0 +1,259 @@
+START
+start parsifying text:
+Ricordati che devi morire.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 1250,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 26,
+      "text": "Ricordati che devi morire.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ricordati"
+        },
+        {
+          "dep": "mark",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "aux",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 3,
+          "dependentGloss": "devi"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 4,
+          "dependentGloss": "morire"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ricordati"
+        },
+        {
+          "dep": "mark",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "aux",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 3,
+          "dependentGloss": "devi"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 4,
+          "dependentGloss": "morire"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Ricordati"
+        },
+        {
+          "dep": "mark",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "aux",
+          "governor": 4,
+          "governorGloss": "morire",
+          "dependent": 3,
+          "dependentGloss": "devi"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 4,
+          "dependentGloss": "morire"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Ricordati",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ricordati",
+          "originalText": "Ricordati",
+          "lemma": "ricordare",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 9,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "Ricordati ricordare+v+part+pass+m+nil+plur",
+          "selected_morpho": "ricordare+v+part+pass+m+nil+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "che",
+          "originalText": "che",
+          "lemma": "che",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 13,
+          "pos": "CS",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "che che+conj",
+          "selected_morpho": "che+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "devi",
+          "originalText": "devi",
+          "lemma": "deviare",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 18,
+          "pos": "VM",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "devi deviare+v+indic+pres+nil+2+sing deviare+v+cong+pres+nil+1+sing deviare+v+cong+pres+nil+2+sing deviare+v+cong+pres+nil+3+sing dovere+v+imp+pres+nil+2+sing dovere+v+indic+pres+nil+2+sing",
+          "selected_morpho": "deviare+v+indic+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "morire",
+          "originalText": "morire",
+          "lemma": "morire",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 25,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "morire morire+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "morire+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 25,
+          "characterOffsetEnd": 26,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [isRoot=T, indexID=1, dep=ROOT, gloss=Ricordati, father=none :D, children= [4-morire, 5-.]
+
+NDTTint [isRoot=F, indexID=4, dep=ccomp, gloss=morire, father=1-Ricordati, children= [2-che, 3-devi]
+	
+NDTTint [isRoot=F, indexID=2, dep=mark, gloss=che, father=4-morire, children= []
+		
+NDTTint [isRoot=F, indexID=3, dep=aux, gloss=devi, father=4-morire, children= []
+		
+NDTTint [isRoot=F, indexID=5, dep=punct, gloss=., father=1-Ricordati, children= []
+	

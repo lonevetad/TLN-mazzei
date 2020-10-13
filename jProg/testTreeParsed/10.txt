@@ -1,0 +1,262 @@
+START
+start parsifying text:
+Paolo ama il calcio.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 263,2 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 20,
+      "text": "Paolo ama il calcio.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "calcio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "calcio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ama"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 1,
+          "dependentGloss": "Paolo"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "calcio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 4,
+          "dependentGloss": "calcio"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ama",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Paolo",
+          "originalText": "Paolo",
+          "lemma": "Paolo",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 5,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Paolo",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "ama",
+          "originalText": "ama",
+          "lemma": "amare",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 9,
+          "pos": "V",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ama amare+v+imp+pres+nil+2+sing amare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "amare+v+imp+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 12,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "calcio",
+          "originalText": "calcio",
+          "lemma": "calcio",
+          "characterOffsetBegin": 13,
+          "characterOffsetEnd": 19,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "calcio calciare+v+indic+pres+nil+1+sing calcio+n+m+sing",
+          "selected_morpho": "calcio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 20,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [isRoot=T, indexID=2, dep=ROOT, gloss=ama, father=none :D, children= [1-Paolo, 4-calcio, 5-.]
+
+NDTTint [isRoot=F, indexID=1, dep=nsubj, gloss=Paolo, father=2-ama, children= []
+	
+NDTTint [isRoot=F, indexID=4, dep=dobj, gloss=calcio, father=2-ama, children= [3-il]
+	
+NDTTint [isRoot=F, indexID=3, dep=det, gloss=il, father=4-calcio, children= []
+		
+NDTTint [isRoot=F, indexID=5, dep=punct, gloss=., father=2-ama, children= []
+	
