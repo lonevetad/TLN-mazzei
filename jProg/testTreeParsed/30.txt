@@ -1,130 +1,116 @@
 START
 start parsifying text:
-Non fu ritrovato il prezioso anello rubato dal famoso ladro Lupin nel lontano Agosto 2016.
+Avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.
 parsed :D
 
 
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 16 tokens at 1066,7 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.1 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 14 tokens at 159,1 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
-      "characterOffsetEnd": 90,
-      "text": "Non fu ritrovato il prezioso anello rubato dal famoso ladro Lupin nel lontano Agosto 2016.",
+      "characterOffsetEnd": 66,
+      "text": "Avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 3,
-          "dependentGloss": "ritrovato"
-        },
-        {
-          "dep": "neg",
-          "governor": 3,
-          "governorGloss": "ritrovato",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "Avida"
         },
         {
-          "dep": "auxpass",
+          "dep": "case",
           "governor": 3,
-          "governorGloss": "ritrovato",
+          "governorGloss": "vita",
           "dependent": 2,
-          "dependentGloss": "fu"
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 3,
+          "dependentGloss": "vita"
+        },
+        {
+          "dep": "advmod",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 4,
+          "dependentGloss": "desiai"
         },
         {
           "dep": "det",
           "governor": 6,
-          "governorGloss": "anello",
-          "dependent": 4,
-          "dependentGloss": "il"
-        },
-        {
-          "dep": "amod",
-          "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 5,
-          "dependentGloss": "prezioso"
+          "dependentGloss": "ogni"
         },
         {
-          "dep": "nsubjpass",
-          "governor": 3,
-          "governorGloss": "ritrovato",
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Avida",
           "dependent": 6,
-          "dependentGloss": "anello"
+          "dependentGloss": "amore"
         },
         {
-          "dep": "acl",
+          "dep": "amod",
           "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 7,
-          "dependentGloss": "rubato"
-        },
-        {
-          "dep": "case",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 8,
-          "dependentGloss": "dal"
-        },
-        {
-          "dep": "amod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 9,
-          "dependentGloss": "famoso"
-        },
-        {
-          "dep": "nmod",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 10,
-          "dependentGloss": "ladro"
-        },
-        {
-          "dep": "nmod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 11,
-          "dependentGloss": "Lupin"
-        },
-        {
-          "dep": "case",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 12,
-          "dependentGloss": "nel"
-        },
-        {
-          "dep": "amod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 13,
-          "dependentGloss": "lontano"
-        },
-        {
-          "dep": "nmod",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 14,
-          "dependentGloss": "Agosto"
-        },
-        {
-          "dep": "nummod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 15,
-          "dependentGloss": "2016"
+          "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 3,
-          "governorGloss": "ritrovato",
-          "dependent": 16,
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 8,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "cc",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 9,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "conj",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 10,
+          "dependentGloss": "ingoiai"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "ingoiai",
+          "dependent": 11,
+          "dependentGloss": "sedativi"
+        },
+        {
+          "dep": "case",
+          "governor": 13,
+          "governorGloss": "diva",
+          "dependent": 12,
+          "dependentGloss": "da"
+        },
+        {
+          "dep": "nmod",
+          "governor": 11,
+          "governorGloss": "sedativi",
+          "dependent": 13,
+          "dependentGloss": "diva"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 14,
           "dependentGloss": "."
         }
       ],
@@ -133,112 +119,98 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 3,
-          "dependentGloss": "ritrovato"
-        },
-        {
-          "dep": "neg",
-          "governor": 3,
-          "governorGloss": "ritrovato",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "Avida"
         },
         {
-          "dep": "auxpass",
+          "dep": "case",
           "governor": 3,
-          "governorGloss": "ritrovato",
+          "governorGloss": "vita",
           "dependent": 2,
-          "dependentGloss": "fu"
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 3,
+          "dependentGloss": "vita"
+        },
+        {
+          "dep": "advmod",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 4,
+          "dependentGloss": "desiai"
         },
         {
           "dep": "det",
           "governor": 6,
-          "governorGloss": "anello",
-          "dependent": 4,
-          "dependentGloss": "il"
-        },
-        {
-          "dep": "amod",
-          "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 5,
-          "dependentGloss": "prezioso"
+          "dependentGloss": "ogni"
         },
         {
-          "dep": "nsubjpass",
-          "governor": 3,
-          "governorGloss": "ritrovato",
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Avida",
           "dependent": 6,
-          "dependentGloss": "anello"
+          "dependentGloss": "amore"
         },
         {
-          "dep": "acl",
+          "dep": "amod",
           "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 7,
-          "dependentGloss": "rubato"
-        },
-        {
-          "dep": "case",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 8,
-          "dependentGloss": "dal"
-        },
-        {
-          "dep": "amod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 9,
-          "dependentGloss": "famoso"
-        },
-        {
-          "dep": "nmod:dal",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 10,
-          "dependentGloss": "ladro"
-        },
-        {
-          "dep": "nmod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 11,
-          "dependentGloss": "Lupin"
-        },
-        {
-          "dep": "case",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 12,
-          "dependentGloss": "nel"
-        },
-        {
-          "dep": "amod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 13,
-          "dependentGloss": "lontano"
-        },
-        {
-          "dep": "nmod:nel",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 14,
-          "dependentGloss": "Agosto"
-        },
-        {
-          "dep": "nummod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 15,
-          "dependentGloss": "2016"
+          "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 3,
-          "governorGloss": "ritrovato",
-          "dependent": 16,
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 8,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "cc",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 9,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 10,
+          "dependentGloss": "ingoiai"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "ingoiai",
+          "dependent": 11,
+          "dependentGloss": "sedativi"
+        },
+        {
+          "dep": "case",
+          "governor": 13,
+          "governorGloss": "diva",
+          "dependent": 12,
+          "dependentGloss": "da"
+        },
+        {
+          "dep": "nmod:da",
+          "governor": 11,
+          "governorGloss": "sedativi",
+          "dependent": 13,
+          "dependentGloss": "diva"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 14,
           "dependentGloss": "."
         }
       ],
@@ -247,112 +219,98 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 3,
-          "dependentGloss": "ritrovato"
-        },
-        {
-          "dep": "neg",
-          "governor": 3,
-          "governorGloss": "ritrovato",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "Avida"
         },
         {
-          "dep": "auxpass",
+          "dep": "case",
           "governor": 3,
-          "governorGloss": "ritrovato",
+          "governorGloss": "vita",
           "dependent": 2,
-          "dependentGloss": "fu"
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 3,
+          "dependentGloss": "vita"
+        },
+        {
+          "dep": "advmod",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 4,
+          "dependentGloss": "desiai"
         },
         {
           "dep": "det",
           "governor": 6,
-          "governorGloss": "anello",
-          "dependent": 4,
-          "dependentGloss": "il"
-        },
-        {
-          "dep": "amod",
-          "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 5,
-          "dependentGloss": "prezioso"
+          "dependentGloss": "ogni"
         },
         {
-          "dep": "nsubjpass",
-          "governor": 3,
-          "governorGloss": "ritrovato",
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "Avida",
           "dependent": 6,
-          "dependentGloss": "anello"
+          "dependentGloss": "amore"
         },
         {
-          "dep": "acl",
+          "dep": "amod",
           "governor": 6,
-          "governorGloss": "anello",
+          "governorGloss": "amore",
           "dependent": 7,
-          "dependentGloss": "rubato"
-        },
-        {
-          "dep": "case",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 8,
-          "dependentGloss": "dal"
-        },
-        {
-          "dep": "amod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 9,
-          "dependentGloss": "famoso"
-        },
-        {
-          "dep": "nmod:dal",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 10,
-          "dependentGloss": "ladro"
-        },
-        {
-          "dep": "nmod",
-          "governor": 10,
-          "governorGloss": "ladro",
-          "dependent": 11,
-          "dependentGloss": "Lupin"
-        },
-        {
-          "dep": "case",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 12,
-          "dependentGloss": "nel"
-        },
-        {
-          "dep": "amod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 13,
-          "dependentGloss": "lontano"
-        },
-        {
-          "dep": "nmod:nel",
-          "governor": 7,
-          "governorGloss": "rubato",
-          "dependent": 14,
-          "dependentGloss": "Agosto"
-        },
-        {
-          "dep": "nummod",
-          "governor": 14,
-          "governorGloss": "Agosto",
-          "dependent": 15,
-          "dependentGloss": "2016"
+          "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 3,
-          "governorGloss": "ritrovato",
-          "dependent": 16,
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 8,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "cc",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 9,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 10,
+          "dependentGloss": "ingoiai"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "ingoiai",
+          "dependent": 11,
+          "dependentGloss": "sedativi"
+        },
+        {
+          "dep": "case",
+          "governor": 13,
+          "governorGloss": "diva",
+          "dependent": 12,
+          "dependentGloss": "da"
+        },
+        {
+          "dep": "nmod:da",
+          "governor": 11,
+          "governorGloss": "sedativi",
+          "dependent": 13,
+          "dependentGloss": "diva"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Avida",
+          "dependent": 14,
           "dependentGloss": "."
         }
       ],
@@ -360,39 +318,20 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Non",
-          "originalText": "Non",
-          "lemma": "non",
+          "word": "Avida",
+          "originalText": "Avida",
+          "lemma": "Avidere",
           "characterOffsetBegin": 0,
-          "characterOffsetEnd": 3,
-          "pos": "BN",
-          "featuresText": "PronType\u003dNeg",
+          "characterOffsetEnd": 5,
+          "pos": "V",
+          "featuresText": "Mood\u003dSub|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Non non+adv",
-          "selected_morpho": "non+adv",
-          "guessed_lemma": false,
-          "features": {
-            "PronType": [
-              "Neg"
-            ]
-          }
-        },
-        {
-          "index": 2,
-          "word": "fu",
-          "originalText": "fu",
-          "lemma": "essere",
-          "characterOffsetBegin": 4,
-          "characterOffsetEnd": 6,
-          "pos": "VA",
-          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPast|VerbForm\u003dFin",
-          "ner": "O",
-          "full_morpho": "fu essere+v+indic+pass+nil+3+sing",
-          "selected_morpho": "essere+v+indic+pass+nil+3+sing",
-          "guessed_lemma": false,
+          "full_morpho": "Avida avido+adj+f+sing+pst",
+          "selected_morpho": "",
+          "guessed_lemma": true,
           "features": {
             "Mood": [
-              "Ind"
+              "Sub"
             ],
             "Number": [
               "Sing"
@@ -401,7 +340,7 @@ parsed :D
               "3"
             ],
             "Tense": [
-              "Past"
+              "Pres"
             ],
             "VerbForm": [
               "Fin"
@@ -409,50 +348,70 @@ parsed :D
           }
         },
         {
-          "index": 3,
-          "word": "ritrovato",
-          "originalText": "ritrovato",
-          "lemma": "ritrovare",
-          "characterOffsetBegin": 7,
-          "characterOffsetEnd": 16,
-          "pos": "V",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "index": 2,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 8,
+          "pos": "E",
+          "featuresText": "_",
           "ner": "O",
-          "full_morpho": "ritrovato ritrovare+v+part+pass+m+nil+sing ritrovato+adj+m+sing+pst",
-          "selected_morpho": "ritrovare+v+part+pass+m+nil+sing",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "vita",
+          "originalText": "vita",
+          "lemma": "vita",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 13,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "vita vita+n+f+sing",
+          "selected_morpho": "vita+n+f+sing",
           "guessed_lemma": false,
           "features": {
             "Gender": [
-              "Masc"
+              "Fem"
             ],
             "Number": [
               "Sing"
-            ],
-            "Tense": [
-              "Past"
-            ],
-            "VerbForm": [
-              "Part"
             ]
           }
         },
         {
           "index": 4,
-          "word": "il",
-          "originalText": "il",
-          "lemma": "il",
-          "characterOffsetBegin": 17,
-          "characterOffsetEnd": 19,
-          "pos": "RD",
-          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "word": "desiai",
+          "originalText": "desiai",
+          "lemma": "desiai",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 20,
+          "pos": "B",
           "ner": "O",
-          "full_morpho": "il il+art+m+sing",
-          "selected_morpho": "il+art+m+sing",
+          "full_morpho": "desiai desiare+v+indic+pass+nil+1+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "ogni",
+          "originalText": "ogni",
+          "lemma": "ogni",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 25,
+          "pos": "DI",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|PronType\u003dInd",
+          "ner": "O",
+          "full_morpho": "ogni ogni+adj+f+plur+pst ogni+adj+f+sing+pst ogni+adj+m+plur+pst ogni+adj+m+sing+pst ogni+pron+_+f+3+sing+neg ogni+adj+m+sing+pst+ind",
+          "selected_morpho": "ogni+adj+m+sing+pst+ind",
           "guessed_lemma": false,
           "features": {
-            "Definite": [
-              "Def"
-            ],
             "Gender": [
               "Masc"
             ],
@@ -460,44 +419,22 @@ parsed :D
               "Sing"
             ],
             "PronType": [
-              "Art"
-            ]
-          }
-        },
-        {
-          "index": 5,
-          "word": "prezioso",
-          "originalText": "prezioso",
-          "lemma": "prezioso",
-          "characterOffsetBegin": 20,
-          "characterOffsetEnd": 28,
-          "pos": "A",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing",
-          "ner": "O",
-          "full_morpho": "prezioso prezioso+adj+m+sing+pst prezioso+n+m+sing",
-          "selected_morpho": "prezioso+adj+m+sing+pst",
-          "guessed_lemma": false,
-          "features": {
-            "Gender": [
-              "Masc"
-            ],
-            "Number": [
-              "Sing"
+              "Ind"
             ]
           }
         },
         {
           "index": 6,
-          "word": "anello",
-          "originalText": "anello",
-          "lemma": "anello",
-          "characterOffsetBegin": 29,
-          "characterOffsetEnd": 35,
+          "word": "amore",
+          "originalText": "amore",
+          "lemma": "amore",
+          "characterOffsetBegin": 26,
+          "characterOffsetEnd": 31,
           "pos": "S",
           "featuresText": "Gender\u003dMasc|Number\u003dSing",
           "ner": "O",
-          "full_morpho": "anello anello+n+m+sing",
-          "selected_morpho": "anello+n+m+sing",
+          "full_morpho": "amore amore+n+m+sing",
+          "selected_morpho": "amore+n+m+sing",
           "guessed_lemma": false,
           "features": {
             "Gender": [
@@ -510,16 +447,16 @@ parsed :D
         },
         {
           "index": 7,
-          "word": "rubato",
-          "originalText": "rubato",
-          "lemma": "rubare",
-          "characterOffsetBegin": 36,
-          "characterOffsetEnd": 42,
-          "pos": "V",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "word": "vero",
+          "originalText": "vero",
+          "lemma": "vero",
+          "characterOffsetBegin": 32,
+          "characterOffsetEnd": 36,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
           "ner": "O",
-          "full_morpho": "rubato rubare+v+part+pass+m+nil+sing rubato+adj+m+sing+pst",
-          "selected_morpho": "rubare+v+part+pass+m+nil+sing",
+          "full_morpho": "vero vero+adj+m+sing+pst vero+n+m+sing",
+          "selected_morpho": "vero+adj+m+sing+pst",
           "guessed_lemma": false,
           "features": {
             "Gender": [
@@ -527,120 +464,123 @@ parsed :D
             ],
             "Number": [
               "Sing"
-            ],
-            "Tense": [
-              "Past"
-            ],
-            "VerbForm": [
-              "Part"
             ]
           }
         },
         {
           "index": 8,
-          "word": "dal",
-          "originalText": "dal",
-          "lemma": "dal",
-          "characterOffsetBegin": 43,
-          "characterOffsetEnd": 46,
-          "pos": "E+RD",
-          "featuresText": "_",
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 36,
+          "characterOffsetEnd": 37,
+          "pos": "FF",
+          "featuresText": "",
           "ner": "O",
-          "full_morpho": "dal dal~dal+prep/il~det+art+m+sing",
-          "selected_morpho": "dal~dal+prep/il~det+art+m+sing",
-          "guessed_lemma": false,
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
           "features": {}
         },
         {
           "index": 9,
-          "word": "famoso",
-          "originalText": "famoso",
-          "lemma": "famoso",
-          "characterOffsetBegin": 47,
-          "characterOffsetEnd": 53,
-          "pos": "A",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "word": "ma",
+          "originalText": "ma",
+          "lemma": "ma",
+          "characterOffsetBegin": 38,
+          "characterOffsetEnd": 40,
+          "pos": "CC",
+          "featuresText": "_",
           "ner": "O",
-          "full_morpho": "famoso famoso+adj+m+sing+pst",
-          "selected_morpho": "famoso+adj+m+sing+pst",
+          "full_morpho": "ma ma+conj",
+          "selected_morpho": "ma+conj",
           "guessed_lemma": false,
-          "features": {
-            "Gender": [
-              "Masc"
-            ],
-            "Number": [
-              "Sing"
-            ]
-          }
+          "features": {}
         },
         {
           "index": 10,
-          "word": "ladro",
-          "originalText": "ladro",
-          "lemma": "ladro",
-          "characterOffsetBegin": 54,
-          "characterOffsetEnd": 59,
-          "pos": "S",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "word": "ingoiai",
+          "originalText": "ingoiai",
+          "lemma": "ingoiare",
+          "characterOffsetBegin": 41,
+          "characterOffsetEnd": 48,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPast|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "ladro ladro+adj+m+sing+pst ladro+n+m+sing",
-          "selected_morpho": "ladro+n+m+sing",
+          "full_morpho": "ingoiai ingoiare+v+indic+pass+nil+1+sing",
+          "selected_morpho": "ingoiare+v+indic+pass+nil+1+sing",
           "guessed_lemma": false,
           "features": {
-            "Gender": [
-              "Masc"
+            "Mood": [
+              "Ind"
             ],
             "Number": [
               "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Fin"
             ]
           }
         },
         {
           "index": 11,
-          "word": "Lupin",
-          "originalText": "Lupin",
-          "lemma": "Lupin",
-          "characterOffsetBegin": 60,
-          "characterOffsetEnd": 65,
-          "pos": "SP",
-          "featuresText": "",
-          "ner": "PER",
-          "full_morpho": "Lupin",
-          "selected_morpho": "",
-          "guessed_lemma": true,
-          "features": {}
+          "word": "sedativi",
+          "originalText": "sedativi",
+          "lemma": "sedativo",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 57,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "sedativi sedativo+adj+m+plur+pst sedativo+n+m+plur sedare+v+part+pass+m+nil+plur/vi+pron+acc+f+2+plur+clit  sedare+v+part+pass+m+nil+plur/vi+pron+dat+_+2+plur+clit",
+          "selected_morpho": "sedativo+adj+m+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
         },
         {
           "index": 12,
-          "word": "nel",
-          "originalText": "nel",
-          "lemma": "nel",
-          "characterOffsetBegin": 66,
-          "characterOffsetEnd": 69,
-          "pos": "E+RD",
+          "word": "da",
+          "originalText": "da",
+          "lemma": "da",
+          "characterOffsetBegin": 58,
+          "characterOffsetEnd": 60,
+          "pos": "E",
           "featuresText": "_",
           "ner": "O",
-          "full_morpho": "nel nel~nel+prep/il~det+art+m+sing",
-          "selected_morpho": "nel~nel+prep/il~det+art+m+sing",
+          "full_morpho": "da da+prep",
+          "selected_morpho": "da+prep",
           "guessed_lemma": false,
           "features": {}
         },
         {
           "index": 13,
-          "word": "lontano",
-          "originalText": "lontano",
-          "lemma": "lontano",
-          "characterOffsetBegin": 70,
-          "characterOffsetEnd": 77,
-          "pos": "A",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "word": "diva",
+          "originalText": "diva",
+          "lemma": "diva",
+          "characterOffsetBegin": 61,
+          "characterOffsetEnd": 65,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
           "ner": "O",
-          "full_morpho": "lontano lontano+adj+m+sing+pst",
-          "selected_morpho": "lontano+adj+m+sing+pst",
+          "full_morpho": "diva diva+n+f+sing divo+adj+f+sing+pst",
+          "selected_morpho": "diva+n+f+sing",
           "guessed_lemma": false,
           "features": {
             "Gender": [
-              "Masc"
+              "Fem"
             ],
             "Number": [
               "Sing"
@@ -649,41 +589,11 @@ parsed :D
         },
         {
           "index": 14,
-          "word": "Agosto",
-          "originalText": "Agosto",
-          "lemma": "Agosto",
-          "characterOffsetBegin": 78,
-          "characterOffsetEnd": 84,
-          "pos": "SP",
-          "featuresText": "",
-          "ner": "O",
-          "full_morpho": "Agosto agosto+n+m+sing",
-          "selected_morpho": "",
-          "guessed_lemma": true,
-          "features": {}
-        },
-        {
-          "index": 15,
-          "word": "2016",
-          "originalText": "2016",
-          "lemma": "2016",
-          "characterOffsetBegin": 85,
-          "characterOffsetEnd": 89,
-          "pos": "N",
-          "featuresText": "",
-          "ner": "O",
-          "full_morpho": "2016",
-          "selected_morpho": "",
-          "guessed_lemma": true,
-          "features": {}
-        },
-        {
-          "index": 16,
           "word": ".",
           "originalText": ".",
           "lemma": "[PUNCT]",
-          "characterOffsetBegin": 89,
-          "characterOffsetEnd": 90,
+          "characterOffsetBegin": 65,
+          "characterOffsetEnd": 66,
           "pos": "FS",
           "featuresText": "",
           "ner": "O",
@@ -704,19 +614,17 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= ritrovato , indexID=3, dep= ROOT , isRoot=T, father=none :D, children= [1-Non, 2-fu, 6-anello, 16-.]
-	NDTTint [gloss= Non , indexID=1, dep= neg , isRoot=F, father=3-ritrovato, children= []
-	NDTTint [gloss= fu , indexID=2, dep= auxpass , isRoot=F, father=3-ritrovato, children= []
-	NDTTint [gloss= anello , indexID=6, dep= nsubjpass , isRoot=F, father=3-ritrovato, children= [4-il, 5-prezioso, 7-rubato]
-		NDTTint [gloss= il , indexID=4, dep= det , isRoot=F, father=6-anello, children= []
-		NDTTint [gloss= prezioso , indexID=5, dep= amod , isRoot=F, father=6-anello, children= []
-		NDTTint [gloss= rubato , indexID=7, dep= acl , isRoot=F, father=6-anello, children= [10-ladro, 14-Agosto]
-			NDTTint [gloss= ladro , indexID=10, dep= nmod , isRoot=F, father=7-rubato, children= [8-dal, 9-famoso, 11-Lupin]
-				NDTTint [gloss= dal , indexID=8, dep= case , isRoot=F, father=10-ladro, children= []
-				NDTTint [gloss= famoso , indexID=9, dep= amod , isRoot=F, father=10-ladro, children= []
-				NDTTint [gloss= Lupin , indexID=11, dep= nmod , isRoot=F, father=10-ladro, children= []
-			NDTTint [gloss= Agosto , indexID=14, dep= nmod , isRoot=F, father=7-rubato, children= [12-nel, 13-lontano, 15-2016]
-				NDTTint [gloss= nel , indexID=12, dep= case , isRoot=F, father=14-Agosto, children= []
-				NDTTint [gloss= lontano , indexID=13, dep= amod , isRoot=F, father=14-Agosto, children= []
-				NDTTint [gloss= 2016 , indexID=15, dep= nummod , isRoot=F, father=14-Agosto, children= []
-	NDTTint [gloss= . , indexID=16, dep= punct , isRoot=F, father=3-ritrovato, children= []
+NDTTint [gloss= Avida, pos= V , lemma=Avidere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [3-vita, 4-desiai, 6-amore, 8-,, 9-ma, 10-ingoiai, 14-.]
+	NDTTint [gloss= vita, pos= S , lemma=vita , indexID=3, dep= nmod , isRoot=F, father=1-Avida, features= [Gender-[Fem], Number-[Sing], children= [2-di]
+		NDTTint [gloss= di, pos= E , lemma=di , indexID=2, dep= case , isRoot=F, father=3-vita, features= [, children= []
+	NDTTint [gloss= desiai, pos= B , lemma=desiai , indexID=4, dep= advmod , isRoot=F, father=1-Avida, features= [, children= []
+	NDTTint [gloss= amore, pos= S , lemma=amore , indexID=6, dep= dobj , isRoot=F, father=1-Avida, features= [Gender-[Masc], Number-[Sing], children= [5-ogni, 7-vero]
+		NDTTint [gloss= ogni, pos= DI , lemma=ogni , indexID=5, dep= det , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], PronType-[Ind], children= []
+		NDTTint [gloss= vero, pos= A , lemma=vero , indexID=7, dep= amod , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], children= []
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-Avida, features= [, children= []
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=9, dep= cc , isRoot=F, father=1-Avida, features= [, children= []
+	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-Avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [11-sedativi]
+		NDTTint [gloss= sedativi, pos= A , lemma=sedativo , indexID=11, dep= xcomp , isRoot=F, father=10-ingoiai, features= [Gender-[Masc], Number-[Plur], children= [13-diva]
+			NDTTint [gloss= diva, pos= S , lemma=diva , indexID=13, dep= nmod , isRoot=F, father=11-sedativi, features= [Gender-[Fem], Number-[Sing], children= [12-da]
+				NDTTint [gloss= da, pos= E , lemma=da , indexID=12, dep= case , isRoot=F, father=13-diva, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=1-Avida, features= [, children= []

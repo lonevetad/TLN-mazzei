@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 500,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 250,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -504,14 +504,14 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= parsificare , indexID=2, dep= ROOT , isRoot=T, father=none :D, children= [1-Talvolta, 4-frasi, 5-richiede, 11-.]
-	NDTTint [gloss= Talvolta , indexID=1, dep= advmod , isRoot=F, father=2-parsificare, children= []
-	NDTTint [gloss= frasi , indexID=4, dep= dobj , isRoot=F, father=2-parsificare, children= [3-le]
-		NDTTint [gloss= le , indexID=3, dep= det , isRoot=F, father=4-frasi, children= []
-	NDTTint [gloss= richiede , indexID=5, dep= advcl , isRoot=F, father=2-parsificare, children= [8-livello]
-		NDTTint [gloss= livello , indexID=8, dep= dobj , isRoot=F, father=5-richiede, children= [6-un, 7-profondo, 10-ricorsione]
-			NDTTint [gloss= un , indexID=6, dep= det , isRoot=F, father=8-livello, children= []
-			NDTTint [gloss= profondo , indexID=7, dep= amod , isRoot=F, father=8-livello, children= []
-			NDTTint [gloss= ricorsione , indexID=10, dep= nmod , isRoot=F, father=8-livello, children= [9-di]
-				NDTTint [gloss= di , indexID=9, dep= case , isRoot=F, father=10-ricorsione, children= []
-	NDTTint [gloss= . , indexID=11, dep= punct , isRoot=F, father=2-parsificare, children= []
+NDTTint [gloss= parsificare, pos= V , lemma=parsificare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [VerbForm-[Inf], children= [1-Talvolta, 4-frasi, 5-richiede, 11-.]
+	NDTTint [gloss= Talvolta, pos= B , lemma=talvolta , indexID=1, dep= advmod , isRoot=F, father=2-parsificare, features= [, children= []
+	NDTTint [gloss= frasi, pos= S , lemma=frase , indexID=4, dep= dobj , isRoot=F, father=2-parsificare, features= [Gender-[Fem], Number-[Plur], children= [3-le]
+		NDTTint [gloss= le, pos= RD , lemma=la , indexID=3, dep= det , isRoot=F, father=4-frasi, features= [Definite-[Def], Gender-[Fem], Number-[Plur], PronType-[Art], children= []
+	NDTTint [gloss= richiede, pos= V , lemma=richiedere , indexID=5, dep= advcl , isRoot=F, father=2-parsificare, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [8-livello]
+		NDTTint [gloss= livello, pos= S , lemma=livello , indexID=8, dep= dobj , isRoot=F, father=5-richiede, features= [Gender-[Masc], Number-[Sing], children= [6-un, 7-profondo, 10-ricorsione]
+			NDTTint [gloss= un, pos= RI , lemma=un , indexID=6, dep= det , isRoot=F, father=8-livello, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+			NDTTint [gloss= profondo, pos= A , lemma=profondo , indexID=7, dep= amod , isRoot=F, father=8-livello, features= [Gender-[Masc], Number-[Sing], children= []
+			NDTTint [gloss= ricorsione, pos= S , lemma=ricorsione , indexID=10, dep= nmod , isRoot=F, father=8-livello, features= [Gender-[Fem], Number-[Sing], children= [9-di]
+				NDTTint [gloss= di, pos= E , lemma=di , indexID=9, dep= case , isRoot=F, father=10-ricorsione, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-parsificare, features= [, children= []

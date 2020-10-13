@@ -32,6 +32,10 @@ public class MockedData {
 			"Ricordati che devi morire.", //
 			"Così muore la Repubblica: sotto scroscianti applausi.", //
 			"La partenza fu ardua considerando la complesso dell'esercizio assegnato e la documentazione scarna.", //
-			"Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.", // 30
+			"Avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.", // 30
+			"I neri erano da Anna a donare i reni.", //
+			"A sorelle russe fraticello seppe sollecitar fessurelle rosa.", //
+			"Esso crepi di percosse.", //
+			"Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.", // 34
 	};
 }

@@ -1,0 +1,257 @@
+START
+start parsifying text:
+Esso crepi di percosse.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.2 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.2 sec. for 5 tokens at 22,4 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 23,
+      "text": "Esso crepi di percosse.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "crepi"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 1,
+          "dependentGloss": "Esso"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "percosse",
+          "dependent": 3,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 4,
+          "dependentGloss": "percosse"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "crepi"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 1,
+          "dependentGloss": "Esso"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "percosse",
+          "dependent": 3,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 4,
+          "dependentGloss": "percosse"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "crepi"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 1,
+          "dependentGloss": "Esso"
+        },
+        {
+          "dep": "case",
+          "governor": 4,
+          "governorGloss": "percosse",
+          "dependent": 3,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 4,
+          "dependentGloss": "percosse"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "crepi",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Esso",
+          "originalText": "Esso",
+          "lemma": "esso",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 4,
+          "pos": "PE",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Person\u003d3|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "Esso esso+pron+_+m+3+sing+strong",
+          "selected_morpho": "esso+pron+_+m+3+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "crepi",
+          "originalText": "crepi",
+          "lemma": "crepare",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 10,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "crepi crepare+v+indic+pres+nil+2+sing crepare+v+cong+pres+nil+1+sing crepare+v+cong+pres+nil+2+sing crepare+v+cong+pres+nil+3+sing",
+          "selected_morpho": "crepare+v+indic+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 13,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": "percosse",
+          "originalText": "percosse",
+          "lemma": "percossa",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 22,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "percosse percossa+n+f+plur percosso+adj+f+plur+pst percuotere+v+indic+pass+nil+3+sing percuotere+v+part+pass+f+nil+plur",
+          "selected_morpho": "percossa+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 23,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [gloss= crepi, pos= V , lemma=crepare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [1-Esso, 4-percosse, 5-.]
+	NDTTint [gloss= Esso, pos= PE , lemma=esso , indexID=1, dep= nsubj , isRoot=F, father=2-crepi, features= [Gender-[Masc], Number-[Sing], Person-[3], PronType-[Prs], children= []
+	NDTTint [gloss= percosse, pos= S , lemma=percossa , indexID=4, dep= nmod , isRoot=F, father=2-crepi, features= [Gender-[Fem], Number-[Plur], children= [3-di]
+		NDTTint [gloss= di, pos= E , lemma=di , indexID=3, dep= case , isRoot=F, father=4-percosse, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=2-crepi, features= [, children= []

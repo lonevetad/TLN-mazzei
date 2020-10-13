@@ -1,0 +1,424 @@
+START
+start parsifying text:
+A sorelle russe fraticello seppe sollecitar fessurelle rosa.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 9 tokens at 147,5 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 60,
+      "text": "A sorelle russe fraticello seppe sollecitar fessurelle rosa.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "seppe"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 2,
+          "dependentGloss": "sorelle"
+        },
+        {
+          "dep": "amod",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 3,
+          "dependentGloss": "russe"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 4,
+          "dependentGloss": "fraticello"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 6,
+          "dependentGloss": "sollecitar"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "rosa",
+          "dependent": 7,
+          "dependentGloss": "fessurelle"
+        },
+        {
+          "dep": "dobj",
+          "governor": 6,
+          "governorGloss": "sollecitar",
+          "dependent": 8,
+          "dependentGloss": "rosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "seppe"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 2,
+          "dependentGloss": "sorelle"
+        },
+        {
+          "dep": "amod",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 3,
+          "dependentGloss": "russe"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 4,
+          "dependentGloss": "fraticello"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 6,
+          "dependentGloss": "sollecitar"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "rosa",
+          "dependent": 7,
+          "dependentGloss": "fessurelle"
+        },
+        {
+          "dep": "dobj",
+          "governor": 6,
+          "governorGloss": "sollecitar",
+          "dependent": 8,
+          "dependentGloss": "rosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "seppe"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 2,
+          "dependentGloss": "sorelle"
+        },
+        {
+          "dep": "amod",
+          "governor": 2,
+          "governorGloss": "sorelle",
+          "dependent": 3,
+          "dependentGloss": "russe"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 4,
+          "dependentGloss": "fraticello"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 6,
+          "dependentGloss": "sollecitar"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "rosa",
+          "dependent": 7,
+          "dependentGloss": "fessurelle"
+        },
+        {
+          "dep": "dobj",
+          "governor": 6,
+          "governorGloss": "sollecitar",
+          "dependent": 8,
+          "dependentGloss": "rosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "seppe",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "A",
+          "originalText": "A",
+          "lemma": "a",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "A a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "sorelle",
+          "originalText": "sorelle",
+          "lemma": "sorella",
+          "characterOffsetBegin": 2,
+          "characterOffsetEnd": 9,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "sorelle sorella+n+f+plur",
+          "selected_morpho": "sorella+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "russe",
+          "originalText": "russe",
+          "lemma": "russo",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 15,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "russe russo+adj+f+plur+pst",
+          "selected_morpho": "russo+adj+f+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "fraticello",
+          "originalText": "fraticello",
+          "lemma": "fraticello",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 26,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "fraticello fraticello+n+m+sing",
+          "selected_morpho": "fraticello+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "seppe",
+          "originalText": "seppe",
+          "lemma": "sapere",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 32,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPast|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "seppe sapere+v+indic+pass+nil+3+sing",
+          "selected_morpho": "sapere+v+indic+pass+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "sollecitar",
+          "originalText": "sollecitar",
+          "lemma": "sollecitare",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 43,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "sollecitar sollecitare+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "sollecitare+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "fessurelle",
+          "originalText": "fessurelle",
+          "lemma": "fessurello",
+          "characterOffsetBegin": 44,
+          "characterOffsetEnd": 54,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "fessurelle",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "rosa",
+          "originalText": "rosa",
+          "lemma": "rosa",
+          "characterOffsetBegin": 55,
+          "characterOffsetEnd": 59,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "rosa rodere+v+part+pass+f+nil+sing rosa+adj+f+plur+pst rosa+adj+f+sing+pst rosa+adj+m+plur+pst rosa+adj+m+sing+pst",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 59,
+          "characterOffsetEnd": 60,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [gloss= seppe, pos= V , lemma=sapere , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Past], VerbForm-[Fin], children= [2-sorelle, 4-fraticello, 6-sollecitar, 9-.]
+	NDTTint [gloss= sorelle, pos= S , lemma=sorella , indexID=2, dep= nmod , isRoot=F, father=5-seppe, features= [Gender-[Fem], Number-[Plur], children= [1-A, 3-russe]
+		NDTTint [gloss= A, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-sorelle, features= [, children= []
+		NDTTint [gloss= russe, pos= A , lemma=russo , indexID=3, dep= amod , isRoot=F, father=2-sorelle, features= [Gender-[Fem], Number-[Plur], children= []
+	NDTTint [gloss= fraticello, pos= S , lemma=fraticello , indexID=4, dep= nsubj , isRoot=F, father=5-seppe, features= [Gender-[Masc], Number-[Sing], children= []
+	NDTTint [gloss= sollecitar, pos= V , lemma=sollecitare , indexID=6, dep= xcomp , isRoot=F, father=5-seppe, features= [VerbForm-[Inf], children= [8-rosa]
+		NDTTint [gloss= rosa, pos= S , lemma=rosa , indexID=8, dep= dobj , isRoot=F, father=6-sollecitar, features= [Gender-[Fem], Number-[Sing], children= [7-fessurelle]
+			NDTTint [gloss= fessurelle, pos= A , lemma=fessurello , indexID=7, dep= amod , isRoot=F, father=8-rosa, features= [Gender-[Fem], Number-[Plur], children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=5-seppe, features= [, children= []

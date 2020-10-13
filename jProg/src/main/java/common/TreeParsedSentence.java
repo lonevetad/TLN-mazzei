@@ -3,6 +3,7 @@ package common;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import common.TintParserOutput.SentenceDependencyTint;
@@ -223,8 +224,8 @@ public class TreeParsedSentence {
 			}
 		}
 
-		protected void forEachFeature(Consumer<String[]> action) {
-			if (this.features != null && features.size() > 0) { features.forEach((fn, fs) -> action.accept(fs)); }
+		protected void forEachFeature(BiConsumer<String, String[]> action) {
+			if (this.features != null && features.size() > 0) { features.forEach(action); }
 		}
 
 		//
@@ -257,13 +258,13 @@ public class TreeParsedSentence {
 			}
 			sb.append(", features= [");
 			this.forEachFeature(//
-					(k) -> {
+					(featureName, feature) -> {
 						if (isNotFirst[0]) {
 							sb.append(", ");
 						} else {
 							isNotFirst[0] = true;
 						}
-						sb.append(Arrays.toString(k));
+						sb.append(featureName).append('-').append(Arrays.toString(feature));
 					});
 			isNotFirst[0] = false;
 			sb.append(", children= [");
@@ -322,7 +323,7 @@ public class TreeParsedSentence {
 			sb.append("null");
 			return;
 		}
-		sb.append('\n');
+		sb.append('\n').append('\n');
 		addTab(sb, level, false);
 		sb.append(n.toString());
 		newLevel = level + 1;

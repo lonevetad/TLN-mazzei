@@ -1,0 +1,1034 @@
+START
+start parsifying text:
+Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.1 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.2 sec. for 23 tokens at 149,4 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 140,
+      "text": "Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "riusciti"
+        },
+        {
+          "dep": "neg",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 1,
+          "dependentGloss": "Non"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 2,
+          "dependentGloss": "siamo"
+        },
+        {
+          "dep": "mark",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 4,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 5,
+          "dependentGloss": "ritrovare"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 6,
+          "dependentGloss": "i"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 7,
+          "dependentGloss": "preziosi"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 8,
+          "dependentGloss": "anelli"
+        },
+        {
+          "dep": "acl",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 9,
+          "dependentGloss": "rubati"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 10,
+          "dependentGloss": "dal"
+        },
+        {
+          "dep": "amod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 11,
+          "dependentGloss": "famoso"
+        },
+        {
+          "dep": "nmod",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 12,
+          "dependentGloss": "ladro"
+        },
+        {
+          "dep": "nmod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 13,
+          "dependentGloss": "Lupin"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 14,
+          "dependentGloss": "nel"
+        },
+        {
+          "dep": "amod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 15,
+          "dependentGloss": "lontano"
+        },
+        {
+          "dep": "nmod",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 16,
+          "dependentGloss": "Agosto"
+        },
+        {
+          "dep": "nummod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 17,
+          "dependentGloss": "2016"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 18,
+          "dependentGloss": "mentre"
+        },
+        {
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 19,
+          "dependentGloss": "festeggiavo"
+        },
+        {
+          "dep": "det",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 20,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 21,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "dobj",
+          "governor": 19,
+          "governorGloss": "festeggiavo",
+          "dependent": 22,
+          "dependentGloss": "matrimonio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 23,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "riusciti"
+        },
+        {
+          "dep": "neg",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 1,
+          "dependentGloss": "Non"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 2,
+          "dependentGloss": "siamo"
+        },
+        {
+          "dep": "mark",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 4,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 5,
+          "dependentGloss": "ritrovare"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 6,
+          "dependentGloss": "i"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 7,
+          "dependentGloss": "preziosi"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 8,
+          "dependentGloss": "anelli"
+        },
+        {
+          "dep": "acl",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 9,
+          "dependentGloss": "rubati"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 10,
+          "dependentGloss": "dal"
+        },
+        {
+          "dep": "amod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 11,
+          "dependentGloss": "famoso"
+        },
+        {
+          "dep": "nmod:dal",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 12,
+          "dependentGloss": "ladro"
+        },
+        {
+          "dep": "nmod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 13,
+          "dependentGloss": "Lupin"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 14,
+          "dependentGloss": "nel"
+        },
+        {
+          "dep": "amod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 15,
+          "dependentGloss": "lontano"
+        },
+        {
+          "dep": "nmod:nel",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 16,
+          "dependentGloss": "Agosto"
+        },
+        {
+          "dep": "nummod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 17,
+          "dependentGloss": "2016"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 18,
+          "dependentGloss": "mentre"
+        },
+        {
+          "dep": "conj:mentre",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 19,
+          "dependentGloss": "festeggiavo"
+        },
+        {
+          "dep": "det",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 20,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 21,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "dobj",
+          "governor": 19,
+          "governorGloss": "festeggiavo",
+          "dependent": 22,
+          "dependentGloss": "matrimonio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 23,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "riusciti"
+        },
+        {
+          "dep": "neg",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 1,
+          "dependentGloss": "Non"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 2,
+          "dependentGloss": "siamo"
+        },
+        {
+          "dep": "mark",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 4,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 5,
+          "dependentGloss": "ritrovare"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 6,
+          "dependentGloss": "i"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 7,
+          "dependentGloss": "preziosi"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "ritrovare",
+          "dependent": 8,
+          "dependentGloss": "anelli"
+        },
+        {
+          "dep": "acl",
+          "governor": 8,
+          "governorGloss": "anelli",
+          "dependent": 9,
+          "dependentGloss": "rubati"
+        },
+        {
+          "dep": "case",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 10,
+          "dependentGloss": "dal"
+        },
+        {
+          "dep": "amod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 11,
+          "dependentGloss": "famoso"
+        },
+        {
+          "dep": "nmod:dal",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 12,
+          "dependentGloss": "ladro"
+        },
+        {
+          "dep": "nmod",
+          "governor": 12,
+          "governorGloss": "ladro",
+          "dependent": 13,
+          "dependentGloss": "Lupin"
+        },
+        {
+          "dep": "case",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 14,
+          "dependentGloss": "nel"
+        },
+        {
+          "dep": "amod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 15,
+          "dependentGloss": "lontano"
+        },
+        {
+          "dep": "nmod:nel",
+          "governor": 9,
+          "governorGloss": "rubati",
+          "dependent": 16,
+          "dependentGloss": "Agosto"
+        },
+        {
+          "dep": "nummod",
+          "governor": 16,
+          "governorGloss": "Agosto",
+          "dependent": 17,
+          "dependentGloss": "2016"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 18,
+          "dependentGloss": "mentre"
+        },
+        {
+          "dep": "conj:mentre",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 19,
+          "dependentGloss": "festeggiavo"
+        },
+        {
+          "dep": "det",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 20,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 22,
+          "governorGloss": "matrimonio",
+          "dependent": 21,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "dobj",
+          "governor": 19,
+          "governorGloss": "festeggiavo",
+          "dependent": 22,
+          "dependentGloss": "matrimonio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "riusciti",
+          "dependent": 23,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Non",
+          "originalText": "Non",
+          "lemma": "non",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 3,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "Non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "siamo",
+          "originalText": "siamo",
+          "lemma": "essere",
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 9,
+          "pos": "VA",
+          "featuresText": "Mood\u003dImp|Number\u003dPlur|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "siamo essere+v+imp+pres+nil+1+plur essere+v+indic+pres+nil+1+plur essere+v+cong+pres+nil+1+plur",
+          "selected_morpho": "essere+v+imp+pres+nil+1+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "riusciti",
+          "originalText": "riusciti",
+          "lemma": "riuscire",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 18,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "riusciti riuscire+v+part+pass+m+nil+plur",
+          "selected_morpho": "riuscire+v+part+pass+m+nil+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "a",
+          "originalText": "a",
+          "lemma": "a",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 20,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "a a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "ritrovare",
+          "originalText": "ritrovare",
+          "lemma": "ritrovare",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 30,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "ritrovare ritrovare+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "ritrovare+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "i",
+          "originalText": "i",
+          "lemma": "il",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 32,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dPlur|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "i il+art+m+plur",
+          "selected_morpho": "il+art+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "preziosi",
+          "originalText": "preziosi",
+          "lemma": "prezioso",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 41,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "preziosi prezioso+adj+m+plur+pst prezioso+n+m+plur",
+          "selected_morpho": "prezioso+adj+m+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "anelli",
+          "originalText": "anelli",
+          "lemma": "anello",
+          "characterOffsetBegin": 42,
+          "characterOffsetEnd": 48,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "anelli anello+n+m+plur",
+          "selected_morpho": "anello+n+m+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "rubati",
+          "originalText": "rubati",
+          "lemma": "rubare",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 55,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "rubati rubare+v+part+pass+m+nil+plur rubato+adj+m+plur+pst",
+          "selected_morpho": "rubare+v+part+pass+m+nil+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "dal",
+          "originalText": "dal",
+          "lemma": "dal",
+          "characterOffsetBegin": 56,
+          "characterOffsetEnd": 59,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "dal dal~dal+prep/il~det+art+m+sing",
+          "selected_morpho": "dal~dal+prep/il~det+art+m+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 11,
+          "word": "famoso",
+          "originalText": "famoso",
+          "lemma": "famoso",
+          "characterOffsetBegin": 60,
+          "characterOffsetEnd": 66,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "famoso famoso+adj+m+sing+pst",
+          "selected_morpho": "famoso+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "word": "ladro",
+          "originalText": "ladro",
+          "lemma": "ladro",
+          "characterOffsetBegin": 67,
+          "characterOffsetEnd": 72,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "ladro ladro+adj+m+sing+pst ladro+n+m+sing",
+          "selected_morpho": "ladro+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "Lupin",
+          "originalText": "Lupin",
+          "lemma": "Lupin",
+          "characterOffsetBegin": 73,
+          "characterOffsetEnd": 78,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Lupin",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 14,
+          "word": "nel",
+          "originalText": "nel",
+          "lemma": "nel",
+          "characterOffsetBegin": 79,
+          "characterOffsetEnd": 82,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "nel nel~nel+prep/il~det+art+m+sing",
+          "selected_morpho": "nel~nel+prep/il~det+art+m+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 15,
+          "word": "lontano",
+          "originalText": "lontano",
+          "lemma": "lontano",
+          "characterOffsetBegin": 83,
+          "characterOffsetEnd": 90,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "lontano lontano+adj+m+sing+pst",
+          "selected_morpho": "lontano+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 16,
+          "word": "Agosto",
+          "originalText": "Agosto",
+          "lemma": "Agosto",
+          "characterOffsetBegin": 91,
+          "characterOffsetEnd": 97,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "Agosto agosto+n+m+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 17,
+          "word": "2016",
+          "originalText": "2016",
+          "lemma": "2016",
+          "characterOffsetBegin": 98,
+          "characterOffsetEnd": 102,
+          "pos": "N",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "2016",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 18,
+          "word": "mentre",
+          "originalText": "mentre",
+          "lemma": "mentre",
+          "characterOffsetBegin": 103,
+          "characterOffsetEnd": 109,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "mentre mentre+conj",
+          "selected_morpho": "mentre+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 19,
+          "word": "festeggiavo",
+          "originalText": "festeggiavo",
+          "lemma": "festeggiare",
+          "characterOffsetBegin": 110,
+          "characterOffsetEnd": 121,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dImp|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "festeggiavo festeggiare+v+indic+imperf+nil+1+sing",
+          "selected_morpho": "festeggiare+v+indic+imperf+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Imp"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 20,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 122,
+          "characterOffsetEnd": 124,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 21,
+          "word": "mio",
+          "originalText": "mio",
+          "lemma": "mio",
+          "characterOffsetBegin": 125,
+          "characterOffsetEnd": 128,
+          "pos": "AP",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Poss\u003dYes|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "mio mio+adj+m+sing+pst+poss mio+pron+m+sing+pst+poss",
+          "selected_morpho": "mio+adj+m+sing+pst+poss",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Poss": [
+              "Yes"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 22,
+          "word": "matrimonio",
+          "originalText": "matrimonio",
+          "lemma": "matrimonio",
+          "characterOffsetBegin": 129,
+          "characterOffsetEnd": 139,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "matrimonio matrimonio+n+m+sing",
+          "selected_morpho": "matrimonio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 23,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 139,
+          "characterOffsetEnd": 140,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [1-Non, 2-siamo, 5-ritrovare, 18-mentre, 19-festeggiavo, 23-.]
+	NDTTint [gloss= Non, pos= BN , lemma=non , indexID=1, dep= neg , isRoot=F, father=3-riusciti, features= [PronType-[Neg], children= []
+	NDTTint [gloss= siamo, pos= VA , lemma=essere , indexID=2, dep= aux , isRoot=F, father=3-riusciti, features= [Mood-[Imp], Number-[Plur], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= ritrovare, pos= V , lemma=ritrovare , indexID=5, dep= xcomp , isRoot=F, father=3-riusciti, features= [VerbForm-[Inf], children= [4-a, 8-anelli]
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=4, dep= mark , isRoot=F, father=5-ritrovare, features= [, children= []
+		NDTTint [gloss= anelli, pos= S , lemma=anello , indexID=8, dep= dobj , isRoot=F, father=5-ritrovare, features= [Gender-[Masc], Number-[Plur], children= [6-i, 7-preziosi, 9-rubati]
+			NDTTint [gloss= i, pos= RD , lemma=il , indexID=6, dep= det , isRoot=F, father=8-anelli, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
+			NDTTint [gloss= preziosi, pos= A , lemma=prezioso , indexID=7, dep= amod , isRoot=F, father=8-anelli, features= [Gender-[Masc], Number-[Plur], children= []
+			NDTTint [gloss= rubati, pos= V , lemma=rubare , indexID=9, dep= acl , isRoot=F, father=8-anelli, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [12-ladro, 16-Agosto]
+				NDTTint [gloss= ladro, pos= S , lemma=ladro , indexID=12, dep= nmod , isRoot=F, father=9-rubati, features= [Gender-[Masc], Number-[Sing], children= [10-dal, 11-famoso, 13-Lupin]
+					NDTTint [gloss= dal, pos= E+RD , lemma=dal , indexID=10, dep= case , isRoot=F, father=12-ladro, features= [, children= []
+					NDTTint [gloss= famoso, pos= A , lemma=famoso , indexID=11, dep= amod , isRoot=F, father=12-ladro, features= [Gender-[Masc], Number-[Sing], children= []
+					NDTTint [gloss= Lupin, pos= SP , lemma=Lupin , indexID=13, dep= nmod , isRoot=F, father=12-ladro, features= [, children= []
+				NDTTint [gloss= Agosto, pos= SP , lemma=Agosto , indexID=16, dep= nmod , isRoot=F, father=9-rubati, features= [, children= [14-nel, 15-lontano, 17-2016]
+					NDTTint [gloss= nel, pos= E+RD , lemma=nel , indexID=14, dep= case , isRoot=F, father=16-Agosto, features= [, children= []
+					NDTTint [gloss= lontano, pos= A , lemma=lontano , indexID=15, dep= amod , isRoot=F, father=16-Agosto, features= [Gender-[Masc], Number-[Sing], children= []
+					NDTTint [gloss= 2016, pos= N , lemma=2016 , indexID=17, dep= nummod , isRoot=F, father=16-Agosto, features= [, children= []
+	NDTTint [gloss= mentre, pos= CC , lemma=mentre , indexID=18, dep= cc , isRoot=F, father=3-riusciti, features= [, children= []
+	NDTTint [gloss= festeggiavo, pos= V , lemma=festeggiare , indexID=19, dep= conj , isRoot=F, father=3-riusciti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [22-matrimonio]
+		NDTTint [gloss= matrimonio, pos= S , lemma=matrimonio , indexID=22, dep= dobj , isRoot=F, father=19-festeggiavo, features= [Gender-[Masc], Number-[Sing], children= [20-il, 21-mio]
+			NDTTint [gloss= il, pos= RD , lemma=il , indexID=20, dep= det , isRoot=F, father=22-matrimonio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+			NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=21, dep= det:poss , isRoot=F, father=22-matrimonio, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=23, dep= punct , isRoot=F, father=3-riusciti, features= [, children= []
