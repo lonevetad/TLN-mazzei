@@ -14,13 +14,13 @@ public class TestGrammarBuilder {
 
 	public static void main(String[] args) {
 		Grammar g;
-		g = GrammarBuilder.buildGrammar(fromHand()); // TODO SET PATH in modo corretto
+		g = GrammarBuilder.buildGrammar(fromFile());
 		System.out.println(g);
 	}
 
 	static LineReader fromFile() {
-		return fromFile(
-				"." + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar + "grammarEng.txt");
+		return fromFile("." + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar
+				+ "resources" + File.separatorChar + "grammarEng.txt");
 	}
 
 	static LineReader fromFile(String pathname) { return new LineReaderFromFile(pathname); }

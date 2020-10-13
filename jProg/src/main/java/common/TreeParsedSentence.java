@@ -136,6 +136,8 @@ public class TreeParsedSentence {
 
 		protected abstract boolean checkIsRoot();
 
+		public String toMiniString() { return indexID + "-" + gloss; }
+
 		@Override
 		public String toString() {
 			StringBuilder sb;
@@ -159,8 +161,9 @@ public class TreeParsedSentence {
 			}
 			sb.append(", children= [");
 			this.forEachChild(//
-					// (k) -> sb.append(k)
-					sb::append);
+					(k) -> sb.append(k.toMiniString())
+//					sb::append
+			);
 			sb.append(']');
 			return sb.toString();
 		}

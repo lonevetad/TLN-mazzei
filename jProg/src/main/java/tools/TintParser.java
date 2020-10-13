@@ -23,7 +23,7 @@ public class TintParser {
 		}
 	}
 
-	public static TintParserOutput parseText(String text, JsonParserSimple jsonParser) {
+	public static TintParsedAndJSON parseText(String text, JsonParserSimple jsonParser) {
 		OutputStreamCollector toJsonCollector;
 		toJsonCollector = new OutputStreamCollector();
 		InputStream stream = new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
@@ -34,11 +34,21 @@ public class TintParser {
 			toJsonCollector = null;
 			TintParserOutput parsifiedStringRepresentation;
 			parsifiedStringRepresentation = jsonParser.parseJson(jsonCollected, TintParserOutput.class);
-			return parsifiedStringRepresentation;
+			return new TintParsedAndJSON(jsonCollected, parsifiedStringRepresentation);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
+	public static class TintParsedAndJSON {
+		public final String json;
+		public final TintParserOutput tintParsed;
+
+		protected TintParsedAndJSON(String json, TintParserOutput tintParsed) {
+			super();
+			this.json = json;
+			this.tintParsed = tintParsed;
+		}
+	}
 }
