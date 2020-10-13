@@ -25,6 +25,12 @@ public class TreeParsedSentence {
 
 	//
 
+	// ora si utilizza l'albero ... eh eh
+
+	//
+
+	//
+
 	// TODO BUILDER
 
 	//
@@ -107,7 +113,8 @@ public class TreeParsedSentence {
 	protected abstract class NodeDependencyTree {
 		protected final boolean isRoot;
 		protected final Integer indexID; // just a simpleID
-		protected final String dep; // is it a PoS? Probably. (took from Tint' "dependency".)
+		protected final String dep; // is it a PoS? Probably. (took from Tint' "dependency".) -> USEFUL FOR
+									// CONVERSION ""
 		protected final String gloss;
 		protected String lemma;
 		protected String pos; // what is this difference from "dep"? (took from Tint' "tokens".)

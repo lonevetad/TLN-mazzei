@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 9 tokens at 147,5 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 428,6 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -413,12 +413,21 @@ built :D
 
 TreeParsedSentence
 root:
+
 NDTTint [gloss= seppe, pos= V , lemma=sapere , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Past], VerbForm-[Fin], children= [2-sorelle, 4-fraticello, 6-sollecitar, 9-.]
+
 	NDTTint [gloss= sorelle, pos= S , lemma=sorella , indexID=2, dep= nmod , isRoot=F, father=5-seppe, features= [Gender-[Fem], Number-[Plur], children= [1-A, 3-russe]
+
 		NDTTint [gloss= A, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-sorelle, features= [, children= []
+
 		NDTTint [gloss= russe, pos= A , lemma=russo , indexID=3, dep= amod , isRoot=F, father=2-sorelle, features= [Gender-[Fem], Number-[Plur], children= []
+
 	NDTTint [gloss= fraticello, pos= S , lemma=fraticello , indexID=4, dep= nsubj , isRoot=F, father=5-seppe, features= [Gender-[Masc], Number-[Sing], children= []
+
 	NDTTint [gloss= sollecitar, pos= V , lemma=sollecitare , indexID=6, dep= xcomp , isRoot=F, father=5-seppe, features= [VerbForm-[Inf], children= [8-rosa]
+
 		NDTTint [gloss= rosa, pos= S , lemma=rosa , indexID=8, dep= dobj , isRoot=F, father=6-sollecitar, features= [Gender-[Fem], Number-[Sing], children= [7-fessurelle]
+
 			NDTTint [gloss= fessurelle, pos= A , lemma=fessurello , indexID=7, dep= amod , isRoot=F, father=8-rosa, features= [Gender-[Fem], Number-[Plur], children= []
+
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=5-seppe, features= [, children= []

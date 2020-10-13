@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 28 tokens at 700,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 28 tokens at 1120,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -1237,30 +1237,57 @@ built :D
 
 TreeParsedSentence
 root:
+
 NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-Ho, 4-film, 5-ma, 7-so, 28-.]
+
 	NDTTint [gloss= Ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+
 	NDTTint [gloss= film, pos= S , lemma=film , indexID=4, dep= dobj , isRoot=F, father=2-visto, features= [Gender-[Masc], Number-[Sing], children= [3-il]
+
 		NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=4-film, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+
 	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=5, dep= cc , isRoot=F, father=2-visto, features= [, children= []
+
 	NDTTint [gloss= so, pos= V , lemma=sapere , indexID=7, dep= conj , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [6-non, 12-scritti]
+
 		NDTTint [gloss= non, pos= BN , lemma=non , indexID=6, dep= neg , isRoot=F, father=7-so, features= [PronType-[Neg], children= []
+
 		NDTTint [gloss= scritti, pos= V , lemma=scrivere , indexID=12, dep= advcl , isRoot=F, father=7-so, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [9-sono, 10-mai, 11-stati, 14-libri, 16-proposito, 17-o, 24-inventata]
+
 			NDTTint [gloss= sono, pos= VA , lemma=essere , indexID=9, dep= aux , isRoot=F, father=12-scritti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+
 			NDTTint [gloss= mai, pos= B , lemma=mai , indexID=10, dep= advmod , isRoot=F, father=12-scritti, features= [, children= []
+
 			NDTTint [gloss= stati, pos= VA , lemma=stare , indexID=11, dep= auxpass , isRoot=F, father=12-scritti, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= []
+
 			NDTTint [gloss= libri, pos= S , lemma=libro , indexID=14, dep= nmod , isRoot=F, father=12-scritti, features= [Gender-[Masc], Number-[Plur], children= [13-dei]
+
 				NDTTint [gloss= dei, pos= E+RD , lemma=del , indexID=13, dep= case , isRoot=F, father=14-libri, features= [, children= []
+
 			NDTTint [gloss= proposito, pos= S , lemma=proposito , indexID=16, dep= nmod , isRoot=F, father=12-scritti, features= [Gender-[Masc], Number-[Sing], children= [15-a]
+
 				NDTTint [gloss= a, pos= E , lemma=a , indexID=15, dep= case , isRoot=F, father=16-proposito, features= [, children= []
+
 			NDTTint [gloss= o, pos= CC , lemma=o , indexID=17, dep= cc , isRoot=F, father=12-scritti, features= [, children= []
+
 			NDTTint [gloss= inventata, pos= V , lemma=inventare , indexID=24, dep= conj , isRoot=F, father=12-scritti, features= [Gender-[Fem], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [18-se, 20-storia, 21-?, 23-stata, 27-pianta]
+
 				NDTTint [gloss= se, pos= CS , lemma=se , indexID=18, dep= mark , isRoot=F, father=24-inventata, features= [, children= []
+
 				NDTTint [gloss= storia, pos= S , lemma=storia , indexID=20, dep= nsubjpass , isRoot=F, father=24-inventata, features= [Gender-[Fem], Number-[Sing], children= [19-la]
+
 					NDTTint [gloss= la, pos= RD , lemma=la , indexID=19, dep= det , isRoot=F, father=20-storia, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+
 				NDTTint [gloss= ?, pos= X , lemma=? , indexID=21, dep= aux , isRoot=F, father=24-inventata, features= [, children= [22-?]
+
 					NDTTint [gloss= ?, pos= X , lemma=? , indexID=22, dep= name , isRoot=F, father=21-?, features= [, children= []
+
 				NDTTint [gloss= stata, pos= VA , lemma=stare , indexID=23, dep= auxpass , isRoot=F, father=24-inventata, features= [Gender-[Fem], Number-[Sing], Tense-[Past], VerbForm-[Part], children= []
+
 				NDTTint [gloss= pianta, pos= S , lemma=pianta , indexID=27, dep= nmod , isRoot=F, father=24-inventata, features= [Gender-[Fem], Number-[Sing], children= [25-di, 26-sana]
+
 					NDTTint [gloss= di, pos= E , lemma=di , indexID=25, dep= case , isRoot=F, father=27-pianta, features= [, children= []
+
 					NDTTint [gloss= sana, pos= A , lemma=sano , indexID=26, dep= amod , isRoot=F, father=27-pianta, features= [Gender-[Fem], Number-[Sing], children= []
+
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=28, dep= punct , isRoot=F, father=2-visto, features= [, children= []

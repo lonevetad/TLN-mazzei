@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 333,3 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 600,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -518,14 +518,25 @@ built :D
 
 TreeParsedSentence
 root:
+
 NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-Il, 10-ubriacher?, 12-.]
+
 	NDTTint [gloss= Il, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-giorno, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+
 	NDTTint [gloss= ubriacher?, pos= V , lemma=ubriacher? , indexID=10, dep= acl:relcl , isRoot=F, father=2-giorno, features= [, children= [4-cui, 5-passer?, 8-esame, 9-mi, 11-?]
+
 		NDTTint [gloss= cui, pos= PR , lemma=cui , indexID=4, dep= nmod , isRoot=F, father=10-ubriacher?, features= [Number-[Plur], Person-[3], PronType-[Rel], children= [3-in]
+
 			NDTTint [gloss= in, pos= E , lemma=in , indexID=3, dep= case , isRoot=F, father=4-cui, features= [, children= []
+
 		NDTTint [gloss= passer?, pos= SP , lemma=passer? , indexID=5, dep= nmod , isRoot=F, father=10-ubriacher?, features= [, children= []
+
 		NDTTint [gloss= esame, pos= S , lemma=esame , indexID=8, dep= nsubj , isRoot=F, father=10-ubriacher?, features= [Gender-[Masc], Number-[Sing], children= [7-l']
+
 			NDTTint [gloss= l', pos= RD , lemma=l' , indexID=7, dep= det , isRoot=F, father=8-esame, features= [, children= []
+
 		NDTTint [gloss= mi, pos= PC , lemma=mi , indexID=9, dep= expl , isRoot=F, father=10-ubriacher?, features= [Clitic-[Yes], Gender-[Fem], Number-[Sing], Person-[1], PronType-[Prs], children= []
+
 		NDTTint [gloss= ?, pos= SP , lemma=? , indexID=11, dep= dobj , isRoot=F, father=10-ubriacher?, features= [, children= []
+
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=12, dep= punct , isRoot=F, father=2-giorno, features= [, children= []

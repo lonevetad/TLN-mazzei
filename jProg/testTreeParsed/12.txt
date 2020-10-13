@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 777,8 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1166,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -342,10 +342,17 @@ built :D
 
 TreeParsedSentence
 root:
+
 NDTTint [gloss= ha, pos= V , lemma=avere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [2-calcio, 5-carenza]
+
 	NDTTint [gloss= calcio, pos= S , lemma=calcio , indexID=2, dep= nsubj , isRoot=F, father=3-ha, features= [Gender-[Masc], Number-[Sing], children= [1-Il]
+
 		NDTTint [gloss= Il, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-calcio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+
 	NDTTint [gloss= carenza, pos= S , lemma=carenza , indexID=5, dep= dobj , isRoot=F, father=3-ha, features= [Gender-[Fem], Number-[Sing], children= [4-una, 7-Paolo]
+
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=4, dep= det , isRoot=F, father=5-carenza, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+
 		NDTTint [gloss= Paolo, pos= SP , lemma=Paolo , indexID=7, dep= nmod , isRoot=F, father=5-carenza, features= [, children= [6-di]
+
 			NDTTint [gloss= di, pos= E , lemma=di , indexID=6, dep= case , isRoot=F, father=7-Paolo, features= [, children= []

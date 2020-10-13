@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 305,6 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1100,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -505,14 +505,25 @@ built :D
 
 TreeParsedSentence
 root:
+
 NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-Ho, 3-cose, 11-.]
+
 	NDTTint [gloss= Ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+
 	NDTTint [gloss= cose, pos= S , lemma=cosa , indexID=3, dep= dobj , isRoot=F, father=2-visto, features= [Gender-[Fem], Number-[Plur], children= [4-che]
+
 		NDTTint [gloss= che, pos= PR , lemma=che , indexID=4, dep= nmod , isRoot=F, father=3-cose, features= [, children= [5-voi]
+
 			NDTTint [gloss= voi, pos= PE , lemma=voi , indexID=5, dep= nsubj , isRoot=F, father=4-che, features= [Number-[Plur], Person-[2], PronType-[Prs], children= [8-potrese]
+
 				NDTTint [gloss= potrese, pos= A , lemma=potrese , indexID=8, dep= acl:relcl , isRoot=F, father=5-voi, features= [Gender-[Masc], Number-[Sing], children= [6-umani, 7-non, 10-immaginare]
+
 					NDTTint [gloss= umani, pos= A , lemma=umano , indexID=6, dep= amod , isRoot=F, father=8-potrese, features= [Gender-[Masc], Number-[Plur], children= []
+
 					NDTTint [gloss= non, pos= BN , lemma=non , indexID=7, dep= neg , isRoot=F, father=8-potrese, features= [PronType-[Neg], children= []
+
 					NDTTint [gloss= immaginare, pos= V , lemma=immaginare , indexID=10, dep= csubj , isRoot=F, father=8-potrese, features= [VerbForm-[Inf], children= [9-neanche]
+
 						NDTTint [gloss= neanche, pos= BN , lemma=neanche , indexID=9, dep= neg , isRoot=F, father=10-immaginare, features= [PronType-[Neg], children= []
+
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-visto, features= [, children= []
