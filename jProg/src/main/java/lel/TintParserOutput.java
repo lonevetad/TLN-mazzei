@@ -198,6 +198,12 @@ public class TintParserOutput implements Serializable {
 
 		protected Map<String, Object> features = new TreeMap<>(Misc.STRING_COMPARATOR);;
 
+		public Object getFeature(String featureName) { return this.features.get(featureName); }
+
+		public String[] getFeatureAsArrayString(String featureName) {
+			return (String[]) this.features.get(featureName);
+		}
+
 		//
 
 		@JsonAnyGetter

@@ -1,4 +1,4 @@
-package testPers;
+package testManuali;
 
 public class MockedData {
 	public static final String[] SENTENCES = new String[] { "I topi non avevano nipoti.", //
@@ -18,5 +18,9 @@ public class MockedData {
 			"Il giorno in cui passerò l'esame mi ubriacherò.", //
 			"Ho imparato a risolvere il cubo di Rubik agilmente durante le scuole superiori.", //
 			"Ho poca fantasia.", //
-			"Se io fossi un genio studierei informatica efficacemente." };
+			"Se io fossi un genio studierei informatica efficacemente.", //
+			"È la spada laser di tuo padre", //
+			"Ha fatto una mossa leale", //
+			"Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via", //
+	};
 }

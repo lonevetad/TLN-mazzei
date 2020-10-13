@@ -1,4 +1,4 @@
-package testPers;
+package testManuali;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
