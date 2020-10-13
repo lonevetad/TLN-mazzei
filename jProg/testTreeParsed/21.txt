@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1222,2 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1571,4 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -505,25 +505,14 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=2, dep=ROOT, gloss=visto, father=none :D, children= [1-Ho, 3-cose, 11-.]
-
-NDTTint [isRoot=F, indexID=1, dep=aux, gloss=Ho, father=2-visto, children= []
-	
-NDTTint [isRoot=F, indexID=3, dep=dobj, gloss=cose, father=2-visto, children= [4-che]
-	
-NDTTint [isRoot=F, indexID=4, dep=nmod, gloss=che, father=3-cose, children= [5-voi]
-		
-NDTTint [isRoot=F, indexID=5, dep=nsubj, gloss=voi, father=4-che, children= [8-potrese]
-			
-NDTTint [isRoot=F, indexID=8, dep=acl:relcl, gloss=potrese, father=5-voi, children= [6-umani, 7-non, 10-immaginare]
-				
-NDTTint [isRoot=F, indexID=6, dep=amod, gloss=umani, father=8-potrese, children= []
-					
-NDTTint [isRoot=F, indexID=7, dep=neg, gloss=non, father=8-potrese, children= []
-					
-NDTTint [isRoot=F, indexID=10, dep=csubj, gloss=immaginare, father=8-potrese, children= [9-neanche]
-					
-NDTTint [isRoot=F, indexID=9, dep=neg, gloss=neanche, father=10-immaginare, children= []
-						
-NDTTint [isRoot=F, indexID=11, dep=punct, gloss=., father=2-visto, children= []
-	
+NDTTint [gloss=visto, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Ho, 3-cose, 11-.]
+	NDTTint [gloss=Ho, indexID=1, dep=aux, isRoot=F, father=2-visto, children= []
+	NDTTint [gloss=cose, indexID=3, dep=dobj, isRoot=F, father=2-visto, children= [4-che]
+		NDTTint [gloss=che, indexID=4, dep=nmod, isRoot=F, father=3-cose, children= [5-voi]
+			NDTTint [gloss=voi, indexID=5, dep=nsubj, isRoot=F, father=4-che, children= [8-potrese]
+				NDTTint [gloss=potrese, indexID=8, dep=acl:relcl, isRoot=F, father=5-voi, children= [6-umani, 7-non, 10-immaginare]
+					NDTTint [gloss=umani, indexID=6, dep=amod, isRoot=F, father=8-potrese, children= []
+					NDTTint [gloss=non, indexID=7, dep=neg, isRoot=F, father=8-potrese, children= []
+					NDTTint [gloss=immaginare, indexID=10, dep=csubj, isRoot=F, father=8-potrese, children= [9-neanche]
+						NDTTint [gloss=neanche, indexID=9, dep=neg, isRoot=F, father=10-immaginare, children= []
+	NDTTint [gloss=., indexID=11, dep=punct, isRoot=F, father=2-visto, children= []

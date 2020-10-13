@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 15 tokens at 517,2 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 15 tokens at 1071,4 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -704,31 +704,17 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=4, dep=ROOT, gloss=ardua, father=none :D, children= [2-partenza, 3-fu, 5-considerando, 15-.]
-
-NDTTint [isRoot=F, indexID=2, dep=nsubjpass, gloss=partenza, father=4-ardua, children= [1-La]
-	
-NDTTint [isRoot=F, indexID=1, dep=det, gloss=La, father=2-partenza, children= []
-		
-NDTTint [isRoot=F, indexID=3, dep=auxpass, gloss=fu, father=4-ardua, children= []
-	
-NDTTint [isRoot=F, indexID=5, dep=advcl, gloss=considerando, father=4-ardua, children= [7-complesso]
-	
-NDTTint [isRoot=F, indexID=7, dep=dobj, gloss=complesso, father=5-considerando, children= [9-esercizio, 11-e, 13-documentazione]
-		
-NDTTint [isRoot=F, indexID=9, dep=nmod, gloss=esercizio, father=7-complesso, children= [8-dell', 10-assegnato]
-			
-NDTTint [isRoot=F, indexID=8, dep=case, gloss=dell', father=9-esercizio, children= []
-				
-NDTTint [isRoot=F, indexID=10, dep=acl, gloss=assegnato, father=9-esercizio, children= []
-				
-NDTTint [isRoot=F, indexID=11, dep=cc, gloss=e, father=7-complesso, children= []
-			
-NDTTint [isRoot=F, indexID=13, dep=conj, gloss=documentazione, father=7-complesso, children= [12-la, 14-scarna]
-			
-NDTTint [isRoot=F, indexID=12, dep=det, gloss=la, father=13-documentazione, children= []
-				
-NDTTint [isRoot=F, indexID=14, dep=amod, gloss=scarna, father=13-documentazione, children= []
-				
-NDTTint [isRoot=F, indexID=15, dep=punct, gloss=., father=4-ardua, children= []
-	
+NDTTint [gloss=ardua, indexID=4, dep=ROOT, isRoot=T, father=none :D, children= [2-partenza, 3-fu, 5-considerando, 15-.]
+	NDTTint [gloss=partenza, indexID=2, dep=nsubjpass, isRoot=F, father=4-ardua, children= [1-La]
+		NDTTint [gloss=La, indexID=1, dep=det, isRoot=F, father=2-partenza, children= []
+	NDTTint [gloss=fu, indexID=3, dep=auxpass, isRoot=F, father=4-ardua, children= []
+	NDTTint [gloss=considerando, indexID=5, dep=advcl, isRoot=F, father=4-ardua, children= [7-complesso]
+		NDTTint [gloss=complesso, indexID=7, dep=dobj, isRoot=F, father=5-considerando, children= [9-esercizio, 11-e, 13-documentazione]
+			NDTTint [gloss=esercizio, indexID=9, dep=nmod, isRoot=F, father=7-complesso, children= [8-dell', 10-assegnato]
+				NDTTint [gloss=dell', indexID=8, dep=case, isRoot=F, father=9-esercizio, children= []
+				NDTTint [gloss=assegnato, indexID=10, dep=acl, isRoot=F, father=9-esercizio, children= []
+			NDTTint [gloss=e, indexID=11, dep=cc, isRoot=F, father=7-complesso, children= []
+			NDTTint [gloss=documentazione, indexID=13, dep=conj, isRoot=F, father=7-complesso, children= [12-la, 14-scarna]
+				NDTTint [gloss=la, indexID=12, dep=det, isRoot=F, father=13-documentazione, children= []
+				NDTTint [gloss=scarna, indexID=14, dep=amod, isRoot=F, father=13-documentazione, children= []
+	NDTTint [gloss=., indexID=15, dep=punct, isRoot=F, father=4-ardua, children= []

@@ -144,21 +144,20 @@ public class TreeParsedSentence {
 			StringBuilder sb;
 			sb = new StringBuilder();
 			sb.append(this.getClass().getSimpleName());
-			sb.append(" [isRoot=");
-			sb.append(isRoot ? 'T' : 'F');
-			sb.append(", indexID=");
-			sb.append(indexID);
-			sb.append(", dep=");
-			sb.append(dep);
-			sb.append(", gloss=");
+			sb.append(" [");
+			sb.append("gloss= ");
 			sb.append(gloss);
+			sb.append(" , indexID=");
+			sb.append(indexID);
+			sb.append(", dep= ");
+			sb.append(dep);
+			sb.append(" , isRoot=");
+			sb.append(isRoot ? 'T' : 'F');
 			sb.append(", father=");
 			if (isRoot || father == null) {
 				sb.append("none :D");
 			} else {
-				sb.append(father.indexID);
-				sb.append("-");
-				sb.append(father.gloss);
+				sb.append(father.toMiniString());
 			}
 			sb.append(", children= [");
 			this.forEachChild(//

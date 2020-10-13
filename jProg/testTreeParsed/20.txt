@@ -480,23 +480,13 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=9, dep=ROOT, gloss=spazzati, father=none :D, children= [3-avanzi, 7-sono, 8-stati, 10-via]
-
-NDTTint [isRoot=F, indexID=3, dep=nsubjpass, gloss=avanzi, father=9-spazzati, children= [1-Gli, 2-ultimi, 6-Repubblica]
-	
-NDTTint [isRoot=F, indexID=1, dep=det, gloss=Gli, father=3-avanzi, children= []
-		
-NDTTint [isRoot=F, indexID=2, dep=amod, gloss=ultimi, father=3-avanzi, children= []
-		
-NDTTint [isRoot=F, indexID=6, dep=nmod, gloss=Repubblica, father=3-avanzi, children= [4-della, 5-vecchia]
-		
-NDTTint [isRoot=F, indexID=4, dep=case, gloss=della, father=6-Repubblica, children= []
-			
-NDTTint [isRoot=F, indexID=5, dep=amod, gloss=vecchia, father=6-Repubblica, children= []
-			
-NDTTint [isRoot=F, indexID=7, dep=aux, gloss=sono, father=9-spazzati, children= []
-	
-NDTTint [isRoot=F, indexID=8, dep=auxpass, gloss=stati, father=9-spazzati, children= []
-	
-NDTTint [isRoot=F, indexID=10, dep=advmod, gloss=via, father=9-spazzati, children= []
-	
+NDTTint [gloss=spazzati, indexID=9, dep=ROOT, isRoot=T, father=none :D, children= [3-avanzi, 7-sono, 8-stati, 10-via]
+	NDTTint [gloss=avanzi, indexID=3, dep=nsubjpass, isRoot=F, father=9-spazzati, children= [1-Gli, 2-ultimi, 6-Repubblica]
+		NDTTint [gloss=Gli, indexID=1, dep=det, isRoot=F, father=3-avanzi, children= []
+		NDTTint [gloss=ultimi, indexID=2, dep=amod, isRoot=F, father=3-avanzi, children= []
+		NDTTint [gloss=Repubblica, indexID=6, dep=nmod, isRoot=F, father=3-avanzi, children= [4-della, 5-vecchia]
+			NDTTint [gloss=della, indexID=4, dep=case, isRoot=F, father=6-Repubblica, children= []
+			NDTTint [gloss=vecchia, indexID=5, dep=amod, isRoot=F, father=6-Repubblica, children= []
+	NDTTint [gloss=sono, indexID=7, dep=aux, isRoot=F, father=9-spazzati, children= []
+	NDTTint [gloss=stati, indexID=8, dep=auxpass, isRoot=F, father=9-spazzati, children= []
+	NDTTint [gloss=via, indexID=10, dep=advmod, isRoot=F, father=9-spazzati, children= []

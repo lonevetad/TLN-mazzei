@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 388,9 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 538,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -345,17 +345,10 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=1, dep=ROOT, gloss=Sembra, father=none :D, children= [6-difficile, 7-.]
-
-NDTTint [isRoot=F, indexID=6, dep=ccomp, gloss=difficile, father=1-Sembra, children= [2-che, 4-laboratorio, 5-sia]
-	
-NDTTint [isRoot=F, indexID=2, dep=mark, gloss=che, father=6-difficile, children= []
-		
-NDTTint [isRoot=F, indexID=4, dep=nsubj, gloss=laboratorio, father=6-difficile, children= [3-il]
-		
-NDTTint [isRoot=F, indexID=3, dep=det, gloss=il, father=4-laboratorio, children= []
-			
-NDTTint [isRoot=F, indexID=5, dep=cop, gloss=sia, father=6-difficile, children= []
-		
-NDTTint [isRoot=F, indexID=7, dep=punct, gloss=., father=1-Sembra, children= []
-	
+NDTTint [gloss=Sembra, indexID=1, dep=ROOT, isRoot=T, father=none :D, children= [6-difficile, 7-.]
+	NDTTint [gloss=difficile, indexID=6, dep=ccomp, isRoot=F, father=1-Sembra, children= [2-che, 4-laboratorio, 5-sia]
+		NDTTint [gloss=che, indexID=2, dep=mark, isRoot=F, father=6-difficile, children= []
+		NDTTint [gloss=laboratorio, indexID=4, dep=nsubj, isRoot=F, father=6-difficile, children= [3-il]
+			NDTTint [gloss=il, indexID=3, dep=det, isRoot=F, father=4-laboratorio, children= []
+		NDTTint [gloss=sia, indexID=5, dep=cop, isRoot=F, father=6-difficile, children= []
+	NDTTint [gloss=., indexID=7, dep=punct, isRoot=F, father=1-Sembra, children= []

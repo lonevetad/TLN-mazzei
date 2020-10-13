@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 183,7 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 900,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -418,21 +418,12 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=3, dep=ROOT, gloss=fossi, father=none :D, children= [1-Se, 2-io, 5-genio, 9-.]
-
-NDTTint [isRoot=F, indexID=1, dep=mark, gloss=Se, father=3-fossi, children= []
-	
-NDTTint [isRoot=F, indexID=2, dep=nsubj, gloss=io, father=3-fossi, children= []
-	
-NDTTint [isRoot=F, indexID=5, dep=dobj, gloss=genio, father=3-fossi, children= [4-un, 6-studierei, 7-informatica, 8-efficacemente]
-	
-NDTTint [isRoot=F, indexID=4, dep=det, gloss=un, father=5-genio, children= []
-		
-NDTTint [isRoot=F, indexID=6, dep=amod, gloss=studierei, father=5-genio, children= []
-		
-NDTTint [isRoot=F, indexID=7, dep=amod, gloss=informatica, father=5-genio, children= []
-		
-NDTTint [isRoot=F, indexID=8, dep=advmod, gloss=efficacemente, father=5-genio, children= []
-		
-NDTTint [isRoot=F, indexID=9, dep=punct, gloss=., father=3-fossi, children= []
-	
+NDTTint [gloss=fossi, indexID=3, dep=ROOT, isRoot=T, father=none :D, children= [1-Se, 2-io, 5-genio, 9-.]
+	NDTTint [gloss=Se, indexID=1, dep=mark, isRoot=F, father=3-fossi, children= []
+	NDTTint [gloss=io, indexID=2, dep=nsubj, isRoot=F, father=3-fossi, children= []
+	NDTTint [gloss=genio, indexID=5, dep=dobj, isRoot=F, father=3-fossi, children= [4-un, 6-studierei, 7-informatica, 8-efficacemente]
+		NDTTint [gloss=un, indexID=4, dep=det, isRoot=F, father=5-genio, children= []
+		NDTTint [gloss=studierei, indexID=6, dep=amod, isRoot=F, father=5-genio, children= []
+		NDTTint [gloss=informatica, indexID=7, dep=amod, isRoot=F, father=5-genio, children= []
+		NDTTint [gloss=efficacemente, indexID=8, dep=advmod, isRoot=F, father=5-genio, children= []
+	NDTTint [gloss=., indexID=9, dep=punct, isRoot=F, father=3-fossi, children= []

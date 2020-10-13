@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 384,6 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 625,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -257,13 +257,8 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [isRoot=T, indexID=2, dep=ROOT, gloss=difficile, father=none :D, children= [1-Sembra, 4-laboratorio, 5-.]
-
-NDTTint [isRoot=F, indexID=1, dep=cop, gloss=Sembra, father=2-difficile, children= []
-	
-NDTTint [isRoot=F, indexID=4, dep=nsubj, gloss=laboratorio, father=2-difficile, children= [3-il]
-	
-NDTTint [isRoot=F, indexID=3, dep=det, gloss=il, father=4-laboratorio, children= []
-		
-NDTTint [isRoot=F, indexID=5, dep=punct, gloss=., father=2-difficile, children= []
-	
+NDTTint [gloss=difficile, indexID=2, dep=ROOT, isRoot=T, father=none :D, children= [1-Sembra, 4-laboratorio, 5-.]
+	NDTTint [gloss=Sembra, indexID=1, dep=cop, isRoot=F, father=2-difficile, children= []
+	NDTTint [gloss=laboratorio, indexID=4, dep=nsubj, isRoot=F, father=2-difficile, children= [3-il]
+		NDTTint [gloss=il, indexID=3, dep=det, isRoot=F, father=4-laboratorio, children= []
+	NDTTint [gloss=., indexID=5, dep=punct, isRoot=F, father=2-difficile, children= []
