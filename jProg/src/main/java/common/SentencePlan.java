@@ -1,4 +1,4 @@
-package lel;
+package common;
 
 import java.io.Serializable;
 

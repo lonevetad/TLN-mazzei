@@ -8,17 +8,18 @@ import java.nio.charset.StandardCharsets;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import common.TintParserOutput;
 import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
-import lel.TintParserOutput;
+import tools.OutputStreamCollector;
 
 public class TParsingJacksonDeserialization {
 
 	public static void main(String[] args) {
 		OutputStream os;
 		String[] textes;
-		OSForJson toJsonCollector;
+		OutputStreamCollector toJsonCollector;
 		textes = MockedData.SENTENCES;
 
 		TintPipeline pipeline = new TintPipeline();
@@ -36,7 +37,7 @@ public class TParsingJacksonDeserialization {
 			pipeline.load();
 
 			// AND NOW
-			toJsonCollector = new OSForJson();
+			toJsonCollector = new OutputStreamCollector();
 			InputStream stream = new ByteArrayInputStream(textes[textes.length - 1].getBytes(StandardCharsets.UTF_8));
 			Annotation annotation = pipeline.run(stream, toJsonCollector, TintRunner.OutputFormat.JSON);
 
@@ -56,22 +57,6 @@ public class TParsingJacksonDeserialization {
 	}
 
 	//
-
-	static class OSForJson extends OutputStream {
-//		ObjectOutputStream oos;
-		StringBuilder sb;
-
-		OSForJson() { this(16); }
-
-		OSForJson(int startSize) { sb = new StringBuilder(startSize); }
-
-		@Override
-		public void write(int b) throws IOException { sb.append((char) b); }
-
-		@Override
-		public String toString() { return sb.toString(); }
-//		public String toString() { return "OSForJson [sb=" + sb.toString() + "]"; }
-	}
 
 	static class OSForJson1 extends OutputStream {
 		// ObjectOutputStream

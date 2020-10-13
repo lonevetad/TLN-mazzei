@@ -2,8 +2,8 @@ parsing:
 Ma a per mio, una nave cotale, renderebbe ques'altra un po' superflua, non è vero?
 
 {
-  "docDate": "2020-10-11",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 488,4 tokens/sec.",
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 583,3 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -847,4 +847,4 @@ Ma a per mio, una nave cotale, renderebbe ques'altra un po' superflua, non è ver
 }
 
 
-took 127 milliseconds.
+took 55 milliseconds.

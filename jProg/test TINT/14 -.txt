@@ -2,8 +2,8 @@ parsing:
 Il giorno in cui passerò l'esame mi ubriacherò.
 
 {
-  "docDate": "2020-10-11",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 666,7 tokens/sec.",
+  "docDate": "2020-10-13",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 1090,9 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -508,4 +508,4 @@ Il giorno in cui passerò l'esame mi ubriacherò.
 }
 
 
-took 26 milliseconds.
+took 19 milliseconds.

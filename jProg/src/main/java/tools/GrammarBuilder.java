@@ -1,7 +1,11 @@
 package tools;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
+import dataStructures.MapTreeAVL;
 import grammar.Grammar;
 import grammar.GrammarElement;
 import grammar.GrammarRule;
@@ -15,6 +19,8 @@ import grammar.RuleElementPairNonTerminal;
 import grammar.RuleElementSingle;
 
 public class GrammarBuilder {
+	protected static final Map<String, GrammarElement> cacheGE = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight,
+			Misc.STRING_COMPARATOR);
 
 	public GrammarBuilder() {}
 
@@ -40,7 +46,7 @@ public class GrammarBuilder {
 					// for each production rule ... "example: S -> A | B C | A ciao B | B B fine ."
 					i = -1;
 					while (++i < len) {
-						rhsRaw = hs[0];
+						rhsRaw = hs[i].trim();
 						rhs = hsToRuleElement(rhsRaw);
 						switch (rhs.getElementsAmount()) {
 						case 1: {
@@ -65,24 +71,45 @@ public class GrammarBuilder {
 		return g;
 	}
 
+	protected static GrammarElement newge(String ssss) {
+		GrammarElement ge;
+		if (cacheGE.containsKey(ssss)) {
+			ge = cacheGE.get(ssss);
+		} else {
+			ge = new GrammarElement(ssss);
+			cacheGE.put(ssss, ge);
+		}
+		return ge;
+	}
+
+	static String[] filterNonBlank(String[] p) {
+		List<String> l;
+		l = new LinkedList<>();
+		for (String s : p) {
+			s = s.trim();
+			if (!(s.isBlank() | s.isEmpty())) { l.add(s); }
+		}
+		return l.toArray(new String[l.size()]);
+	}
+
 	protected static RuleElement hsToRuleElement(String hs) {
 		RuleElement re;
 		String[] parts;
-		parts = hs.split("\\s+");
+		parts = filterNonBlank(hs.split("\\s+"));
+
 		if (parts.length > 0) {
 			if (parts.length == 1) {
-				re = new RuleElementSingle(new GrammarElement(parts[0].trim()));
+				re = new RuleElementSingle(newge(parts[0].trim()));
 			} else {
 				if (parts.length == 2) {
-					re = new RuleElementPairNonTerminal(new GrammarElement(parts[0].trim()),
-							new GrammarElement(parts[1].trim()));
+					re = new RuleElementPairNonTerminal(newge(parts[0].trim()), newge(parts[1].trim()));
 				} else {
 					int i, len;
 					ArrayList<GrammarElement> elems;
 					elems = new ArrayList<GrammarElement>(len = parts.length);
 					i = -1;
 					while (++i < len) {
-						elems.add(new GrammarElement(parts[i].trim()));
+						elems.add(newge(parts[i].trim()));
 					}
 					re = new RuleElementList(elems);
 				}

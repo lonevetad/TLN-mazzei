@@ -1,5 +1,6 @@
-package lel;
+package common;
 
+import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
@@ -12,10 +13,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 import eu.fbk.dh.tint.runner.TintPipeline;
 import tools.Misc;
+import tools.OutputStreamCollector;
 
 /**
  * Output of a
- * {@link TintPipeline#run(java.io.InputStream, java.io.OutputStream, eu.fbk.dh.tint.runner.TintRunner.OutputFormat)}.
+ * {@link TintPipeline#run(java.io.InputStream, java.io.OutputStream, eu.fbk.dh.tint.runner.TintRunner.OutputFormat)},
+ * collected from {@link OutputStream} using the utilities
+ * {@link OutputStreamCollector}.
  */
 public class TintParserOutput implements Serializable {
 	private static final long serialVersionUID = 86540524040541L;
@@ -46,6 +50,12 @@ public class TintParserOutput implements Serializable {
 
 	public static class SentenceTint implements Serializable {
 		private static final long serialVersionUID = 86540524040542L;
+
+		public static enum DependencyTypeProduced {
+			Basic, Collapsed, CollapsedCcprocessed
+		}
+
+		//
 		protected int index;
 		protected int characterOffsetBegin;
 		protected int characterOffsetEnd;
@@ -141,11 +151,13 @@ public class TintParserOutput implements Serializable {
 	//
 	public static class SentenceDependencyTint implements Serializable {
 		private static final long serialVersionUID = 86540524040543L;
-		protected String dep;
-		protected int governor;
-		protected String governorGloss;
-		protected int dependent;
-		protected String dependentGloss;
+		public static final String GLOSS_ROOT = "ROOT";
+		//
+		protected String dep; // is it a PoS?
+		protected int governor; // ID of the "father node"
+		protected String governorGloss; // gloss of the "father node"
+		protected int dependent; // works as an ID
+		protected String dependentGloss; // gloss of this node
 
 		// getter
 

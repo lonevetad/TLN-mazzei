@@ -1,4 +1,4 @@
-package simpleNLG;
+package testManuali;
 
 import simplenlg.features.Feature;
 import simplenlg.features.Tense;

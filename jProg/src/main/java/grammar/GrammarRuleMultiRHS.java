@@ -46,10 +46,18 @@ public class GrammarRuleMultiRHS extends GrammarRule {
 
 	@Override
 	public String toString() {
+		boolean[] b = { true };
 		StringBuilder sb;
 		sb = new StringBuilder();
 		sb.append(super.toString());
-		this.rhsSet.forEach(re -> sb.append(' ').append(re.toString()));
+		this.rhsSet.forEach(re -> {
+			if (b[0]) {
+				sb.append(' ');
+				b[0] = false;
+			} else
+				sb.append(" | ");
+			sb.append(re.toString());
+		});
 		return sb.toString();
 	}
 
