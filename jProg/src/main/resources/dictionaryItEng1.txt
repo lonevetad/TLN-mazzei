@@ -67,6 +67,11 @@ livello -> level
 livelli -> levels
 ricorsione -> recursion
 nave -> ship
+sostenere -> face
+torta -> cake
+deliziosa | delizioso -> delicious
+gustosa | gustoso -> tasty
+infornare -> bake
 rendere -> make
 renderebbe -> would make
 parer | parere -> opinion

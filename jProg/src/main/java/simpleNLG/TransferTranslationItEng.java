@@ -54,67 +54,68 @@ public class TransferTranslationItEng {
 
 		// child controls, interleaving some if(s
 		childrenIterator = subtreeRoot.getChildrenIterator();
-		while (childrenIterator.hasNext()) { // iterator required to modify local variables
-			child = childrenIterator.next();
-			translatedChildGloss = null;
+		if (childrenIterator != null)
+			while (childrenIterator.hasNext()) { // is required to modify local variables: forEach forbids, iterator not
+				child = childrenIterator.next();
+				translatedChildGloss = null;
 
-			if ("nsubj".equals(posNodeType)) {
-				if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
-				verbPhrase = NLG_FACTORY.createVerbPhrase();
-				verbPhrase.setVerb(translatedNodeGloss);
-				setVerbFeaures(verbPhrase, subtreeRoot.getFeatures(), false);
-				if (subPhraseRoot instanceof SPhraseSpec) {
-					((SPhraseSpec) subPhraseRoot)
-							.setSubject(translatedChildGloss = wordTranslator.apply(child.getGloss()));
-				}
-				/*
-				 * else if (subPhraseRoot instanceof VPPhraseSpec) { ((VPPhraseSpec)
-				 * subPhraseRoot) .setSubject(translatedChildGloss =
-				 * wordTranslator.apply(child.getGloss())); }
-				 */
-			}
-			if ("aux".equals(posNodeType)) {
-				verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
-				setVerbFeaures(verbPhrase, child.getFeatures(), true);
-			}
-			if ("auxpass".equals(posNodeType)) { verbPhrase.setFeature(Feature.PASSIVE, true); }
-			if ("cop".equals(posNodeType)) {
-				if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-				verbPhrase = NLG_FACTORY.createVerbPhrase(wordTranslator.apply(child.getGloss()));
-				setVerbFeaures(verbPhrase, child.getFeatures(), false);
-			}
-			if (verbPhrase != null && "advmod".equals(posNodeType)) {
-				if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
-				verbPhrase.setVerb(translatedNodeGloss);
-			}
-			if ("det".equals(posNodeType) || "det:poss".equals(posNodeType)) {
-				// are there other "det:??" ?
-				if (nounPhrase == null) {
+				if ("nsubj".equals(posNodeType)) {
 					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
-					nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+					verbPhrase = NLG_FACTORY.createVerbPhrase();
+					verbPhrase.setVerb(translatedNodeGloss);
+					setVerbFeaures(verbPhrase, subtreeRoot.getFeatures(), false);
+					if (subPhraseRoot instanceof SPhraseSpec) {
+						((SPhraseSpec) subPhraseRoot)
+								.setSubject(translatedChildGloss = wordTranslator.apply(child.getGloss()));
+					}
+					/*
+					 * else if (subPhraseRoot instanceof VPPhraseSpec) { ((VPPhraseSpec)
+					 * subPhraseRoot) .setSubject(translatedChildGloss =
+					 * wordTranslator.apply(child.getGloss())); }
+					 */
 				}
-				if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-				nounPhrase.setDeterminer(translatedChildGloss);
-			}
-			if ("compound".equals(posNodeType)) {
-				// surely exists
-				if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-				nounPhrase.addModifier(translatedChildGloss);
-			}
-			if ("case".equals(posNodeType)) {
-				if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-				prepositionPhrase = NLG_FACTORY.createPrepositionPhrase(translatedChildGloss);
-				prepositionPhrase.addComplement(nounPhrase); // surely exists
-			}
-			if ("amod".equals(posNodeType)) {
-				if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-				if (nounPhrase == null) {
-					prepositionPhrase.addPreModifier(translatedChildGloss);
-				} else {
-					nounPhrase.addPreModifier(translatedChildGloss);
+				if ("aux".equals(posNodeType)) {
+					verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
+					setVerbFeaures(verbPhrase, child.getFeatures(), true);
+				}
+				if ("auxpass".equals(posNodeType)) { verbPhrase.setFeature(Feature.PASSIVE, true); }
+				if ("cop".equals(posNodeType)) {
+					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
+					verbPhrase = NLG_FACTORY.createVerbPhrase(wordTranslator.apply(child.getGloss()));
+					setVerbFeaures(verbPhrase, child.getFeatures(), false);
+				}
+				if (verbPhrase != null && "advmod".equals(posNodeType)) {
+					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
+					verbPhrase.setVerb(translatedNodeGloss);
+				}
+				if ("det".equals(posNodeType) || "det:poss".equals(posNodeType)) {
+					// are there other "det:??" ?
+					if (nounPhrase == null) {
+						if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
+						nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+					}
+					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
+					nounPhrase.setDeterminer(translatedChildGloss);
+				}
+				if ("compound".equals(posNodeType)) {
+					// surely exists
+					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
+					nounPhrase.addModifier(translatedChildGloss);
+				}
+				if ("case".equals(posNodeType)) {
+					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
+					prepositionPhrase = NLG_FACTORY.createPrepositionPhrase(translatedChildGloss);
+					prepositionPhrase.addComplement(nounPhrase); // surely exists
+				}
+				if ("amod".equals(posNodeType)) {
+					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
+					if (nounPhrase == null) {
+						prepositionPhrase.addPreModifier(translatedChildGloss);
+					} else {
+						nounPhrase.addPreModifier(translatedChildGloss);
+					}
 				}
 			}
-		}
 
 		// use the verb/noun/preposition phrase, if any are created
 		if (verbPhrase != null) {
@@ -156,14 +157,23 @@ public class TransferTranslationItEng {
 	protected static void setVerbFeaures(VPPhraseSpec verbPhrase, Map<String, String[]> features,
 			boolean isPerfectForm) {
 		String tenseFeature;
-		String[] person;
+		String[] feature;
+		if (features == null) {
+			System.out.println("no feature for verb: " + verbPhrase.getVerb().toString());
+			return; // no feature to put, weirdly
+		}
 		if (isPerfectForm) { verbPhrase.setFeature(Feature.PERFECT, true); }
-		tenseFeature = features.get("Tense")[0];
-		if ("Pres".equals(tenseFeature)) {
-			verbPhrase.setFeature(Feature.TENSE, Tense.PRESENT);
-		} else if ("Past".equals(tenseFeature)) { verbPhrase.setFeature(Feature.TENSE, Tense.PAST); }
+		feature = features.get("Tense");
+		if (feature != null) {
+			tenseFeature = feature[0];
+			if ("Pres".equals(tenseFeature)) {
+				verbPhrase.setFeature(Feature.TENSE, Tense.PRESENT);
+			} else if ("Past".equals(tenseFeature)) { verbPhrase.setFeature(Feature.TENSE, Tense.PAST); }
+		} else {
+			System.out.println("no feature Tense for verb: " + verbPhrase.getVerb().toString());
+		}
 		// recycle "tenseFeature":
-		person = features.get("Person");
-		if (person != null && "3".equals(person[0])) { verbPhrase.setFeature(Feature.PERSON, Person.HE); } // assumption
+		feature = features.get("Person");
+		if (feature != null && "3".equals(feature[0])) { verbPhrase.setFeature(Feature.PERSON, Person.HE); } // assumption
 	}
 }

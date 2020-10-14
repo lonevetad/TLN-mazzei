@@ -13,6 +13,7 @@ import tools.json.JsonParserJackson;
 public class TestTransfer {
 
 	public static void main(String[] args) {
+		int sentenceIndex;
 		WordTranslatorItEng dictionary;
 		TintParsedAndJSON parsedAndJson;
 		JsonParserSimple jsonParser;
@@ -23,7 +24,8 @@ public class TestTransfer {
 		dictionary.forEachTranslation((from, to) -> { System.out.println(from + " -> " + to); });
 
 		jsonParser = new JsonParserJackson();
-		text = MockedData.SENTENCES[2];
+		sentenceIndex = MockedData.SENTENCES.length - 1; // 2
+		text = MockedData.SENTENCES[sentenceIndex];
 		parsedAndJson = TintParser.parseText(text, jsonParser);
 		System.out.println("parsing:::: " + text);
 
