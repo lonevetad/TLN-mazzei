@@ -1,12 +1,12 @@
 package testManuali;
 
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
 import grammar.Grammar;
 import tools.GrammarBuilder;
 import tools.LineReader;
+import tools.Misc;
 import tools.lineReader.LineReaderCollection;
 import tools.lineReader.LineReaderFromFile;
 
@@ -18,10 +18,7 @@ public class TestGrammarBuilder {
 		System.out.println(g);
 	}
 
-	static LineReader fromFile() {
-		return fromFile("." + File.separatorChar + "src" + File.separatorChar + "main" + File.separatorChar
-				+ "resources" + File.separatorChar + "grammarEng.txt");
-	}
+	static LineReader fromFile() { return fromFile(Misc.RESOURCE_PATH + "grammarEng.txt"); }
 
 	static LineReader fromFile(String pathname) { return new LineReaderFromFile(pathname); }
 

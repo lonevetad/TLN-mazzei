@@ -1,0 +1,98 @@
+. -> .
+, -> ,
+? -> ?
+! -> !
+
+i | le | gli -> the
+una | uno | un -> a
+che -> that
+di | del | della -> of
+un -> a
+ma -> but
+a -> to
+it -> esso
+he -> lui
+she -> lei
+tu -> you
+io -> I
+voi -> you
+noi -> us
+
+questa | questo -> this
+quella | quello -> that
+mio | mine -> mine
+quest'altra -> this one
+po' -> little bit
+cui -> of
+neanche -> not
+tuo | tua -> your
+poco | poca -> few
+difficile -> difficult
+talvolta -> sometimes
+se -> if
+non -> not
+vero | vera -> true
+
+spada laser -> lightsaber
+Repubblica -> Republic
+
+topo -> mouse
+topi | tope -> mice
+nipote | nipotino -> nephew
+nipotina -> niece
+ho -> have
+è -> is
+sono -> am
+sei | siamo | sono -> are
+ha fatto -> make
+padre | papà -> father
+madre | mamma -> mother
+leale -> fair
+mossa -> move
+avanzi | avanzo -> leftover
+vecchia | vecchio | vecchi | vecchie  -> old
+sono stati spazzati + via -> have been wiped out
+spazzato + via -> wipe out
+spazzati + via -> wipe out
+sembra | sembrare -> seems
+film -> film
+laboratorio -> lab
+parsificare -> parse
+frase -> sentence
+frasi -> sentences
+richiede -> requires
+richiedere -> require
+profondo | profonda | profonde | profondi -> deep
+livello -> level
+livelli -> levels
+ricorsione -> recursion
+nave -> ship
+rendere -> make
+renderebbe -> would make
+parer | parere -> opinion
+cotale -> like that
+superflua | superfluo -> unnecessary
+penna -> pen
+amico | amica -> friend
+precedente -> previous
+tratta | tratto -> took
+trarre -> take
+successo -> success
+mondiale -> world wide
+leale -> fair
+mossa -> move
+fatto | fatta -> done
+fare -> do
+visto | vista -> seen
+vedere -> see
+cosa -> thing
+cose -> things
+umano -> human
+umani -> humans
+potreste -> could
+immaginare | immagina | immagino -> imagine
+genio -> genius
+informatica -> computer science
+efficacemente -> efficiently
+fantasia -> fanatsy
+calcio -> calcuim

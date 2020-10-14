@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+import common.TintParser;
 import common.TintParserOutput;
 import common.TreeParsedSentence;
+import common.TintParser.TintParsedAndJSON;
 import tools.JsonParserSimple;
 import tools.LoggerMessages;
 import tools.LoggerOnFile;
-import tools.TintParser;
-import tools.TintParser.TintParsedAndJSON;
 import tools.json.JsonParserJackson;
 
 public class TestTreeParsedSentence_FromTint {
