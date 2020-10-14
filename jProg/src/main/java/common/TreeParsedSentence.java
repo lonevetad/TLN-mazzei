@@ -1,6 +1,7 @@
 package common;
 
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.function.BiConsumer;
@@ -10,6 +11,7 @@ import common.TintParserOutput.SentenceDependencyTint;
 import common.TintParserOutput.SentenceTint;
 import common.TintParserOutput.SentenceTokenTint;
 import dataStructures.MapTreeAVL;
+import dataStructures.SetMapped;
 import edu.emory.mathcs.backport.java.util.Arrays;
 import tools.Misc;
 
@@ -22,6 +24,8 @@ public class TreeParsedSentence {
 	}
 
 	protected NodeDependencyTree root;
+
+	public NodeDependencyTree getRoot() { return root; }
 
 	//
 
@@ -110,7 +114,7 @@ public class TreeParsedSentence {
 
 	//
 
-	protected abstract class NodeDependencyTree {
+	public abstract class NodeDependencyTree {
 		protected final boolean isRoot;
 		protected final Integer indexID; // just a simpleID
 		protected final String dep; // is it a PoS? Probably. (took from Tint' "dependency".) -> USEFUL FOR
@@ -198,8 +202,14 @@ public class TreeParsedSentence {
 			}
 		}
 
-		protected void forEachChild(Consumer<NodeDependencyTree> action) {
+		public void forEachChild(Consumer<NodeDependencyTree> action) {
 			if (this.children != null && children.size() > 0) { children.forEach((idc, c) -> action.accept(c)); }
+		}
+
+		public Iterator<NodeDependencyTree> getChildrenIterator() {
+			if (this.children == null)
+				return null;
+			return new SetMapped<>(this.children.entrySet(), e -> e.getValue()).iterator();
 		}
 
 		protected abstract boolean checkIsRoot();
@@ -231,7 +241,7 @@ public class TreeParsedSentence {
 			}
 		}
 
-		protected void forEachFeature(BiConsumer<String, String[]> action) {
+		public void forEachFeature(BiConsumer<String, String[]> action) {
 			if (this.features != null && features.size() > 0) { features.forEach(action); }
 		}
 
