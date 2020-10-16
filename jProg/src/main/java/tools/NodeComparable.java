@@ -42,7 +42,7 @@ public interface NodeComparable<K> extends Serializable {
 
 	//
 
-	// TODO METHODS
+	// TODO INSTANCE METHODS
 
 	//
 
@@ -51,9 +51,9 @@ public interface NodeComparable<K> extends Serializable {
 	/** Returns the set of all children held by this node. */
 	public Set<NodeComparable<K>> getChildrenNC();
 
-	public NodeComparable<K> getChildNCBy(K key);
+	public NodeComparable<K> getChildNCByKey(K key);
 
-	public default boolean containsChildNC(K key) { return this.getChildNCBy(key) != null; }
+	public default boolean containsChildNC(K key) { return this.getChildNCByKey(key) != null; }
 
 	public default void forEachChildNC(Consumer<NodeComparable<K>> action) {
 		Set<NodeComparable<K>> children;
@@ -86,10 +86,17 @@ public interface NodeComparable<K> extends Serializable {
 
 	/**
 	 * Compute how much <code>this</code> node differs to the given one, which is
-	 * considered as the "base". <br>
-	 * So {@link DissonanceWeights#getWeightMissingNode()} weights the nodes that
-	 * are missing in <code>this</code> "children set" (obtained by
-	 * <code>this.{@link #getChildrenNC()}</code>)
+	 * considered as the "base". Default weights (instance of
+	 * {@link DissonanceWeights}) is provided
+	 * <p>
+	 * {@link DissonanceWeights#getWeightMissingNode()} weights the nodes that are
+	 * missing in <code>this</code> "children set" (obtained by
+	 * <code>this.{@link #getChildrenNC()}</code>), while
+	 * {@link DissonanceWeights#getWeightExceedingNode()} weights the nodes that are
+	 * present in <code>this</code> "children set" but not contained in the "base".
+	 * {@link DissonanceWeights#getWeightDepth()} instead weights exponentially the
+	 * recursion depth: deeper dependency could be considered having a higher weight
+	 * ("less than one" exponent base are not implemented yet).
 	 */
 	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase) {
 		return computeDissonanceAsLong(nodeBase, WEIGHTS_DEFAULT);
@@ -99,22 +106,25 @@ public interface NodeComparable<K> extends Serializable {
 		return computeDissonanceAsLong(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
 	}
 
+	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
 	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights) {
 		return computeDissonanceAsLong(nodeBase, weights, false); // make it fast
 	}
 
+	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
 	public long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights, boolean checkRecursion);
 
 	//
 
 	/**
-	 * See {@link #computeDissonanceAsLong(NodeComparable, NodeComparable)}, it's
-	 * the same but returning and computing a {@link BigInteger} instead.
+	 * See {@link #computeDissonanceAsLong(NodeComparable)}, it's the same but
+	 * returning and computing a {@link BigInteger} instead.
 	 */
 	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase) {
 		return computeDissonanceAsBigInt(nodeBase, WEIGHTS_DEFAULT);
 	}
 
+	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
 	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, boolean checkRecursion) {
 		return computeDissonanceAsBigInt(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
 	}
@@ -123,6 +133,7 @@ public interface NodeComparable<K> extends Serializable {
 		return computeDissonanceAsBigInt(nodeBase, weights, false); // make it fast
 	}
 
+	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
 	public BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, DissonanceWeights weights,
 			boolean checkRecursion);
 
@@ -132,6 +143,7 @@ public interface NodeComparable<K> extends Serializable {
 
 	//
 
+	/** See {@link NodeComparable#computeDissonanceAsLong(NodeComparable)}. */
 	public static class DissonanceWeights implements Serializable {
 		private static final long serialVersionUID = 23263214070008L;
 		protected int weightMissingNode, weightExceedingNode, weightDepth;
@@ -195,7 +207,7 @@ public interface NodeComparable<K> extends Serializable {
 				if (nodeBase.containsChildNC(key)) {
 					// recursion :D
 					dissonance[0] += ((DefaultNodeComparable<T>) child).computeDissonanceAsLong_NoRecursion(
-							nodeBase.getChildNCBy(key), //
+							nodeBase.getChildNCByKey(key), //
 							weights, //
 							exponentialWeightDepth * weights.weightDepth);
 				} else {
@@ -226,7 +238,7 @@ public interface NodeComparable<K> extends Serializable {
 					// recursion :D
 					if (!nodesVisited.containsKey(key)) {
 						dissonance[0] += ((DefaultNodeComparable<T>) child).computeDissonanceAsLong_WithRecursion(
-								nodeBase.getChildNCBy(key), //
+								nodeBase.getChildNCByKey(key), //
 								weights, //
 								nodesVisited, //
 								exponentialWeightDepth * weights.weightDepth);
@@ -267,7 +279,7 @@ public interface NodeComparable<K> extends Serializable {
 				if (nodeBase.containsChildNC(key)) {
 					// recursion :D
 					dissonance[0] = dissonance[0].add(((DefaultNodeComparable<T>) child)
-							.computeDissonanceAsBigInt_NoRecursion(nodeBase.getChildNCBy(key), //
+							.computeDissonanceAsBigInt_NoRecursion(nodeBase.getChildNCByKey(key), //
 									weights, //
 									exponentialWeightDepth.multiply(weights.weightDepthBigInt))//
 					);
@@ -300,7 +312,7 @@ public interface NodeComparable<K> extends Serializable {
 					if (!nodesVisited.containsKey(key)) {
 						BigInteger dissGot;
 						dissGot = ((DefaultNodeComparable<T>) child).computeDissonanceAsBigInt_WithRecursion(
-								nodeBase.getChildNCBy(key), //
+								nodeBase.getChildNCByKey(key), //
 								weights, //
 								nodesVisited, //
 								exponentialWeightDepth.multiply(weights.weightDepthBigInt));
@@ -345,6 +357,6 @@ public interface NodeComparable<K> extends Serializable {
 		public Set<NodeComparable<T>> getChildrenNC() { return this.children; }
 
 		@Override
-		public NodeComparable<T> getChildNCBy(T key) { return this.backMap.get(key); }
+		public NodeComparable<T> getChildNCByKey(T key) { return this.backMap.get(key); }
 	}
 }

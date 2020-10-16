@@ -10,16 +10,41 @@ import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+import common.TransferTranslationItEng3.NodeSubtreeDependency;
 import dataStructures.MapTreeAVL;
 import dataStructures.SetMapped;
 import edu.emory.mathcs.backport.java.util.Arrays;
 import tools.Misc;
 import tools.NodeComparable;
 import tools.NodeComparable.NodeComparableDefaultAlghoritms;
+import tools.Stringable;
 
+/**
+ * Idea: si inizia a tradurre (usando
+ * {@link TransferTranslationItEng3#transfer(NodeSubtreeDependency)}, che invoca
+ * {@link TransferRule#applyTransferRule(TransferTranslationItEng3, NodeSubtreeDependency)}
+ * ) un nodo radice.:
+ * <ol>
+ * <li>Si cerca la {@link TransferRule} migliore per il dato nodo</li>
+ * <li>Si converte il sotto-albero, producendo un nuovo sottoalbero (a mano,
+ * secondo l'implementazione della regola)</li>
+ * <li>Per ogni nodo non-foglia considerato (e plausibilmente convertito) dalla
+ * regola, si invoca
+ * {@link TransferRule#manageUntouchedNodes(NodeSubtreeDependency, TransferTranslationItEng3, NodeSubtreeDependency, NodeSubtreeDependency[])}
+ * per gestire tuti i figli che non sono considerati dalla regola.</li>
+ * <li>Per ogni nodo foglia considerato, invocare ricorsivamente
+ * {@link TransferTranslationItEng3#transfer(NodeSubtreeDependency)}
+ * ricorsivamente.</li>
+ * </ol>
+ */
+/**/
 public class TransferTranslationItEng3 {
 
-	public TransferTranslationItEng3() {}
+	public TransferTranslationItEng3() {
+		rulesGroupedByRoot = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight,
+				ElementGrammarWithAlternatives.EG_COMPARATOR);
+//	<TransferTranslationItEng3.ElementGrammarWithAlternatives, List<TransferRule>>		
+	}
 
 	/**
 	 * All rules are stored here but grouped by
@@ -27,10 +52,23 @@ public class TransferTranslationItEng3 {
 	 */
 	protected Map<ElementGrammarWithAlternatives, List<TransferRule>> rulesGroupedByRoot;
 
+	//
+	// TODO THE TRANSFER METHOD
+	//
+
+	public NodeSubtreeDependency transfer(NodeSubtreeDependency rootSubtree) {
+		TransferRule rule;
+//		NodeSubtreeDependency transferred;
+		rule = this.getBestRuleFor(rootSubtree);
+		return rule.applyTransferRule(this, rootSubtree);
+	}
+
+	// TODO UTILITIES
+
 	public void addRule(TransferRule rule) {
 		ElementGrammarWithAlternatives rootRule;
 		List<TransferRule> l;
-		rootRule = rule.lhs.getKeyIdentifier();
+		rootRule = rule.lhsTemplate.getKeyIdentifier();
 		l = rulesGroupedByRoot.get(rootRule);
 		if (l == null) {
 			l = new ArrayList<>();
@@ -42,7 +80,7 @@ public class TransferTranslationItEng3 {
 		}
 	}
 
-	public TransferRule getBestRuleFor(NodeSubtreeDependency subtreeToTransfer) {
+	protected TransferRule getBestRuleFor(NodeSubtreeDependency subtreeToTransfer) {
 		int len;
 		ElementGrammarWithAlternatives rootST;
 		RuleScored[] scores;
@@ -73,6 +111,28 @@ public class TransferTranslationItEng3 {
 	//
 
 	// TODO utilities
+	@Override
+	public String toString() {
+		StringBuilder sb;
+		sb = new StringBuilder();
+		sb.append("Transfer:\n");
+		rulesGroupedByRoot.forEach((rootEG, rulesCollected) -> {
+			sb.append("\n\n\n\ncollection of rules grouped with node:\n");
+			rootEG.toString(sb);
+			sb.append("\nrules:");
+			rulesCollected.forEach(tr -> {
+				sb.append('\n');
+				tr.toString(sb);
+			});
+		});
+		return sb.toString();
+	}
+
+	//
+
+	//
+
+	// TODO CLASSES
 
 	//
 
@@ -102,7 +162,7 @@ public class TransferTranslationItEng3 {
 			return c;
 		};
 
-		protected ElementGrammarWithAlternatives(String[] alternatives) {
+		public ElementGrammarWithAlternatives(String[] alternatives) {
 			int i;
 			bm = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, Misc.STRING_COMPARATOR);
 			Set<String> a = this.alternatives = bm.toSetKey();
@@ -150,6 +210,20 @@ public class TransferTranslationItEng3 {
 			}
 			return false;
 		}
+
+		@Override
+		public String toString() {
+			StringBuilder sb;
+			sb = new StringBuilder();
+			toString(sb);
+			return sb.toString();
+		}
+
+		public void toString(StringBuilder sb) {
+			sb.append("EG: [");
+
+		}
+
 	}
 
 	//
@@ -164,14 +238,15 @@ public class TransferTranslationItEng3 {
 	 * (NN.B.: each point comes from a "governor/father" and goes into a
 	 * "dependent/child", so one of them is the root.)
 	 */
-	public static class NodeSubtreeDependency extends NodeComparableDefaultAlghoritms<ElementGrammarWithAlternatives> {
+	public static class NodeSubtreeDependency extends NodeComparableDefaultAlghoritms<ElementGrammarWithAlternatives>
+			implements Stringable {
 		protected static final Function<NodeSubtreeDependency, NodeComparable<ElementGrammarWithAlternatives>> IDENTITY_FUNCTION_JC_GENERICS_TOO_RESTRICTIVE = (
 				nstd) -> nstd;
 		private static final long serialVersionUID = -1111222233344L;
-		protected final ElementGrammarWithAlternatives rootSubtreeDep;
-		protected final MapTreeAVL<ElementGrammarWithAlternatives, NodeSubtreeDependency> backMapChildren;
-		protected final Set<ElementGrammarWithAlternatives> childrenSubtreeDep;
-		protected final Set<NodeComparable<ElementGrammarWithAlternatives>> childrenNodeComparable;
+
+		public static NodeSubtreeDependency newNSD(ElementGrammarWithAlternatives dep) {
+			return new NodeSubtreeDependency(dep);
+		}
 
 //		public SubtreeDependency(ElementGrammarWithAlternatives nodeSubtreeDep) { this(nodeSubtreeDep, null); }
 
@@ -190,6 +265,11 @@ public class TransferTranslationItEng3 {
 					);
 		}
 
+		protected final ElementGrammarWithAlternatives rootSubtreeDep;
+		protected final MapTreeAVL<ElementGrammarWithAlternatives, NodeSubtreeDependency> backMapChildren;
+		protected final Set<ElementGrammarWithAlternatives> childrenSubtreeDep;
+		protected final Set<NodeComparable<ElementGrammarWithAlternatives>> childrenNodeComparable;
+
 		@Override
 		public ElementGrammarWithAlternatives getKeyIdentifier() { return rootSubtreeDep; }
 
@@ -197,8 +277,36 @@ public class TransferTranslationItEng3 {
 		public Set<NodeComparable<ElementGrammarWithAlternatives>> getChildrenNC() { return childrenNodeComparable; }
 
 		@Override
-		public NodeComparable<ElementGrammarWithAlternatives> getChildNCBy(ElementGrammarWithAlternatives key) {
+		public NodeComparable<ElementGrammarWithAlternatives> getChildNCByKey(ElementGrammarWithAlternatives key) {
 			return this.backMapChildren.get(key);
+		}
+
+		public NodeComparable<ElementGrammarWithAlternatives> getChildNCBySingleKey(String key) {
+			return this.getChildNCByKey(new ElementGrammarWithAlternatives(new String[] { key }));
+		}
+
+		@Override
+		public String toString() {
+			StringBuilder sb;
+			sb = new StringBuilder();
+			toString(sb);
+			return sb.toString();
+		}
+
+		public void toString(StringBuilder sb) { this.toString(sb, 0); }
+
+		@Override
+		public void toString(StringBuilder sb, int level) {
+			int lev;
+			addTab(sb, level, false);
+			sb.append("NStD: ");
+			this.rootSubtreeDep.toString(sb);
+			sb.append(" -----> (children:)");
+			lev = level + 1;
+			backMapChildren.forEach((k, child) -> {
+				sb.append('\n');
+				child.toString(sb, lev);
+			});
 		}
 	}
 
@@ -210,19 +318,83 @@ public class TransferTranslationItEng3 {
 
 	/** THE rule. */
 	public static abstract class TransferRule {
-		protected final NodeSubtreeDependency lhs;
+		protected final NodeSubtreeDependency lhsTemplate;
 
 		public TransferRule(NodeSubtreeDependency lhs) {
 			super();
-			this.lhs = lhs;
+			this.lhsTemplate = lhs;
 		}
 
 		/** See {@link NodeComparable#computeDissonanceAsLong(NodeComparable)}. */
 		public long scoreDifferences(NodeSubtreeDependency givenSubtree) {
-			return lhs.computeDissonanceAsLong(givenSubtree);
+			return givenSubtree.computeDissonanceAsLong(lhsTemplate);
 		}
 
-		public abstract NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree);
+		/**
+		 * NOTE: remember to invoke
+		 * {@link TransferRule#manageUntouchedChildredUpontransfer(NodeSubtreeDependency, TransferTranslationItEng3, NodeSubtreeDependency)}
+		 * on EACH newly created node.
+		 * <p>
+		 * Applying a rule means performing the following steps:
+		 * <ol>
+		 * <li>take a sentence sub-tree to be transfer (by passing the sub-root node as
+		 * argument)</li>
+		 * <li>produce the new subtree by allocating new nodes (this depends on this
+		 * method's implementation).</li>
+		 * <li>wire them up (again, this depends on this method's implementation).</li>
+		 * </ol>
+		 * <br>
+		 * After this (REMEMBER TO WIRE the newly created node), You are obligated to
+		 * perform the following steps:
+		 * <ul>
+		 * <li>for each newly produced node, invoke
+		 * {@link TransferRule#manageUntouchedChildredUpontransfer(NodeSubtreeDependency, TransferTranslationItEng3, NodeSubtreeDependency)}
+		 * passing as first parameter the original node, as third parameter that newly
+		 * produced node.</li>
+		 * </ul>
+		 */
+//		* <li>for each newly produced LEAF node {@link TransferRule}</li>
+		public abstract NodeSubtreeDependency applyTransferRule(TransferTranslationItEng3 transferer,
+				NodeSubtreeDependency originalSubtree);
+
+//		protected final void manageNewlyProducedLeafNodes(NodeSubtreeDependency originalNonleafNode,
+//				TransferTranslationItEng3 transferer, NodeSubtreeDependency newlyProducedByLeafNode) {
+
+		/**
+		 * See
+		 * {@link #applyTransferRule(TransferTranslationItEng3, NodeSubtreeDependency)},
+		 * since there You'll find what this method is, what are its parameters and
+		 * where and why it MUST bew invoked
+		 */
+			// protected final void
+			// manageUntouchedChildredUpontransfer(NodeSubtreeDependency
+			// originalNonleafNode,
+//				NodeSubtreeDependency[] childrenOriginalUntouched, TransferTranslationItEng3 transferer,
+//				NodeSubtreeDependency newlyProducedByTransferNode) {
+		protected final void manageUntouchedChildredUpontransfer(NodeSubtreeDependency originalNode,
+				TransferTranslationItEng3 transferer, NodeSubtreeDependency newlyProducedByTransferNode) {
+			// todooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+			/*
+			 * for each node non "touched" (i.e., not present in newlyBlaBla.children),
+			 * transfer it AND wire the newly produced node into the newlyBla's children
+			 * set.
+			 */
+			originalNode.forEachChildNC(child -> {
+				if (!newlyProducedByTransferNode.containsChildNC(child.getKeyIdentifier())) {
+					NodeSubtreeDependency transferedChild;
+					transferedChild = transferer.transfer((NodeSubtreeDependency) child);
+					newlyProducedByTransferNode.addChildNC(transferedChild);
+				}
+			});
+		}
+
+		@Override
+		public String toString() { return "TransferRule [lhs=" + lhsTemplate + "]"; }
+
+		public void toString(StringBuilder sb) {
+			sb.append("++++TransferRule:\n");
+			this.lhsTemplate.toString(sb);
+		}
 	}
 
 	public static class RuleScored {

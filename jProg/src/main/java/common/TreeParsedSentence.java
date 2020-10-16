@@ -171,7 +171,7 @@ public class TreeParsedSentence {
 		public Set<NodeComparable<Integer>> getChildrenNC() { return null; }
 
 		@Override
-		public NodeComparable<Integer> getChildNCBy(Integer key) { return this.children.get(key); }
+		public NodeComparable<Integer> getChildNCByKey(Integer key) { return this.children.get(key); }
 
 		// setter
 
