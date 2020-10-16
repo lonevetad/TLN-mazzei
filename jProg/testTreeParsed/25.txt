@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1400,0 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1166,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 22,
-      "text": "Tu sei un mago, Harry.",
+      "text": "tu sei un mago, Harry.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 1,
-          "dependentGloss": "Tu"
+          "dependentGloss": "tu"
         },
         {
           "dep": "cop",
@@ -51,7 +51,7 @@ parsed :D
           "dependentGloss": ","
         },
         {
-          "dep": "nmod",
+          "dep": "conj",
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 6,
@@ -78,7 +78,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 1,
-          "dependentGloss": "Tu"
+          "dependentGloss": "tu"
         },
         {
           "dep": "cop",
@@ -102,7 +102,7 @@ parsed :D
           "dependentGloss": ","
         },
         {
-          "dep": "nmod",
+          "dep": "conj",
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 6,
@@ -129,7 +129,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 1,
-          "dependentGloss": "Tu"
+          "dependentGloss": "tu"
         },
         {
           "dep": "cop",
@@ -153,7 +153,7 @@ parsed :D
           "dependentGloss": ","
         },
         {
-          "dep": "nmod",
+          "dep": "conj",
           "governor": 4,
           "governorGloss": "mago",
           "dependent": 6,
@@ -171,15 +171,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Tu",
-          "originalText": "Tu",
+          "word": "tu",
+          "originalText": "tu",
           "lemma": "tu",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "PE",
           "featuresText": "Number\u003dSing|Person\u003d2|PronType\u003dPrs",
           "ner": "O",
-          "full_morpho": "Tu tu+pron+nom+_+2+sing+strong tu+pron+nom+_+2+sing+strong",
+          "full_morpho": "tu tu+pron+nom+_+2+sing+strong tu+pron+nom+_+2+sing+strong",
           "selected_morpho": "tu+pron+nom+_+2+sing+strong",
           "guessed_lemma": false,
           "features": {
@@ -333,9 +333,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= mago, pos= S , lemma=mago , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-Tu, 2-sei, 3-un, 5-,, 6-Harry, 7-.]
+NDTTint [gloss= mago, pos= S , lemma=mago , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-tu, 2-sei, 3-un, 5-,, 6-Harry, 7-.]
 
-	NDTTint [gloss= Tu, pos= PE , lemma=tu , indexID=1, dep= nsubj , isRoot=F, father=4-mago, features= [Number-[Sing], Person-[2], PronType-[Prs], children= []
+	NDTTint [gloss= tu, pos= PE , lemma=tu , indexID=1, dep= nsubj , isRoot=F, father=4-mago, features= [Number-[Sing], Person-[2], PronType-[Prs], children= []
 
 	NDTTint [gloss= sei, pos= V , lemma=essere , indexID=2, dep= cop , isRoot=F, father=4-mago, features= [Mood-[Ind], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= []
 
@@ -343,6 +343,6 @@ NDTTint [gloss= mago, pos= S , lemma=mago , indexID=4, dep= ROOT , isRoot=T, fat
 
 	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=4-mago, features= [, children= []
 
-	NDTTint [gloss= Harry, pos= SP , lemma=Harry , indexID=6, dep= nmod , isRoot=F, father=4-mago, features= [, children= []
+	NDTTint [gloss= Harry, pos= SP , lemma=Harry , indexID=6, dep= conj , isRoot=F, father=4-mago, features= [, children= []
 
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=4-mago, features= [, children= []

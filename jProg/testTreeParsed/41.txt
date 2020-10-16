@@ -1,53 +1,67 @@
 START
 start parsifying text:
-Io sono tuo padre.
+Io sono il tuo padre intelligente.
 parsed :D
 
 
  JSON:
 {
   "docDate": "2020-10-14",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 833,3 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1166,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
-      "characterOffsetEnd": 18,
-      "text": "io sono tuo padre.",
+      "characterOffsetEnd": 34,
+      "text": "io sono il tuo padre intelligente.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 4,
+          "dependent": 5,
           "dependentGloss": "padre"
         },
         {
           "dep": "nsubj",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 1,
           "dependentGloss": "io"
         },
         {
           "dep": "cop",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 2,
           "dependentGloss": "sono"
         },
         {
-          "dep": "det:poss",
-          "governor": 4,
+          "dep": "det",
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 4,
           "dependentGloss": "tuo"
         },
         {
-          "dep": "punct",
-          "governor": 4,
+          "dep": "amod",
+          "governor": 5,
           "governorGloss": "padre",
-          "dependent": 5,
+          "dependent": 6,
+          "dependentGloss": "intelligente"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 7,
           "dependentGloss": "."
         }
       ],
@@ -56,35 +70,49 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 4,
+          "dependent": 5,
           "dependentGloss": "padre"
         },
         {
           "dep": "nsubj",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 1,
           "dependentGloss": "io"
         },
         {
           "dep": "cop",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 2,
           "dependentGloss": "sono"
         },
         {
-          "dep": "det:poss",
-          "governor": 4,
+          "dep": "det",
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 4,
           "dependentGloss": "tuo"
         },
         {
-          "dep": "punct",
-          "governor": 4,
+          "dep": "amod",
+          "governor": 5,
           "governorGloss": "padre",
-          "dependent": 5,
+          "dependent": 6,
+          "dependentGloss": "intelligente"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 7,
           "dependentGloss": "."
         }
       ],
@@ -93,35 +121,49 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 4,
+          "dependent": 5,
           "dependentGloss": "padre"
         },
         {
           "dep": "nsubj",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 1,
           "dependentGloss": "io"
         },
         {
           "dep": "cop",
-          "governor": 4,
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 2,
           "dependentGloss": "sono"
         },
         {
-          "dep": "det:poss",
-          "governor": 4,
+          "dep": "det",
+          "governor": 5,
           "governorGloss": "padre",
           "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 4,
           "dependentGloss": "tuo"
         },
         {
-          "dep": "punct",
-          "governor": 4,
+          "dep": "amod",
+          "governor": 5,
           "governorGloss": "padre",
-          "dependent": 5,
+          "dependent": 6,
+          "dependentGloss": "intelligente"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "padre",
+          "dependent": 7,
           "dependentGloss": "."
         }
       ],
@@ -185,11 +227,39 @@ parsed :D
         },
         {
           "index": 3,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 8,
+          "characterOffsetEnd": 10,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
           "word": "tuo",
           "originalText": "tuo",
           "lemma": "tuo",
-          "characterOffsetBegin": 8,
-          "characterOffsetEnd": 11,
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 14,
           "pos": "AP",
           "featuresText": "Gender\u003dMasc|Number\u003dSing|Poss\u003dYes|PronType\u003dPrs",
           "ner": "O",
@@ -212,12 +282,12 @@ parsed :D
           }
         },
         {
-          "index": 4,
+          "index": 5,
           "word": "padre",
           "originalText": "padre",
           "lemma": "padre",
-          "characterOffsetBegin": 12,
-          "characterOffsetEnd": 17,
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 20,
           "pos": "S",
           "featuresText": "Gender\u003dMasc|Number\u003dSing",
           "ner": "O",
@@ -234,12 +304,34 @@ parsed :D
           }
         },
         {
-          "index": 5,
+          "index": 6,
+          "word": "intelligente",
+          "originalText": "intelligente",
+          "lemma": "intelligente",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 33,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "intelligente intelligente+adj+f+sing+pst intelligente+adj+m+sing+pst intelligente+n+f+sing intelligente+n+m+sing",
+          "selected_morpho": "intelligente+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
           "word": ".",
           "originalText": ".",
           "lemma": "[PUNCT]",
-          "characterOffsetBegin": 17,
-          "characterOffsetEnd": 18,
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 34,
           "pos": "FS",
           "featuresText": "",
           "ner": "O",
@@ -261,12 +353,16 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= padre, pos= S , lemma=padre , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-io, 2-sono, 3-tuo, 5-.]
+NDTTint [gloss= padre, pos= S , lemma=padre , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-io, 2-sono, 3-il, 4-tuo, 6-intelligente, 7-.]
 
-	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=4-padre, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=5-padre, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
 
-	NDTTint [gloss= sono, pos= V , lemma=essere , indexID=2, dep= cop , isRoot=F, father=4-padre, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= sono, pos= V , lemma=essere , indexID=2, dep= cop , isRoot=F, father=5-padre, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 
-	NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=3, dep= det:poss , isRoot=F, father=4-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+	NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=5-padre, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
 
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=4-padre, features= [, children= []
+	NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=4, dep= det:poss , isRoot=F, father=5-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+
+	NDTTint [gloss= intelligente, pos= A , lemma=intelligente , indexID=6, dep= amod , isRoot=F, father=5-padre, features= [Gender-[Masc], Number-[Sing], children= []
+
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=5-padre, features= [, children= []

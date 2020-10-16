@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 15 tokens at 1363,6 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 15 tokens at 1250,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 99,
-      "text": "La partenza fu ardua considerando la complesso dell\u0027esercizio assegnato e la documentazione scarna.",
+      "text": "la partenza fu ardua considerando la complesso dell\u0027esercizio assegnato e la documentazione scarna.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "partenza",
           "dependent": 1,
-          "dependentGloss": "La"
+          "dependentGloss": "la"
         },
         {
           "dep": "nsubjpass",
@@ -134,7 +134,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "partenza",
           "dependent": 1,
-          "dependentGloss": "La"
+          "dependentGloss": "la"
         },
         {
           "dep": "nsubjpass",
@@ -241,7 +241,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "partenza",
           "dependent": 1,
-          "dependentGloss": "La"
+          "dependentGloss": "la"
         },
         {
           "dep": "nsubjpass",
@@ -346,15 +346,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "La",
-          "originalText": "La",
+          "word": "la",
+          "originalText": "la",
           "lemma": "la",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "RD",
           "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
           "ner": "O",
-          "full_morpho": "La la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
           "selected_morpho": "la+art+f+sing",
           "guessed_lemma": false,
           "features": {
@@ -707,9 +707,7 @@ root:
 
 NDTTint [gloss= ardua, pos= V , lemma=arduare , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [2-partenza, 3-fu, 5-considerando, 15-.]
 
-	NDTTint [gloss= partenza, pos= S , lemma=partenza , indexID=2, dep= nsubjpass , isRoot=F, father=4-ardua, features= [Gender-[Fem], Number-[Sing], children= [1-La]
-
-		NDTTint [gloss= La, pos= RD , lemma=la , indexID=1, dep= det , isRoot=F, father=2-partenza, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+	NDTTint [gloss= partenza, pos= S , lemma=partenza , indexID=2, dep= nsubjpass , isRoot=F, father=4-ardua, features= [Gender-[Fem], Number-[Sing], children= []
 
 	NDTTint [gloss= fu, pos= VA , lemma=essere , indexID=3, dep= auxpass , isRoot=F, father=4-ardua, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Past], VerbForm-[Fin], children= []
 

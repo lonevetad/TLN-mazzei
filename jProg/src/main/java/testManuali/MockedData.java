@@ -20,11 +20,11 @@ public class MockedData {
 			"Ho imparato a risolvere il cubo di Rubik agilmente durante le scuole superiori.", // 15
 			"Ho poca fantasia.", //
 			"Se io fossi un genio studierei informatica efficacemente.", //
-			"È la spada laser di tuo padre", //
-			"Ha fatto una mossa leale", //
+			"È la spada laser di tuo padre.", //
+			"Ha fatto una mossa leale.", //
 			"Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via", // 20
 			"Ho visto cose che voi umani non potrese neanche immaginare.", //
-			"Ora so come ci si sente ad essere un divano", // Guida galattica per autostoppisti
+			"Ora so come ci si sente ad essere un divano.", // Guida galattica per autostoppisti
 			"Tutti i bei momenti saranno persi come lacrime nella pioggia.", //
 			"Alle prime luci del quinto giorno, all'alba guarda ad est!", //
 			"Tu sei un mago, Harry.", // 25
@@ -37,6 +37,12 @@ public class MockedData {
 			"A sorelle russe fraticello seppe sollecitar fessurelle rosa.", //
 			"Esso crepi di percosse.", //
 			"Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.", // 34
-			"Ho infornato una torta gustosa.", //
+			"Ho infornato una torta gustosa.", // 35
+			"Invia la lettera.", //
+			"Invia la lettera colorata.", //
+			"A me piacciono i gatti belli.", //
+			"A me piace il colore giallo.", //
+			"Io adoro follemente l'arte sublime del cucinare pietanze orientali.", // 40
+			"Io sono il tuo padre intelligente.", //
 	};
 }

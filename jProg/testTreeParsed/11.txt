@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1400,0 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 777,8 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 31,
-      "text": "Paolo ha una carenza di calcio.",
+      "text": "paolo ha una carenza di calcio.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "ha",
           "dependent": 1,
-          "dependentGloss": "Paolo"
+          "dependentGloss": "paolo"
         },
         {
           "dep": "det",
@@ -78,7 +78,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "ha",
           "dependent": 1,
-          "dependentGloss": "Paolo"
+          "dependentGloss": "paolo"
         },
         {
           "dep": "det",
@@ -129,7 +129,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "ha",
           "dependent": 1,
-          "dependentGloss": "Paolo"
+          "dependentGloss": "paolo"
         },
         {
           "dep": "det",
@@ -171,15 +171,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Paolo",
-          "originalText": "Paolo",
-          "lemma": "Paolo",
+          "word": "paolo",
+          "originalText": "paolo",
+          "lemma": "paolo",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 5,
-          "pos": "SP",
+          "pos": "SW",
           "featuresText": "",
-          "ner": "PER",
-          "full_morpho": "Paolo",
+          "ner": "O",
+          "full_morpho": "paolo",
           "selected_morpho": "",
           "guessed_lemma": true,
           "features": {}
@@ -330,9 +330,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= ha, pos= V , lemma=avere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [1-Paolo, 4-carenza, 7-.]
+NDTTint [gloss= ha, pos= V , lemma=avere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [1-paolo, 4-carenza, 7-.]
 
-	NDTTint [gloss= Paolo, pos= SP , lemma=Paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ha, features= [, children= []
+	NDTTint [gloss= paolo, pos= SW , lemma=paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ha, features= [, children= []
 
 	NDTTint [gloss= carenza, pos= S , lemma=carenza , indexID=4, dep= dobj , isRoot=F, father=2-ha, features= [Gender-[Fem], Number-[Sing], children= [3-una, 6-calcio]
 

@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 28 tokens at 1120,0 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 28 tokens at 1037,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 124,
-      "text": "Ho visto il film ma non so se sono mai stati scritti dei libri a proposito o se la storia ?? stata inventata di sana pianta.",
+      "text": "ho visto il film ma non so se sono mai stati scritti dei libri a proposito o se la storia ?? stata inventata di sana pianta.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -225,7 +225,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -423,7 +423,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -619,15 +619,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Ho",
-          "originalText": "Ho",
+          "word": "ho",
+          "originalText": "ho",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "VA",
           "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
           "selected_morpho": "avere+v+indic+pres+nil+1+sing",
           "guessed_lemma": false,
           "features": {
@@ -1238,9 +1238,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-Ho, 4-film, 5-ma, 7-so, 28-.]
+NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-ho, 4-film, 5-ma, 7-so, 28-.]
 
-	NDTTint [gloss= Ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 
 	NDTTint [gloss= film, pos= S , lemma=film , indexID=4, dep= dobj , isRoot=F, father=2-visto, features= [Gender-[Masc], Number-[Sing], children= [3-il]
 

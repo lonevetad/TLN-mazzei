@@ -1,0 +1,512 @@
+START
+start parsifying text:
+Io adoro follemente l'arte sublime del cucinare pietanze orientali.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 846,2 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 67,
+      "text": "io adoro follemente l\u0027arte sublime del cucinare pietanze orientali.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adoro"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 1,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 3,
+          "dependentGloss": "follemente"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 4,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 5,
+          "dependentGloss": "arte"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 6,
+          "dependentGloss": "sublime"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 7,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 8,
+          "dependentGloss": "cucinare"
+        },
+        {
+          "dep": "nmod",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 9,
+          "dependentGloss": "pietanze"
+        },
+        {
+          "dep": "amod",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 10,
+          "dependentGloss": "orientali"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adoro"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 1,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 3,
+          "dependentGloss": "follemente"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 4,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 5,
+          "dependentGloss": "arte"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 6,
+          "dependentGloss": "sublime"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 7,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 8,
+          "dependentGloss": "cucinare"
+        },
+        {
+          "dep": "nmod:del",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 9,
+          "dependentGloss": "pietanze"
+        },
+        {
+          "dep": "amod",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 10,
+          "dependentGloss": "orientali"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adoro"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 1,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 3,
+          "dependentGloss": "follemente"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 4,
+          "dependentGloss": "l\u0027"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 5,
+          "dependentGloss": "arte"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 6,
+          "dependentGloss": "sublime"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 7,
+          "dependentGloss": "del"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 8,
+          "dependentGloss": "cucinare"
+        },
+        {
+          "dep": "nmod:del",
+          "governor": 5,
+          "governorGloss": "arte",
+          "dependent": 9,
+          "dependentGloss": "pietanze"
+        },
+        {
+          "dep": "amod",
+          "governor": 9,
+          "governorGloss": "pietanze",
+          "dependent": 10,
+          "dependentGloss": "orientali"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adoro",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "io",
+          "originalText": "io",
+          "lemma": "io",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
+          "selected_morpho": "io+pron+nom+_+1+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "adoro",
+          "originalText": "adoro",
+          "lemma": "adorare",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 8,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "adoro adorare+v+indic+pres+nil+1+sing",
+          "selected_morpho": "adorare+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "follemente",
+          "originalText": "follemente",
+          "lemma": "follemente",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 19,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "follemente follemente+adv",
+          "selected_morpho": "follemente+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": "l\u0027",
+          "originalText": "l\u0027",
+          "lemma": "l\u0027",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 22,
+          "pos": "RD",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "l\u0027 l\u0027+pron+accdat+_+3+_+clit l\u0027+pron+acc+m+3+sing+clit",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "arte",
+          "originalText": "arte",
+          "lemma": "arte",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 26,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "arte arte+n+f+sing",
+          "selected_morpho": "arte+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "sublime",
+          "originalText": "sublime",
+          "lemma": "sublime",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 34,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "sublime sublime+adj+f+sing+pst sublime+adj+m+sing+pst sublime+n+m+sing",
+          "selected_morpho": "sublime+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "del",
+          "originalText": "del",
+          "lemma": "del",
+          "characterOffsetBegin": 35,
+          "characterOffsetEnd": 38,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "del del~del+prep/il~det+art+m+sing",
+          "selected_morpho": "del~del+prep/il~det+art+m+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 8,
+          "word": "cucinare",
+          "originalText": "cucinare",
+          "lemma": "cucinare",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 47,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "cucinare cucinare+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "cucinare+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "pietanze",
+          "originalText": "pietanze",
+          "lemma": "pietanza",
+          "characterOffsetBegin": 48,
+          "characterOffsetEnd": 56,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "pietanze pietanza+n+f+plur",
+          "selected_morpho": "pietanza+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "orientali",
+          "originalText": "orientali",
+          "lemma": "orientale",
+          "characterOffsetBegin": 57,
+          "characterOffsetEnd": 66,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "orientali orientale+adj+f+plur+pst orientale+adj+m+plur+pst",
+          "selected_morpho": "orientale+adj+m+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 66,
+          "characterOffsetEnd": 67,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= adoro, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-io, 3-follemente, 5-arte, 11-.]
+
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=2-adoro, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+
+	NDTTint [gloss= follemente, pos= B , lemma=follemente , indexID=3, dep= advmod , isRoot=F, father=2-adoro, features= [, children= []
+
+	NDTTint [gloss= arte, pos= S , lemma=arte , indexID=5, dep= dobj , isRoot=F, father=2-adoro, features= [Gender-[Fem], Number-[Sing], children= [4-l', 6-sublime, 9-pietanze]
+
+		NDTTint [gloss= l', pos= RD , lemma=l' , indexID=4, dep= det , isRoot=F, father=5-arte, features= [, children= []
+
+		NDTTint [gloss= sublime, pos= A , lemma=sublime , indexID=6, dep= amod , isRoot=F, father=5-arte, features= [Gender-[Masc], Number-[Sing], children= []
+
+		NDTTint [gloss= pietanze, pos= S , lemma=pietanza , indexID=9, dep= nmod , isRoot=F, father=5-arte, features= [Gender-[Fem], Number-[Plur], children= [7-del, 8-cucinare, 10-orientali]
+
+			NDTTint [gloss= del, pos= E+RD , lemma=del , indexID=7, dep= case , isRoot=F, father=9-pietanze, features= [, children= []
+
+			NDTTint [gloss= cucinare, pos= V , lemma=cucinare , indexID=8, dep= acl , isRoot=F, father=9-pietanze, features= [VerbForm-[Inf], children= []
+
+			NDTTint [gloss= orientali, pos= A , lemma=orientale , indexID=10, dep= amod , isRoot=F, father=9-pietanze, features= [Gender-[Masc], Number-[Plur], children= []
+
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-adoro, features= [, children= []

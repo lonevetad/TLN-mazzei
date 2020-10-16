@@ -21,9 +21,10 @@ public class TestTransfer {
 		String text;
 		//
 		dictionary = WordTranslatorItEng.getInstance();
-		dictionary.forEachTranslation((from, to) -> { System.out.println(from + " -> " + to); });
+//		dictionary.forEachTranslation((from, to) -> { System.out.println(from + " -> " + to); });
 
 		jsonParser = new JsonParserJackson();
+		sentenceIndex = 19;
 		sentenceIndex = MockedData.SENTENCES.length - 1; // 2
 		text = MockedData.SENTENCES[sentenceIndex];
 		parsedAndJson = TintParser.parseText(text, jsonParser);
@@ -46,5 +47,7 @@ public class TestTransfer {
 		String translated = TransferTranslationItEng.REALISER.realiseSentence(sentence);
 		System.out.println("translated:");
 		System.out.println(translated);
+
+		System.out.println("\n\n\n END");
 	}
 }

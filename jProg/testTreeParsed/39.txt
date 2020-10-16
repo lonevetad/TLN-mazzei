@@ -1,0 +1,355 @@
+START
+start parsifying text:
+A me piace il colore giallo.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 1400,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 28,
+      "text": "a me piace il colore giallo.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "a",
+          "originalText": "a",
+          "lemma": "a",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "a a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "me",
+          "originalText": "me",
+          "lemma": "me",
+          "characterOffsetBegin": 2,
+          "characterOffsetEnd": 4,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "me me+pron+nom+_+1+sing+strong me+pron+acc+_+1+sing+strong",
+          "selected_morpho": "me+pron+nom+_+1+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "piace",
+          "originalText": "piace",
+          "lemma": "piacere",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 10,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "piace piacere+v+indic+pres+nil+3+sing",
+          "selected_morpho": "piacere+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 13,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "colore",
+          "originalText": "colore",
+          "lemma": "colore",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "colore colore+n+m+sing",
+          "selected_morpho": "colore+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "giallo",
+          "originalText": "giallo",
+          "lemma": "giallo",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 27,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "giallo giallo+adj+m+sing+pst giallo+n+m+sing",
+          "selected_morpho": "giallo+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 28,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= piace, pos= V , lemma=piacere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [2-me, 5-colore, 7-.]
+
+	NDTTint [gloss= me, pos= PE , lemma=me , indexID=2, dep= nmod , isRoot=F, father=3-piace, features= [Number-[Sing], Person-[1], PronType-[Prs], children= [1-a]
+
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-me, features= [, children= []
+
+	NDTTint [gloss= colore, pos= S , lemma=colore , indexID=5, dep= nsubj , isRoot=F, father=3-piace, features= [Gender-[Masc], Number-[Sing], children= [4-il, 6-giallo]
+
+		NDTTint [gloss= il, pos= RD , lemma=il , indexID=4, dep= det , isRoot=F, father=5-colore, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+
+		NDTTint [gloss= giallo, pos= A , lemma=giallo , indexID=6, dep= amod , isRoot=F, father=5-colore, features= [Gender-[Masc], Number-[Sing], children= []
+
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-piace, features= [, children= []

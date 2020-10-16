@@ -16,7 +16,7 @@
  *  simplenlg.phrasespec.SPhraseSpec
  *  simplenlg.realiser.Realiser
  */
-package testManuali;
+package tash;
 
 import simplenlg.framework.InflectedWordElement;
 import simplenlg.framework.LexicalCategory;

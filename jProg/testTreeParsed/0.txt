@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.1 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.2 sec. for 6 tokens at 35,7 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.1 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 6 tokens at 42,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 26,
-      "text": "I topi non avevano nipoti.",
+      "text": "i topi non avevano nipoti.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "topi",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -71,7 +71,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "topi",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -115,7 +115,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "topi",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -150,15 +150,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "I",
-          "originalText": "I",
+          "word": "i",
+          "originalText": "i",
           "lemma": "il",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 1,
           "pos": "RD",
           "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dPlur|PronType\u003dArt",
           "ner": "O",
-          "full_morpho": "I il+art+m+plur",
+          "full_morpho": "i il+art+m+plur",
           "selected_morpho": "il+art+m+plur",
           "guessed_lemma": false,
           "features": {
@@ -300,9 +300,9 @@ root:
 
 NDTTint [gloss= avevano, pos= V , lemma=avere , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Imp], VerbForm-[Fin], children= [2-topi, 3-non, 5-nipoti, 6-.]
 
-	NDTTint [gloss= topi, pos= S , lemma=topo , indexID=2, dep= nsubj , isRoot=F, father=4-avevano, features= [Gender-[Masc], Number-[Plur], children= [1-I]
+	NDTTint [gloss= topi, pos= S , lemma=topo , indexID=2, dep= nsubj , isRoot=F, father=4-avevano, features= [Gender-[Masc], Number-[Plur], children= [1-i]
 
-		NDTTint [gloss= I, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-topi, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
+		NDTTint [gloss= i, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-topi, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
 
 	NDTTint [gloss= non, pos= BN , lemma=non , indexID=3, dep= neg , isRoot=F, father=4-avevano, features= [PronType-[Neg], children= []
 

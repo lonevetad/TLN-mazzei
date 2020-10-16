@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 437,5 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 538,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 34,
-      "text": "Ho sostenuto l\u0027esame con successo.",
+      "text": "ho sostenuto l\u0027esame con successo.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sostenuto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -78,7 +78,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sostenuto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -129,7 +129,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sostenuto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -171,15 +171,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Ho",
-          "originalText": "Ho",
+          "word": "ho",
+          "originalText": "ho",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "VA",
           "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
           "selected_morpho": "avere+v+indic+pres+nil+1+sing",
           "guessed_lemma": false,
           "features": {
@@ -330,9 +330,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= sostenuto, pos= V , lemma=sostenere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-Ho, 4-esame, 7-.]
+NDTTint [gloss= sostenuto, pos= V , lemma=sostenere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-ho, 4-esame, 7-.]
 
-	NDTTint [gloss= Ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-sostenuto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-sostenuto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 
 	NDTTint [gloss= esame, pos= S , lemma=esame , indexID=4, dep= dobj , isRoot=F, father=2-sostenuto, features= [Gender-[Masc], Number-[Sing], children= [3-l', 6-successo]
 

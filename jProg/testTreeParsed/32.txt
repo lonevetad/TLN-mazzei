@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 428,6 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 321,4 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 60,
-      "text": "A sorelle russe fraticello seppe sollecitar fessurelle rosa.",
+      "text": "a sorelle russe fraticello seppe sollecitar fessurelle rosa.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sorelle",
           "dependent": 1,
-          "dependentGloss": "A"
+          "dependentGloss": "a"
         },
         {
           "dep": "nmod",
@@ -92,7 +92,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sorelle",
           "dependent": 1,
-          "dependentGloss": "A"
+          "dependentGloss": "a"
         },
         {
           "dep": "nmod:a",
@@ -157,7 +157,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "sorelle",
           "dependent": 1,
-          "dependentGloss": "A"
+          "dependentGloss": "a"
         },
         {
           "dep": "nmod:a",
@@ -213,15 +213,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "A",
-          "originalText": "A",
+          "word": "a",
+          "originalText": "a",
           "lemma": "a",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 1,
           "pos": "E",
           "featuresText": "_",
           "ner": "O",
-          "full_morpho": "A a+prep",
+          "full_morpho": "a a+prep",
           "selected_morpho": "a+prep",
           "guessed_lemma": false,
           "features": {}
@@ -416,9 +416,9 @@ root:
 
 NDTTint [gloss= seppe, pos= V , lemma=sapere , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Past], VerbForm-[Fin], children= [2-sorelle, 4-fraticello, 6-sollecitar, 9-.]
 
-	NDTTint [gloss= sorelle, pos= S , lemma=sorella , indexID=2, dep= nmod , isRoot=F, father=5-seppe, features= [Gender-[Fem], Number-[Plur], children= [1-A, 3-russe]
+	NDTTint [gloss= sorelle, pos= S , lemma=sorella , indexID=2, dep= nmod , isRoot=F, father=5-seppe, features= [Gender-[Fem], Number-[Plur], children= [1-a, 3-russe]
 
-		NDTTint [gloss= A, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-sorelle, features= [, children= []
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-sorelle, features= [, children= []
 
 		NDTTint [gloss= russe, pos= A , lemma=russo , indexID=3, dep= amod , isRoot=F, father=2-sorelle, features= [Gender-[Fem], Number-[Plur], children= []
 

@@ -6,7 +6,8 @@
 i | le | gli -> the
 una | uno | un -> a
 che -> that
-di | del | della -> of
+di | del -> of
+della | dello -> of the
 un -> a
 ma -> but
 a -> to

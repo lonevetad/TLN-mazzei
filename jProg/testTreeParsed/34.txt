@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 534,9 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 1277,8 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 140,
-      "text": "Non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.",
+      "text": "non siamo riusciti a ritrovare i preziosi anelli rubati dal famoso ladro Lupin nel lontano Agosto 2016 mentre festeggiavo il mio matrimonio.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "riusciti",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "non"
         },
         {
           "dep": "aux",
@@ -190,7 +190,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "riusciti",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "non"
         },
         {
           "dep": "aux",
@@ -353,7 +353,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "riusciti",
           "dependent": 1,
-          "dependentGloss": "Non"
+          "dependentGloss": "non"
         },
         {
           "dep": "aux",
@@ -507,15 +507,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Non",
-          "originalText": "Non",
+          "word": "non",
+          "originalText": "non",
           "lemma": "non",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 3,
           "pos": "BN",
           "featuresText": "PronType\u003dNeg",
           "ner": "O",
-          "full_morpho": "Non non+adv",
+          "full_morpho": "non non+adv",
           "selected_morpho": "non+adv",
           "guessed_lemma": false,
           "features": {
@@ -1010,9 +1010,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [1-Non, 2-siamo, 5-ritrovare, 18-mentre, 19-festeggiavo, 23-.]
+NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [1-non, 2-siamo, 5-ritrovare, 18-mentre, 19-festeggiavo, 23-.]
 
-	NDTTint [gloss= Non, pos= BN , lemma=non , indexID=1, dep= neg , isRoot=F, father=3-riusciti, features= [PronType-[Neg], children= []
+	NDTTint [gloss= non, pos= BN , lemma=non , indexID=1, dep= neg , isRoot=F, father=3-riusciti, features= [PronType-[Neg], children= []
 
 	NDTTint [gloss= siamo, pos= VA , lemma=essere , indexID=2, dep= aux , isRoot=F, father=3-riusciti, features= [Mood-[Imp], Number-[Plur], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 

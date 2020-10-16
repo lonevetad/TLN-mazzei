@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1100,0 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1222,2 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 59,
-      "text": "Ho visto cose che voi umani non potrese neanche immaginare.",
+      "text": "ho visto cose che voi umani non potrese neanche immaginare.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "dobj",
@@ -106,7 +106,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "dobj",
@@ -185,7 +185,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "visto",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "dobj",
@@ -255,15 +255,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Ho",
-          "originalText": "Ho",
+          "word": "ho",
+          "originalText": "ho",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "VA",
           "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
           "selected_morpho": "avere+v+indic+pres+nil+1+sing",
           "guessed_lemma": false,
           "features": {
@@ -506,9 +506,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-Ho, 3-cose, 11-.]
+NDTTint [gloss= visto, pos= V , lemma=vistare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-ho, 3-cose, 11-.]
 
-	NDTTint [gloss= Ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-visto, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 
 	NDTTint [gloss= cose, pos= S , lemma=cosa , indexID=3, dep= dobj , isRoot=F, father=2-visto, features= [Gender-[Fem], Number-[Plur], children= [4-che]
 

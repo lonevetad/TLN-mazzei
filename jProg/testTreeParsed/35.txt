@@ -1,59 +1,59 @@
 START
 start parsifying text:
-Ha fatto una mossa leale.
+Ho infornato una torta gustosa.
 parsed :D
 
 
  JSON:
 {
   "docDate": "2020-10-14",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 6 tokens at 2000,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 6 tokens at 666,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
-      "characterOffsetEnd": 25,
-      "text": "ha fatto una mossa leale.",
+      "characterOffsetEnd": 31,
+      "text": "ho infornato una torta gustosa.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "fatto"
+          "dependentGloss": "infornato"
         },
         {
           "dep": "aux",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 1,
-          "dependentGloss": "ha"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 3,
           "dependentGloss": "una"
         },
         {
-          "dep": "dobj",
-          "governor": 2,
-          "governorGloss": "fatto",
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 4,
-          "dependentGloss": "mossa"
+          "dependentGloss": "torta"
         },
         {
-          "dep": "amod",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "infornato",
           "dependent": 5,
-          "dependentGloss": "leale"
+          "dependentGloss": "gustosa"
         },
         {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 6,
           "dependentGloss": "."
         }
@@ -64,40 +64,40 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "fatto"
+          "dependentGloss": "infornato"
         },
         {
           "dep": "aux",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 1,
-          "dependentGloss": "ha"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 3,
           "dependentGloss": "una"
         },
         {
-          "dep": "dobj",
-          "governor": 2,
-          "governorGloss": "fatto",
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 4,
-          "dependentGloss": "mossa"
+          "dependentGloss": "torta"
         },
         {
-          "dep": "amod",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "infornato",
           "dependent": 5,
-          "dependentGloss": "leale"
+          "dependentGloss": "gustosa"
         },
         {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 6,
           "dependentGloss": "."
         }
@@ -108,40 +108,40 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "fatto"
+          "dependentGloss": "infornato"
         },
         {
           "dep": "aux",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 1,
-          "dependentGloss": "ha"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 3,
           "dependentGloss": "una"
         },
         {
-          "dep": "dobj",
-          "governor": 2,
-          "governorGloss": "fatto",
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "gustosa",
           "dependent": 4,
-          "dependentGloss": "mossa"
+          "dependentGloss": "torta"
         },
         {
-          "dep": "amod",
-          "governor": 4,
-          "governorGloss": "mossa",
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "infornato",
           "dependent": 5,
-          "dependentGloss": "leale"
+          "dependentGloss": "gustosa"
         },
         {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "fatto",
+          "governorGloss": "infornato",
           "dependent": 6,
           "dependentGloss": "."
         }
@@ -150,16 +150,16 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "ha",
-          "originalText": "ha",
+          "word": "ho",
+          "originalText": "ho",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "VA",
-          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "ha avere+v+indic+pres+nil+3+sing",
-          "selected_morpho": "avere+v+indic+pres+nil+3+sing",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
           "guessed_lemma": false,
           "features": {
             "Mood": [
@@ -169,7 +169,7 @@ parsed :D
               "Sing"
             ],
             "Person": [
-              "3"
+              "1"
             ],
             "Tense": [
               "Pres"
@@ -181,16 +181,16 @@ parsed :D
         },
         {
           "index": 2,
-          "word": "fatto",
-          "originalText": "fatto",
-          "lemma": "fare",
+          "word": "infornato",
+          "originalText": "infornato",
+          "lemma": "infornare",
           "characterOffsetBegin": 3,
-          "characterOffsetEnd": 8,
+          "characterOffsetEnd": 12,
           "pos": "V",
           "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
           "ner": "O",
-          "full_morpho": "fatto fare+v+part+pass+m+nil+sing fatto+n+m+sing",
-          "selected_morpho": "fare+v+part+pass+m+nil+sing",
+          "full_morpho": "infornato infornare+v+part+pass+m+nil+sing",
+          "selected_morpho": "infornare+v+part+pass+m+nil+sing",
           "guessed_lemma": false,
           "features": {
             "Gender": [
@@ -212,8 +212,8 @@ parsed :D
           "word": "una",
           "originalText": "una",
           "lemma": "una",
-          "characterOffsetBegin": 9,
-          "characterOffsetEnd": 12,
+          "characterOffsetBegin": 13,
+          "characterOffsetEnd": 16,
           "pos": "RI",
           "featuresText": "Definite\u003dInd|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
           "ner": "O",
@@ -237,16 +237,16 @@ parsed :D
         },
         {
           "index": 4,
-          "word": "mossa",
-          "originalText": "mossa",
-          "lemma": "mossa",
-          "characterOffsetBegin": 13,
-          "characterOffsetEnd": 18,
-          "pos": "S",
+          "word": "torta",
+          "originalText": "torta",
+          "lemma": "torto",
+          "characterOffsetBegin": 17,
+          "characterOffsetEnd": 22,
+          "pos": "A",
           "featuresText": "Gender\u003dFem|Number\u003dSing",
           "ner": "O",
-          "full_morpho": "mossa mossa+n+f+sing mosso+adj+f+sing+pst muovere+v+part+pass+f+nil+sing",
-          "selected_morpho": "mossa+n+f+sing",
+          "full_morpho": "torta torcere+v+part+pass+f+nil+sing torta+n+f+sing torto+adj+f+sing+pst",
+          "selected_morpho": "torto+adj+f+sing+pst",
           "guessed_lemma": false,
           "features": {
             "Gender": [
@@ -259,20 +259,20 @@ parsed :D
         },
         {
           "index": 5,
-          "word": "leale",
-          "originalText": "leale",
-          "lemma": "leale",
-          "characterOffsetBegin": 19,
-          "characterOffsetEnd": 24,
-          "pos": "A",
-          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "word": "gustosa",
+          "originalText": "gustosa",
+          "lemma": "gustosa",
+          "characterOffsetBegin": 23,
+          "characterOffsetEnd": 30,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
           "ner": "O",
-          "full_morpho": "leale leale+adj+f+sing+pst leale+adj+m+sing+pst",
-          "selected_morpho": "leale+adj+m+sing+pst",
-          "guessed_lemma": false,
+          "full_morpho": "gustosa gustoso+adj+f+sing+pst",
+          "selected_morpho": "",
+          "guessed_lemma": true,
           "features": {
             "Gender": [
-              "Masc"
+              "Fem"
             ],
             "Number": [
               "Sing"
@@ -284,8 +284,8 @@ parsed :D
           "word": ".",
           "originalText": ".",
           "lemma": "[PUNCT]",
-          "characterOffsetBegin": 24,
-          "characterOffsetEnd": 25,
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 31,
           "pos": "FS",
           "featuresText": "",
           "ner": "O",
@@ -307,14 +307,14 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= fatto, pos= V , lemma=fare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-ha, 4-mossa, 6-.]
+NDTTint [gloss= infornato, pos= V , lemma=infornare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-ho, 5-gustosa, 6-.]
 
-	NDTTint [gloss= ha, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-fatto, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-infornato, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 
-	NDTTint [gloss= mossa, pos= S , lemma=mossa , indexID=4, dep= dobj , isRoot=F, father=2-fatto, features= [Gender-[Fem], Number-[Sing], children= [3-una, 5-leale]
+	NDTTint [gloss= gustosa, pos= S , lemma=gustosa , indexID=5, dep= dobj , isRoot=F, father=2-infornato, features= [Gender-[Fem], Number-[Sing], children= [3-una, 4-torta]
 
-		NDTTint [gloss= una, pos= RI , lemma=una , indexID=3, dep= det , isRoot=F, father=4-mossa, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= una, pos= RI , lemma=una , indexID=3, dep= det , isRoot=F, father=5-gustosa, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
 
-		NDTTint [gloss= leale, pos= A , lemma=leale , indexID=5, dep= amod , isRoot=F, father=4-mossa, features= [Gender-[Masc], Number-[Sing], children= []
+		NDTTint [gloss= torta, pos= A , lemma=torto , indexID=4, dep= amod , isRoot=F, father=5-gustosa, features= [Gender-[Fem], Number-[Sing], children= []
 
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=6, dep= punct , isRoot=F, father=2-fatto, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=6, dep= punct , isRoot=F, father=2-infornato, features= [, children= []

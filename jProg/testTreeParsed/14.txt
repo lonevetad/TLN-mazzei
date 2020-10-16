@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 600,0 tokens/sec.",
+  "docDate": "2020-10-14",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 12 tokens at 750,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 49,
-      "text": "Il giorno in cui passer?? l\u0027esame mi ubriacher??.",
+      "text": "il giorno in cui passer?? l\u0027esame mi ubriacher??.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "giorno",
           "dependent": 1,
-          "dependentGloss": "Il"
+          "dependentGloss": "il"
         },
         {
           "dep": "case",
@@ -113,7 +113,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "giorno",
           "dependent": 1,
-          "dependentGloss": "Il"
+          "dependentGloss": "il"
         },
         {
           "dep": "case",
@@ -199,7 +199,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "giorno",
           "dependent": 1,
-          "dependentGloss": "Il"
+          "dependentGloss": "il"
         },
         {
           "dep": "case",
@@ -276,15 +276,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Il",
-          "originalText": "Il",
+          "word": "il",
+          "originalText": "il",
           "lemma": "il",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "RD",
           "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
           "ner": "O",
-          "full_morpho": "Il il+art+m+sing",
+          "full_morpho": "il il+art+m+sing",
           "selected_morpho": "il+art+m+sing",
           "guessed_lemma": false,
           "features": {
@@ -519,9 +519,9 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-Il, 10-ubriacher?, 12-.]
+NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-il, 10-ubriacher?, 12-.]
 
-	NDTTint [gloss= Il, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-giorno, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+	NDTTint [gloss= il, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-giorno, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
 
 	NDTTint [gloss= ubriacher?, pos= V , lemma=ubriacher? , indexID=10, dep= acl:relcl , isRoot=F, father=2-giorno, features= [, children= [4-cui, 5-passer?, 8-esame, 9-mi, 11-?]
 

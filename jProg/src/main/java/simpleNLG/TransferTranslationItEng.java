@@ -1,5 +1,6 @@
 package simpleNLG;
 
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
@@ -18,9 +19,10 @@ import simplenlg.phrasespec.PPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
 import simplenlg.phrasespec.VPPhraseSpec;
 import simplenlg.realiser.english.Realiser;
+import tools.Misc;
 
 public class TransferTranslationItEng {
-	public static final Lexicon LEXICON = new XMLLexicon();
+	public static final Lexicon LEXICON = new XMLLexicon(Paths.get(Misc.RESOURCE_PATH + "LexiconIt.txt").toUri());
 	public static final NLGFactory NLG_FACTORY = new NLGFactory(LEXICON);
 	public static final Realiser REALISER = new Realiser(LEXICON);
 
@@ -32,7 +34,7 @@ public class TransferTranslationItEng {
 	}
 
 	protected static void transfer(Function<String, String> wordTranslator,
-			TreeParsedSentence.NodeDependencyTree subtreeRoot, PhraseElement subPhraseRoot) {
+			TreeParsedSentence.NodeDependencyTree subtreeRoot, final PhraseElement subPhraseRoot) {
 //main stuffs
 //		boolean tempCacheFlag;
 		String posNodeType, nodeGloss, translatedNodeGloss, translatedChildGloss;
@@ -43,6 +45,11 @@ public class TransferTranslationItEng {
 		VPPhraseSpec verbPhrase = null;
 		PPPhraseSpec prepositionPhrase = null;
 
+		if (subPhraseRoot == null) {
+			System.out.println("subPhraseRoot is null .... o.o");
+			return;
+		}
+
 		posNodeType = subtreeRoot.getDep();
 		nodeGloss = subtreeRoot.getGloss();
 		translatedNodeGloss = null;
@@ -52,12 +59,14 @@ public class TransferTranslationItEng {
 			nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss = wordTranslator.apply(nodeGloss));
 		}
 
+		System.out.println("subtreeRoo______: " + subtreeRoot.getGloss());
 		// child controls, interleaving some if(s
 		childrenIterator = subtreeRoot.getChildrenIterator();
 		if (childrenIterator != null)
 			while (childrenIterator.hasNext()) { // is required to modify local variables: forEach forbids, iterator not
 				child = childrenIterator.next();
 				translatedChildGloss = null;
+				System.out.println("\t child: " + child.getGloss() + ",,,, having posNodeType: " + posNodeType);
 
 				if ("nsubj".equals(posNodeType)) {
 					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
@@ -67,6 +76,10 @@ public class TransferTranslationItEng {
 					if (subPhraseRoot instanceof SPhraseSpec) {
 						((SPhraseSpec) subPhraseRoot)
 								.setSubject(translatedChildGloss = wordTranslator.apply(child.getGloss()));
+					} else {
+						System.out.print(
+								"\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+						System.out.println("and is not a SPhraseSpec: " + subPhraseRoot.getClass().getSimpleName());
 					}
 					/*
 					 * else if (subPhraseRoot instanceof VPPhraseSpec) { ((VPPhraseSpec)
@@ -126,6 +139,11 @@ public class TransferTranslationItEng {
 				((VPPhraseSpec) subPhraseRoot).setVerb(verbPhrase);
 			} else if (subPhraseRoot instanceof SPhraseSpec)
 				((SPhraseSpec) subPhraseRoot).setVerbPhrase(verbPhrase);
+			else {
+				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+				System.out.println(
+						"and is not a SPhraseSpec nor VPPhraseSpec: " + subPhraseRoot.getClass().getSimpleName());
+			}
 		}
 		if (prepositionPhrase != null) {
 			subPhraseRoot.addPostModifier(prepositionPhrase);
@@ -135,7 +153,13 @@ public class TransferTranslationItEng {
 				((VPPhraseSpec) subPhraseRoot).setObject(nounPhrase);
 			} else if (subPhraseRoot instanceof SPhraseSpec) {
 				((SPhraseSpec) subPhraseRoot).setObject(nounPhrase);
-			} else if (subPhraseRoot instanceof PPPhraseSpec) { ((PPPhraseSpec) subPhraseRoot).setObject(nounPhrase); }
+			} else if (subPhraseRoot instanceof PPPhraseSpec) {
+				((PPPhraseSpec) subPhraseRoot).setObject(nounPhrase);
+			} else {
+				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+				System.out.println("and is not a SPhraseSpec nor VPPhraseSpec nor PPPhraseSpec: "
+						+ subPhraseRoot.getClass().getSimpleName());
+			}
 		}
 
 		// RECURSION :D

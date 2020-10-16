@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
@@ -14,6 +15,7 @@ import dataStructures.MapTreeAVL;
 import dataStructures.SetMapped;
 import edu.emory.mathcs.backport.java.util.Arrays;
 import tools.Misc;
+import tools.NodeComparable;
 
 /** Do it for a SINGLE sentence. */
 public class TreeParsedSentence {
@@ -114,17 +116,18 @@ public class TreeParsedSentence {
 
 	//
 
-	public abstract class NodeDependencyTree {
+	public abstract class NodeDependencyTree extends NodeComparable.NodeComparableDefaultAlghoritms<Integer> {
+		private static final long serialVersionUID = -3000078540408L;
 		protected final boolean isRoot;
 		protected final Integer indexID; // just a simpleID
-		protected final String dep; // is it a PoS? Probably. (took from Tint' "dependency".) -> USEFUL FOR
-									// CONVERSION ""
+		protected final String dep; // (took from Tint' "dependency".) -> USEFUL FOR CONVERSION ""
 		protected final String gloss;
 		protected String lemma;
-		protected String pos; // what is this difference from "dep"? (took from Tint' "tokens".)
+		protected String pos; // (took from Tint' "tokens".) the pos-tag, sometimes similar to "dep".
 		protected String glossFather;
 		protected NodeDependencyTree father;
 		protected Map<Integer, NodeDependencyTree> children;
+		protected Set<NodeComparable<Integer>> childrenBackMap;
 		protected Map<String, String[]> features;
 
 		protected NodeDependencyTree(Integer indexID, String dep, String gloss, String glossFather) {
@@ -161,6 +164,15 @@ public class TreeParsedSentence {
 
 		public String getPos() { return pos; }
 
+		@Override
+		public Integer getKeyIdentifier() { return indexID; }
+
+		@Override
+		public Set<NodeComparable<Integer>> getChildrenNC() { return null; }
+
+		@Override
+		public NodeComparable<Integer> getChildNCBy(Integer key) { return this.children.get(key); }
+
 		// setter
 
 		public void setLemma(String lemma) { this.lemma = lemma; }
@@ -172,8 +184,13 @@ public class TreeParsedSentence {
 		public void setFeatures(Map<String, String[]> features) { this.features = features; }
 
 		protected void checkChildren() {
-			if (children == null)
+			if (children == null) {
 				children = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.INTEGER_COMPARATOR);
+				childrenBackMap = new SetMapped<NodeDependencyTree, NodeComparable<Integer>>(
+						((MapTreeAVL<Integer, NodeDependencyTree>) children).toSetValue(n -> n.getKeyIdentifier()), //
+						// generics type converter, need by the Java Compiler
+						(ndt) -> { return (NodeComparable<Integer>) ndt; });
+			}
 		}
 
 		protected void checkFreature() {
@@ -303,6 +320,7 @@ public class TreeParsedSentence {
 	//
 
 	protected class NDTTint extends NodeDependencyTree {
+		private static final long serialVersionUID = 258632L;
 
 		protected NDTTint(Integer indexID, String dep, String gloss, String glossFather) {
 			super(indexID, dep, gloss, glossFather);
