@@ -147,18 +147,22 @@ sotto -> under
 scroscianti | scrosciante -> thunderous
 applauso | applausi -> applause
 anello -> ring
+fatto -> been
 anelli -> rings
+spada -> sword
 lettera -> mail
 colorata | colorate -> colorful
 gatto -> cat
 gatti -> cats
-fu -> essere
+fu -> be
 
 amore -> love
+via -> out
 follemente -> insanely
 cucinare -> coocking
 spada laser -> lightsaber
 Repubblica -> Republic
+spazzati -> wiped
 sono stati spazzati + via -> have been wiped out
 è stata | è stato -> has been
 a proposito -> about

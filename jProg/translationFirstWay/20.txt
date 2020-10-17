@@ -3,7 +3,7 @@
 
 --------------------------------
  start parsing :D
-parsing:::: Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via
+parsing:::: Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.
 parsed tree: 
 TreeParsedSentence
 root:
@@ -17,7 +17,8 @@ NDTTint [gloss= spazzati, pos= V , lemma=spazzare , indexID=9, dep= ROOT , isRoo
 			NDTTint [gloss= vecchia, pos= A , lemma=vecchio , indexID=5, dep= amod , isRoot=F, father=6-Repubblica, features= [Gender-[Fem], Number-[Sing], children= []		]	]
 	NDTTint [gloss= sono, pos= VA , lemma=essere , indexID=7, dep= aux , isRoot=F, father=9-spazzati, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 	NDTTint [gloss= stati, pos= VA , lemma=essere , indexID=8, dep= auxpass , isRoot=F, father=9-spazzati, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= []
-	NDTTint [gloss= via, pos= B , lemma=via , indexID=10, dep= advmod , isRoot=F, father=9-spazzati, features= [, children= []]
+	NDTTint [gloss= via, pos= B , lemma=via , indexID=10, dep= advmod , isRoot=F, father=9-spazzati, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=9-spazzati, features= [, children= []]
 
 
 

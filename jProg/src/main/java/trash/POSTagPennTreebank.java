@@ -1,4 +1,4 @@
-package common;
+package trash;
 
 public enum POSTagPennTreebank {
 	CoordinatingConjunction("CC"), //

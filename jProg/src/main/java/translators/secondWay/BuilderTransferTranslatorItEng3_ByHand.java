@@ -1,8 +1,8 @@
-package tools;
+package translators.secondWay;
 
 import common.ElemGrammarBase;
 import common.NodeParsedSentence;
-import translators.secondWay.TransferTranslationRuleBased;
+import tools.BuilderTransferTranslatorItEng;
 import translators.secondWay.TransferTranslationRuleBased.TransferRule;
 
 /** Le regole di transfer IT -> ENG sono definite a mano. */

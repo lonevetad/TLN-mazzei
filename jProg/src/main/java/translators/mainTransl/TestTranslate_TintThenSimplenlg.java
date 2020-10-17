@@ -41,8 +41,8 @@ public class TestTranslate_TintThenSimplenlg {
 		jsonParser = new JsonParserJackson();
 //		sentenceIndex = 19;
 //		sentenceIndex = MockedData.SENTENCES.length - 1; // 2
-//		for (int sentenceIndex : new int[] { 18, 19, 20 }) {+
-		for (int sentenceIndex = 0; sentenceIndex < MockedData.SENTENCES.length; sentenceIndex++) {
+		for (int sentenceIndex : new int[] { 18, 19, 20 }) {
+//		for (int sentenceIndex = 0; sentenceIndex < MockedData.SENTENCES.length; sentenceIndex++) {
 			log = new LoggerOnFile(FOLDER_PATH + sentenceIndex + ".txt");
 			log.logAndPrint("\n\n\n--------------------------------\n start parsing :D");
 			text = MockedData.SENTENCES[sentenceIndex];

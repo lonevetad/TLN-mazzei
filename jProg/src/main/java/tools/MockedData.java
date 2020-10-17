@@ -22,7 +22,7 @@ public class MockedData {
 			"Se io fossi un genio studierei informatica efficacemente.", //
 			"fu la spada laser di tuo padre.", // inizialmente al posto di "fu" c'era "è"
 			"Ha fatto una mossa leale.", //
-			"Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via", // 20
+			"Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.", // 20
 			"Ho visto cose che voi umani non potreste neanche immaginare.", //
 			"Ora so come ci si sente ad essere un divano.", // Guida galattica per autostoppisti
 			"Tutti i bei momenti saranno persi come lacrime nella pioggia.", //
