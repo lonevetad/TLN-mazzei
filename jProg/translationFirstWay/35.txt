@@ -1,0 +1,35 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Io ho infornato una torta gustosa.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= infornato, pos= V , lemma=infornare , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=3-infornato, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=2, dep= aux , isRoot=F, father=3-infornato, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= gustosa, pos= S , lemma=gustosa , indexID=6, dep= dobj , isRoot=F, father=3-infornato, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= una, pos= RI , lemma=una , indexID=4, dep= det , isRoot=F, father=6-gustosa, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= torta, pos= A , lemma=torto , indexID=5, dep= amod , isRoot=F, father=6-gustosa, features= [Gender-[Fem], Number-[Sing], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-infornato, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[bake:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[tasty:NOUN], specifier=WordElement[a:DETERMINER], premodifiers=[cake], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[bake:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[tasty:NOUN], specifier=WordElement[a:DETERMINER], premodifiers=[cake], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+I have baked a cake tasty.

@@ -152,6 +152,7 @@ lettera -> mail
 colorata | colorate -> colorful
 gatto -> cat
 gatti -> cats
+fu -> essere
 
 amore -> love
 follemente -> insanely

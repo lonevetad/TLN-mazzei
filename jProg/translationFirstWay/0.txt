@@ -1,0 +1,34 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: I topi non avevano nipoti.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= avevano, pos= V , lemma=avere , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= topi, pos= S , lemma=topo , indexID=2, dep= nsubj , isRoot=F, father=4-avevano, features= [Gender-[Masc], Number-[Plur], children= [
+		NDTTint [gloss= i, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-topi, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []	]
+	NDTTint [gloss= non, pos= BN , lemma=non , indexID=3, dep= neg , isRoot=F, father=4-avevano, features= [PronType-[Neg], children= []
+	NDTTint [gloss= nipoti, pos= S , lemma=nipote , indexID=5, dep= dobj , isRoot=F, father=4-avevano, features= [Gender-[Masc], Number-[Plur], children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=6, dep= punct , isRoot=F, father=4-avevano, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=HE, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[nephew:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[mouse:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=HE, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[nephew:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[mouse:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Mouse ha nephew.

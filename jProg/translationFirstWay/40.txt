@@ -1,0 +1,39 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Io adoro follemente l'arte sublime del cucinare pietanze orientali.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= adoro, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=2-adoro, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+	NDTTint [gloss= follemente, pos= B , lemma=follemente , indexID=3, dep= advmod , isRoot=F, father=2-adoro, features= [, children= []
+	NDTTint [gloss= arte, pos= S , lemma=arte , indexID=5, dep= dobj , isRoot=F, father=2-adoro, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= l', pos= RD , lemma=l' , indexID=4, dep= det , isRoot=F, father=5-arte, features= [, children= []
+		NDTTint [gloss= sublime, pos= A , lemma=sublime , indexID=6, dep= amod , isRoot=F, father=5-arte, features= [Gender-[Masc], Number-[Sing], children= []
+		NDTTint [gloss= pietanze, pos= S , lemma=pietanza , indexID=9, dep= nmod , isRoot=F, father=5-arte, features= [Gender-[Fem], Number-[Plur], children= [
+			NDTTint [gloss= del, pos= E+RD , lemma=del , indexID=7, dep= case , isRoot=F, father=9-pietanze, features= [, children= []
+			NDTTint [gloss= cucinare, pos= V , lemma=cucinare , indexID=8, dep= acl , isRoot=F, father=9-pietanze, features= [VerbForm-[Inf], children= []
+			NDTTint [gloss= orientali, pos= A , lemma=orientale , indexID=10, dep= amod , isRoot=F, father=9-pietanze, features= [Gender-[Masc], Number-[Plur], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-adoro, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={negated=false, perfect=false, passive=false, head=WordElement[adorare:VERB], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[food:NOUN], premodifiers=[orientals], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[arte:NOUN], specifier=WordElement[l':DETERMINER], premodifiers=[sublime], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={negated=false, perfect=false, passive=false, head=WordElement[adorare:VERB], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[food:NOUN], premodifiers=[orientals], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[arte:NOUN], specifier=WordElement[l':DETERMINER], premodifiers=[sublime], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+I adorare l' sublime arte of orientals food.
