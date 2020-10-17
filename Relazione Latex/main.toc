@@ -1,0 +1,10 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\contentsline {chapter}{Requirements}{2}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Soluzione proposta}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Risorse utilizzate}{6}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Tint (The Italian NLP Tool)}{6}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}SimpleNLG}{6}{subsection.1.1.2}%
+\contentsline {chapter}{\numberline {2}Implementazione}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Costruzione struttura dati sintattica}{7}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Conclusioni}{10}{chapter.3}%

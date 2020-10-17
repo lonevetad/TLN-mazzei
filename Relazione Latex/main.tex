@@ -1,0 +1,57 @@
+\documentclass[12pt]{report}
+
+% includes
+\usepackage{geometry}           % page size
+\usepackage[utf8]{inputenc}     % encoding
+\usepackage{lmodern}   % font
+\usepackage[italian]{babel}    % language
+\usepackage{graphicx}           % images
+\usepackage{indentfirst}        % indentation
+\usepackage[nottoc]{tocbibind}  % table of contents style
+\usepackage[unicode]{hyperref}  % references from the table of contents
+\usepackage{tabularx}
+\usepackage{longtable}
+\newlength\dunder
+\settowidth{\dunder}{\_}
+\usepackage{amsmath}
+\usepackage[final]{pdfpages}
+
+% includes options
+\geometry{  a4paper,            % scientific thesis standard
+            left=3cm,
+            right=3cm,
+            top=3cm,
+            bottom=3cm,
+ }
+\graphicspath{{images/}}        % path where the images are located
+\setlength{\parindent}{0cm}     % paragraph indentation
+
+
+% other options
+\linespread{1.5}                % space between lines
+\renewcommand*\contentsname{Cuprins}    % table of contents name
+
+% the document content
+\begin{document}  
+    % front-matter
+    \pagenumbering{gobble}
+    
+	\includepdf{IntroTLNLat.pdf}
+    % table of contents
+    \tableofcontents
+    
+    % chapters
+    
+    
+    
+    
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    
+    \input{chapters/introduction}
+    \input{chapters/chapter1}
+    \input{chapters/chapter2}
+    \input{chapters/chapter3}
+    
+    
+\end{document}
