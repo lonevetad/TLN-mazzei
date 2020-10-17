@@ -1,0 +1,39 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= spazzati, pos= V , lemma=spazzare , indexID=9, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [
+	NDTTint [gloss= avanzi, pos= S , lemma=avanzo , indexID=3, dep= nsubjpass , isRoot=F, father=9-spazzati, features= [Gender-[Masc], Number-[Plur], children= [
+		NDTTint [gloss= gli, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=3-avanzi, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
+		NDTTint [gloss= ultimi, pos= NO , lemma=ultimo , indexID=2, dep= amod , isRoot=F, father=3-avanzi, features= [Gender-[Masc], NumType-[Ord], Number-[Plur], children= []
+		NDTTint [gloss= Repubblica, pos= S , lemma=repubblica , indexID=6, dep= nmod , isRoot=F, father=3-avanzi, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= della, pos= E+RD , lemma=della , indexID=4, dep= case , isRoot=F, father=6-Repubblica, features= [, children= []
+			NDTTint [gloss= vecchia, pos= A , lemma=vecchio , indexID=5, dep= amod , isRoot=F, father=6-Repubblica, features= [Gender-[Fem], Number-[Sing], children= []		]	]
+	NDTTint [gloss= sono, pos= VA , lemma=essere , indexID=7, dep= aux , isRoot=F, father=9-spazzati, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= stati, pos= VA , lemma=essere , indexID=8, dep= auxpass , isRoot=F, father=9-spazzati, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= []
+	NDTTint [gloss= via, pos= B , lemma=via , indexID=10, dep= advmod , isRoot=F, father=9-spazzati, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=9-spazzati, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[spazzare:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={specifier=WordElement[the:DETERMINER], premodifiers=[last], gender=NEUTER, acronym=false, raised=false, head=WordElement[leftover:NOUN], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=of the, discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[repubblica:NOUN], premodifiers=[old], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], discourse_function=OBJECT, person=THIRD, possessive=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=true, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[spazzare:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={specifier=WordElement[the:DETERMINER], premodifiers=[last], gender=NEUTER, acronym=false, raised=false, head=WordElement[leftover:NOUN], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=of the, discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[repubblica:NOUN], premodifiers=[old], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], discourse_function=OBJECT, person=THIRD, possessive=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=true, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+The last leftover of the old repubblica haves been spazzared.

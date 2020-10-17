@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.2 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.2 sec. for 5 tokens at 22,4 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 500,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 23,
-      "text": "Esso crepi di percosse.",
+      "text": "esso crepi di percosse.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "crepi",
           "dependent": 1,
-          "dependentGloss": "Esso"
+          "dependentGloss": "esso"
         },
         {
           "dep": "case",
@@ -64,7 +64,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "crepi",
           "dependent": 1,
-          "dependentGloss": "Esso"
+          "dependentGloss": "esso"
         },
         {
           "dep": "case",
@@ -101,7 +101,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "crepi",
           "dependent": 1,
-          "dependentGloss": "Esso"
+          "dependentGloss": "esso"
         },
         {
           "dep": "case",
@@ -129,15 +129,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Esso",
-          "originalText": "Esso",
+          "word": "esso",
+          "originalText": "esso",
           "lemma": "esso",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 4,
           "pos": "PE",
           "featuresText": "Gender\u003dMasc|Number\u003dSing|Person\u003d3|PronType\u003dPrs",
           "ner": "O",
-          "full_morpho": "Esso esso+pron+_+m+3+sing+strong",
+          "full_morpho": "esso esso+pron+_+m+3+sing+strong",
           "selected_morpho": "esso+pron+_+m+3+sing+strong",
           "guessed_lemma": false,
           "features": {
@@ -250,8 +250,9 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= crepi, pos= V , lemma=crepare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [1-Esso, 4-percosse, 5-.]
-	NDTTint [gloss= Esso, pos= PE , lemma=esso , indexID=1, dep= nsubj , isRoot=F, father=2-crepi, features= [Gender-[Masc], Number-[Sing], Person-[3], PronType-[Prs], children= []
-	NDTTint [gloss= percosse, pos= S , lemma=percossa , indexID=4, dep= nmod , isRoot=F, father=2-crepi, features= [Gender-[Fem], Number-[Plur], children= [3-di]
-		NDTTint [gloss= di, pos= E , lemma=di , indexID=3, dep= case , isRoot=F, father=4-percosse, features= [, children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=2-crepi, features= [, children= []
+
+NDTTint [gloss= crepi, pos= V , lemma=crepare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= esso, pos= PE , lemma=esso , indexID=1, dep= nsubj , isRoot=F, father=2-crepi, features= [Gender-[Masc], Number-[Sing], Person-[3], PronType-[Prs], children= []
+	NDTTint [gloss= percosse, pos= S , lemma=percossa , indexID=4, dep= nmod , isRoot=F, father=2-crepi, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= di, pos= E , lemma=di , indexID=3, dep= case , isRoot=F, father=4-percosse, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=2-crepi, features= [, children= []]

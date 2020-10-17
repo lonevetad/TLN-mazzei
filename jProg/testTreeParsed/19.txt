@@ -1,19 +1,19 @@
 START
 start parsifying text:
-Ha fatto una mossa leale
+Ha fatto una mossa leale.
 parsed :D
 
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 555,6 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 6 tokens at 857,1 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
-      "characterOffsetEnd": 24,
-      "text": "Ha fatto una mossa leale",
+      "characterOffsetEnd": 25,
+      "text": "ha fatto una mossa leale.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "fatto",
           "dependent": 1,
-          "dependentGloss": "Ha"
+          "dependentGloss": "ha"
         },
         {
           "dep": "det",
@@ -49,6 +49,13 @@ parsed :D
           "governorGloss": "mossa",
           "dependent": 5,
           "dependentGloss": "leale"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "fatto",
+          "dependent": 6,
+          "dependentGloss": "."
         }
       ],
       "collapsed-dependencies": [
@@ -64,7 +71,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "fatto",
           "dependent": 1,
-          "dependentGloss": "Ha"
+          "dependentGloss": "ha"
         },
         {
           "dep": "det",
@@ -86,6 +93,13 @@ parsed :D
           "governorGloss": "mossa",
           "dependent": 5,
           "dependentGloss": "leale"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "fatto",
+          "dependent": 6,
+          "dependentGloss": "."
         }
       ],
       "collapsed-ccprocessed-dependencies": [
@@ -101,7 +115,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "fatto",
           "dependent": 1,
-          "dependentGloss": "Ha"
+          "dependentGloss": "ha"
         },
         {
           "dep": "det",
@@ -123,21 +137,28 @@ parsed :D
           "governorGloss": "mossa",
           "dependent": 5,
           "dependentGloss": "leale"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "fatto",
+          "dependent": 6,
+          "dependentGloss": "."
         }
       ],
       "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
       "tokens": [
         {
           "index": 1,
-          "word": "Ha",
-          "originalText": "Ha",
+          "word": "ha",
+          "originalText": "ha",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "VA",
           "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Ha avere+v+indic+pres+nil+3+sing",
+          "full_morpho": "ha avere+v+indic+pres+nil+3+sing",
           "selected_morpho": "avere+v+indic+pres+nil+3+sing",
           "guessed_lemma": false,
           "features": {
@@ -257,6 +278,21 @@ parsed :D
               "Sing"
             ]
           }
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 25,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
         }
       ]
     }
@@ -270,8 +306,10 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= fatto, pos= V , lemma=fare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-Ha, 4-mossa]
-	NDTTint [gloss= Ha, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-fatto, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= []
-	NDTTint [gloss= mossa, pos= S , lemma=mossa , indexID=4, dep= dobj , isRoot=F, father=2-fatto, features= [Gender-[Fem], Number-[Sing], children= [3-una, 5-leale]
+
+NDTTint [gloss= fatto, pos= V , lemma=fare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [
+	NDTTint [gloss= ha, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-fatto, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= mossa, pos= S , lemma=mossa , indexID=4, dep= dobj , isRoot=F, father=2-fatto, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=3, dep= det , isRoot=F, father=4-mossa, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-		NDTTint [gloss= leale, pos= A , lemma=leale , indexID=5, dep= amod , isRoot=F, father=4-mossa, features= [Gender-[Masc], Number-[Sing], children= []
+		NDTTint [gloss= leale, pos= A , lemma=leale , indexID=5, dep= amod , isRoot=F, father=4-mossa, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=6, dep= punct , isRoot=F, father=2-fatto, features= [, children= []]

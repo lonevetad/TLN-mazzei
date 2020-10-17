@@ -6,21 +6,21 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 800,0 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 210,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 17,
-      "text": "Ho poca fantasia.",
+      "text": "ho poca fantasia.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -32,14 +32,14 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 3,
           "dependentGloss": "fantasia"
         },
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 4,
           "dependentGloss": "."
         }
@@ -50,7 +50,7 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -62,14 +62,14 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 3,
           "dependentGloss": "fantasia"
         },
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 4,
           "dependentGloss": "."
         }
@@ -80,7 +80,7 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Ho"
+          "dependentGloss": "ho"
         },
         {
           "dep": "det",
@@ -92,14 +92,14 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 3,
           "dependentGloss": "fantasia"
         },
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Ho",
+          "governorGloss": "ho",
           "dependent": 4,
           "dependentGloss": "."
         }
@@ -108,15 +108,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Ho",
-          "originalText": "Ho",
+          "word": "ho",
+          "originalText": "ho",
           "lemma": "avere",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "V",
           "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
           "selected_morpho": "avere+v+indic+pres+nil+1+sing",
           "guessed_lemma": false,
           "features": {
@@ -211,7 +211,8 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= Ho, pos= V , lemma=avere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [3-fantasia, 4-.]
-	NDTTint [gloss= fantasia, pos= S , lemma=fantasia , indexID=3, dep= dobj , isRoot=F, father=1-Ho, features= [Gender-[Fem], Number-[Sing], children= [2-poca]
-		NDTTint [gloss= poca, pos= DI , lemma=poco , indexID=2, dep= det , isRoot=F, father=3-fantasia, features= [Gender-[Fem], Number-[Sing], PronType-[Ind], children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=4, dep= punct , isRoot=F, father=1-Ho, features= [, children= []
+
+NDTTint [gloss= ho, pos= V , lemma=avere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= fantasia, pos= S , lemma=fantasia , indexID=3, dep= dobj , isRoot=F, father=1-ho, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= poca, pos= DI , lemma=poco , indexID=2, dep= det , isRoot=F, father=3-fantasia, features= [Gender-[Fem], Number-[Sing], PronType-[Ind], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=4, dep= punct , isRoot=F, father=1-ho, features= [, children= []]

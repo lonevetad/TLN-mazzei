@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 13 tokens at 162,5 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 13 tokens at 928,6 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 58,
-      "text": "Alle prime luci del quinto giorno, all\u0027alba guarda ad est!",
+      "text": "alle prime luci del quinto giorno, all\u0027alba guarda ad est!",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "luci",
           "dependent": 1,
-          "dependentGloss": "Alle"
+          "dependentGloss": "alle"
         },
         {
           "dep": "amod",
@@ -120,7 +120,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "luci",
           "dependent": 1,
-          "dependentGloss": "Alle"
+          "dependentGloss": "alle"
         },
         {
           "dep": "amod",
@@ -213,7 +213,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "luci",
           "dependent": 1,
-          "dependentGloss": "Alle"
+          "dependentGloss": "alle"
         },
         {
           "dep": "amod",
@@ -297,15 +297,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Alle",
-          "originalText": "Alle",
+          "word": "alle",
+          "originalText": "alle",
           "lemma": "alla",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 4,
           "pos": "E+RD",
           "featuresText": "_",
           "ner": "O",
-          "full_morpho": "Alle alla~alla+prep/le~det+art+f+plur",
+          "full_morpho": "alle alla~alla+prep/le~det+art+f+plur",
           "selected_morpho": "alla~alla+prep/le~det+art+f+plur",
           "guessed_lemma": false,
           "features": {}
@@ -566,16 +566,17 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= guarda, pos= V , lemma=guardare , indexID=10, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [3-luci, 9-alba, 12-est, 13-!]
-	NDTTint [gloss= luci, pos= S , lemma=luce , indexID=3, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Plur], children= [1-Alle, 2-prime, 6-giorno, 7-,]
-		NDTTint [gloss= Alle, pos= E+RD , lemma=alla , indexID=1, dep= case , isRoot=F, father=3-luci, features= [, children= []
+
+NDTTint [gloss= guarda, pos= V , lemma=guardare , indexID=10, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= luci, pos= S , lemma=luce , indexID=3, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= alle, pos= E+RD , lemma=alla , indexID=1, dep= case , isRoot=F, father=3-luci, features= [, children= []
 		NDTTint [gloss= prime, pos= NO , lemma=primo , indexID=2, dep= amod , isRoot=F, father=3-luci, features= [Gender-[Fem], NumType-[Ord], Number-[Plur], children= []
-		NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=6, dep= nmod , isRoot=F, father=3-luci, features= [Gender-[Masc], Number-[Sing], children= [4-del, 5-quinto]
+		NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=6, dep= nmod , isRoot=F, father=3-luci, features= [Gender-[Masc], Number-[Sing], children= [
 			NDTTint [gloss= del, pos= E+RD , lemma=del , indexID=4, dep= case , isRoot=F, father=6-giorno, features= [, children= []
-			NDTTint [gloss= quinto, pos= NO , lemma=quinto , indexID=5, dep= amod , isRoot=F, father=6-giorno, features= [Gender-[Masc], NumType-[Ord], Number-[Sing], children= []
-		NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-luci, features= [, children= []
-	NDTTint [gloss= alba, pos= S , lemma=alba , indexID=9, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Sing], children= [8-all']
-		NDTTint [gloss= all', pos= E+RD , lemma=all' , indexID=8, dep= case , isRoot=F, father=9-alba, features= [, children= []
-	NDTTint [gloss= est, pos= S , lemma=est , indexID=12, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Masc], Number-[Sing], children= [11-ad]
-		NDTTint [gloss= ad, pos= E , lemma=ad , indexID=11, dep= case , isRoot=F, father=12-est, features= [, children= []
-	NDTTint [gloss= !, pos= FS , lemma=! , indexID=13, dep= punct , isRoot=F, father=10-guarda, features= [, children= []
+			NDTTint [gloss= quinto, pos= NO , lemma=quinto , indexID=5, dep= amod , isRoot=F, father=6-giorno, features= [Gender-[Masc], NumType-[Ord], Number-[Sing], children= []		]
+		NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-luci, features= [, children= []	]
+	NDTTint [gloss= alba, pos= S , lemma=alba , indexID=9, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= all', pos= E+RD , lemma=all' , indexID=8, dep= case , isRoot=F, father=9-alba, features= [, children= []	]
+	NDTTint [gloss= est, pos= S , lemma=est , indexID=12, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= ad, pos= E , lemma=ad , indexID=11, dep= case , isRoot=F, father=12-est, features= [, children= []	]
+	NDTTint [gloss= !, pos= FS , lemma=! , indexID=13, dep= punct , isRoot=F, father=10-guarda, features= [, children= []]

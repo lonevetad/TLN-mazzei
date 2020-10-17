@@ -1,4 +1,4 @@
-package common;
+package trash;
 
 import java.io.Serializable;
 
@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Deprecated
 public class SentencePlan implements Serializable {
 
 	//

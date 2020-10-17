@@ -1,13 +1,14 @@
-package tools;
+package common;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import common.TintParserOutput;
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
+import tools.JsonParserSimple;
+import tools.OutputStreamCollector;
 
 public class TintParser {
 	private static final TintPipeline pipeline;
@@ -26,6 +27,7 @@ public class TintParser {
 	public static TintParsedAndJSON parseText(String text, JsonParserSimple jsonParser) {
 		OutputStreamCollector toJsonCollector;
 		toJsonCollector = new OutputStreamCollector();
+		text = Character.toLowerCase(text.charAt(0)) + text.substring(1);
 		InputStream stream = new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
 		try {
 //			Annotation annotation =

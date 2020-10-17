@@ -1,0 +1,18 @@
+S -> NP VP
+NP -> N
+NP -> NP PP | NP RelClause 
+PP -> P NP
+VP -> V NP | V | V NP PP | VP PP | V_Intrans | V_trans NP | V_ditrans NP NP
+V_intrans-> eats | sleeps
+V_trans-> eats | gives
+
+NP -> Pronoun | ProperName | Det Noun
+Det -> a | the | every 
+Pronoun -> he | she | it
+ProperName -> john | jary
+Noun -> AdjP Noun | N
+AdjP -> Adj | Adv AdjP
+Adj ->  big | small | red
+Adv -> very | really
+PP -> P NP
+P -> with | in | above | over

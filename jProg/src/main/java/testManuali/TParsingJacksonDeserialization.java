@@ -12,6 +12,7 @@ import common.TintParserOutput;
 import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
+import tools.MockedData;
 import tools.OutputStreamCollector;
 
 public class TParsingJacksonDeserialization {

@@ -1,0 +1,31 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Parlè?
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= parl?, pos= SP , lemma=parl? , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= name , isRoot=F, father=1-parl?, features= [, children= []
+	NDTTint [gloss= ?, pos= FS , lemma=? , indexID=3, dep= punct , isRoot=F, father=1-parl?, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+

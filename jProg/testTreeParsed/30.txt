@@ -6,21 +6,21 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.1 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 14 tokens at 159,1 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 933,3 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 66,
-      "text": "Avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.",
+      "text": "avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Avida"
+          "dependentGloss": "avida"
         },
         {
           "dep": "case",
@@ -32,14 +32,14 @@ parsed :D
         {
           "dep": "nmod",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 3,
           "dependentGloss": "vita"
         },
         {
           "dep": "advmod",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 4,
           "dependentGloss": "desiai"
         },
@@ -53,7 +53,7 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 6,
           "dependentGloss": "amore"
         },
@@ -67,21 +67,21 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 8,
           "dependentGloss": ","
         },
         {
           "dep": "cc",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 9,
           "dependentGloss": "ma"
         },
         {
           "dep": "conj",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 10,
           "dependentGloss": "ingoiai"
         },
@@ -109,7 +109,7 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 14,
           "dependentGloss": "."
         }
@@ -120,7 +120,7 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Avida"
+          "dependentGloss": "avida"
         },
         {
           "dep": "case",
@@ -132,14 +132,14 @@ parsed :D
         {
           "dep": "nmod:di",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 3,
           "dependentGloss": "vita"
         },
         {
           "dep": "advmod",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 4,
           "dependentGloss": "desiai"
         },
@@ -153,7 +153,7 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 6,
           "dependentGloss": "amore"
         },
@@ -167,21 +167,21 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 8,
           "dependentGloss": ","
         },
         {
           "dep": "cc",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 9,
           "dependentGloss": "ma"
         },
         {
           "dep": "conj:ma",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 10,
           "dependentGloss": "ingoiai"
         },
@@ -209,7 +209,7 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 14,
           "dependentGloss": "."
         }
@@ -220,7 +220,7 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Avida"
+          "dependentGloss": "avida"
         },
         {
           "dep": "case",
@@ -232,14 +232,14 @@ parsed :D
         {
           "dep": "nmod:di",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 3,
           "dependentGloss": "vita"
         },
         {
           "dep": "advmod",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 4,
           "dependentGloss": "desiai"
         },
@@ -253,7 +253,7 @@ parsed :D
         {
           "dep": "dobj",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 6,
           "dependentGloss": "amore"
         },
@@ -267,21 +267,21 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 8,
           "dependentGloss": ","
         },
         {
           "dep": "cc",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 9,
           "dependentGloss": "ma"
         },
         {
           "dep": "conj:ma",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 10,
           "dependentGloss": "ingoiai"
         },
@@ -309,7 +309,7 @@ parsed :D
         {
           "dep": "punct",
           "governor": 1,
-          "governorGloss": "Avida",
+          "governorGloss": "avida",
           "dependent": 14,
           "dependentGloss": "."
         }
@@ -318,20 +318,20 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Avida",
-          "originalText": "Avida",
-          "lemma": "Avidere",
+          "word": "avida",
+          "originalText": "avida",
+          "lemma": "avidare",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 5,
           "pos": "V",
-          "featuresText": "Mood\u003dSub|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "Avida avido+adj+f+sing+pst",
+          "full_morpho": "avida avido+adj+f+sing+pst",
           "selected_morpho": "",
           "guessed_lemma": true,
           "features": {
             "Mood": [
-              "Sub"
+              "Ind"
             ],
             "Number": [
               "Sing"
@@ -614,17 +614,18 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= Avida, pos= V , lemma=Avidere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [3-vita, 4-desiai, 6-amore, 8-,, 9-ma, 10-ingoiai, 14-.]
-	NDTTint [gloss= vita, pos= S , lemma=vita , indexID=3, dep= nmod , isRoot=F, father=1-Avida, features= [Gender-[Fem], Number-[Sing], children= [2-di]
-		NDTTint [gloss= di, pos= E , lemma=di , indexID=2, dep= case , isRoot=F, father=3-vita, features= [, children= []
-	NDTTint [gloss= desiai, pos= B , lemma=desiai , indexID=4, dep= advmod , isRoot=F, father=1-Avida, features= [, children= []
-	NDTTint [gloss= amore, pos= S , lemma=amore , indexID=6, dep= dobj , isRoot=F, father=1-Avida, features= [Gender-[Masc], Number-[Sing], children= [5-ogni, 7-vero]
+
+NDTTint [gloss= avida, pos= V , lemma=avidare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= vita, pos= S , lemma=vita , indexID=3, dep= nmod , isRoot=F, father=1-avida, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= di, pos= E , lemma=di , indexID=2, dep= case , isRoot=F, father=3-vita, features= [, children= []	]
+	NDTTint [gloss= desiai, pos= B , lemma=desiai , indexID=4, dep= advmod , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= amore, pos= S , lemma=amore , indexID=6, dep= dobj , isRoot=F, father=1-avida, features= [Gender-[Masc], Number-[Sing], children= [
 		NDTTint [gloss= ogni, pos= DI , lemma=ogni , indexID=5, dep= det , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], PronType-[Ind], children= []
-		NDTTint [gloss= vero, pos= A , lemma=vero , indexID=7, dep= amod , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], children= []
-	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-Avida, features= [, children= []
-	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=9, dep= cc , isRoot=F, father=1-Avida, features= [, children= []
-	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-Avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [11-sedativi]
-		NDTTint [gloss= sedativi, pos= A , lemma=sedativo , indexID=11, dep= xcomp , isRoot=F, father=10-ingoiai, features= [Gender-[Masc], Number-[Plur], children= [13-diva]
-			NDTTint [gloss= diva, pos= S , lemma=diva , indexID=13, dep= nmod , isRoot=F, father=11-sedativi, features= [Gender-[Fem], Number-[Sing], children= [12-da]
-				NDTTint [gloss= da, pos= E , lemma=da , indexID=12, dep= case , isRoot=F, father=13-diva, features= [, children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=1-Avida, features= [, children= []
+		NDTTint [gloss= vero, pos= A , lemma=vero , indexID=7, dep= amod , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=9, dep= cc , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [
+		NDTTint [gloss= sedativi, pos= A , lemma=sedativo , indexID=11, dep= xcomp , isRoot=F, father=10-ingoiai, features= [Gender-[Masc], Number-[Plur], children= [
+			NDTTint [gloss= diva, pos= S , lemma=diva , indexID=13, dep= nmod , isRoot=F, father=11-sedativi, features= [Gender-[Fem], Number-[Sing], children= [
+				NDTTint [gloss= da, pos= E , lemma=da , indexID=12, dep= case , isRoot=F, father=13-diva, features= [, children= []			]		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=1-avida, features= [, children= []]

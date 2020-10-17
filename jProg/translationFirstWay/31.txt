@@ -1,0 +1,37 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: I neri erano da Anna a donare i reni.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= erano, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= neri, pos= S , lemma=nero , indexID=2, dep= nsubj , isRoot=F, father=3-erano, features= [Gender-[Masc], Number-[Plur], children= []
+	NDTTint [gloss= Anna, pos= SP , lemma=Anna , indexID=5, dep= nmod , isRoot=F, father=3-erano, features= [, children= [
+		NDTTint [gloss= da, pos= E , lemma=da , indexID=4, dep= case , isRoot=F, father=5-Anna, features= [, children= []	]
+	NDTTint [gloss= donare, pos= V , lemma=donare , indexID=7, dep= xcomp , isRoot=F, father=3-erano, features= [VerbForm-[Inf], children= [
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=6, dep= mark , isRoot=F, father=7-donare, features= [, children= []
+		NDTTint [gloss= reni, pos= S , lemma=rene , indexID=9, dep= dobj , isRoot=F, father=7-donare, features= [Gender-[Masc], Number-[Plur], children= [
+			NDTTint [gloss= i, pos= RD , lemma=il , indexID=8, dep= det , isRoot=F, father=9-reni, features= [Definite-[Def, Def], Gender-[Masc, Masc], Number-[Plur, Plur], PronType-[Art, Art], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=10, dep= punct , isRoot=F, father=3-erano, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[Anna:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=HE, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[nero:NOUN], number=SINGULAR, gender=masculine, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[Anna:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=HE, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[nero:NOUN], number=SINGULAR, gender=masculine, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Nero è to Anna.

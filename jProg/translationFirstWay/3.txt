@@ -1,0 +1,35 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Sembra che il laboratorio sia difficile.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= sembra, pos= V , lemma=sembrare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= difficile, pos= A , lemma=difficile , indexID=6, dep= ccomp , isRoot=F, father=1-sembra, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= che, pos= CS , lemma=che , indexID=2, dep= mark , isRoot=F, father=6-difficile, features= [, children= []
+		NDTTint [gloss= laboratorio, pos= S , lemma=laboratorio , indexID=4, dep= nsubj , isRoot=F, father=6-difficile, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=4-laboratorio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []		]
+		NDTTint [gloss= sia, pos= V , lemma=essere , indexID=5, dep= cop , isRoot=F, father=6-difficile, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=1-sembra, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[difficult:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lab:NOUN], specifier=WordElement[the:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lab:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[difficult:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lab:NOUN], specifier=WordElement[the:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lab:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Lab difficults the lab.

@@ -6,28 +6,28 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 21 tokens at 381,8 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 750,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 86,
-      "text": "Ma a parer mio, una nave cotale, renderebbe quest\u0027altra un po\u0027 superflua, non ?? vero?",
+      "text": "ma a parer mio, una nave cotale, renderebbe quest\u0027altra un po\u0027 superflua, non ?? vero?",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 10,
-          "dependentGloss": "renderebbe"
+          "dependent": 3,
+          "dependentGloss": "parer"
         },
         {
           "dep": "cc",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 1,
-          "dependentGloss": "Ma"
+          "dependentGloss": "ma"
         },
         {
           "dep": "case",
@@ -35,13 +35,6 @@ parsed :D
           "governorGloss": "parer",
           "dependent": 2,
           "dependentGloss": "a"
-        },
-        {
-          "dep": "nmod",
-          "governor": 10,
-          "governorGloss": "renderebbe",
-          "dependent": 3,
-          "dependentGloss": "parer"
         },
         {
           "dep": "det:poss",
@@ -65,9 +58,9 @@ parsed :D
           "dependentGloss": "una"
         },
         {
-          "dep": "nsubj",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 7,
           "dependentGloss": "nave"
         },
@@ -80,10 +73,17 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 7,
-          "governorGloss": "nave",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 9,
           "dependentGloss": ","
+        },
+        {
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
         },
         {
           "dep": "det",
@@ -122,8 +122,8 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 16,
           "dependentGloss": ","
         },
@@ -136,13 +136,13 @@ parsed :D
         },
         {
           "dep": "conj",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 18,
           "dependentGloss": "?"
         },
         {
-          "dep": "punct",
+          "dep": "cc",
           "governor": 18,
           "governorGloss": "?",
           "dependent": 19,
@@ -150,14 +150,14 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 20,
           "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 21,
           "dependentGloss": "?"
@@ -168,15 +168,15 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 10,
-          "dependentGloss": "renderebbe"
+          "dependent": 3,
+          "dependentGloss": "parer"
         },
         {
           "dep": "cc",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 1,
-          "dependentGloss": "Ma"
+          "dependentGloss": "ma"
         },
         {
           "dep": "case",
@@ -184,13 +184,6 @@ parsed :D
           "governorGloss": "parer",
           "dependent": 2,
           "dependentGloss": "a"
-        },
-        {
-          "dep": "nmod:a",
-          "governor": 10,
-          "governorGloss": "renderebbe",
-          "dependent": 3,
-          "dependentGloss": "parer"
         },
         {
           "dep": "det:poss",
@@ -214,9 +207,9 @@ parsed :D
           "dependentGloss": "una"
         },
         {
-          "dep": "nsubj",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 7,
           "dependentGloss": "nave"
         },
@@ -229,10 +222,17 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 7,
-          "governorGloss": "nave",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 9,
           "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
         },
         {
           "dep": "det",
@@ -271,8 +271,8 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 16,
           "dependentGloss": ","
         },
@@ -284,14 +284,14 @@ parsed :D
           "dependentGloss": "non"
         },
         {
-          "dep": "conj",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 18,
           "dependentGloss": "?"
         },
         {
-          "dep": "punct",
+          "dep": "cc",
           "governor": 18,
           "governorGloss": "?",
           "dependent": 19,
@@ -299,14 +299,14 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 20,
           "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 21,
           "dependentGloss": "?"
@@ -317,15 +317,15 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-          "dependent": 10,
-          "dependentGloss": "renderebbe"
+          "dependent": 3,
+          "dependentGloss": "parer"
         },
         {
           "dep": "cc",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 1,
-          "dependentGloss": "Ma"
+          "dependentGloss": "ma"
         },
         {
           "dep": "case",
@@ -333,13 +333,6 @@ parsed :D
           "governorGloss": "parer",
           "dependent": 2,
           "dependentGloss": "a"
-        },
-        {
-          "dep": "nmod:a",
-          "governor": 10,
-          "governorGloss": "renderebbe",
-          "dependent": 3,
-          "dependentGloss": "parer"
         },
         {
           "dep": "det:poss",
@@ -363,9 +356,9 @@ parsed :D
           "dependentGloss": "una"
         },
         {
-          "dep": "nsubj",
-          "governor": 10,
-          "governorGloss": "renderebbe",
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 7,
           "dependentGloss": "nave"
         },
@@ -378,10 +371,17 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 7,
-          "governorGloss": "nave",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 9,
           "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
         },
         {
           "dep": "det",
@@ -420,8 +420,8 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 16,
           "dependentGloss": ","
         },
@@ -433,14 +433,14 @@ parsed :D
           "dependentGloss": "non"
         },
         {
-          "dep": "conj",
-          "governor": 15,
-          "governorGloss": "superflua",
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
           "dependent": 18,
           "dependentGloss": "?"
         },
         {
-          "dep": "punct",
+          "dep": "cc",
           "governor": 18,
           "governorGloss": "?",
           "dependent": 19,
@@ -448,14 +448,14 @@ parsed :D
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 20,
           "dependentGloss": "vero"
         },
         {
           "dep": "punct",
-          "governor": 18,
+          "governor": 19,
           "governorGloss": "?",
           "dependent": 21,
           "dependentGloss": "?"
@@ -465,15 +465,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Ma",
-          "originalText": "Ma",
+          "word": "ma",
+          "originalText": "ma",
           "lemma": "ma",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "CC",
           "featuresText": "_",
           "ner": "O",
-          "full_morpho": "Ma ma+conj",
+          "full_morpho": "ma ma+conj",
           "selected_morpho": "ma+conj",
           "guessed_lemma": false,
           "features": {}
@@ -893,22 +893,23 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [1-Ma, 3-parer, 7-nave, 15-superflua]
-	NDTTint [gloss= Ma, pos= CC , lemma=ma , indexID=1, dep= cc , isRoot=F, father=10-renderebbe, features= [, children= []
-	NDTTint [gloss= parer, pos= S , lemma=parer , indexID=3, dep= nmod , isRoot=F, father=10-renderebbe, features= [Gender-[Masc], Number-[Sing], children= [2-a, 4-mio]
-		NDTTint [gloss= a, pos= E , lemma=a , indexID=2, dep= case , isRoot=F, father=3-parer, features= [, children= []
-		NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=4, dep= det:poss , isRoot=F, father=3-parer, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
-	NDTTint [gloss= nave, pos= S , lemma=nave , indexID=7, dep= nsubj , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [6-una, 8-cotale]
+
+NDTTint [gloss= parer, pos= S , lemma=parer , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=1, dep= cc , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= a, pos= E , lemma=a , indexID=2, dep= case , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=4, dep= det:poss , isRoot=F, father=3-parer, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+	NDTTint [gloss= nave, pos= S , lemma=nave , indexID=7, dep= conj , isRoot=F, father=3-parer, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=6, dep= det , isRoot=F, father=7-nave, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-		NDTTint [gloss= cotale, pos= A , lemma=cotale , indexID=8, dep= amod , isRoot=F, father=7-nave, features= [Gender-[Masc], Number-[Sing], children= []
-	NDTTint [gloss= superflua, pos= A , lemma=superfluo , indexID=15, dep= xcomp , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [11-quest', 12-altra, 14-po', 16-,, 18-?]
-		NDTTint [gloss= quest', pos= DD , lemma=questo , indexID=11, dep= det , isRoot=F, father=15-superflua, features= [Gender-[Masc], Number-[Sing], PronType-[Dem], children= []
-		NDTTint [gloss= altra, pos= A , lemma=altro , indexID=12, dep= amod , isRoot=F, father=15-superflua, features= [Gender-[Fem], Number-[Sing], children= []
-		NDTTint [gloss= po', pos= B , lemma=po' , indexID=14, dep= advmod , isRoot=F, father=15-superflua, features= [, children= [13-un]
-			NDTTint [gloss= un, pos= RI , lemma=un , indexID=13, dep= det , isRoot=F, father=14-po', features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-		NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=16, dep= punct , isRoot=F, father=15-superflua, features= [, children= []
-		NDTTint [gloss= ?, pos= X , lemma=? , indexID=18, dep= conj , isRoot=F, father=15-superflua, features= [, children= [17-non, 19-?, 20-vero, 21-?]
-			NDTTint [gloss= non, pos= BN , lemma=non , indexID=17, dep= neg , isRoot=F, father=18-?, features= [PronType-[Neg], children= []
-			NDTTint [gloss= ?, pos= X , lemma=? , indexID=19, dep= punct , isRoot=F, father=18-?, features= [, children= []
-			NDTTint [gloss= vero, pos= X , lemma=vero , indexID=20, dep= punct , isRoot=F, father=18-?, features= [, children= []
-			NDTTint [gloss= ?, pos= X , lemma=? , indexID=21, dep= punct , isRoot=F, father=18-?, features= [, children= []
+		NDTTint [gloss= cotale, pos= A , lemma=cotale , indexID=8, dep= amod , isRoot=F, father=7-nave, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= conj , isRoot=F, father=3-parer, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+		NDTTint [gloss= superflua, pos= A , lemma=superfluo , indexID=15, dep= xcomp , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= quest', pos= DD , lemma=questo , indexID=11, dep= det , isRoot=F, father=15-superflua, features= [Gender-[Masc], Number-[Sing], PronType-[Dem], children= []
+			NDTTint [gloss= altra, pos= A , lemma=altro , indexID=12, dep= amod , isRoot=F, father=15-superflua, features= [Gender-[Fem], Number-[Sing], children= []
+			NDTTint [gloss= po', pos= B , lemma=po' , indexID=14, dep= advmod , isRoot=F, father=15-superflua, features= [, children= [
+				NDTTint [gloss= un, pos= RI , lemma=un , indexID=13, dep= det , isRoot=F, father=14-po', features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []			]		]	]
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=16, dep= punct , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=18, dep= conj , isRoot=F, father=3-parer, features= [, children= [
+		NDTTint [gloss= non, pos= BN , lemma=non , indexID=17, dep= neg , isRoot=F, father=18-?, features= [PronType-[Neg], children= []
+		NDTTint [gloss= ?, pos= X , lemma=? , indexID=19, dep= cc , isRoot=F, father=18-?, features= [, children= [
+			NDTTint [gloss= vero, pos= X , lemma=vero , indexID=20, dep= punct , isRoot=F, father=19-?, features= [, children= []
+			NDTTint [gloss= ?, pos= X , lemma=? , indexID=21, dep= punct , isRoot=F, father=19-?, features= [, children= []		]	]]

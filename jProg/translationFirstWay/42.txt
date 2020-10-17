@@ -1,0 +1,36 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Questa è una frase di esempio.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= questa, pos= PD , lemma=questa , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Fem], Number-[Sing], Person-[3], PronType-[Dem], children= [
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= acl , isRoot=F, father=1-questa, features= [, children= [
+		NDTTint [gloss= ?, pos= X , lemma=? , indexID=3, dep= compound , isRoot=F, father=2-?, features= [, children= [
+			NDTTint [gloss= esempio, pos= S , lemma=esempio , indexID=7, dep= nmod , isRoot=F, father=3-?, features= [Gender-[Masc], Number-[Sing], children= [
+				NDTTint [gloss= una, pos= X , lemma=una , indexID=4, dep= nummod , isRoot=F, father=7-esempio, features= [, children= [
+					NDTTint [gloss= frase, pos= X , lemma=frase , indexID=5, dep= punct , isRoot=F, father=4-una, features= [, children= []				]
+				NDTTint [gloss= di, pos= X , lemma=di , indexID=6, dep= nummod , isRoot=F, father=7-esempio, features= [, children= []			]		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-questa, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+

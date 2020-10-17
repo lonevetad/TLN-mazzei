@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 647,1 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 785,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 61,
-      "text": "Tutti i bei momenti saranno persi come lacrime nella pioggia.",
+      "text": "tutti i bei momenti saranno persi come lacrime nella pioggia.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "momenti",
           "dependent": 1,
-          "dependentGloss": "Tutti"
+          "dependentGloss": "tutti"
         },
         {
           "dep": "det",
@@ -106,7 +106,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "momenti",
           "dependent": 1,
-          "dependentGloss": "Tutti"
+          "dependentGloss": "tutti"
         },
         {
           "dep": "det",
@@ -185,7 +185,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "momenti",
           "dependent": 1,
-          "dependentGloss": "Tutti"
+          "dependentGloss": "tutti"
         },
         {
           "dep": "det",
@@ -255,15 +255,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Tutti",
-          "originalText": "Tutti",
+          "word": "tutti",
+          "originalText": "tutti",
           "lemma": "tutto",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 5,
           "pos": "T",
           "featuresText": "Gender\u003dMasc|Number\u003dPlur|PronType\u003dTot",
           "ner": "O",
-          "full_morpho": "Tutti tutti+pron+_+m+3+plur+ind tutto+adj+m+plur+pst tutto+adj+m+plur+pst+ind",
+          "full_morpho": "tutti tutti+pron+_+m+3+plur+ind tutto+adj+m+plur+pst tutto+adj+m+plur+pst+ind",
           "selected_morpho": "tutto+adj+m+plur+pst+ind",
           "guessed_lemma": false,
           "features": {
@@ -513,14 +513,15 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= persi, pos= V , lemma=perdere , indexID=6, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [4-momenti, 5-saranno, 8-lacrime, 10-pioggia, 11-.]
-	NDTTint [gloss= momenti, pos= S , lemma=momento , indexID=4, dep= nsubjpass , isRoot=F, father=6-persi, features= [Gender-[Masc], Number-[Plur], children= [1-Tutti, 2-i, 3-bei]
-		NDTTint [gloss= Tutti, pos= T , lemma=tutto , indexID=1, dep= det:predet , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], PronType-[Tot], children= []
+
+NDTTint [gloss= persi, pos= V , lemma=perdere , indexID=6, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [
+	NDTTint [gloss= momenti, pos= S , lemma=momento , indexID=4, dep= nsubjpass , isRoot=F, father=6-persi, features= [Gender-[Masc], Number-[Plur], children= [
+		NDTTint [gloss= tutti, pos= T , lemma=tutto , indexID=1, dep= det:predet , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], PronType-[Tot], children= []
 		NDTTint [gloss= i, pos= RD , lemma=il , indexID=2, dep= det , isRoot=F, father=4-momenti, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
-		NDTTint [gloss= bei, pos= A , lemma=bello , indexID=3, dep= amod , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], children= []
+		NDTTint [gloss= bei, pos= A , lemma=bello , indexID=3, dep= amod , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], children= []	]
 	NDTTint [gloss= saranno, pos= VA , lemma=essere , indexID=5, dep= auxpass , isRoot=F, father=6-persi, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Fut], VerbForm-[Fin], children= []
-	NDTTint [gloss= lacrime, pos= S , lemma=lacrima , indexID=8, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Plur], children= [7-come]
-		NDTTint [gloss= come, pos= E , lemma=come , indexID=7, dep= case , isRoot=F, father=8-lacrime, features= [, children= []
-	NDTTint [gloss= pioggia, pos= S , lemma=pioggia , indexID=10, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Sing], children= [9-nella]
-		NDTTint [gloss= nella, pos= E+RD , lemma=nella , indexID=9, dep= case , isRoot=F, father=10-pioggia, features= [, children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=6-persi, features= [, children= []
+	NDTTint [gloss= lacrime, pos= S , lemma=lacrima , indexID=8, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= come, pos= E , lemma=come , indexID=7, dep= case , isRoot=F, father=8-lacrime, features= [, children= []	]
+	NDTTint [gloss= pioggia, pos= S , lemma=pioggia , indexID=10, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= nella, pos= E+RD , lemma=nella , indexID=9, dep= case , isRoot=F, father=10-pioggia, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=6-persi, features= [, children= []]

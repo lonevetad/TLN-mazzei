@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 217,4 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 1000,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 18,
-      "text": "Io sono tuo padre.",
+      "text": "io sono tuo padre.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "padre",
           "dependent": 1,
-          "dependentGloss": "Io"
+          "dependentGloss": "io"
         },
         {
           "dep": "cop",
@@ -64,7 +64,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "padre",
           "dependent": 1,
-          "dependentGloss": "Io"
+          "dependentGloss": "io"
         },
         {
           "dep": "cop",
@@ -101,7 +101,7 @@ parsed :D
           "governor": 4,
           "governorGloss": "padre",
           "dependent": 1,
-          "dependentGloss": "Io"
+          "dependentGloss": "io"
         },
         {
           "dep": "cop",
@@ -129,15 +129,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Io",
-          "originalText": "Io",
+          "word": "io",
+          "originalText": "io",
           "lemma": "io",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "PE",
           "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
           "ner": "O",
-          "full_morpho": "Io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
+          "full_morpho": "io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
           "selected_morpho": "io+pron+nom+_+1+sing+strong",
           "guessed_lemma": false,
           "features": {
@@ -260,8 +260,9 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= padre, pos= S , lemma=padre , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-Io, 2-sono, 3-tuo, 5-.]
-	NDTTint [gloss= Io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=4-padre, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+
+NDTTint [gloss= padre, pos= S , lemma=padre , indexID=4, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=4-padre, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
 	NDTTint [gloss= sono, pos= V , lemma=essere , indexID=2, dep= cop , isRoot=F, father=4-padre, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 	NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=3, dep= det:poss , isRoot=F, father=4-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=4-padre, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=4-padre, features= [, children= []]

@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
+import tools.MockedData;
 
 public class TestPipline {
 	public static void main(String[] args) {

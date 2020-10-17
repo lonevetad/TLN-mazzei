@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 600,0 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 750,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 57,
-      "text": "Se io fossi un genio studierei informatica efficacemente.",
+      "text": "se io fossi un genio studierei informatica efficacemente.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "fossi",
           "dependent": 1,
-          "dependentGloss": "Se"
+          "dependentGloss": "se"
         },
         {
           "dep": "nsubj",
@@ -92,7 +92,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "fossi",
           "dependent": 1,
-          "dependentGloss": "Se"
+          "dependentGloss": "se"
         },
         {
           "dep": "nsubj",
@@ -157,7 +157,7 @@ parsed :D
           "governor": 3,
           "governorGloss": "fossi",
           "dependent": 1,
-          "dependentGloss": "Se"
+          "dependentGloss": "se"
         },
         {
           "dep": "nsubj",
@@ -213,15 +213,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Se",
-          "originalText": "Se",
+          "word": "se",
+          "originalText": "se",
           "lemma": "se",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 2,
           "pos": "CS",
           "featuresText": "_",
           "ner": "O",
-          "full_morpho": "Se se+conj se+pron+accdat+_+3+_+clit se+pron+acc+m+3+sing+clit",
+          "full_morpho": "se se+conj se+pron+accdat+_+3+_+clit se+pron+acc+m+3+sing+clit",
           "selected_morpho": "se+conj",
           "guessed_lemma": false,
           "features": {}
@@ -418,12 +418,13 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= fossi, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [1-Se, 2-io, 5-genio, 9-.]
-	NDTTint [gloss= Se, pos= CS , lemma=se , indexID=1, dep= mark , isRoot=F, father=3-fossi, features= [, children= []
+
+NDTTint [gloss= fossi, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= se, pos= CS , lemma=se , indexID=1, dep= mark , isRoot=F, father=3-fossi, features= [, children= []
 	NDTTint [gloss= io, pos= PE , lemma=io , indexID=2, dep= nsubj , isRoot=F, father=3-fossi, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
-	NDTTint [gloss= genio, pos= S , lemma=genio , indexID=5, dep= dobj , isRoot=F, father=3-fossi, features= [Gender-[Masc], Number-[Sing], children= [4-un, 6-studierei, 7-informatica, 8-efficacemente]
+	NDTTint [gloss= genio, pos= S , lemma=genio , indexID=5, dep= dobj , isRoot=F, father=3-fossi, features= [Gender-[Masc], Number-[Sing], children= [
 		NDTTint [gloss= un, pos= RI , lemma=un , indexID=4, dep= det , isRoot=F, father=5-genio, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
 		NDTTint [gloss= studierei, pos= A , lemma=studiereo , indexID=6, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Masc], Number-[Plur], children= []
 		NDTTint [gloss= informatica, pos= A , lemma=informatico , indexID=7, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Fem], Number-[Sing], children= []
-		NDTTint [gloss= efficacemente, pos= B , lemma=efficacemente , indexID=8, dep= advmod , isRoot=F, father=5-genio, features= [, children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=3-fossi, features= [, children= []
+		NDTTint [gloss= efficacemente, pos= B , lemma=efficacemente , indexID=8, dep= advmod , isRoot=F, father=5-genio, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=3-fossi, features= [, children= []]

@@ -1,0 +1,37 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Se io fossi un genio studierei informatica efficacemente.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= fossi, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= se, pos= CS , lemma=se , indexID=1, dep= mark , isRoot=F, father=3-fossi, features= [, children= []
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=2, dep= nsubj , isRoot=F, father=3-fossi, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+	NDTTint [gloss= genio, pos= S , lemma=genio , indexID=5, dep= dobj , isRoot=F, father=3-fossi, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= un, pos= RI , lemma=un , indexID=4, dep= det , isRoot=F, father=5-genio, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= studierei, pos= A , lemma=studiereo , indexID=6, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Masc], Number-[Plur], children= []
+		NDTTint [gloss= informatica, pos= A , lemma=informatico , indexID=7, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Fem], Number-[Sing], children= []
+		NDTTint [gloss= efficacemente, pos= B , lemma=efficacemente , indexID=8, dep= advmod , isRoot=F, father=5-genio, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=3-fossi, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[genius:NOUN], specifier=WordElement[a:DETERMINER], premodifiers=[studierei, computer science], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[genius:NOUN], specifier=WordElement[a:DETERMINER], premodifiers=[studierei, computer science], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+I essere a studierei, computer science genius.

@@ -1,0 +1,41 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Alle prime luci del quinto giorno, all'alba guarda ad est!
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= guarda, pos= V , lemma=guardare , indexID=10, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= luci, pos= S , lemma=luce , indexID=3, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= alle, pos= E+RD , lemma=alla , indexID=1, dep= case , isRoot=F, father=3-luci, features= [, children= []
+		NDTTint [gloss= prime, pos= NO , lemma=primo , indexID=2, dep= amod , isRoot=F, father=3-luci, features= [Gender-[Fem], NumType-[Ord], Number-[Plur], children= []
+		NDTTint [gloss= giorno, pos= S , lemma=giorno , indexID=6, dep= nmod , isRoot=F, father=3-luci, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= del, pos= E+RD , lemma=del , indexID=4, dep= case , isRoot=F, father=6-giorno, features= [, children= []
+			NDTTint [gloss= quinto, pos= NO , lemma=quinto , indexID=5, dep= amod , isRoot=F, father=6-giorno, features= [Gender-[Masc], NumType-[Ord], Number-[Sing], children= []		]
+		NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-luci, features= [, children= []	]
+	NDTTint [gloss= alba, pos= S , lemma=alba , indexID=9, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= all', pos= E+RD , lemma=all' , indexID=8, dep= case , isRoot=F, father=9-alba, features= [, children= []	]
+	NDTTint [gloss= est, pos= S , lemma=est , indexID=12, dep= nmod , isRoot=F, father=10-guarda, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= ad, pos= E , lemma=ad , indexID=11, dep= case , isRoot=F, father=12-est, features= [, children= []	]
+	NDTTint [gloss= !, pos= FS , lemma=! , indexID=13, dep= punct , isRoot=F, father=10-guarda, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[alle:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[luce:NOUN], premodifiers=[first], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[day:NOUN], premodifiers=[fifth], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=all', discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[sunrise:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[est:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[guardare:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[alle:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[luce:NOUN], premodifiers=[first], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[day:NOUN], premodifiers=[fifth], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=all', discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[sunrise:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[est:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[guardare:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Guardares alle first luce of fifth day all' sunrise to est.

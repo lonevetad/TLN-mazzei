@@ -6,33 +6,33 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 3 tokens at 96,8 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 3 tokens at 600,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 7,
-      "text": "Parl???",
+      "text": "parl???",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Parl?"
+          "dependentGloss": "parl?"
         },
         {
-          "dep": "punct",
+          "dep": "name",
           "governor": 1,
-          "governorGloss": "Parl?",
+          "governorGloss": "parl?",
           "dependent": 2,
           "dependentGloss": "?"
         },
         {
           "dep": "punct",
-          "governor": 2,
-          "governorGloss": "?",
+          "governor": 1,
+          "governorGloss": "parl?",
           "dependent": 3,
           "dependentGloss": "?"
         }
@@ -43,19 +43,19 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Parl?"
+          "dependentGloss": "parl?"
         },
         {
-          "dep": "punct",
+          "dep": "name",
           "governor": 1,
-          "governorGloss": "Parl?",
+          "governorGloss": "parl?",
           "dependent": 2,
           "dependentGloss": "?"
         },
         {
           "dep": "punct",
-          "governor": 2,
-          "governorGloss": "?",
+          "governor": 1,
+          "governorGloss": "parl?",
           "dependent": 3,
           "dependentGloss": "?"
         }
@@ -66,19 +66,19 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 1,
-          "dependentGloss": "Parl?"
+          "dependentGloss": "parl?"
         },
         {
-          "dep": "punct",
+          "dep": "name",
           "governor": 1,
-          "governorGloss": "Parl?",
+          "governorGloss": "parl?",
           "dependent": 2,
           "dependentGloss": "?"
         },
         {
           "dep": "punct",
-          "governor": 2,
-          "governorGloss": "?",
+          "governor": 1,
+          "governorGloss": "parl?",
           "dependent": 3,
           "dependentGloss": "?"
         }
@@ -87,15 +87,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "Parl?",
-          "originalText": "Parl?",
-          "lemma": "Parl?",
+          "word": "parl?",
+          "originalText": "parl?",
+          "lemma": "parl?",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 5,
-          "pos": "X",
+          "pos": "SP",
           "featuresText": "",
           "ner": "O",
-          "full_morpho": "Parl?",
+          "full_morpho": "parl?",
           "selected_morpho": "",
           "guessed_lemma": true,
           "features": {}
@@ -122,7 +122,7 @@ parsed :D
           "lemma": "?",
           "characterOffsetBegin": 6,
           "characterOffsetEnd": 7,
-          "pos": "X",
+          "pos": "FS",
           "featuresText": "",
           "ner": "O",
           "full_morpho": "? [PUNCT] [PUNCT]",
@@ -142,6 +142,7 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= Parl?, pos= X , lemma=Parl? , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [2-?]
-	NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= punct , isRoot=F, father=1-Parl?, features= [, children= [3-?]
-		NDTTint [gloss= ?, pos= X , lemma=? , indexID=3, dep= punct , isRoot=F, father=2-?, features= [, children= []
+
+NDTTint [gloss= parl?, pos= SP , lemma=parl? , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= name , isRoot=F, father=1-parl?, features= [, children= []
+	NDTTint [gloss= ?, pos= FS , lemma=? , indexID=3, dep= punct , isRoot=F, father=1-parl?, features= [, children= []]

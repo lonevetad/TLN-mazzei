@@ -6,14 +6,14 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-13",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.1 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 10 tokens at 77,5 tokens/sec.",
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 10 tokens at 1250,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 37,
-      "text": "I neri erano da Anna a donare i reni.",
+      "text": "i neri erano da Anna a donare i reni.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -27,7 +27,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "neri",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -99,7 +99,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "neri",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -171,7 +171,7 @@ parsed :D
           "governor": 2,
           "governorGloss": "neri",
           "dependent": 1,
-          "dependentGloss": "I"
+          "dependentGloss": "i"
         },
         {
           "dep": "nsubj",
@@ -234,15 +234,15 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "I",
-          "originalText": "I",
+          "word": "i",
+          "originalText": "i",
           "lemma": "il",
           "characterOffsetBegin": 0,
           "characterOffsetEnd": 1,
           "pos": "RD",
           "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dPlur|PronType\u003dArt",
           "ner": "O",
-          "full_morpho": "I il+art+m+plur",
+          "full_morpho": "i il+art+m+plur",
           "selected_morpho": "il+art+m+plur",
           "guessed_lemma": false,
           "features": {
@@ -454,13 +454,13 @@ built :D
 
 TreeParsedSentence
 root:
-NDTTint [gloss= erano, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Imp], VerbForm-[Fin], children= [2-neri, 5-Anna, 7-donare, 10-.]
-	NDTTint [gloss= neri, pos= S , lemma=nero , indexID=2, dep= nsubj , isRoot=F, father=3-erano, features= [Gender-[Masc], Number-[Plur], children= [1-I]
-		NDTTint [gloss= I, pos= RD , lemma=il , indexID=1, dep= det , isRoot=F, father=2-neri, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
-	NDTTint [gloss= Anna, pos= SP , lemma=Anna , indexID=5, dep= nmod , isRoot=F, father=3-erano, features= [, children= [4-da]
-		NDTTint [gloss= da, pos= E , lemma=da , indexID=4, dep= case , isRoot=F, father=5-Anna, features= [, children= []
-	NDTTint [gloss= donare, pos= V , lemma=donare , indexID=7, dep= xcomp , isRoot=F, father=3-erano, features= [VerbForm-[Inf], children= [6-a, 9-reni]
+
+NDTTint [gloss= erano, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= neri, pos= S , lemma=nero , indexID=2, dep= nsubj , isRoot=F, father=3-erano, features= [Gender-[Masc], Number-[Plur], children= []
+	NDTTint [gloss= Anna, pos= SP , lemma=Anna , indexID=5, dep= nmod , isRoot=F, father=3-erano, features= [, children= [
+		NDTTint [gloss= da, pos= E , lemma=da , indexID=4, dep= case , isRoot=F, father=5-Anna, features= [, children= []	]
+	NDTTint [gloss= donare, pos= V , lemma=donare , indexID=7, dep= xcomp , isRoot=F, father=3-erano, features= [VerbForm-[Inf], children= [
 		NDTTint [gloss= a, pos= E , lemma=a , indexID=6, dep= mark , isRoot=F, father=7-donare, features= [, children= []
-		NDTTint [gloss= reni, pos= S , lemma=rene , indexID=9, dep= dobj , isRoot=F, father=7-donare, features= [Gender-[Masc], Number-[Plur], children= [8-i]
-			NDTTint [gloss= i, pos= RD , lemma=il , indexID=8, dep= det , isRoot=F, father=9-reni, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=10, dep= punct , isRoot=F, father=3-erano, features= [, children= []
+		NDTTint [gloss= reni, pos= S , lemma=rene , indexID=9, dep= dobj , isRoot=F, father=7-donare, features= [Gender-[Masc], Number-[Plur], children= [
+			NDTTint [gloss= i, pos= RD , lemma=il , indexID=8, dep= det , isRoot=F, father=9-reni, features= [Definite-[Def, Def], Gender-[Masc, Masc], Number-[Plur, Plur], PronType-[Art, Art], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=10, dep= punct , isRoot=F, father=3-erano, features= [, children= []]
