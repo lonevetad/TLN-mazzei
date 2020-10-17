@@ -53,6 +53,12 @@ public interface NodeComparable<K> extends Serializable {
 
 	public NodeComparable<K> getChildNCByKey(K key);
 
+	public default boolean isLeafNC() {
+		Set<NodeComparable<K>> children;
+		children = getChildrenNC();
+		return children == null || children.isEmpty();
+	}
+
 	public default boolean containsChildNC(K key) { return this.getChildNCByKey(key) != null; }
 
 	public default void forEachChildNC(Consumer<NodeComparable<K>> action) {
@@ -68,10 +74,7 @@ public interface NodeComparable<K> extends Serializable {
 		if (child == null)
 			return this;
 		children = getChildrenNC();
-		if (children == null) {
-			System.out.println(" WTFFFFF CHILDREN NULL");
-			return this;
-		}
+		if (children == null) { return this; }
 		children.add(child);
 		return this;
 	}

@@ -1,4 +1,4 @@
-package tash;
+package trash;
 
 import simplenlg.features.Feature;
 import simplenlg.features.Tense;

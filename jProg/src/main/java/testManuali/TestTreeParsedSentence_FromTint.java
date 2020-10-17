@@ -5,12 +5,13 @@ import java.io.IOException;
 import java.util.Objects;
 
 import common.TintParser;
-import common.TintParserOutput;
-import common.TreeParsedSentence;
 import common.TintParser.TintParsedAndJSON;
+import common.TintParserOutput;
+import common.SentenceParsed;
 import tools.JsonParserSimple;
 import tools.LoggerMessages;
 import tools.LoggerOnFile;
+import tools.MockedData;
 import tools.json.JsonParserJackson;
 
 public class TestTreeParsedSentence_FromTint {
@@ -20,7 +21,7 @@ public class TestTreeParsedSentence_FromTint {
 		int index;
 		JsonParserSimple jsonParser;
 		TintParserOutput parsifiedText;
-		TreeParsedSentence treeParsedSent;
+		SentenceParsed treeParsedSent;
 		LoggerMessages log;
 		TintParsedAndJSON parsedAndJson;
 		jsonParser = new JsonParserJackson();
@@ -46,7 +47,7 @@ public class TestTreeParsedSentence_FromTint {
 			log.logAndPrint("parsed :D\n\n\n JSON:");
 			log.logAndPrint(parsedAndJson.json);
 			log.logAndPrint("\n\n Now build the tree:");
-			treeParsedSent = new TreeParsedSentence(parsifiedText.getSentences()[0]);
+			treeParsedSent = new SentenceParsed(parsifiedText.getSentences()[0]);
 
 			log.logAndPrint("built :D\n\n");
 			log.logAndPrint(Objects.toString(treeParsedSent));

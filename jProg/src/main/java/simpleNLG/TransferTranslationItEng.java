@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
 
-import common.TreeParsedSentence;
-import common.TreeParsedSentence.NodeDependencyTree;
+import common.SentenceParsed;
+import common.SentenceParsed.NodeParsedSentFromTint;
 import edu.stanford.nlp.coref.data.Dictionaries.Person;
 import simplenlg.features.Feature;
 import simplenlg.features.Tense;
@@ -21,25 +21,27 @@ import simplenlg.phrasespec.VPPhraseSpec;
 import simplenlg.realiser.english.Realiser;
 import tools.Misc;
 
+/** First non-naive version of a translator. */
 public class TransferTranslationItEng {
 	public static final Lexicon LEXICON = new XMLLexicon(Paths.get(Misc.RESOURCE_PATH + "LexiconIt.txt").toUri());
 	public static final NLGFactory NLG_FACTORY = new NLGFactory(LEXICON);
 	public static final Realiser REALISER = new Realiser(LEXICON);
 
-	public static SPhraseSpec transferTranslateItEng(TreeParsedSentence t, Function<String, String> wordTranslator) {
+	public static SPhraseSpec transferTranslateItEng(SentenceParsed t, Function<String, String> wordTranslator) {
 		SPhraseSpec rootOfPhrase;
 		rootOfPhrase = NLG_FACTORY.createClause();
-		transfer(wordTranslator, t.getRoot(), rootOfPhrase);
+		System.out.println("\n\n\n t.root è .. " + t.getRoot());
+		translateSentenceTree(wordTranslator, t.getRoot(), rootOfPhrase);
 		return rootOfPhrase;
 	}
 
-	protected static void transfer(Function<String, String> wordTranslator,
-			TreeParsedSentence.NodeDependencyTree subtreeRoot, final PhraseElement subPhraseRoot) {
+	protected static void translateSentenceTree(Function<String, String> wordTranslator,
+			SentenceParsed.NodeParsedSentFromTint subtreeRoot, final PhraseElement subPhraseRoot) {
 //main stuffs
 //		boolean tempCacheFlag;
 		String posNodeType, nodeGloss, translatedNodeGloss, translatedChildGloss;
-		Iterator<NodeDependencyTree> childrenIterator;
-		NodeDependencyTree child;
+		Iterator<NodeParsedSentFromTint> childrenIterator;
+		NodeParsedSentFromTint child;
 		// the following three could be created
 		NPPhraseSpec nounPhrase = null;
 		VPPhraseSpec verbPhrase = null;
@@ -169,11 +171,11 @@ public class TransferTranslationItEng {
 			String childNodeType;
 			childNodeType = c.getDep();
 			if (("nsubjpass".equals(posNodeType) && "nmod".equals(childNodeType)) || "compound".equals(childNodeType)) {
-				transfer(wordTranslator, c, n);
+				translateSentenceTree(wordTranslator, c, n);
 			} else if ("nsubjpass".equals(childNodeType) || "dobj".equals(childNodeType)) {
-				transfer(wordTranslator, c, v);
+				translateSentenceTree(wordTranslator, c, v);
 			} else {
-				transfer(wordTranslator, c, subPhraseRoot); // AGAIN
+				translateSentenceTree(wordTranslator, c, subPhraseRoot); // AGAIN
 			}
 		});
 	}

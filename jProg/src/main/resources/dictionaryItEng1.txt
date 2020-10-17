@@ -3,7 +3,7 @@
 ? -> ?
 ! -> !
 
-i | le | gli -> the
+il | lo | la | i | gli | le -> the
 una | uno | un -> a
 che -> that
 di | del -> of
@@ -14,10 +14,14 @@ a -> to
 it -> esso
 he -> lui
 she -> lei
+esso -> he
+essa -> she
+essi | esse -> they
 tu -> you
 io -> I
 voi -> you
 noi -> us
+da -> to
 
 questa | questo -> this
 quella | quello -> that
@@ -31,18 +35,18 @@ poco | poca -> few
 difficile -> difficult
 talvolta -> sometimes
 se -> if
+dei -> some
 non -> not
 vero | vera -> true
+falso | falsa -> false
 
-spada laser -> lightsaber
-Repubblica -> Republic
 
 topo -> mouse
 topi | tope -> mice
-nipote | nipotino -> nephew
+nipote | nipotino |nipoti -> nephew
 nipotina -> niece
 ho -> have
-è -> is
+è -> it's
 sono -> am
 sei | siamo | sono -> are
 ha fatto -> make
@@ -52,7 +56,6 @@ leale -> fair
 mossa -> move
 avanzi | avanzo -> leftover
 vecchia | vecchio | vecchi | vecchie  -> old
-sono stati spazzati + via -> have been wiped out
 spazzato + via -> wipe out
 spazzati + via -> wipe out
 sembra | sembrare -> seems
@@ -101,4 +104,61 @@ genio -> genius
 informatica -> computer science
 efficacemente -> efficiently
 fantasia -> fanatsy
-calcio -> calcuim
+calcio -> calcium
+tutti --> all
+quei --> those
+momento --> moment
+momenti --> moments
+andranno perduti --> will be lost
+nel | nella | nello --> in
+tempo --> time
+come --> like
+lacrima --> tear
+lacrime --> tears
+pioggia --> rain
+colore -> color
+colori -> colors
+giallo -> yellow
+pietanza | pietanze -> food
+orientale -> oriental
+orientali -> orientals
+intelligente | intelligenti -> clever
+esempio -> example
+esempi -> examples
+libri -> books
+libro -> book
+storia -> novel
+inventato | inventata -> invented
+carenza -> lack
+giorno -> day
+ultimo | ultimi -> last
+ora | adesso -> now
+divano | divani -> couch
+tutti | tutta | tutte | tutto -> all 
+primo | prima | prime | primi -> first
+quinto | quinta | quinti | quinte -> fifth
+alba -> sunrise
+ad -> to
+mago | maga -> mage
+stregone | strega -> wizard
+morire -> die
+muore -> dies
+sotto -> under
+scroscianti | scrosciante -> thunderous
+applauso | applausi -> applause
+anello -> ring
+anelli -> rings
+lettera -> mail
+colorata | colorate -> colorful
+gatto -> cat
+gatti -> cats
+
+amore -> love
+follemente -> insanely
+cucinare -> coocking
+spada laser -> lightsaber
+Repubblica -> Republic
+sono stati spazzati + via -> have been wiped out
+è stata | è stato -> has been
+a proposito -> about
+di sana pianta -> from scratch

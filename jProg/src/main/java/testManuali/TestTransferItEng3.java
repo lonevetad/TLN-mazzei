@@ -1,11 +1,12 @@
-package tools;
+package testManuali;
 
-import common.TransferTranslationItEng3;
+import tools.BuilderTransferTranslatorItEng3_ByHand;
+import translators.TransferTranslationRuleBased;
 
 public class TestTransferItEng3 {
 
 	public static void main(String[] args) {
-		TransferTranslationItEng3 transferer;
+		TransferTranslationRuleBased transferer;
 		transferer = BuilderTransferTranslatorItEng3_ByHand.SINGLETON.newTransferItEng();
 
 	}

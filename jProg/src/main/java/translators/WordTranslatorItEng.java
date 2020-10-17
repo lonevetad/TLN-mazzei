@@ -1,10 +1,12 @@
-package tools;
+package translators;
 
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
+import tools.LineReader;
+import tools.Misc;
 import tools.lineReader.LineReaderFromFile;
 
 public class WordTranslatorItEng implements Function<String, String> {

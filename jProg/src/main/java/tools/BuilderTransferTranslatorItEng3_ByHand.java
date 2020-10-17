@@ -1,30 +1,12 @@
 package tools;
 
-import common.TransferTranslationItEng3;
-import common.TransferTranslationItEng3.ElementGrammarWithAlternatives;
-import common.TransferTranslationItEng3.NodeSubtreeDependency;
-import common.TransferTranslationItEng3.TransferRule;
+import common.ElemGrammarBase;
+import common.NodeParsedSentence;
+import translators.TransferTranslationRuleBased;
+import translators.TransferTranslationRuleBased.TransferRule;
 
 public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTranslatorItEng {
 	public static final BuilderTransferTranslatorItEng3_ByHand SINGLETON = new BuilderTransferTranslatorItEng3_ByHand();
-
-	public static enum ElemGrammarBase {
-		PUNC("F", "FS", "Punc", "Punct", "PUNC", "PUNCT"), //
-		Verb("V", "verb"), //
-		Adjective(new String[] { "JJ", "JJR", "JJS", "adj", "amod" }), //
-		Noun(new String[] { "NN", "NNS", "NNP", "NNPS", "N", "nsubj", "nsubjpass" }), //
-		Adverb("RB", "RBR", "RBS"), //
-		Subject(new String[] { "S", "subj", "nsubj", "nsubjpass" }), //
-		Objectt(new String[] { "O", "obj" }) //
-		//
-		;
-
-		public final ElementGrammarWithAlternatives eg;
-
-		private ElemGrammarBase(String... aa) { this(new ElementGrammarWithAlternatives(aa)); }
-
-		private ElemGrammarBase(ElementGrammarWithAlternatives eg) { this.eg = eg; }
-	}
 
 	//
 
@@ -35,65 +17,41 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 	private BuilderTransferTranslatorItEng3_ByHand() {}
 
 	@Override
-	public TransferTranslationItEng3 newTransferItEng() {
-		TransferTranslationItEng3 t;
-		t = new TransferTranslationItEng3();
+	public TransferTranslationRuleBased newTransferItEng() {
+		TransferTranslationRuleBased t;
+		t = new TransferTranslationRuleBased();
 
 		// identities
+		for (ElemGrammarBase egb : ElemGrammarBase.values()) {
+			t.addRule(new IdentityTransferRule(egb));
+		}
 
-		t.addRule(new TransferRule(NodeSubtreeDependency.newNSD(ElemGrammarBase.PUNC.eg)) {
-			@Override
-			public NodeSubtreeDependency applyTransferRule(TransferTranslationItEng3 transferer,
-					NodeSubtreeDependency originalSubtree) {
-				NodeSubtreeDependency newNode;
-				newNode = NodeSubtreeDependency.newNSD(ElemGrammarBase.PUNC.eg);
-				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newNode);
-				return newNode;
-			}
-		});
-
-		t.addRule(new TransferRule(
-				NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))) {
-
-		});
-
-		t.addRule(new TransferRule(
-				NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "O", "obj" }))) {
-			@Override
-			public NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree) {
-				return NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "O", "obj" }));
-			}
-		});
-
-		t.addRule(new TransferRule(NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] {}))) {
-			@Override
-			public NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree) {
-				return NodeSubtreeDependency.newNSD(ElemGrammarBase.Adjective.eg);
-			}
-		});
-		t.addRule(new TransferRule(NodeSubtreeDependency.newNSD(ElemGrammarBase.Adjective.eg)) {
-			@Override
-			public NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree) {
-				return NodeSubtreeDependency
-						.newNSD(new ElementGrammarWithAlternatives(new String[] { "JJ", "JJR", "JJS", "adj" }));
-			}
-		});
+//		t.addRule(new TransferRule(NodeParsedSentence.newNSD(ElemGrammarBase.PUNC.eg)) {
+//			@Override
+//			public NodeParsedSentence applyTransferRule(TransferTranslationItEng3 transferer,
+//					NodeParsedSentence originalSubtree) {
+//				NodeParsedSentence newNode;
+//				newNode = NodeParsedSentence.newNSD(ElemGrammarBase.PUNC.eg);
+//				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newNode);
+//				return newNode;
+//			}
+//		});
 
 		//
 		// more complexies
 		//
 
-		t.addRule(new TransferRule((NodeSubtreeDependency) NodeSubtreeDependency.newNSD(ElemGrammarBase.Verb.eg)//
-				.addChildNC(NodeSubtreeDependency.newNSD(ElemGrammarBase.Noun.eg))) {
+		t.addRule(new TransferRule((NodeParsedSentence) ElemGrammarBase.Verb.newNSD()//
+				.addChildNC(ElemGrammarBase.Noun.newNSD())) {
 			@Override
-			public NodeSubtreeDependency applyTransferRule(TransferTranslationItEng3 transferer,
-					NodeSubtreeDependency originalSubtree) {
-				NodeSubtreeDependency newVerb, newSubj, oldSubj;
+			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+					NodeParsedSentence originalSubtree) {
+				NodeParsedSentence newVerb, newSubj, oldSubj;
 				// prodicing
-				newVerb = NodeSubtreeDependency.newNSD(ElemGrammarBase.Verb.eg);
+				newVerb = ElemGrammarBase.Verb.newNSD();
 				// (the old child must be taken)
-				oldSubj = (NodeSubtreeDependency) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
-				newSubj = NodeSubtreeDependency.newNSD(ElemGrammarBase.Noun.eg);
+				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
+				newSubj = ElemGrammarBase.Noun.newNSD();
 				// wiring
 				newVerb.addChildNC(newSubj);
 				// mandatory invoke .. (bottom-up is better, but You are free)
@@ -103,20 +61,63 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 			}
 		});
 
-//		t.addRule(new TransferRule((NodeSubtreeDependency) // casting
-//		NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
+		t.addRule(new TransferRule(//
+				(NodeParsedSentence) ElemGrammarBase.Verb.newNSD()//
+						.addChildNC(ElemGrammarBase.Objectt.newNSD())//
+		) {
+			@Override
+			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+					NodeParsedSentence originalSubtree) {
+				NodeParsedSentence newVerb, newSubj, oldSubj;
+				// prodicing
+				newVerb = ElemGrammarBase.Verb.newNSD();
+				// (the old child must be taken)
+				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
+				newSubj = ElemGrammarBase.Objectt.newNSD();
+				// wiring
+				newVerb.addChildNC(newSubj);
+				// mandatory invoke .. (bottom-up is better, but You are free)
+				manageUntouchedChildredUpontransfer(oldSubj, transferer, newSubj);
+				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newVerb);
+				return newVerb; // the root
+			}
+		});
+		t.addRule(new TransferRule(//
+				(NodeParsedSentence) ElemGrammarBase.Subject.newNSD()//
+						.addChildNC(ElemGrammarBase.Adjective.newNSD())//
+		) {
+			@Override
+			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+					NodeParsedSentence originalSubtree) {
+				NodeParsedSentence newSubj, newAdj, oldAdj;
+				// prodicing
+				newSubj = ElemGrammarBase.Subject.newNSD();
+				// (the old child must be taken)
+				oldAdj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Adjective.eg);
+				newAdj = ElemGrammarBase.Adjective.newNSD();
+				// wiring
+				newSubj.addChildNC(newAdj);
+				// mandatory invoke .. (bottom-up is better, but You are free)
+				manageUntouchedChildredUpontransfer(oldAdj, transferer, newAdj);
+				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newSubj);
+				return newSubj; // the root
+			}
+		});
+
+//		t.addRule(new TransferRule((NodeParsedSentence) // casting
+//		NodeParsedSentence.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
 //				// 1st level of nesting
 //				.addChildNC(
-//						NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })))
+//						NodeParsedSentence.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })))
 //		//
 //		) {
 //			@Override
-//			public NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree) {
-////				return NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }));
-//				return (NodeSubtreeDependency) //
-//				NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
+//			public NodeParsedSentence applyTransferRule(NodeParsedSentence originalSubtree) {
+////				return NodeParsedSentence.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }));
+//				return (NodeParsedSentence) //
+//				NodeParsedSentence.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
 //						// 1st level of nesting
-//						.addChildNC(NodeSubtreeDependency
+//						.addChildNC(NodeParsedSentence
 //								.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })));
 //			}
 //		});
@@ -125,63 +126,124 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 		// EVEN MORE COMPLEX
 		//
 
-		t.addRule(new TransferRule((NodeSubtreeDependency) // casting
-		NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
-				// 1st level of nesting
-				.addChildNC(
-						NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })))
-				.addChildNC(
-						NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })))
-		//
+		t.addRule(new TransferRule(//
+				(NodeParsedSentence) ElemGrammarBase.Verb.newNSD()//
+						.addChildNC(ElemGrammarBase.Subject.newNSD())//
+						.addChildNC(ElemGrammarBase.Objectt.newNSD())//
 		) {
 			@Override
-			public NodeSubtreeDependency applyTransferRule(NodeSubtreeDependency originalSubtree) {
-//				return NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }));
-				return (NodeSubtreeDependency) //
-				NodeSubtreeDependency.newNSD(new ElementGrammarWithAlternatives(new String[] { "V", "verb" }))
-						// 1st level of nesting
-						.addChildNC(NodeSubtreeDependency
-								.newNSD(new ElementGrammarWithAlternatives(new String[] { "S", "subj" })));
-			}
-		});
-
-		t.addRule(new TransferRule(
-				//
-				(NodeSubtreeDependency) NodeSubtreeDependency.newNSD(ElemGrammarBase.Verb.eg)//
-						.addChildNC(NodeSubtreeDependency.newNSD(ElemGrammarBase.Noun.eg))//
-						// second child of verb:
-						.addChildNC(NodeSubtreeDependency.newNSD(ElemGrammarBase.Noun.eg))//
-		) {
-			@Override
-			public NodeSubtreeDependency applyTransferRule(TransferTranslationItEng3 transferer,
-					NodeSubtreeDependency originalSubtree) {
-				NodeSubtreeDependency newVerb, newSubj, newObj, oldSubj, oldObjs;
+			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+					NodeParsedSentence originalSubtree) {
+				NodeParsedSentence newVerb, newSubj, oldSubj, newObj, oldObj;
 				// prodicing
-				newVerb = NodeSubtreeDependency.newNSD(ElemGrammarBase.Verb.eg);
+				newVerb = ElemGrammarBase.Verb.newNSD();
 				// (the old child must be taken)
-				oldSubj = (NodeSubtreeDependency) originalSubtree.getChildNCByKey(ElemGrammarBase.Subject.eg);
-				if (oldSubj == null) {
-					oldSubj = (NodeSubtreeDependency) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
-				}
-
-				oldObjs = (NodeSubtreeDependency) originalSubtree.getChildNCByKey(ElemGrammarBase.Objectt.eg);
-				if (oldObjs == null) {
-					oldObjs = (NodeSubtreeDependency) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
-					// warning : is it the same ov previous?
-				}
-				newSubj = NodeSubtreeDependency.newNSD(ElemGrammarBase.Subject.eg);
-				newObj = NodeSubtreeDependency.newNSD(ElemGrammarBase.Objectt.eg);
+				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Subject.eg);
+				oldObj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Objectt.eg);
+				// and then new ones
+				newSubj = ElemGrammarBase.Subject.newNSD();
+				newObj = ElemGrammarBase.Objectt.newNSD();
 				// wiring
 				newVerb.addChildNC(newSubj);
 				newVerb.addChildNC(newObj);
 				// mandatory invoke .. (bottom-up is better, but You are free)
 				manageUntouchedChildredUpontransfer(oldSubj, transferer, newSubj);
-				manageUntouchedChildredUpontransfer(oldObjs, transferer, newObj);
+				manageUntouchedChildredUpontransfer(oldObj, transferer, newObj);
 				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newVerb);
 				return newVerb; // the root
 			}
 		});
+
+		t.addRule(new TransferRule(//
+				(NodeParsedSentence) ElemGrammarBase.Verb.newNSD()//
+						.addChildNC(ElemGrammarBase.Subject.newNSD())//
+						.addChildNC(ElemGrammarBase.Aux.newNSD())//
+						.addChildNC(ElemGrammarBase.Objectt.newNSD())//
+		) {
+			@Override
+			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+					NodeParsedSentence originalSubtree) {
+				NodeParsedSentence newVerb, newSubj, oldSubj, newObj, oldObj, newAux, oldAux;
+				// prodicing
+				newVerb = ElemGrammarBase.Verb.newNSD();
+				// (the old child must be taken)
+				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Subject.eg);
+				oldObj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Objectt.eg);
+				oldAux = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Aux.eg);
+				// and then new ones
+				newSubj = ElemGrammarBase.Subject.newNSD();
+				newAux = ElemGrammarBase.Aux.newNSD();
+				newObj = ElemGrammarBase.Objectt.newNSD();
+				// wiring
+				newVerb.addChildNC(newSubj);
+				newVerb.addChildNC(newObj);
+				newVerb.addChildNC(newAux);
+				// mandatory invoke .. (bottom-up is better, but You are free)
+				manageUntouchedChildredUpontransfer(oldSubj, transferer, newSubj);
+				manageUntouchedChildredUpontransfer(oldObj, transferer, newObj);
+				manageUntouchedChildredUpontransfer(oldAux, transferer, newAux);
+				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newVerb);
+				return newVerb; // the root
+			}
+		});
+//
+//		t.addRule(new TransferRule(
+//				//
+//				(NodeParsedSentence) ElemGrammarBase.Verb.newNSD() //
+//						.addChildNC( ElemGrammarBase.Noun.newNSD())//
+//						// second child of verb:
+//						.addChildNC(ElemGrammarBase.Noun.)//
+//		) {
+//			@Override
+//			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+//					NodeParsedSentence originalSubtree) {
+//				NodeParsedSentence newVerb, newSubj, newObj, oldSubj, oldObjs;
+//				// prodicing
+//				newVerb = ElemGrammarBase.Verb.newNSD();
+//				// (the old child must be taken)
+//				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Subject.eg);
+//				if (oldSubj == null) {
+//					oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
+//				}
+//				oldObjs = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Objectt.eg);
+//				if (oldObjs == null) {
+//					oldObjs = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
+//					// warning : is it the same ov previous?
+//				}
+//				newSubj = NodeParsedSentence.newNSD(ElemGrammarBase.Subject.eg);
+//				newObj = NodeParsedSentence.newNSD(ElemGrammarBase.Objectt.eg);
+//				// wiring
+//				newVerb.addChildNC(newSubj);
+//				newVerb.addChildNC(newObj);
+//				// mandatory invoke .. (bottom-up is better, but You are free)
+//				manageUntouchedChildredUpontransfer(oldSubj, transferer, newSubj);
+//				manageUntouchedChildredUpontransfer(oldObjs, transferer, newObj);
+//				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newVerb);
+//				return newVerb; // the root
+//			}
+//		});
 		return t;
+	}
+
+//
+
+	protected static class IdentityTransferRule extends TransferRule {
+		final ElemGrammarBase egb;
+
+		public IdentityTransferRule(ElemGrammarBase egb) {
+			super(egb.newNSD());
+			this.egb = egb;
+		}
+
+		@Override
+		public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+				NodeParsedSentence originalSubtree) {
+			NodeParsedSentence newNode;
+			newNode = egb.newNSD();
+			manageUntouchedChildredUpontransfer(originalSubtree, transferer, newNode);
+			return newNode;
+		}
+
 	}
 
 }

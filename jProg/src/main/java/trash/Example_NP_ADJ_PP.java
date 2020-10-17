@@ -16,7 +16,7 @@
  *  simplenlg.phrasespec.SPhraseSpec
  *  simplenlg.realiser.Realiser
  */
-package tash;
+package trash;
 
 import simplenlg.framework.InflectedWordElement;
 import simplenlg.framework.LexicalCategory;

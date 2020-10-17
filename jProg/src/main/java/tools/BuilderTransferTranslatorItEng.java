@@ -1,10 +1,10 @@
 package tools;
 
-import common.TransferTranslationItEng3;
+import translators.TransferTranslationRuleBased;
 
 public abstract class BuilderTransferTranslatorItEng {
 
-	public abstract TransferTranslationItEng3 newTransferItEng();
+	public abstract TransferTranslationRuleBased newTransferItEng();
 
 	public static void main(String[] args) {
 		// TODO eh eh ... read from file?

@@ -1,4 +1,4 @@
-package tash;
+package trash;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import common.TreeParsedSentence;
+import common.SentenceParsed;
 
 /**
  * Traduttore formato da regole generiche, a prescindere che si usi SimpleNLG
@@ -102,10 +102,10 @@ public class TransferTranslationItEng2 {
 	 * For example: "just some adjective" could be one of the following "{JJ, JJR,
 	 * JJS}" or "{adj, nadj, amod}". In this way, it can be easily verified
 	 */
-	public static class ElementGrammarWithAlternatives {
+	public static class ElementGrammarWithAlternatives_OLD {
 		protected final String[] alternatives;
 
-		protected ElementGrammarWithAlternatives(String[] alternatives) {
+		protected ElementGrammarWithAlternatives_OLD(String[] alternatives) {
 			super();
 			this.alternatives = alternatives;
 			Arrays.sort(alternatives);
@@ -130,12 +130,12 @@ public class TransferTranslationItEng2 {
 	 * The LHS is a subtree: a root with its direct optional child / children.
 	 */
 	public static abstract class TransferRule { // 3
-		protected final ElementGrammarWithAlternatives nodeLhs;
-		protected final Set<ElementGrammarWithAlternatives> childrenLhs;
+		protected final ElementGrammarWithAlternatives_OLD nodeLhs;
+		protected final Set<ElementGrammarWithAlternatives_OLD> childrenLhs;
 
-		public TransferRule(ElementGrammarWithAlternatives nodeLhs) { this(nodeLhs, null); }
+		public TransferRule(ElementGrammarWithAlternatives_OLD nodeLhs) { this(nodeLhs, null); }
 
-		public TransferRule(ElementGrammarWithAlternatives nodeLhs, Set<ElementGrammarWithAlternatives> childrenLhs) {
+		public TransferRule(ElementGrammarWithAlternatives_OLD nodeLhs, Set<ElementGrammarWithAlternatives_OLD> childrenLhs) {
 			super();
 			this.nodeLhs = nodeLhs;
 			this.childrenLhs = childrenLhs;
@@ -159,7 +159,7 @@ public class TransferTranslationItEng2 {
 		 * </ul>
 		 */
 //		is part of the LHS
-		protected Integer isAcceptable(TreeParsedSentence.NodeDependencyTree node) {
+		protected Integer isAcceptable(SentenceParsed.NodeParsedSentFromTint node) {
 			// check if the node itself can be part of the lhs. If not -> false
 			/* After this optimization, checks must be */
 			return null;
@@ -167,20 +167,20 @@ public class TransferTranslationItEng2 {
 
 		/**
 		 * NOTE: DO NOT INVOKE ME, USE
-		 * {@link #testAndApplyRule(common.TreeParsedSentence.NodeDependencyTree)}
+		 * {@link #testAndApplyRule(common.SentenceParsed.NodeParsedSentFromTint)}
 		 * INSTEAD.
 		 * 
 		 * Produce a new node/subtree, depending on this rule and the provided node.
 		 * It's assumed that
-		 * {@link #isAcceptable(common.TreeParsedSentence.NodeDependencyTree)} returns
+		 * {@link #isAcceptable(common.SentenceParsed.NodeParsedSentFromTint)} returns
 		 * <code>true</code>.
 		 */
-		protected abstract TreeParsedSentence.NodeDependencyTree applyTransferRule(
-				TreeParsedSentence.NodeDependencyTree node);
+		protected abstract SentenceParsed.NodeParsedSentFromTint applyTransferRule(
+				SentenceParsed.NodeParsedSentFromTint node);
 
 		/** The real rule, the ones to be invoked */
-		public final TreeParsedSentence.NodeDependencyTree testAndApplyRule(
-				TreeParsedSentence.NodeDependencyTree node) {
+		public final SentenceParsed.NodeParsedSentFromTint testAndApplyRule(
+				SentenceParsed.NodeParsedSentFromTint node) {
 			if (isAcceptable(node))
 				return applyTransferRule(node);
 			else
