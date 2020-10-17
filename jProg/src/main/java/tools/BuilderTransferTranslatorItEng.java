@@ -1,6 +1,6 @@
 package tools;
 
-import translators.TransferTranslationRuleBased;
+import translators.secondWay.TransferTranslationRuleBased;
 
 public abstract class BuilderTransferTranslatorItEng {
 

@@ -261,9 +261,10 @@ public class SentenceParsed implements Stringable {
 //							isNotFirst[0] = true;
 //						}
 //						sb.append(k.toMiniString());
+							sb.append('\n');
 							k.toString(sb, lev);
 						});
-				sb.append('\n');
+				addTab(sb, level, false);
 			}
 			sb.append(']');
 		}

@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 368,4 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 318,2 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -346,16 +346,10 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= sembra, pos= V , lemma=sembrare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [6-difficile, 7-.]
-
-	NDTTint [gloss= difficile, pos= A , lemma=difficile , indexID=6, dep= ccomp , isRoot=F, father=1-sembra, features= [Gender-[Masc], Number-[Sing], children= [2-che, 4-laboratorio, 5-sia]
-
+NDTTint [gloss= sembra, pos= V , lemma=sembrare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= difficile, pos= A , lemma=difficile , indexID=6, dep= ccomp , isRoot=F, father=1-sembra, features= [Gender-[Masc], Number-[Sing], children= [
 		NDTTint [gloss= che, pos= CS , lemma=che , indexID=2, dep= mark , isRoot=F, father=6-difficile, features= [, children= []
-
-		NDTTint [gloss= laboratorio, pos= S , lemma=laboratorio , indexID=4, dep= nsubj , isRoot=F, father=6-difficile, features= [Gender-[Masc], Number-[Sing], children= [3-il]
-
-			NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=4-laboratorio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-
-		NDTTint [gloss= sia, pos= V , lemma=essere , indexID=5, dep= cop , isRoot=F, father=6-difficile, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=1-sembra, features= [, children= []
+		NDTTint [gloss= laboratorio, pos= S , lemma=laboratorio , indexID=4, dep= nsubj , isRoot=F, father=6-difficile, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=4-laboratorio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []		]
+		NDTTint [gloss= sia, pos= V , lemma=essere , indexID=5, dep= cop , isRoot=F, father=6-difficile, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=1-sembra, features= [, children= []]

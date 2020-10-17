@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 555,6 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 833,3 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -258,12 +258,8 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= invia, pos= V , lemma=inviare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [3-lettera, 5-.]
-
-	NDTTint [gloss= lettera, pos= S , lemma=lettera , indexID=3, dep= dobj , isRoot=F, father=1-invia, features= [Gender-[Fem], Number-[Sing], children= [2-la, 4-colorata]
-
+NDTTint [gloss= invia, pos= V , lemma=inviare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= lettera, pos= S , lemma=lettera , indexID=3, dep= dobj , isRoot=F, father=1-invia, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= la, pos= RD , lemma=la , indexID=2, dep= det , isRoot=F, father=3-lettera, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-
-		NDTTint [gloss= colorata, pos= A , lemma=colorato , indexID=4, dep= amod , isRoot=F, father=3-lettera, features= [Gender-[Fem], Number-[Sing], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=1-invia, features= [, children= []
+		NDTTint [gloss= colorata, pos= A , lemma=colorato , indexID=4, dep= amod , isRoot=F, father=3-lettera, features= [Gender-[Fem], Number-[Sing], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=1-invia, features= [, children= []]

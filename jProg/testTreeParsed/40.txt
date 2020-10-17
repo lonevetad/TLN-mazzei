@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 611,1 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 647,1 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -489,24 +489,14 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= adoro, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [1-io, 3-follemente, 5-arte, 11-.]
-
+NDTTint [gloss= adoro, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
 	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=2-adoro, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
-
 	NDTTint [gloss= follemente, pos= B , lemma=follemente , indexID=3, dep= advmod , isRoot=F, father=2-adoro, features= [, children= []
-
-	NDTTint [gloss= arte, pos= S , lemma=arte , indexID=5, dep= dobj , isRoot=F, father=2-adoro, features= [Gender-[Fem], Number-[Sing], children= [4-l', 6-sublime, 9-pietanze]
-
+	NDTTint [gloss= arte, pos= S , lemma=arte , indexID=5, dep= dobj , isRoot=F, father=2-adoro, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= l', pos= RD , lemma=l' , indexID=4, dep= det , isRoot=F, father=5-arte, features= [, children= []
-
 		NDTTint [gloss= sublime, pos= A , lemma=sublime , indexID=6, dep= amod , isRoot=F, father=5-arte, features= [Gender-[Masc], Number-[Sing], children= []
-
-		NDTTint [gloss= pietanze, pos= S , lemma=pietanza , indexID=9, dep= nmod , isRoot=F, father=5-arte, features= [Gender-[Fem], Number-[Plur], children= [7-del, 8-cucinare, 10-orientali]
-
+		NDTTint [gloss= pietanze, pos= S , lemma=pietanza , indexID=9, dep= nmod , isRoot=F, father=5-arte, features= [Gender-[Fem], Number-[Plur], children= [
 			NDTTint [gloss= del, pos= E+RD , lemma=del , indexID=7, dep= case , isRoot=F, father=9-pietanze, features= [, children= []
-
 			NDTTint [gloss= cucinare, pos= V , lemma=cucinare , indexID=8, dep= acl , isRoot=F, father=9-pietanze, features= [VerbForm-[Inf], children= []
-
-			NDTTint [gloss= orientali, pos= A , lemma=orientale , indexID=10, dep= amod , isRoot=F, father=9-pietanze, features= [Gender-[Masc], Number-[Plur], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-adoro, features= [, children= []
+			NDTTint [gloss= orientali, pos= A , lemma=orientale , indexID=10, dep= amod , isRoot=F, father=9-pietanze, features= [Gender-[Masc], Number-[Plur], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-adoro, features= [, children= []]

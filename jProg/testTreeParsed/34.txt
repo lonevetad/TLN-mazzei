@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 676,5 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 884,6 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -1010,48 +1010,26 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [1-non, 2-siamo, 5-ritrovare, 18-mentre, 19-festeggiavo, 23-.]
-
+NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [
 	NDTTint [gloss= non, pos= BN , lemma=non , indexID=1, dep= neg , isRoot=F, father=3-riusciti, features= [PronType-[Neg], children= []
-
 	NDTTint [gloss= siamo, pos= VA , lemma=essere , indexID=2, dep= aux , isRoot=F, father=3-riusciti, features= [Mood-[Imp], Number-[Plur], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
-
-	NDTTint [gloss= ritrovare, pos= V , lemma=ritrovare , indexID=5, dep= xcomp , isRoot=F, father=3-riusciti, features= [VerbForm-[Inf], children= [4-a, 8-anelli]
-
+	NDTTint [gloss= ritrovare, pos= V , lemma=ritrovare , indexID=5, dep= xcomp , isRoot=F, father=3-riusciti, features= [VerbForm-[Inf], children= [
 		NDTTint [gloss= a, pos= E , lemma=a , indexID=4, dep= mark , isRoot=F, father=5-ritrovare, features= [, children= []
-
-		NDTTint [gloss= anelli, pos= S , lemma=anello , indexID=8, dep= dobj , isRoot=F, father=5-ritrovare, features= [Gender-[Masc], Number-[Plur], children= [6-i, 7-preziosi, 9-rubati]
-
+		NDTTint [gloss= anelli, pos= S , lemma=anello , indexID=8, dep= dobj , isRoot=F, father=5-ritrovare, features= [Gender-[Masc], Number-[Plur], children= [
 			NDTTint [gloss= i, pos= RD , lemma=il , indexID=6, dep= det , isRoot=F, father=8-anelli, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
-
 			NDTTint [gloss= preziosi, pos= A , lemma=prezioso , indexID=7, dep= amod , isRoot=F, father=8-anelli, features= [Gender-[Masc], Number-[Plur], children= []
-
-			NDTTint [gloss= rubati, pos= V , lemma=rubare , indexID=9, dep= acl , isRoot=F, father=8-anelli, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [12-ladro, 16-Agosto]
-
-				NDTTint [gloss= ladro, pos= S , lemma=ladro , indexID=12, dep= nmod , isRoot=F, father=9-rubati, features= [Gender-[Masc], Number-[Sing], children= [10-dal, 11-famoso, 13-Lupin]
-
+			NDTTint [gloss= rubati, pos= V , lemma=rubare , indexID=9, dep= acl , isRoot=F, father=8-anelli, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= [
+				NDTTint [gloss= ladro, pos= S , lemma=ladro , indexID=12, dep= nmod , isRoot=F, father=9-rubati, features= [Gender-[Masc], Number-[Sing], children= [
 					NDTTint [gloss= dal, pos= E+RD , lemma=dal , indexID=10, dep= case , isRoot=F, father=12-ladro, features= [, children= []
-
 					NDTTint [gloss= famoso, pos= A , lemma=famoso , indexID=11, dep= amod , isRoot=F, father=12-ladro, features= [Gender-[Masc], Number-[Sing], children= []
-
-					NDTTint [gloss= Lupin, pos= SP , lemma=Lupin , indexID=13, dep= nmod , isRoot=F, father=12-ladro, features= [, children= []
-
-				NDTTint [gloss= Agosto, pos= SP , lemma=Agosto , indexID=16, dep= nmod , isRoot=F, father=9-rubati, features= [, children= [14-nel, 15-lontano, 17-2016]
-
+					NDTTint [gloss= Lupin, pos= SP , lemma=Lupin , indexID=13, dep= nmod , isRoot=F, father=12-ladro, features= [, children= []				]
+				NDTTint [gloss= Agosto, pos= SP , lemma=Agosto , indexID=16, dep= nmod , isRoot=F, father=9-rubati, features= [, children= [
 					NDTTint [gloss= nel, pos= E+RD , lemma=nel , indexID=14, dep= case , isRoot=F, father=16-Agosto, features= [, children= []
-
 					NDTTint [gloss= lontano, pos= A , lemma=lontano , indexID=15, dep= amod , isRoot=F, father=16-Agosto, features= [Gender-[Masc], Number-[Sing], children= []
-
-					NDTTint [gloss= 2016, pos= N , lemma=2016 , indexID=17, dep= nummod , isRoot=F, father=16-Agosto, features= [, children= []
-
+					NDTTint [gloss= 2016, pos= N , lemma=2016 , indexID=17, dep= nummod , isRoot=F, father=16-Agosto, features= [, children= []				]			]		]	]
 	NDTTint [gloss= mentre, pos= CC , lemma=mentre , indexID=18, dep= cc , isRoot=F, father=3-riusciti, features= [, children= []
-
-	NDTTint [gloss= festeggiavo, pos= V , lemma=festeggiare , indexID=19, dep= conj , isRoot=F, father=3-riusciti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [22-matrimonio]
-
-		NDTTint [gloss= matrimonio, pos= S , lemma=matrimonio , indexID=22, dep= dobj , isRoot=F, father=19-festeggiavo, features= [Gender-[Masc], Number-[Sing], children= [20-il, 21-mio]
-
+	NDTTint [gloss= festeggiavo, pos= V , lemma=festeggiare , indexID=19, dep= conj , isRoot=F, father=3-riusciti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [
+		NDTTint [gloss= matrimonio, pos= S , lemma=matrimonio , indexID=22, dep= dobj , isRoot=F, father=19-festeggiavo, features= [Gender-[Masc], Number-[Sing], children= [
 			NDTTint [gloss= il, pos= RD , lemma=il , indexID=20, dep= det , isRoot=F, father=22-matrimonio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-
-			NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=21, dep= det:poss , isRoot=F, father=22-matrimonio, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=23, dep= punct , isRoot=F, father=3-riusciti, features= [, children= []
+			NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=21, dep= det:poss , isRoot=F, father=22-matrimonio, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=23, dep= punct , isRoot=F, father=3-riusciti, features= [, children= []]

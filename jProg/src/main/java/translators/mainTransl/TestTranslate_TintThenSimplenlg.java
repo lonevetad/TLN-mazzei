@@ -1,9 +1,8 @@
-package testManuali;
+package translators.mainTransl;
 
 import common.TintParser;
 import common.TintParser.TintParsedAndJSON;
 import common.SentenceParsed;
-import simpleNLG.TransferTranslationItEng;
 import simplenlg.framework.DocumentElement;
 import simplenlg.phrasespec.SPhraseSpec;
 import tools.JsonParserSimple;

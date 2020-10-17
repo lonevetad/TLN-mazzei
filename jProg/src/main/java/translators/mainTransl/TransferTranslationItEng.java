@@ -1,4 +1,4 @@
-package simpleNLG;
+package translators.mainTransl;
 
 import java.nio.file.Paths;
 import java.util.Iterator;
@@ -39,7 +39,7 @@ public class TransferTranslationItEng {
 			SentenceParsed.NodeParsedSentFromTint subtreeRoot, final PhraseElement subPhraseRoot) {
 //main stuffs
 //		boolean tempCacheFlag;
-		String posNodeType, nodeGloss, translatedNodeGloss, translatedChildGloss;
+		String depNodeType, nodeGloss, translatedNodeGloss, translatedChildGloss;
 		Iterator<NodeParsedSentFromTint> childrenIterator;
 		NodeParsedSentFromTint child;
 		// the following three could be created
@@ -52,35 +52,61 @@ public class TransferTranslationItEng {
 			return;
 		}
 
-		posNodeType = subtreeRoot.getDep();
+		depNodeType = subtreeRoot.getDep();
 		nodeGloss = subtreeRoot.getGloss();
 		translatedNodeGloss = null;
-
+		translatedNodeGloss = wordTranslator.apply(nodeGloss);
 // first of all, check if the root is the "nominal modifier" or "direct object"
-		if ("nmod".equals(posNodeType) || "dobj".equals(posNodeType)) {
-			nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss = wordTranslator.apply(nodeGloss));
+		if ("nmod".equals(depNodeType) || "dobj".equals(depNodeType)) {
+			nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+		} else if ("ROOT".equals(depNodeType)) {
+			String subTreeRootPos = subtreeRoot.getPos();
+			switch (subTreeRootPos) {
+			case "V":
+			case "VP":
+			case "VB":
+			case "VBD": {
+				verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
+				break;
+			}
+			case "N":
+			case "NN":
+			case "NNS":
+			case "NNP":
+			case "NNPS": {
+				nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+				break;
+			}
+			default:
+//				throw new IllegalArgumentException
+				System.out.println("Unexpected value: " + subTreeRootPos);
+			}
 		}
 
 		System.out.println("subtreeRoo______: " + subtreeRoot.getGloss());
 		// child controls, interleaving some if(s
 		childrenIterator = subtreeRoot.getChildrenIterator();
-		if (childrenIterator != null)
+		if (childrenIterator != null) {
+			String childDepNodeType;
 			while (childrenIterator.hasNext()) { // is required to modify local variables: forEach forbids, iterator not
 				child = childrenIterator.next();
+				childDepNodeType = child.getDep();
 				translatedChildGloss = null;
-				System.out.println("\t child: " + child.getGloss() + ",,,, having posNodeType: " + posNodeType);
+				System.out.println("\t child: " + child.getGloss() + ",,,, having posNodeType: " + childDepNodeType);
 
-				if ("nsubj".equals(posNodeType)) {
+				if ("nsubj".equals(childDepNodeType)) {
 					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
-					verbPhrase = NLG_FACTORY.createVerbPhrase();
+					if (verbPhrase != null)
+						verbPhrase = NLG_FACTORY.createVerbPhrase();
 					verbPhrase.setVerb(translatedNodeGloss);
-					setVerbFeaures(verbPhrase, subtreeRoot.getFeatures(), false);
+					setVerbFeatures(verbPhrase, subtreeRoot.getFeatures(), false);
+					System.out.println("\n\n####");
 					if (subPhraseRoot instanceof SPhraseSpec) {
 						((SPhraseSpec) subPhraseRoot)
 								.setSubject(translatedChildGloss = wordTranslator.apply(child.getGloss()));
 					} else {
 						System.out.print(
-								"\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+								"\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + childDepNodeType + " and ...");
 						System.out.println("and is not a SPhraseSpec: " + subPhraseRoot.getClass().getSimpleName());
 					}
 					/*
@@ -89,21 +115,24 @@ public class TransferTranslationItEng {
 					 * wordTranslator.apply(child.getGloss())); }
 					 */
 				}
-				if ("aux".equals(posNodeType)) {
-					verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
-					setVerbFeaures(verbPhrase, child.getFeatures(), true);
+				if ("aux".equals(childDepNodeType)) {
+					if (verbPhrase == null)
+						verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
+					setVerbFeatures(verbPhrase, child.getFeatures(), true);
+					System.out.println("\n\n####2 now verbPhrase is: " + verbPhrase);
 				}
-				if ("auxpass".equals(posNodeType)) { verbPhrase.setFeature(Feature.PASSIVE, true); }
-				if ("cop".equals(posNodeType)) {
+				if ("auxpass".equals(childDepNodeType)) { verbPhrase.setFeature(Feature.PASSIVE, true); }
+				if ("cop".equals(childDepNodeType)) {
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-					verbPhrase = NLG_FACTORY.createVerbPhrase(wordTranslator.apply(child.getGloss()));
-					setVerbFeaures(verbPhrase, child.getFeatures(), false);
+					if (verbPhrase != null)
+						verbPhrase = NLG_FACTORY.createVerbPhrase(wordTranslator.apply(child.getGloss()));
+					setVerbFeatures(verbPhrase, child.getFeatures(), false);
 				}
-				if (verbPhrase != null && "advmod".equals(posNodeType)) {
+				if (verbPhrase != null && "advmod".equals(childDepNodeType)) {
 					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
 					verbPhrase.setVerb(translatedNodeGloss);
 				}
-				if ("det".equals(posNodeType) || "det:poss".equals(posNodeType)) {
+				if ("det".equals(childDepNodeType) || "det:poss".equals(childDepNodeType)) {
 					// are there other "det:??" ?
 					if (nounPhrase == null) {
 						if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeGloss); } // c&p
@@ -112,17 +141,17 @@ public class TransferTranslationItEng {
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
 					nounPhrase.setDeterminer(translatedChildGloss);
 				}
-				if ("compound".equals(posNodeType)) {
+				if ("compound".equals(childDepNodeType)) {
 					// surely exists
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
 					nounPhrase.addModifier(translatedChildGloss);
 				}
-				if ("case".equals(posNodeType)) {
+				if ("case".equals(childDepNodeType)) {
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
 					prepositionPhrase = NLG_FACTORY.createPrepositionPhrase(translatedChildGloss);
 					prepositionPhrase.addComplement(nounPhrase); // surely exists
 				}
-				if ("amod".equals(posNodeType)) {
+				if ("amod".equals(childDepNodeType)) {
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
 					if (nounPhrase == null) {
 						prepositionPhrase.addPreModifier(translatedChildGloss);
@@ -131,7 +160,7 @@ public class TransferTranslationItEng {
 					}
 				}
 			}
-
+		}
 		// use the verb/noun/preposition phrase, if any are created
 		if (verbPhrase != null) {
 			if (nounPhrase != null) {
@@ -142,7 +171,7 @@ public class TransferTranslationItEng {
 			} else if (subPhraseRoot instanceof SPhraseSpec)
 				((SPhraseSpec) subPhraseRoot).setVerbPhrase(verbPhrase);
 			else {
-				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + depNodeType + " and ...");
 				System.out.println(
 						"and is not a SPhraseSpec nor VPPhraseSpec: " + subPhraseRoot.getClass().getSimpleName());
 			}
@@ -158,7 +187,7 @@ public class TransferTranslationItEng {
 			} else if (subPhraseRoot instanceof PPPhraseSpec) {
 				((PPPhraseSpec) subPhraseRoot).setObject(nounPhrase);
 			} else {
-				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + posNodeType + " and ...");
+				System.out.print("\t ###AAAAAAAH on " + subtreeRoot.getGloss() + " is " + depNodeType + " and ...");
 				System.out.println("and is not a SPhraseSpec nor VPPhraseSpec nor PPPhraseSpec: "
 						+ subPhraseRoot.getClass().getSimpleName());
 			}
@@ -170,7 +199,7 @@ public class TransferTranslationItEng {
 		subtreeRoot.forEachChild(c -> {
 			String childNodeType;
 			childNodeType = c.getDep();
-			if (("nsubjpass".equals(posNodeType) && "nmod".equals(childNodeType)) || "compound".equals(childNodeType)) {
+			if (("nsubjpass".equals(depNodeType) && "nmod".equals(childNodeType)) || "compound".equals(childNodeType)) {
 				translateSentenceTree(wordTranslator, c, n);
 			} else if ("nsubjpass".equals(childNodeType) || "dobj".equals(childNodeType)) {
 				translateSentenceTree(wordTranslator, c, v);
@@ -180,7 +209,7 @@ public class TransferTranslationItEng {
 		});
 	}
 
-	protected static void setVerbFeaures(VPPhraseSpec verbPhrase, Map<String, String[]> features,
+	protected static void setVerbFeatures(VPPhraseSpec verbPhrase, Map<String, String[]> features,
 			boolean isPerfectForm) {
 		String tenseFeature;
 		String[] feature;

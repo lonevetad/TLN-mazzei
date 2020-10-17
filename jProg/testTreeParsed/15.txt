@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 583,3 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 560,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -618,30 +618,17 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= imparato, pos= V , lemma=imparare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-ho, 4-risolvere, 14-.]
-
+NDTTint [gloss= imparato, pos= V , lemma=imparare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [
 	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-imparato, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
-
-	NDTTint [gloss= risolvere, pos= V , lemma=risolvere , indexID=4, dep= xcomp , isRoot=F, father=2-imparato, features= [VerbForm-[Inf], children= [3-a, 6-cubo, 12-scuole]
-
+	NDTTint [gloss= risolvere, pos= V , lemma=risolvere , indexID=4, dep= xcomp , isRoot=F, father=2-imparato, features= [VerbForm-[Inf], children= [
 		NDTTint [gloss= a, pos= E , lemma=a , indexID=3, dep= mark , isRoot=F, father=4-risolvere, features= [, children= []
-
-		NDTTint [gloss= cubo, pos= S , lemma=cubo , indexID=6, dep= dobj , isRoot=F, father=4-risolvere, features= [Gender-[Masc], Number-[Sing], children= [5-il, 8-Rubik]
-
+		NDTTint [gloss= cubo, pos= S , lemma=cubo , indexID=6, dep= dobj , isRoot=F, father=4-risolvere, features= [Gender-[Masc], Number-[Sing], children= [
 			NDTTint [gloss= il, pos= RD , lemma=il , indexID=5, dep= det , isRoot=F, father=6-cubo, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-
-			NDTTint [gloss= Rubik, pos= SP , lemma=Rubik , indexID=8, dep= nmod , isRoot=F, father=6-cubo, features= [, children= [7-di]
-
-				NDTTint [gloss= di, pos= E , lemma=di , indexID=7, dep= case , isRoot=F, father=8-Rubik, features= [, children= []
-
-		NDTTint [gloss= scuole, pos= S , lemma=scuola , indexID=12, dep= nmod , isRoot=F, father=4-risolvere, features= [Gender-[Fem], Number-[Plur], children= [9-agilmente, 10-durante, 11-le, 13-superiori]
-
+			NDTTint [gloss= Rubik, pos= SP , lemma=Rubik , indexID=8, dep= nmod , isRoot=F, father=6-cubo, features= [, children= [
+				NDTTint [gloss= di, pos= E , lemma=di , indexID=7, dep= case , isRoot=F, father=8-Rubik, features= [, children= []			]		]
+		NDTTint [gloss= scuole, pos= S , lemma=scuola , indexID=12, dep= nmod , isRoot=F, father=4-risolvere, features= [Gender-[Fem], Number-[Plur], children= [
 			NDTTint [gloss= agilmente, pos= B , lemma=agilmente , indexID=9, dep= advmod , isRoot=F, father=12-scuole, features= [, children= []
-
 			NDTTint [gloss= durante, pos= E , lemma=durante , indexID=10, dep= case , isRoot=F, father=12-scuole, features= [, children= []
-
 			NDTTint [gloss= le, pos= RD , lemma=la , indexID=11, dep= det , isRoot=F, father=12-scuole, features= [Definite-[Def], Gender-[Fem], Number-[Plur], PronType-[Art], children= []
-
-			NDTTint [gloss= superiori, pos= A , lemma=superiore , indexID=13, dep= amod , isRoot=F, father=12-scuole, features= [Gender-[Masc], Number-[Plur], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=2-imparato, features= [, children= []
+			NDTTint [gloss= superiori, pos= A , lemma=superiore , indexID=13, dep= amod , isRoot=F, father=12-scuole, features= [Gender-[Masc], Number-[Plur], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=2-imparato, features= [, children= []]

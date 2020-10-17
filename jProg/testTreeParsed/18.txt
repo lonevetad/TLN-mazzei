@@ -1,13 +1,6 @@
-START
-start parsifying text:
-È la spada laser di tuo padre.
-parsed :D
-
-
- JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 500,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 1125,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -397,29 +390,3 @@ parsed :D
     }
   ]
 }
-
-
- Now build the tree:
-built :D
-
-
-TreeParsedSentence
-root:
-
-NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [, children= [1-?, 4-spada, 9-.]
-
-	NDTTint [gloss= ?, pos= X , lemma=? , indexID=1, dep= nummod , isRoot=F, father=2-?, features= [, children= []
-
-	NDTTint [gloss= spada, pos= S , lemma=spada , indexID=4, dep= dobj , isRoot=F, father=2-?, features= [Gender-[Fem], Number-[Sing], children= [3-la, 5-laser, 8-padre]
-
-		NDTTint [gloss= la, pos= RD , lemma=la , indexID=3, dep= det , isRoot=F, father=4-spada, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-
-		NDTTint [gloss= laser, pos= S , lemma=laser , indexID=5, dep= compound , isRoot=F, father=4-spada, features= [Gender-[Masc], Number-[Plur], children= []
-
-		NDTTint [gloss= padre, pos= S , lemma=padre , indexID=8, dep= nmod , isRoot=F, father=4-spada, features= [Gender-[Masc], Number-[Sing], children= [6-di, 7-tuo]
-
-			NDTTint [gloss= di, pos= E , lemma=di , indexID=6, dep= case , isRoot=F, father=8-padre, features= [, children= []
-
-			NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=7, dep= det:poss , isRoot=F, father=8-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=2-?, features= [, children= []

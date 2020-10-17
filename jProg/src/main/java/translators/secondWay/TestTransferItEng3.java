@@ -1,7 +1,6 @@
-package testManuali;
+package translators.secondWay;
 
 import tools.BuilderTransferTranslatorItEng3_ByHand;
-import translators.TransferTranslationRuleBased;
 
 public class TestTransferItEng3 {
 

@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 250,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 538,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -340,16 +340,10 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= piacciono, pos= V , lemma=piacere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [2-me, 5-gatti, 7-.]
-
-	NDTTint [gloss= me, pos= PE , lemma=me , indexID=2, dep= nmod , isRoot=F, father=3-piacciono, features= [Number-[Sing], Person-[1], PronType-[Prs], children= [1-a]
-
-		NDTTint [gloss= a, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-me, features= [, children= []
-
-	NDTTint [gloss= gatti, pos= S , lemma=gatto , indexID=5, dep= dobj , isRoot=F, father=3-piacciono, features= [Gender-[Masc], Number-[Plur], children= [4-i, 6-belli]
-
+NDTTint [gloss= piacciono, pos= V , lemma=piacere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= me, pos= PE , lemma=me , indexID=2, dep= nmod , isRoot=F, father=3-piacciono, features= [Number-[Sing], Person-[1], PronType-[Prs], children= [
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=1, dep= case , isRoot=F, father=2-me, features= [, children= []	]
+	NDTTint [gloss= gatti, pos= S , lemma=gatto , indexID=5, dep= dobj , isRoot=F, father=3-piacciono, features= [Gender-[Masc], Number-[Plur], children= [
 		NDTTint [gloss= i, pos= RD , lemma=il , indexID=4, dep= det , isRoot=F, father=5-gatti, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
-
-		NDTTint [gloss= belli, pos= A , lemma=bello , indexID=6, dep= amod , isRoot=F, father=5-gatti, features= [Gender-[Masc], Number-[Plur], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-piacciono, features= [, children= []
+		NDTTint [gloss= belli, pos= A , lemma=bello , indexID=6, dep= amod , isRoot=F, father=5-gatti, features= [Gender-[Masc], Number-[Plur], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-piacciono, features= [, children= []]

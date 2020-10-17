@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 538,5 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 583,3 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -353,16 +353,10 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= padre, pos= S , lemma=padre , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [1-io, 2-sono, 3-il, 4-tuo, 6-intelligente, 7-.]
-
+NDTTint [gloss= padre, pos= S , lemma=padre , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [
 	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=5-padre, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
-
 	NDTTint [gloss= sono, pos= V , lemma=essere , indexID=2, dep= cop , isRoot=F, father=5-padre, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
-
 	NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=5-padre, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-
 	NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=4, dep= det:poss , isRoot=F, father=5-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
-
 	NDTTint [gloss= intelligente, pos= A , lemma=intelligente , indexID=6, dep= amod , isRoot=F, father=5-padre, features= [Gender-[Masc], Number-[Sing], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=5-padre, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=5-padre, features= [, children= []]

@@ -9,7 +9,7 @@ import dataStructures.SetMapped;
 
 /** Default implementation of {@link NodeComparable} useful for */
 public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableDefaultAlghoritms<SynonymSet>
-		implements Stringable {
+		implements Stringable, Cloneable {
 	private static final long serialVersionUID = 5640520473L;
 	protected static final Function<NodeComparableSynonymIndexed, NodeComparable<SynonymSet>> IDENTITY_FUNCTION_JavaCompiler_GENERICS_TOO_RESTRICTIVE = (
 			nstd) -> nstd;
@@ -25,6 +25,21 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 
 	public NodeComparableSynonymIndexed(SynonymSet defaultSyn) {
 		this.alternatives = defaultSyn;
+		instantiatesChildrenStructures();
+	}
+
+	public NodeComparableSynonymIndexed(NodeComparableSynonymIndexed original) {// copy constructor
+		this.alternatives = original.alternatives;
+		instantiatesChildrenStructures();
+	}
+
+	//
+
+	protected final SynonymSet alternatives; // the "node key"
+	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenByElemGramm;
+	protected Set<NodeComparable<SynonymSet>> childrenByElemGrammBackMap; // the "node children"
+
+	protected void instantiatesChildrenStructures() {
 		this.childrenByElemGramm = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration,
 				SynonymSet.SYNONYM_COMPARATOR);
 		this.childrenByElemGrammBackMap = new SetMapped<>(
@@ -34,12 +49,6 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 				IDENTITY_FUNCTION_JavaCompiler_GENERICS_TOO_RESTRICTIVE)
 						.setReverseMapper(IDENTITY_FUNCTION_REVERSE_MAPPER);
 	}
-
-	//
-
-	protected final SynonymSet alternatives; // the "node key"
-	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenByElemGramm;
-	protected Set<NodeComparable<SynonymSet>> childrenByElemGrammBackMap; // the "node children"
 
 	//
 
@@ -86,4 +95,7 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 			}
 		});
 	}
+
+	@Override
+	public NodeComparableSynonymIndexed clone() { return new NodeComparableSynonymIndexed(this); }
 }

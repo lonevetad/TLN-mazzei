@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.1 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 3 tokens at 41,7 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 3 tokens at 600,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -143,8 +143,6 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= parl?, pos= SP , lemma=parl? , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [2-?, 3-?]
-
+NDTTint [gloss= parl?, pos= SP , lemma=parl? , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
 	NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= name , isRoot=F, father=1-parl?, features= [, children= []
-
-	NDTTint [gloss= ?, pos= FS , lemma=? , indexID=3, dep= punct , isRoot=F, father=1-parl?, features= [, children= []
+	NDTTint [gloss= ?, pos= FS , lemma=? , indexID=3, dep= punct , isRoot=F, father=1-parl?, features= [, children= []]

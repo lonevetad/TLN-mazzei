@@ -1,4 +1,4 @@
-package translators;
+package translators.secondWay;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -32,8 +32,8 @@ import tools.SynonymSet;
 /**
  * Apply the transfer translation (through
  * {@link #transfer(NodeSubtreeDependency)}) on a given parsed-sentence tree to
- * produce a new one, depending on the rules which this instance is based on
- * (added via {@link #addRule(TransferRule)}).
+ * produce a new one, depending on the rules ({@link TransferRule}) which this
+ * instance is based on (added via {@link #addRule(TransferRule)}).
  */
 public class TransferTranslationRuleBased {
 
@@ -160,7 +160,17 @@ public class TransferTranslationRuleBased {
 
 	// TODO RULE
 
-	/** THE rule. */
+	/**
+	 * THE rule.<br>
+	 * It requires a "template" of a sentence's subtree (like Subject <- Verb ->
+	 * Object) that is accepted by this rule and can tell how much a given
+	 * sentence's portion is applicable to this rule (through
+	 * {@link #scoreDifferences(NodeParsedSentence)}).<br>
+	 * The rule can be applied to a given sentence's subtree to produce a new
+	 * "transferred" sentence's subtree by calling
+	 * {@link #applyTransferRule(TransferTranslationRuleBased, NodeParsedSentence)}).
+	 * The first parameter is the "translator" holding this rule-instance.
+	 */
 	public static abstract class TransferRule {
 		protected final NodeParsedSentence lhsTemplate;
 
@@ -210,13 +220,19 @@ public class TransferTranslationRuleBased {
 		 * since there You'll find what this method is, what are its parameters and
 		 * where and why it MUST bew invoked
 		 */
-			// protected final void
-			// manageUntouchedChildredUpontransfer(NodeSubtreeDependency
-			// originalNonleafNode,
+		// protected final void
+		// manageUntouchedChildredUpontransfer(NodeSubtreeDependency
+		// originalNonleafNode,
 //				NodeSubtreeDependency[] childrenOriginalUntouched, TransferTranslationItEng3 transferer,
 //				NodeSubtreeDependency newlyProducedByTransferNode) {
 		protected final void manageUntouchedChildredUpontransfer(NodeParsedSentence originalNode,
 				TransferTranslationRuleBased transferer, NodeParsedSentence newlyProducedByTransferNode) {
+			if (originalNode == null)
+				/*
+				 * the new node is synthetic (like "soggetto sottointeso" in Italian, that is
+				 * missing in English?)
+				 */
+				return;
 			/*
 			 * for each node non "touched" (i.e., not present in newlyBlaBla.children),
 			 * transfer it AND wire the newly produced node into the newlyBla's children

@@ -2,9 +2,10 @@ package tools;
 
 import common.ElemGrammarBase;
 import common.NodeParsedSentence;
-import translators.TransferTranslationRuleBased;
-import translators.TransferTranslationRuleBased.TransferRule;
+import translators.secondWay.TransferTranslationRuleBased;
+import translators.secondWay.TransferTranslationRuleBased.TransferRule;
 
+/** Le regole di transfer IT -> ENG sono definite a mano. */
 public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTranslatorItEng {
 	public static final BuilderTransferTranslatorItEng3_ByHand SINGLETON = new BuilderTransferTranslatorItEng3_ByHand();
 
@@ -48,10 +49,10 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 					NodeParsedSentence originalSubtree) {
 				NodeParsedSentence newVerb, newSubj, oldSubj;
 				// prodicing
-				newVerb = ElemGrammarBase.Verb.newNSD();
+				newVerb = originalSubtree.clone(); // ElemGrammarBase.Verb.newNSD();
 				// (the old child must be taken)
 				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
-				newSubj = ElemGrammarBase.Noun.newNSD();
+				newSubj = oldSubj.clone();
 				// wiring
 				newVerb.addChildNC(newSubj);
 				// mandatory invoke .. (bottom-up is better, but You are free)
@@ -68,16 +69,29 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 			@Override
 			public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
 					NodeParsedSentence originalSubtree) {
-				NodeParsedSentence newVerb, newSubj, oldSubj;
+				NodeParsedSentence newVerb, newSubj, newObj, oldObj;
 				// prodicing
 				newVerb = ElemGrammarBase.Verb.newNSD();
 				// (the old child must be taken)
-				oldSubj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Noun.eg);
-				newSubj = ElemGrammarBase.Objectt.newNSD();
+				oldObj = (NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Objectt.eg);
+				newObj = oldObj.clone();
 				// wiring
+				newVerb.addChildNC(newObj);
+
+				/*
+				 * in italiano, esiste il soggetto sottointeso, in inglese no -> creiamolo e
+				 * mettiamolo di default, con il genere che dipende dall'oggetto
+				 */
+				newSubj = ElemGrammarBase.Subject.newNSD();
+				String[] genderFeature = oldObj.getFeatures().get("Gender");
+				if (genderFeature != null) { newSubj.addFeatures("Gender", genderFeature); }
 				newVerb.addChildNC(newSubj);
+
 				// mandatory invoke .. (bottom-up is better, but You are free)
-				manageUntouchedChildredUpontransfer(oldSubj, transferer, newSubj);
+				manageUntouchedChildredUpontransfer(
+						(NodeParsedSentence) originalSubtree.getChildNCByKey(ElemGrammarBase.Subject.eg), //
+						transferer, newSubj);
+				manageUntouchedChildredUpontransfer(oldObj, transferer, newObj);
 				manageUntouchedChildredUpontransfer(originalSubtree, transferer, newVerb);
 				return newVerb; // the root
 			}

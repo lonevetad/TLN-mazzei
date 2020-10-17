@@ -26,6 +26,17 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	public NodeParsedSentence(SynonymSet defaultSyn) { super(defaultSyn); }
 
+	public NodeParsedSentence(NodeParsedSentence original) { // copy constructor
+		super(original);
+		this.gloss = original.gloss;
+		this.lemma = original.lemma;
+		this.dep = original.dep;
+		this.pos = original.pos;
+		this.features = null;
+		checkFeatures();
+		original.features.forEach(this::addFeatures);
+	}
+
 	protected String gloss;
 	protected String lemma;
 	protected String dep; // "dependency tag", inspired from Tint's "dependency". USEFUL FOR CONVERSION ""
@@ -117,4 +128,6 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 		if (this.features != null && features.size() > 0) { features.forEach(action); }
 	}
 
+	@Override
+	public NodeParsedSentence clone() { return new NodeParsedSentence(this); }
 }

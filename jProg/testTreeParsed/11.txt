@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 700,0 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 875,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -330,16 +330,10 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= ha, pos= V , lemma=avere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [1-paolo, 4-carenza, 7-.]
-
+NDTTint [gloss= ha, pos= V , lemma=avere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
 	NDTTint [gloss= paolo, pos= SW , lemma=paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ha, features= [, children= []
-
-	NDTTint [gloss= carenza, pos= S , lemma=carenza , indexID=4, dep= dobj , isRoot=F, father=2-ha, features= [Gender-[Fem], Number-[Sing], children= [3-una, 6-calcio]
-
+	NDTTint [gloss= carenza, pos= S , lemma=carenza , indexID=4, dep= dobj , isRoot=F, father=2-ha, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=3, dep= det , isRoot=F, father=4-carenza, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-
-		NDTTint [gloss= calcio, pos= S , lemma=calcio , indexID=6, dep= nmod , isRoot=F, father=4-carenza, features= [Gender-[Masc], Number-[Sing], children= [5-di]
-
-			NDTTint [gloss= di, pos= E , lemma=di , indexID=5, dep= case , isRoot=F, father=6-calcio, features= [, children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=2-ha, features= [, children= []
+		NDTTint [gloss= calcio, pos= S , lemma=calcio , indexID=6, dep= nmod , isRoot=F, father=4-carenza, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= di, pos= E , lemma=di , indexID=5, dep= case , isRoot=F, father=6-calcio, features= [, children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=2-ha, features= [, children= []]

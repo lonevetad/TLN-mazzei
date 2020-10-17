@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 import dataStructures.MapTreeAVL;
-import translators.TransferTranslationRuleBased;
+import translators.secondWay.TransferTranslationRuleBased;
 
 /**
  * A set of String representing the same concept.

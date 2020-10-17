@@ -7,7 +7,7 @@ parsed :D
  JSON:
 {
   "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 368,4 tokens/sec.",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 538,5 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -353,16 +353,10 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= infornato, pos= V , lemma=infornare , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [1-io, 2-ho, 6-gustosa, 7-.]
-
+NDTTint [gloss= infornato, pos= V , lemma=infornare , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [
 	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=3-infornato, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
-
 	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=2, dep= aux , isRoot=F, father=3-infornato, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
-
-	NDTTint [gloss= gustosa, pos= S , lemma=gustosa , indexID=6, dep= dobj , isRoot=F, father=3-infornato, features= [Gender-[Fem], Number-[Sing], children= [4-una, 5-torta]
-
+	NDTTint [gloss= gustosa, pos= S , lemma=gustosa , indexID=6, dep= dobj , isRoot=F, father=3-infornato, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=4, dep= det , isRoot=F, father=6-gustosa, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-
-		NDTTint [gloss= torta, pos= A , lemma=torto , indexID=5, dep= amod , isRoot=F, father=6-gustosa, features= [Gender-[Fem], Number-[Sing], children= []
-
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-infornato, features= [, children= []
+		NDTTint [gloss= torta, pos= A , lemma=torto , indexID=5, dep= amod , isRoot=F, father=6-gustosa, features= [Gender-[Fem], Number-[Sing], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=3-infornato, features= [, children= []]
