@@ -1,0 +1,8 @@
+S -> NP VP
+VP -> Verb NP | Verb NP PP | Verb PP
+PP -> Preposition NP
+NP -> Det Nominal | ProperNoun
+Nominal -> Noun | NominalNoun
+
+Det -> a | the 
+Noun ->

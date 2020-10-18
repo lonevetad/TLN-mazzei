@@ -1,0 +1,39 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Tutti i bei momenti saranno persi come lacrime nella pioggia.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= persi, pos= V , lemma=perdere , indexID=6, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [
+	NDTTint [gloss= momenti, pos= S , lemma=momento , indexID=4, dep= nsubjpass , isRoot=F, father=6-persi, features= [Gender-[Masc], Number-[Plur], children= [
+		NDTTint [gloss= tutti, pos= T , lemma=tutto , indexID=1, dep= det:predet , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], PronType-[Tot], children= []
+		NDTTint [gloss= i, pos= RD , lemma=il , indexID=2, dep= det , isRoot=F, father=4-momenti, features= [Definite-[Def], Gender-[Masc], Number-[Plur], PronType-[Art], children= []
+		NDTTint [gloss= bei, pos= A , lemma=bello , indexID=3, dep= amod , isRoot=F, father=4-momenti, features= [Gender-[Masc], Number-[Plur], children= []	]
+	NDTTint [gloss= saranno, pos= VA , lemma=essere , indexID=5, dep= auxpass , isRoot=F, father=6-persi, features= [Mood-[Ind], Number-[Plur], Person-[3], Tense-[Fut], VerbForm-[Fin], children= []
+	NDTTint [gloss= lacrime, pos= S , lemma=lacrima , indexID=8, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= come, pos= E , lemma=come , indexID=7, dep= case , isRoot=F, father=8-lacrime, features= [, children= []	]
+	NDTTint [gloss= pioggia, pos= S , lemma=pioggia , indexID=10, dep= nmod , isRoot=F, father=6-persi, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= nella, pos= E+RD , lemma=nella , indexID=9, dep= case , isRoot=F, father=10-pioggia, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=6-persi, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[come:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lacrima:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[in:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[pioggia:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[perdere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[momento:NOUN], specifier=WordElement[the:DETERMINER], premodifiers=[bei], number=SINGULAR, gender=masculine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=true, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[come:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lacrima:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[in:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[pioggia:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[perdere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[momento:NOUN], specifier=WordElement[the:DETERMINER], premodifiers=[bei], number=SINGULAR, gender=masculine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=true, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+The bei momento is perso come lacrima in pioggia.

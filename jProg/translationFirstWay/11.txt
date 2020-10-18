@@ -1,0 +1,35 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Paolo ha una carenza di calcio.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= ha, pos= V , lemma=avere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= paolo, pos= SW , lemma=paolo , indexID=1, dep= nsubj , isRoot=F, father=2-ha, features= [, children= []
+	NDTTint [gloss= carenza, pos= S , lemma=carenza , indexID=4, dep= dobj , isRoot=F, father=2-ha, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= una, pos= RI , lemma=una , indexID=3, dep= det , isRoot=F, father=4-carenza, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= calcio, pos= S , lemma=calcio , indexID=6, dep= nmod , isRoot=F, father=4-carenza, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= di, pos= E , lemma=di , indexID=5, dep= case , isRoot=F, father=6-calcio, features= [, children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=2-ha, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={negated=false, perfect=false, passive=false, head=WordElement[avere:VERB], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[calcium:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], form=NORMAL, person=HE, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lack:NOUN], specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[paolo:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={negated=false, perfect=false, passive=false, head=WordElement[avere:VERB], number=SINGULAR, postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[calcium:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], form=NORMAL, person=HE, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[lack:NOUN], specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[paolo:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Paolo ha a lack of calcium.

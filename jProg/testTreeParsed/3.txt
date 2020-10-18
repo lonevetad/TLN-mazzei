@@ -1,0 +1,355 @@
+START
+start parsifying text:
+Sembra che il laboratorio sia difficile.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 318,2 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 40,
+      "text": "sembra che il laboratorio sia difficile.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "sembra"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "laboratorio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 4,
+          "dependentGloss": "laboratorio"
+        },
+        {
+          "dep": "cop",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 5,
+          "dependentGloss": "sia"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 6,
+          "dependentGloss": "difficile"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "sembra"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "laboratorio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 4,
+          "dependentGloss": "laboratorio"
+        },
+        {
+          "dep": "cop",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 5,
+          "dependentGloss": "sia"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 6,
+          "dependentGloss": "difficile"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "sembra"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 2,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "laboratorio",
+          "dependent": 3,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 4,
+          "dependentGloss": "laboratorio"
+        },
+        {
+          "dep": "cop",
+          "governor": 6,
+          "governorGloss": "difficile",
+          "dependent": 5,
+          "dependentGloss": "sia"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 6,
+          "dependentGloss": "difficile"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "sembra",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "sembra",
+          "originalText": "sembra",
+          "lemma": "sembrare",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 6,
+          "pos": "V",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "sembra sembrare+v+imp+pres+nil+2+sing sembrare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "sembrare+v+imp+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "che",
+          "originalText": "che",
+          "lemma": "che",
+          "characterOffsetBegin": 7,
+          "characterOffsetEnd": 10,
+          "pos": "CS",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "che che+conj",
+          "selected_morpho": "che+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 13,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "laboratorio",
+          "originalText": "laboratorio",
+          "lemma": "laboratorio",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 25,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "laboratorio laboratorio+n+m+sing",
+          "selected_morpho": "laboratorio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "sia",
+          "originalText": "sia",
+          "lemma": "essere",
+          "characterOffsetBegin": 26,
+          "characterOffsetEnd": 29,
+          "pos": "V",
+          "featuresText": "Mood\u003dSub|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "sia essere+v+cong+pres+nil+1+sing essere+v+cong+pres+nil+2+sing essere+v+cong+pres+nil+3+sing sia+conj",
+          "selected_morpho": "essere+v+cong+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Sub"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "difficile",
+          "originalText": "difficile",
+          "lemma": "difficile",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 39,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "difficile difficile+adj+f+sing+pst difficile+adj+m+sing+pst",
+          "selected_morpho": "difficile+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 40,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= sembra, pos= V , lemma=sembrare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= difficile, pos= A , lemma=difficile , indexID=6, dep= ccomp , isRoot=F, father=1-sembra, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= che, pos= CS , lemma=che , indexID=2, dep= mark , isRoot=F, father=6-difficile, features= [, children= []
+		NDTTint [gloss= laboratorio, pos= S , lemma=laboratorio , indexID=4, dep= nsubj , isRoot=F, father=6-difficile, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= il, pos= RD , lemma=il , indexID=3, dep= det , isRoot=F, father=4-laboratorio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []		]
+		NDTTint [gloss= sia, pos= V , lemma=essere , indexID=5, dep= cop , isRoot=F, father=6-difficile, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=7, dep= punct , isRoot=F, father=1-sembra, features= [, children= []]

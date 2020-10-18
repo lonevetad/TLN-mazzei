@@ -1,0 +1,39 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Ora so come ci si sente ad essere un divano.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= so, pos= V , lemma=sapere , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= ora, pos= B , lemma=ora , indexID=1, dep= advmod , isRoot=F, father=2-so, features= [, children= []
+	NDTTint [gloss= sente, pos= V , lemma=sentire , indexID=6, dep= ccomp , isRoot=F, father=2-so, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+		NDTTint [gloss= come, pos= CS , lemma=come , indexID=3, dep= mark , isRoot=F, father=6-sente, features= [, children= []
+		NDTTint [gloss= ci, pos= PC , lemma=ci , indexID=4, dep= advmod , isRoot=F, father=6-sente, features= [Clitic-[Yes], Gender-[Fem], Number-[Plur], Person-[1], PronType-[Prs], children= []
+		NDTTint [gloss= si, pos= PC , lemma=si , indexID=5, dep= expl:impers , isRoot=F, father=6-sente, features= [Clitic-[Yes], Person-[3], PronType-[Prs], children= []
+		NDTTint [gloss= divano, pos= S , lemma=divano , indexID=10, dep= xcomp , isRoot=F, father=6-sente, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= ad, pos= E , lemma=ad , indexID=7, dep= mark , isRoot=F, father=10-divano, features= [, children= []
+			NDTTint [gloss= essere, pos= V , lemma=essere , indexID=8, dep= cop , isRoot=F, father=10-divano, features= [VerbForm-[Inf], children= []
+			NDTTint [gloss= un, pos= RI , lemma=un , indexID=9, dep= det , isRoot=F, father=10-divano, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=2-so, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=INFINITIVE, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[couch:NOUN], specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[essere:VERB], number=SINGULAR, negated=false, perfect=false, form=INFINITIVE, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[couch:NOUN], specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+To essere a couch.

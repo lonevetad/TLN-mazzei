@@ -1,0 +1,32 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Ho poca fantasia.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= ho, pos= V , lemma=avere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= fantasia, pos= S , lemma=fantasia , indexID=3, dep= dobj , isRoot=F, father=1-ho, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= poca, pos= DI , lemma=poco , indexID=2, dep= det , isRoot=F, father=3-fantasia, features= [Gender-[Fem], Number-[Sing], PronType-[Ind], children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=4, dep= punct , isRoot=F, father=1-ho, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[fanatsy:NOUN], specifier=WordElement[few:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avere:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[fanatsy:NOUN], specifier=WordElement[few:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Ha few fanatsy.

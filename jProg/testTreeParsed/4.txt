@@ -1,0 +1,518 @@
+START
+start parsifying text:
+Talvolta parsificare le frasi richiede un profondo livello di ricorsione.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 11 tokens at 220,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 73,
+      "text": "talvolta parsificare le frasi richiede un profondo livello di ricorsione.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "richiede"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "parsificare",
+          "dependent": 1,
+          "dependentGloss": "talvolta"
+        },
+        {
+          "dep": "advcl",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 2,
+          "dependentGloss": "parsificare"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "frasi",
+          "dependent": 3,
+          "dependentGloss": "le"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 4,
+          "dependentGloss": "frasi"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 6,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 7,
+          "dependentGloss": "profondo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 8,
+          "dependentGloss": "livello"
+        },
+        {
+          "dep": "case",
+          "governor": 10,
+          "governorGloss": "ricorsione",
+          "dependent": 9,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 10,
+          "dependentGloss": "ricorsione"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "richiede"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "parsificare",
+          "dependent": 1,
+          "dependentGloss": "talvolta"
+        },
+        {
+          "dep": "advcl",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 2,
+          "dependentGloss": "parsificare"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "frasi",
+          "dependent": 3,
+          "dependentGloss": "le"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 4,
+          "dependentGloss": "frasi"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 6,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 7,
+          "dependentGloss": "profondo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 8,
+          "dependentGloss": "livello"
+        },
+        {
+          "dep": "case",
+          "governor": 10,
+          "governorGloss": "ricorsione",
+          "dependent": 9,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 10,
+          "dependentGloss": "ricorsione"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 5,
+          "dependentGloss": "richiede"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "parsificare",
+          "dependent": 1,
+          "dependentGloss": "talvolta"
+        },
+        {
+          "dep": "advcl",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 2,
+          "dependentGloss": "parsificare"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "frasi",
+          "dependent": 3,
+          "dependentGloss": "le"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 4,
+          "dependentGloss": "frasi"
+        },
+        {
+          "dep": "det",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 6,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "amod",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 7,
+          "dependentGloss": "profondo"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 8,
+          "dependentGloss": "livello"
+        },
+        {
+          "dep": "case",
+          "governor": 10,
+          "governorGloss": "ricorsione",
+          "dependent": 9,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 8,
+          "governorGloss": "livello",
+          "dependent": 10,
+          "dependentGloss": "ricorsione"
+        },
+        {
+          "dep": "punct",
+          "governor": 5,
+          "governorGloss": "richiede",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "talvolta",
+          "originalText": "talvolta",
+          "lemma": "talvolta",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 8,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "talvolta talvolta+adv",
+          "selected_morpho": "talvolta+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "parsificare",
+          "originalText": "parsificare",
+          "lemma": "parsificare",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 20,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "parsificare",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "le",
+          "originalText": "le",
+          "lemma": "la",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 23,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dPlur|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "le le+pron+acc+f+3+plur+clit le+pron+accdat+_+3+_+clit la+art+f+plur",
+          "selected_morpho": "la+art+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "frasi",
+          "originalText": "frasi",
+          "lemma": "frase",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 29,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "frasi frase+n+f+plur",
+          "selected_morpho": "frase+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "richiede",
+          "originalText": "richiede",
+          "lemma": "richiedere",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 38,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "richiede richiedere+v+indic+pres+nil+3+sing",
+          "selected_morpho": "richiedere+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 39,
+          "characterOffsetEnd": 41,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "profondo",
+          "originalText": "profondo",
+          "lemma": "profondo",
+          "characterOffsetBegin": 42,
+          "characterOffsetEnd": 50,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "profondo profondare+v+indic+pres+nil+1+sing profondere+v+indic+pres+nil+1+sing profondo+adj+m+sing+pst profondo+n+m+sing",
+          "selected_morpho": "profondo+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "livello",
+          "originalText": "livello",
+          "lemma": "livello",
+          "characterOffsetBegin": 51,
+          "characterOffsetEnd": 58,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "livello livellare+v+indic+pres+nil+1+sing livello+n+m+sing",
+          "selected_morpho": "livello+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 59,
+          "characterOffsetEnd": 61,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 10,
+          "word": "ricorsione",
+          "originalText": "ricorsione",
+          "lemma": "ricorsione",
+          "characterOffsetBegin": 62,
+          "characterOffsetEnd": 72,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "ricorsione",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 72,
+          "characterOffsetEnd": 73,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= richiede, pos= V , lemma=richiedere , indexID=5, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= parsificare, pos= V , lemma=parsificare , indexID=2, dep= advcl , isRoot=F, father=5-richiede, features= [VerbForm-[Inf], children= [
+		NDTTint [gloss= talvolta, pos= B , lemma=talvolta , indexID=1, dep= advmod , isRoot=F, father=2-parsificare, features= [, children= []	]
+	NDTTint [gloss= frasi, pos= S , lemma=frase , indexID=4, dep= nsubj , isRoot=F, father=5-richiede, features= [Gender-[Fem], Number-[Plur], children= [
+		NDTTint [gloss= le, pos= RD , lemma=la , indexID=3, dep= det , isRoot=F, father=4-frasi, features= [Definite-[Def], Gender-[Fem], Number-[Plur], PronType-[Art], children= []	]
+	NDTTint [gloss= livello, pos= S , lemma=livello , indexID=8, dep= dobj , isRoot=F, father=5-richiede, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= un, pos= RI , lemma=un , indexID=6, dep= det , isRoot=F, father=8-livello, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= profondo, pos= A , lemma=profondo , indexID=7, dep= amod , isRoot=F, father=8-livello, features= [Gender-[Masc], Number-[Sing], children= []
+		NDTTint [gloss= ricorsione, pos= S , lemma=ricorsione , indexID=10, dep= nmod , isRoot=F, father=8-livello, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= di, pos= E , lemma=di , indexID=9, dep= case , isRoot=F, father=10-ricorsione, features= [, children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=5-richiede, features= [, children= []]

@@ -1,0 +1,430 @@
+START
+start parsifying text:
+Se io fossi un genio studierei informatica efficacemente.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 750,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 57,
+      "text": "se io fossi un genio studierei informatica efficacemente.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "fossi"
+        },
+        {
+          "dep": "mark",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 1,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 2,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 4,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 5,
+          "dependentGloss": "genio"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 6,
+          "dependentGloss": "studierei"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 7,
+          "dependentGloss": "informatica"
+        },
+        {
+          "dep": "advmod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 8,
+          "dependentGloss": "efficacemente"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "fossi"
+        },
+        {
+          "dep": "mark",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 1,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 2,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 4,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 5,
+          "dependentGloss": "genio"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 6,
+          "dependentGloss": "studierei"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 7,
+          "dependentGloss": "informatica"
+        },
+        {
+          "dep": "advmod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 8,
+          "dependentGloss": "efficacemente"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "fossi"
+        },
+        {
+          "dep": "mark",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 1,
+          "dependentGloss": "se"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 2,
+          "dependentGloss": "io"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 4,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 5,
+          "dependentGloss": "genio"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 6,
+          "dependentGloss": "studierei"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 7,
+          "dependentGloss": "informatica"
+        },
+        {
+          "dep": "advmod",
+          "governor": 5,
+          "governorGloss": "genio",
+          "dependent": 8,
+          "dependentGloss": "efficacemente"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "fossi",
+          "dependent": 9,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "se",
+          "originalText": "se",
+          "lemma": "se",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "CS",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "se se+conj se+pron+accdat+_+3+_+clit se+pron+acc+m+3+sing+clit",
+          "selected_morpho": "se+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "io",
+          "originalText": "io",
+          "lemma": "io",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 5,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
+          "selected_morpho": "io+pron+nom+_+1+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "fossi",
+          "originalText": "fossi",
+          "lemma": "essere",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 11,
+          "pos": "V",
+          "featuresText": "Mood\u003dSub|Number\u003dSing|Person\u003d1|Tense\u003dImp|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "fossi essere+v+cong+imperf+nil+1+sing essere+v+cong+imperf+nil+2+sing fosso+n+m+plur",
+          "selected_morpho": "essere+v+cong+imperf+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Sub"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Imp"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 14,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "genio",
+          "originalText": "genio",
+          "lemma": "genio",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "genio genio+n+m+sing",
+          "selected_morpho": "genio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "studierei",
+          "originalText": "studierei",
+          "lemma": "studiereo",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 30,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "studierei studiare+v+cond+pres+nil+1+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "informatica",
+          "originalText": "informatica",
+          "lemma": "informatico",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 42,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "informatica informatica+n+f+sing informatico+adj+f+sing+pst",
+          "selected_morpho": "informatico+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "efficacemente",
+          "originalText": "efficacemente",
+          "lemma": "efficacemente",
+          "characterOffsetBegin": 43,
+          "characterOffsetEnd": 56,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "efficacemente efficacemente+adv",
+          "selected_morpho": "efficacemente+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 9,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 56,
+          "characterOffsetEnd": 57,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= fossi, pos= V , lemma=essere , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Sub], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [
+	NDTTint [gloss= se, pos= CS , lemma=se , indexID=1, dep= mark , isRoot=F, father=3-fossi, features= [, children= []
+	NDTTint [gloss= io, pos= PE , lemma=io , indexID=2, dep= nsubj , isRoot=F, father=3-fossi, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
+	NDTTint [gloss= genio, pos= S , lemma=genio , indexID=5, dep= dobj , isRoot=F, father=3-fossi, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= un, pos= RI , lemma=un , indexID=4, dep= det , isRoot=F, father=5-genio, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= studierei, pos= A , lemma=studiereo , indexID=6, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Masc], Number-[Plur], children= []
+		NDTTint [gloss= informatica, pos= A , lemma=informatico , indexID=7, dep= amod , isRoot=F, father=5-genio, features= [Gender-[Fem], Number-[Sing], children= []
+		NDTTint [gloss= efficacemente, pos= B , lemma=efficacemente , indexID=8, dep= advmod , isRoot=F, father=5-genio, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=3-fossi, features= [, children= []]

@@ -1,0 +1,302 @@
+START
+start parsifying text:
+Ho un amico di penna.
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 6 tokens at 857,1 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 21,
+      "text": "ho un amico di penna.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 2,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 3,
+          "dependentGloss": "amico"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "penna",
+          "dependent": 4,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 5,
+          "dependentGloss": "penna"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 2,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 3,
+          "dependentGloss": "amico"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "penna",
+          "dependent": 4,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 5,
+          "dependentGloss": "penna"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 2,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "dobj",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 3,
+          "dependentGloss": "amico"
+        },
+        {
+          "dep": "case",
+          "governor": 5,
+          "governorGloss": "penna",
+          "dependent": 4,
+          "dependentGloss": "di"
+        },
+        {
+          "dep": "nmod:di",
+          "governor": 3,
+          "governorGloss": "amico",
+          "dependent": 5,
+          "dependentGloss": "penna"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "ho",
+          "dependent": 6,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "ho",
+          "originalText": "ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 5,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "amico",
+          "originalText": "amico",
+          "lemma": "amico",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 11,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "amico amicare+v+indic+pres+nil+1+sing amico+adj+m+sing+pst amico+n+m+sing",
+          "selected_morpho": "amico+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "di",
+          "originalText": "di",
+          "lemma": "di",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 14,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "di di+prep",
+          "selected_morpho": "di+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "penna",
+          "originalText": "penna",
+          "lemma": "penna",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "penna penna+n+f+sing",
+          "selected_morpho": "penna+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 21,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= ho, pos= V , lemma=avere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= amico, pos= S , lemma=amico , indexID=3, dep= dobj , isRoot=F, father=1-ho, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= un, pos= RI , lemma=un , indexID=2, dep= det , isRoot=F, father=3-amico, features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= penna, pos= S , lemma=penna , indexID=5, dep= nmod , isRoot=F, father=3-amico, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= di, pos= E , lemma=di , indexID=4, dep= case , isRoot=F, father=5-penna, features= [, children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=6, dep= punct , isRoot=F, father=1-ho, features= [, children= []]

@@ -1,0 +1,915 @@
+START
+start parsifying text:
+Ma a parer mio, una nave cotale, renderebbe quest'altra un po' superflua, non è vero?
+parsed :D
+
+
+ JSON:
+{
+  "docDate": "2020-10-17",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 750,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 86,
+      "text": "ma a parer mio, una nave cotale, renderebbe quest\u0027altra un po\u0027 superflua, non ?? vero?",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "parer"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 1,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "quest\u0027"
+        },
+        {
+          "dep": "amod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "det",
+          "governor": 14,
+          "governorGloss": "po\u0027",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 18,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "cc",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 19,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "parer"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 1,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "quest\u0027"
+        },
+        {
+          "dep": "amod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "det",
+          "governor": 14,
+          "governorGloss": "po\u0027",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 18,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "cc",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 19,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "parer"
+        },
+        {
+          "dep": "cc",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 1,
+          "dependentGloss": "ma"
+        },
+        {
+          "dep": "case",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 2,
+          "dependentGloss": "a"
+        },
+        {
+          "dep": "det:poss",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 4,
+          "dependentGloss": "mio"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 6,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 7,
+          "dependentGloss": "nave"
+        },
+        {
+          "dep": "amod",
+          "governor": 7,
+          "governorGloss": "nave",
+          "dependent": 8,
+          "dependentGloss": "cotale"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 9,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 10,
+          "dependentGloss": "renderebbe"
+        },
+        {
+          "dep": "det",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 11,
+          "dependentGloss": "quest\u0027"
+        },
+        {
+          "dep": "amod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 12,
+          "dependentGloss": "altra"
+        },
+        {
+          "dep": "det",
+          "governor": 14,
+          "governorGloss": "po\u0027",
+          "dependent": 13,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "advmod",
+          "governor": 15,
+          "governorGloss": "superflua",
+          "dependent": 14,
+          "dependentGloss": "po\u0027"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 10,
+          "governorGloss": "renderebbe",
+          "dependent": 15,
+          "dependentGloss": "superflua"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 16,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "neg",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 17,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "conj:ma",
+          "governor": 3,
+          "governorGloss": "parer",
+          "dependent": 18,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "cc",
+          "governor": 18,
+          "governorGloss": "?",
+          "dependent": 19,
+          "dependentGloss": "?"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 20,
+          "dependentGloss": "vero"
+        },
+        {
+          "dep": "punct",
+          "governor": 19,
+          "governorGloss": "?",
+          "dependent": 21,
+          "dependentGloss": "?"
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "ma",
+          "originalText": "ma",
+          "lemma": "ma",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "ma ma+conj",
+          "selected_morpho": "ma+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "a",
+          "originalText": "a",
+          "lemma": "a",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 4,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "a a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 3,
+          "word": "parer",
+          "originalText": "parer",
+          "lemma": "parer",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 10,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "parer parere+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "mio",
+          "originalText": "mio",
+          "lemma": "mio",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 14,
+          "pos": "AP",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Poss\u003dYes|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "mio mio+adj+m+sing+pst+poss mio+pron+m+sing+pst+poss",
+          "selected_morpho": "mio+adj+m+sing+pst+poss",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Poss": [
+              "Yes"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 15,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "una",
+          "originalText": "una",
+          "lemma": "una",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 19,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "una una+pron+_+f+3+sing+ind una+art+f+sing",
+          "selected_morpho": "una+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "nave",
+          "originalText": "nave",
+          "lemma": "nave",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 24,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "nave nave+n+f+sing",
+          "selected_morpho": "nave+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "cotale",
+          "originalText": "cotale",
+          "lemma": "cotale",
+          "characterOffsetBegin": 25,
+          "characterOffsetEnd": 31,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "cotale",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 31,
+          "characterOffsetEnd": 32,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 10,
+          "word": "renderebbe",
+          "originalText": "renderebbe",
+          "lemma": "rendere",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 43,
+          "pos": "V",
+          "featuresText": "Mood\u003dCnd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "renderebbe rendere+v+cond+pres+nil+3+sing",
+          "selected_morpho": "rendere+v+cond+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Cnd"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": "quest\u0027",
+          "originalText": "quest\u0027",
+          "lemma": "questo",
+          "characterOffsetBegin": 44,
+          "characterOffsetEnd": 50,
+          "pos": "DD",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|PronType\u003dDem",
+          "ner": "O",
+          "full_morpho": "quest\u0027 questo+adj+f+sing+pst+dim questo+adj+m+sing+pst+dim",
+          "selected_morpho": "questo+adj+m+sing+pst+dim",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Dem"
+            ]
+          }
+        },
+        {
+          "index": 12,
+          "word": "altra",
+          "originalText": "altra",
+          "lemma": "altro",
+          "characterOffsetBegin": 50,
+          "characterOffsetEnd": 55,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "altra altra+pron+_+f+3+sing+ind altro+adj+f+sing+pst altro+pron+_+f+3+sing+neg",
+          "selected_morpho": "altro+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 56,
+          "characterOffsetEnd": 58,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "word": "po\u0027",
+          "originalText": "po\u0027",
+          "lemma": "po\u0027",
+          "characterOffsetBegin": 59,
+          "characterOffsetEnd": 62,
+          "pos": "B",
+          "ner": "O",
+          "full_morpho": "po\u0027 po\u0027+pron+_+m+3+sing+ind po\u0027+pron+_+m+3+sing+ind",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 15,
+          "word": "superflua",
+          "originalText": "superflua",
+          "lemma": "superfluo",
+          "characterOffsetBegin": 63,
+          "characterOffsetEnd": 72,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "superflua superfluo+adj+f+sing+pst",
+          "selected_morpho": "superfluo+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 16,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 72,
+          "characterOffsetEnd": 73,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 17,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 74,
+          "characterOffsetEnd": 77,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 18,
+          "word": "?",
+          "originalText": "?",
+          "lemma": "?",
+          "characterOffsetBegin": 78,
+          "characterOffsetEnd": 79,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "?",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 19,
+          "word": "?",
+          "originalText": "?",
+          "lemma": "?",
+          "characterOffsetBegin": 79,
+          "characterOffsetEnd": 80,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "?",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 20,
+          "word": "vero",
+          "originalText": "vero",
+          "lemma": "vero",
+          "characterOffsetBegin": 81,
+          "characterOffsetEnd": 85,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "vero vero+adj+m+sing+pst vero+n+m+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 21,
+          "word": "?",
+          "originalText": "?",
+          "lemma": "?",
+          "characterOffsetBegin": 85,
+          "characterOffsetEnd": 86,
+          "pos": "X",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "? [PUNCT] [PUNCT]",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+ Now build the tree:
+built :D
+
+
+TreeParsedSentence
+root:
+
+NDTTint [gloss= parer, pos= S , lemma=parer , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=1, dep= cc , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= a, pos= E , lemma=a , indexID=2, dep= case , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=4, dep= det:poss , isRoot=F, father=3-parer, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+	NDTTint [gloss= nave, pos= S , lemma=nave , indexID=7, dep= conj , isRoot=F, father=3-parer, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= una, pos= RI , lemma=una , indexID=6, dep= det , isRoot=F, father=7-nave, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= cotale, pos= A , lemma=cotale , indexID=8, dep= amod , isRoot=F, father=7-nave, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= conj , isRoot=F, father=3-parer, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+		NDTTint [gloss= superflua, pos= A , lemma=superfluo , indexID=15, dep= xcomp , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= quest', pos= DD , lemma=questo , indexID=11, dep= det , isRoot=F, father=15-superflua, features= [Gender-[Masc], Number-[Sing], PronType-[Dem], children= []
+			NDTTint [gloss= altra, pos= A , lemma=altro , indexID=12, dep= amod , isRoot=F, father=15-superflua, features= [Gender-[Fem], Number-[Sing], children= []
+			NDTTint [gloss= po', pos= B , lemma=po' , indexID=14, dep= advmod , isRoot=F, father=15-superflua, features= [, children= [
+				NDTTint [gloss= un, pos= RI , lemma=un , indexID=13, dep= det , isRoot=F, father=14-po', features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []			]		]	]
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=16, dep= punct , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=18, dep= conj , isRoot=F, father=3-parer, features= [, children= [
+		NDTTint [gloss= non, pos= BN , lemma=non , indexID=17, dep= neg , isRoot=F, father=18-?, features= [PronType-[Neg], children= []
+		NDTTint [gloss= ?, pos= X , lemma=? , indexID=19, dep= cc , isRoot=F, father=18-?, features= [, children= [
+			NDTTint [gloss= vero, pos= X , lemma=vero , indexID=20, dep= punct , isRoot=F, father=19-?, features= [, children= []
+			NDTTint [gloss= ?, pos= X , lemma=? , indexID=21, dep= punct , isRoot=F, father=19-?, features= [, children= []		]	]]

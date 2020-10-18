@@ -1,0 +1,47 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Ma a parer mio, una nave cotale, renderebbe quest'altra un po' superflua, non è vero?
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= parer, pos= S , lemma=parer , indexID=3, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], children= [
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=1, dep= cc , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= a, pos= E , lemma=a , indexID=2, dep= case , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=4, dep= det:poss , isRoot=F, father=3-parer, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []
+	NDTTint [gloss= nave, pos= S , lemma=nave , indexID=7, dep= conj , isRoot=F, father=3-parer, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= una, pos= RI , lemma=una , indexID=6, dep= det , isRoot=F, father=7-nave, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= cotale, pos= A , lemma=cotale , indexID=8, dep= amod , isRoot=F, father=7-nave, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= conj , isRoot=F, father=3-parer, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+		NDTTint [gloss= superflua, pos= A , lemma=superfluo , indexID=15, dep= xcomp , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [
+			NDTTint [gloss= quest', pos= DD , lemma=questo , indexID=11, dep= det , isRoot=F, father=15-superflua, features= [Gender-[Masc], Number-[Sing], PronType-[Dem], children= []
+			NDTTint [gloss= altra, pos= A , lemma=altro , indexID=12, dep= amod , isRoot=F, father=15-superflua, features= [Gender-[Fem], Number-[Sing], children= []
+			NDTTint [gloss= po', pos= B , lemma=po' , indexID=14, dep= advmod , isRoot=F, father=15-superflua, features= [, children= [
+				NDTTint [gloss= un, pos= RI , lemma=un , indexID=13, dep= det , isRoot=F, father=14-po', features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []			]		]	]
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=16, dep= punct , isRoot=F, father=3-parer, features= [, children= []
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=18, dep= conj , isRoot=F, father=3-parer, features= [, children= [
+		NDTTint [gloss= non, pos= BN , lemma=non , indexID=17, dep= neg , isRoot=F, father=18-?, features= [PronType-[Neg], children= []
+		NDTTint [gloss= ?, pos= X , lemma=? , indexID=19, dep= cc , isRoot=F, father=18-?, features= [, children= [
+			NDTTint [gloss= vero, pos= X , lemma=vero , indexID=20, dep= punct , isRoot=F, father=19-?, features= [, children= []
+			NDTTint [gloss= ?, pos= X , lemma=? , indexID=21, dep= punct , isRoot=F, father=19-?, features= [, children= []		]	]]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=little bit, specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=little bit, specifier=WordElement[a:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+A little bit to.

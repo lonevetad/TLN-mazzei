@@ -1,0 +1,11 @@
+// grammatica delle regole del transfer coso
+// E = elemento .. da decidere ancora se solamente Non Terminale o altro
+
+G -> Rule [ \n Rule ]*
+Rule -> LHS \-\> RHS
+LHS -> CommonPart
+RHS -> CommonPart
+CommonPart -> [ E | \( E [ \| E ]+ \) ]+
+E -> Terminale | NonTerminale
+Terminale -> [a-z][a-z | A-Z]*
+NonTerminale -> [A-Z][a-z | A-Z]*

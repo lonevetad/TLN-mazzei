@@ -1,0 +1,42 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Ho imparato a risolvere il cubo di Rubik agilmente durante le scuole superiori.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= imparato, pos= V , lemma=imparare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Gender-[Masc], Number-[Sing], Tense-[Past], VerbForm-[Part], children= [
+	NDTTint [gloss= ho, pos= VA , lemma=avere , indexID=1, dep= aux , isRoot=F, father=2-imparato, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
+	NDTTint [gloss= risolvere, pos= V , lemma=risolvere , indexID=4, dep= xcomp , isRoot=F, father=2-imparato, features= [VerbForm-[Inf], children= [
+		NDTTint [gloss= a, pos= E , lemma=a , indexID=3, dep= mark , isRoot=F, father=4-risolvere, features= [, children= []
+		NDTTint [gloss= cubo, pos= S , lemma=cubo , indexID=6, dep= dobj , isRoot=F, father=4-risolvere, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= il, pos= RD , lemma=il , indexID=5, dep= det , isRoot=F, father=6-cubo, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
+			NDTTint [gloss= Rubik, pos= SP , lemma=Rubik , indexID=8, dep= nmod , isRoot=F, father=6-cubo, features= [, children= [
+				NDTTint [gloss= di, pos= E , lemma=di , indexID=7, dep= case , isRoot=F, father=8-Rubik, features= [, children= []			]		]
+		NDTTint [gloss= scuole, pos= S , lemma=scuola , indexID=12, dep= nmod , isRoot=F, father=4-risolvere, features= [Gender-[Fem], Number-[Plur], children= [
+			NDTTint [gloss= agilmente, pos= B , lemma=agilmente , indexID=9, dep= advmod , isRoot=F, father=12-scuole, features= [, children= []
+			NDTTint [gloss= durante, pos= E , lemma=durante , indexID=10, dep= case , isRoot=F, father=12-scuole, features= [, children= []
+			NDTTint [gloss= le, pos= RD , lemma=la , indexID=11, dep= det , isRoot=F, father=12-scuole, features= [Definite-[Def], Gender-[Fem], Number-[Plur], PronType-[Art], children= []
+			NDTTint [gloss= superiori, pos= A , lemma=superiore , indexID=13, dep= amod , isRoot=F, father=12-scuole, features= [Gender-[Masc], Number-[Plur], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=2-imparato, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[durante:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[scuola:NOUN], specifier=WordElement[the:DETERMINER], premodifiers=[superiori], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[imparare:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[durante:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[scuola:NOUN], specifier=WordElement[the:DETERMINER], premodifiers=[superiori], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[imparare:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Haves imparared durante the superiori scuola.

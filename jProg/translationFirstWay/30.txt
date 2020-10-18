@@ -1,0 +1,42 @@
+
+
+
+--------------------------------
+ start parsing :D
+parsing:::: Avida di vita desiai ogni amore vero, ma ingoiai sedativi da diva.
+parsed tree: 
+TreeParsedSentence
+root:
+
+NDTTint [gloss= avida, pos= V , lemma=avidare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= vita, pos= S , lemma=vita , indexID=3, dep= nmod , isRoot=F, father=1-avida, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= di, pos= E , lemma=di , indexID=2, dep= case , isRoot=F, father=3-vita, features= [, children= []	]
+	NDTTint [gloss= desiai, pos= B , lemma=desiai , indexID=4, dep= advmod , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= amore, pos= S , lemma=amore , indexID=6, dep= dobj , isRoot=F, father=1-avida, features= [Gender-[Masc], Number-[Sing], children= [
+		NDTTint [gloss= ogni, pos= DI , lemma=ogni , indexID=5, dep= det , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], PronType-[Ind], children= []
+		NDTTint [gloss= vero, pos= A , lemma=vero , indexID=7, dep= amod , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], children= []	]
+	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=9, dep= cc , isRoot=F, father=1-avida, features= [, children= []
+	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [
+		NDTTint [gloss= sedativi, pos= A , lemma=sedativo , indexID=11, dep= xcomp , isRoot=F, father=10-ingoiai, features= [Gender-[Masc], Number-[Plur], children= [
+			NDTTint [gloss= diva, pos= S , lemma=diva , indexID=13, dep= nmod , isRoot=F, father=11-sedativi, features= [Gender-[Fem], Number-[Sing], children= [
+				NDTTint [gloss= da, pos= E , lemma=da , indexID=12, dep= case , isRoot=F, father=13-diva, features= [, children= []			]		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=1-avida, features= [, children= []]
+
+
+
+ now translating into SimpleNLP
+nlp future input:
+{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[vita:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[diva:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avidare:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[love:NOUN], specifier=WordElement[ogni:DETERMINER], premodifiers=[true], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+
+
+
+
+ sentence created:
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={postmodifiers=[{realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[of:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[vita:NOUN], number=SINGULAR, gender=feminine, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}, {realisation=null, category=PREPOSITIONAL_PHRASE, features={head=WordElement[to:PREPOSITION], discourse_function=POST_MODIFIER, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[diva:NOUN], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], elided=false}}], expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[avidare:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[love:NOUN], specifier=WordElement[ogni:DETERMINER], premodifiers=[true], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+
+
+
+ realize translation
+translated:
+Avidares ogni true love of vita to diva.
