@@ -78,7 +78,20 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	//
 
 	@Override
+	public String toString() {
+		StringBuilder sb;
+		sb = new StringBuilder();
+		toString(sb);
+		return sb.toString();
+	}
+
+	@Override
 	public void toString(StringBuilder sb) { this.toString(sb, 0); }
+
+	/** Call <code>super</code> before doing anything. */
+	protected void toStringNonCollectionFields(StringBuilder sb) {
+		sb.append(" --> ");
+	}
 
 	@Override
 	public void toString(StringBuilder sb, int level) {
@@ -86,6 +99,7 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 		addTab(sb, level, false);
 		sb.append("NStD: ");
 		this.alternatives.toString(sb);
+		toStringNonCollectionFields(sb);
 		sb.append(" -----> (children:)");
 		lev = level + 1;
 		this.forEachChildNC((child) -> {

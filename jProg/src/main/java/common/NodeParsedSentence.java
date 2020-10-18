@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 
 import dataStructures.MapTreeAVL;
+import edu.emory.mathcs.backport.java.util.Arrays;
 import tools.Misc;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
@@ -42,6 +43,25 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 	protected String dep; // "dependency tag", inspired from Tint's "dependency". USEFUL FOR CONVERSION ""
 	protected String pos; // "PoS tag", inspired from Tint's "tokens".
 	protected Map<String, String[]> features;
+
+	@Override
+	public void toStringNonCollectionFields(StringBuilder sb) {
+		sb.append(", gloss=").append(gloss).append(", pos=").append(", dep=").append(dep);
+		if (this.features != null) {
+			boolean[] separator = { false };
+			sb.append(", features: {");
+			this.features.forEach((fn, feats) -> {
+				if (separator[0]) {
+					sb.append(", ");
+				} else {
+					separator[0] = true;
+				}
+				sb.append(fn).append(": ");
+				sb.append(Arrays.toString(feats));
+			});
+			sb.append('}');
+		}
+	}
 
 	//
 

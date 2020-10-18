@@ -19,25 +19,37 @@ import translators.secondWay.TransferTranslationRuleBased;
  */
 public class SynonymSet {
 	public static final Comparator<SynonymSet> SYNONYM_COMPARATOR = (eg1, eg2) -> {
-		boolean equal;
-		int c;
+		// boolean equal;
+		int c, size2;
 		Iterator<String> i1, i2;
-		Comparator<String> comp;
+		// Comparator<String> comp;
 		if (eg1 == eg2)
 			return 0;
 		if (eg1 == null)
 			return -1;
 		if (eg2 == null)
 			return 1;
+		if (eg1.areIntersecting(eg2))
+			return 0;
+		size2 = eg1.bm.size();
+		if ((c = eg2.bm.size()) == 0 && 0 == size2) {
+			return 0; // nothing to comoare
+		}
+		if (c == 0)
+			return -1;
+		if (size2 == 0)
+			return 1;
 		i1 = eg1.bm.iteratorKey();
 		i2 = eg2.bm.iteratorKey();
-		equal = true;
-		comp = Misc.STRING_COMPARATOR;
-		c = 0;
-		while (equal && i1.hasNext() && i2.hasNext()) {
-			equal = (c = comp.compare(i1.next(), i2.next())) == 0;
-		}
-		return c;
+		return Misc.STRING_COMPARATOR.compare(i1.next(), i2.next());
+//		equal = true;
+//		comp = Misc.STRING_COMPARATOR;
+//		c = 0;
+//		while (equal && i1.hasNext() && i2.hasNext()) {
+//			equal = (c = comp.compare(i1.next(), i2.next())) == 0;
+//		}*/
+//		return c;
+
 	};
 
 	public SynonymSet(String[] alternatives) {

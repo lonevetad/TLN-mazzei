@@ -56,7 +56,7 @@ public class TransferTranslationRuleBased {
 		TransferRule rule;
 //		NodeSubtreeDependency transferred;
 		rule = this.getBestRuleFor(rootSubtree);
-		return rule.applyTransferRule(this, rootSubtree);
+		return rule == null ? null : rule.applyTransferRule(this, rootSubtree);
 	}
 
 	// TODO UTILITIES

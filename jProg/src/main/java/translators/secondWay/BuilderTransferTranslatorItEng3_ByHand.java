@@ -8,6 +8,7 @@ import translators.secondWay.TransferTranslationRuleBased.TransferRule;
 /** Le regole di transfer IT -> ENG sono definite a mano. */
 public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTranslatorItEng {
 	public static final BuilderTransferTranslatorItEng3_ByHand SINGLETON = new BuilderTransferTranslatorItEng3_ByHand();
+	public static final TransferTranslationRuleBased TRANSFERER_RULE_BASED = SINGLETON.newTransferItEng();
 
 	//
 
@@ -253,7 +254,7 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 		public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
 				NodeParsedSentence originalSubtree) {
 			NodeParsedSentence newNode;
-			newNode = egb.newNSD();
+			newNode = originalSubtree.clone(); // egb.newNSD();
 			manageUntouchedChildredUpontransfer(originalSubtree, transferer, newNode);
 			return newNode;
 		}

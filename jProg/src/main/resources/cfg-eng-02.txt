@@ -1,12 +1,15 @@
-S -> NP VP
-NP -> N
-NP -> NP PP | NP RelClause 
+# un commento
+S -> NP VP | IP
+# -pst sarebbe "poni il verbo in past-tense"
+# il Ii deriva da " https://en.wikipedia.org/wiki/X-bar_theory ", sezione "a full sentence"
+IP -> NP Ii
+Ii -> pastTenseMarker VP
+NP -> N | NP PP | NP RelClause | NP Det | Pronoun | ProperName | Det Noun
 PP -> P NP
 VP -> V NP | V | V NP PP | VP PP | V_Intrans | V_trans NP | V_ditrans NP NP
 V_intrans-> eats | sleeps
 V_trans-> eats | gives
 
-NP -> Pronoun | ProperName | Det Noun
 Det -> a | the | every 
 Pronoun -> he | she | it
 ProperName -> john | jary

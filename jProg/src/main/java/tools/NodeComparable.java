@@ -90,7 +90,7 @@ public interface NodeComparable<K> extends Serializable {
 	/**
 	 * Compute how much <code>this</code> node differs to the given one, which is
 	 * considered as the "base". Default weights (instance of
-	 * {@link DissonanceWeights}) is provided
+	 * {@link DissonanceWeights}) is provided.
 	 * <p>
 	 * {@link DissonanceWeights#getWeightMissingNode()} weights the nodes that are
 	 * missing in <code>this</code> "children set" (obtained by
