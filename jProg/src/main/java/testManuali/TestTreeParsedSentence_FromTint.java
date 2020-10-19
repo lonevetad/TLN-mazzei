@@ -4,16 +4,24 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+import common.SentenceParsed;
 import common.TintParser;
 import common.TintParser.TintParsedAndJSON;
 import common.TintParserOutput;
-import common.SentenceParsed;
 import tools.JsonParserSimple;
 import tools.LoggerMessages;
 import tools.LoggerOnFile;
 import tools.MockedData;
 import tools.json.JsonParserJackson;
 
+/**
+ * Esegue, come test, la prima parte di tutta la pipeline:
+ * <ol>
+ * <li>legge da file la frase</li>
+ * <li>la parsifica con Tint e ne raccoglie l'output (JSON)</li>
+ * <li>converte il Json in un oggetto utilizzabile</li>
+ * </ol>
+ */
 public class TestTreeParsedSentence_FromTint {
 	static final String FOLDER_PATH = "." + File.separator + "testTreeParsed";
 

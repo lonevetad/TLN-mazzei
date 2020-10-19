@@ -6,7 +6,11 @@ parsed :D
 
  JSON:
 {
+<<<<<<< HEAD
   "docDate": "2020-10-17",
+=======
+  "docDate": "2020-10-19",
+>>>>>>> marco
   "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 777,8 tokens/sec.",
   "sentences": [
     {

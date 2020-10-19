@@ -1,19 +1,33 @@
 START
 start parsifying text:
+<<<<<<< HEAD
 Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via
+=======
+Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.
+>>>>>>> marco
 parsed :D
 
 
  JSON:
 {
+<<<<<<< HEAD
   "docDate": "2020-10-17",
   "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 10 tokens at 1111,1 tokens/sec.",
+=======
+  "docDate": "2020-10-19",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 11 tokens at 211,5 tokens/sec.",
+>>>>>>> marco
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
+<<<<<<< HEAD
       "characterOffsetEnd": 66,
       "text": "gli ultimi avanzi della vecchia Repubblica sono stati spazzati via",
+=======
+      "characterOffsetEnd": 67,
+      "text": "gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.",
+>>>>>>> marco
       "basic-dependencies": [
         {
           "dep": "ROOT",
@@ -84,6 +98,16 @@ parsed :D
           "governorGloss": "spazzati",
           "dependent": 10,
           "dependentGloss": "via"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "dep": "punct",
+          "governor": 9,
+          "governorGloss": "spazzati",
+          "dependent": 11,
+          "dependentGloss": "."
+>>>>>>> marco
         }
       ],
       "collapsed-dependencies": [
@@ -156,6 +180,16 @@ parsed :D
           "governorGloss": "spazzati",
           "dependent": 10,
           "dependentGloss": "via"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "dep": "punct",
+          "governor": 9,
+          "governorGloss": "spazzati",
+          "dependent": 11,
+          "dependentGloss": "."
+>>>>>>> marco
         }
       ],
       "collapsed-ccprocessed-dependencies": [
@@ -228,6 +262,16 @@ parsed :D
           "governorGloss": "spazzati",
           "dependent": 10,
           "dependentGloss": "via"
+<<<<<<< HEAD
+=======
+        },
+        {
+          "dep": "punct",
+          "governor": 9,
+          "governorGloss": "spazzati",
+          "dependent": 11,
+          "dependentGloss": "."
+>>>>>>> marco
         }
       ],
       "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
@@ -467,6 +511,24 @@ parsed :D
           "selected_morpho": "via+adv",
           "guessed_lemma": false,
           "features": {}
+<<<<<<< HEAD
+=======
+        },
+        {
+          "index": 11,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 66,
+          "characterOffsetEnd": 67,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+>>>>>>> marco
         }
       ]
     }
@@ -490,4 +552,9 @@ NDTTint [gloss= spazzati, pos= V , lemma=spazzare , indexID=9, dep= ROOT , isRoo
 			NDTTint [gloss= vecchia, pos= A , lemma=vecchio , indexID=5, dep= amod , isRoot=F, father=6-Repubblica, features= [Gender-[Fem], Number-[Sing], children= []		]	]
 	NDTTint [gloss= sono, pos= VA , lemma=essere , indexID=7, dep= aux , isRoot=F, father=9-spazzati, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= []
 	NDTTint [gloss= stati, pos= VA , lemma=essere , indexID=8, dep= auxpass , isRoot=F, father=9-spazzati, features= [Gender-[Masc], Number-[Plur], Tense-[Past], VerbForm-[Part], children= []
+<<<<<<< HEAD
 	NDTTint [gloss= via, pos= B , lemma=via , indexID=10, dep= advmod , isRoot=F, father=9-spazzati, features= [, children= []]
+=======
+	NDTTint [gloss= via, pos= B , lemma=via , indexID=10, dep= advmod , isRoot=F, father=9-spazzati, features= [, children= []
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=11, dep= punct , isRoot=F, father=9-spazzati, features= [, children= []]
+>>>>>>> marco

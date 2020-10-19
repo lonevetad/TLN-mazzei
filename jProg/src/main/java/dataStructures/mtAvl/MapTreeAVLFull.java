@@ -19,6 +19,7 @@ public class MapTreeAVLFull<K, V> extends MapTreeAVLMinIter<K, V> {
 		super(b, comp);
 		firstInserted = (NodeAVL_Full) NIL;
 		firstInserted.nextInserted = firstInserted.prevInserted = firstInserted; // that is NIL
+		optimization = Optimizations.FullButHeavyNodes;
 	}
 
 	protected NodeAVL_Full firstInserted; // stack-like

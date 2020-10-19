@@ -397,6 +397,26 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	 */
 	public Entry<K, V> getLowesCommonAncestor(K k1, K k2);
 
+	/** See {@link #rangeQuery(Object, boolean, Object, boolean)}. */
+	public default MapTreeAVL<K, V> rangeQuery(K lowerBound, K upperBound) throws IllegalArgumentException {
+		return rangeQuery(lowerBound, true, upperBound, true);
+	}
+
+	/**
+	 * Returns a subset of this map ("use and discard", i.e. the returned map is NOT
+	 * backed by this one!) that includes all elements within the given bounds. <br>
+	 * In case the bounds coincides, it returns a map containing the single element
+	 * identified by one of those bound's key (if at least one of the boolean
+	 * parameters are true) or an empty map. Otherwise, <code>throws</code>
+	 * <p>
+	 * NOTE: the returned map is NOT backed by this one! It's "use and discard".
+	 * 
+	 * @throws IllegalArgumentException if the lower bound is greater than upper
+	 *                                  bound, or some bound is null
+	 */
+	public MapTreeAVL<K, V> rangeQuery(K lowerBound, boolean isLowerBoundIncluded, K upperBound,
+			boolean isUpperBoundIncluded) throws IllegalArgumentException;
+
 	/**
 	 * Merge the smaller tree in the bigger ones. The smaller one will be cleared
 	 * after the call.

@@ -91,6 +91,10 @@ public class TransferTranslationRuleBased {
 		while (--len >= 0) {
 			// score and collect
 			currentRule = l.get(len);
+			/*
+			 * TODO: further developments could rates how much a singlr node is compatible
+			 * (inverting the scoring order from the actual one?)
+			 */
 			scores[len] = newRuleScored(currentRule, currentRule.scoreDifferences(subtreeToTransfer));
 		}
 		return pickTheBest(scores).rule;
@@ -181,7 +185,8 @@ public class TransferTranslationRuleBased {
 
 		/** See {@link NodeComparable#computeDissonanceAsLong(NodeComparable)}. */
 		public long scoreDifferences(NodeParsedSentence givenSubtree) {
-			return givenSubtree.computeDissonanceAsLong(lhsTemplate);
+			// return givenSubtree.computeDissonanceAsLong(lhsTemplate);
+			return lhsTemplate.computeDissonanceAsLong(givenSubtree);
 		}
 
 		/**
@@ -246,6 +251,18 @@ public class TransferTranslationRuleBased {
 				}
 			});
 		}
+
+//		public static NodeParsedSentence cloneNode(NodeParsedSentence original) {
+//			return cloneNode(original, original::clone);
+//		}
+//
+//		/***/
+//		public static NodeParsedSentence cloneNode(NodeParsedSentence original, Supplier<NodeParsedSentence> newNodeInstantiator) {
+//			NodeParsedSentence newNode;List<String>oldAlternatives
+//			newNode=newNodeInstantiator.get();
+//			newNode.getKeyIdentifier().toList()
+//			return newNode;
+//		}
 
 		@Override
 		public String toString() { return "TransferRule [lhs=" + lhsTemplate + "]"; }

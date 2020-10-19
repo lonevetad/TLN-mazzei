@@ -28,7 +28,8 @@ public class GrammarBuilder {
 		Grammar g;
 		g = new Grammar();
 		lineReader.forEach(line -> {
-			if (!(line == null || (line = line.trim()).length() == 0 || line.startsWith("#") || line.isBlank())) {
+			if (!(line == null || (line = line.trim()).length() == 0 || line.startsWith("#") || line.startsWith("//")
+					|| line.isBlank())) {
 				// a good line?
 				final String lhsRaw;
 				String rhsRaw;

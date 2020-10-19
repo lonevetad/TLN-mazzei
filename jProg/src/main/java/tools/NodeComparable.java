@@ -48,6 +48,12 @@ public interface NodeComparable<K> extends Serializable {
 
 	public K getKeyIdentifier();
 
+	/**
+	 * in future releases, the score (compute
+	 * througj{@link #computeDissonanceAsLong(NodeComparable)}
+	 */
+	public default long scoreKeyCompatibilityWith(K anotherKey) { return 1; }
+
 	/** Returns the set of all children held by this node. */
 	public Set<NodeComparable<K>> getChildrenNC();
 

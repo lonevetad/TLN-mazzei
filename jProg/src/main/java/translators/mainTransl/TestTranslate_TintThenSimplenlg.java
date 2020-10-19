@@ -16,7 +16,23 @@ import tools.json.JsonParserJackson;
 import translators.WordTranslatorItEng;
 
 /**
+<<<<<<< HEAD
  * THE MAIN TESTEEEEEEEER *
+=======
+ * THE MAIN TESTER - VERSION 1
+ * <p>
+ * <ol>
+ * <li>legge da file la frase</li>
+ * <li>la parsifica con Tint e ne raccoglie l'output (JSON)</li>
+ * <li>converte il Json in un oggetto utilizzabile (il tutto, nella funzione
+ * {@link TintParser#parseText(String, JsonParserSimple)}</li>
+ * <li>con "TransferTranslationItEng.NLG_FACTORY.createSentence" si fa il
+ * transfer per ottenere la frase parsificata, in inglese ora, ma che sia un
+ * oggetto utilizzabile dalla libreria SimpleNlg</li>
+ * <li>usando SimpleNLG, si usa il Realizer per generare la frase tradotta</li>
+ * <li>visualizzazione della frase tradotta</li>
+ * </ol>
+>>>>>>> marco
  */
 public class TestTranslate_TintThenSimplenlg {
 	static final String FOLDER_PATH = "." + File.separator + "translationFirstWay" + File.separator;

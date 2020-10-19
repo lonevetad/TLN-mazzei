@@ -45,5 +45,6 @@ public class MockedData {
 			"Io adoro follemente l'arte sublime del cucinare pietanze orientali.", // 40
 			"Io sono il tuo padre intelligente.", //
 			"Questa è una frase di esempio.", // "This is a sample sentence",
+			"Io adoro scrivere.", //
 	};
 }

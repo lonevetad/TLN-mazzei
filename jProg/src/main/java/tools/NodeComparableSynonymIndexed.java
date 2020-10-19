@@ -1,6 +1,8 @@
 package tools;
 
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.Function;
 
@@ -36,14 +38,19 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	//
 
 	protected final SynonymSet alternatives; // the "node key"
-	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenByElemGramm;
-	protected Set<NodeComparable<SynonymSet>> childrenByElemGrammBackMap; // the "node children"
+
+	/**
+	 * A "radix-graph" or similar (range-trees?) would have been better thana simple
+	 * map
+	 */
+	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenBySynonymsBackMap;
+	protected Set<NodeComparable<SynonymSet>> childrenBySynonyms; // the "node children"
 
 	protected void instantiatesChildrenStructures() {
-		this.childrenByElemGramm = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration,
+		this.childrenBySynonymsBackMap = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration,
 				SynonymSet.SYNONYM_COMPARATOR);
-		this.childrenByElemGrammBackMap = new SetMapped<>(
-				((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenByElemGramm)
+		this.childrenBySynonyms = new SetMapped<>(
+				((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
 						.toSetValue(n -> n.getKeyIdentifier()), //
 				// generics type converter, need by the Java Compiler
 				IDENTITY_FUNCTION_JavaCompiler_GENERICS_TOO_RESTRICTIVE)
@@ -56,10 +63,27 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	public SynonymSet getKeyIdentifier() { return this.alternatives; }
 
 	@Override
-	public Set<NodeComparable<SynonymSet>> getChildrenNC() { return this.childrenByElemGrammBackMap; }
+
+	public Set<NodeComparable<SynonymSet>> getChildrenNC() { return this.childrenBySynonyms; }
 
 	@Override
-	public NodeComparable<SynonymSet> getChildNCByKey(SynonymSet key) { return this.childrenByElemGramm.get(key); }
+	public NodeComparable<SynonymSet> getChildNCByKey(SynonymSet key) {
+		NodeComparableSynonymIndexed c;
+		Entry<SynonymSet, NodeComparableSynonymIndexed> entryIter;
+		Iterator<Entry<SynonymSet, NodeComparableSynonymIndexed>> iterChildren;
+		c = this.childrenBySynonymsBackMap.get(key);
+		if (c != null) // well contained
+			return c;
+		// not fond? -> scan
+		iterChildren = ((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
+				.iterator();
+		while (iterChildren.hasNext()) {
+			entryIter = iterChildren.next();
+			if (entryIter.getKey().areIntersecting(key))
+				return entryIter.getValue();
+		}
+		return null;
+	}
 
 	public NodeComparable<SynonymSet> getChildNCBySingleKey(String key) {
 		return this.getChildNCByKey(new SynonymSet(new String[] { key }));
@@ -74,6 +98,14 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	public boolean hasAlternative(String t) { return this.alternatives.hasAlternative(t); }
 
 	public boolean canBeIdentifiedBy(SynonymSet eg) { return this.alternatives.areIntersecting(eg); }
+
+	//
+
+	@Override
+	public long scoreKeyCompatibilityWith(SynonymSet anotherKey) {
+		// TODO: use the synonym's comparator or not?
+		return this.alternatives.countAlternatives() - this.alternatives.intersectionSize(anotherKey);
+	}
 
 	//
 

@@ -6,7 +6,6 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import dataStructures.MapTreeAVL;
-//import tools.Comparators;
 
 public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 	private static final long serialVersionUID = 477874447L;
@@ -16,6 +15,7 @@ public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 		super(b, comp);
 		minValue = (NodeAVL_MinIter) NIL;
 		minValue.nextInOrder = minValue.prevInOrder = minValue; // that is NIL
+		optimization = Optimizations.MinMaxIndexIteration;
 	}
 
 	protected NodeAVL_MinIter minValue; // sorted-growing
