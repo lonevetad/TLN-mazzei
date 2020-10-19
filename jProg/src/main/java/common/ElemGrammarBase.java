@@ -17,8 +17,8 @@ public enum ElemGrammarBase {
 	Subject("S", "subj", "nsubj", "nsubjpass"), //
 	Objectt("O", "obj", "dobj", "iobj"), //
 	Aux("aux", "auxpass"), //
-	Det("det") //
-
+	Det("det"), //
+	Comp("comp", "xcomp")
 	//
 	;
 

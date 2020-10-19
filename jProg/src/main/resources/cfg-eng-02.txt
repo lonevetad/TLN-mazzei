@@ -1,5 +1,5 @@
 # un commento
-S -> NP VP | IP
+S -> NP VP | IP | AUX NP VP | VP
 # -pst sarebbe "poni il verbo in past-tense"
 # il Ii deriva da " https://en.wikipedia.org/wiki/X-bar_theory ", sezione "a full sentence"
 IP -> NP Ii
@@ -10,7 +10,7 @@ VP -> V NP | V | V NP PP | VP PP | V_Intrans | V_trans NP | V_ditrans NP NP
 V_intrans-> eats | sleeps
 V_trans-> eats | gives
 
-Det -> a | the | every 
+Det -> a | the | every | that
 Pronoun -> he | she | it
 ProperName -> john | jary
 Noun -> AdjP Noun | N

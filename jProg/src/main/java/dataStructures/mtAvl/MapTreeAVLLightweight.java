@@ -242,6 +242,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		root = NIL = newNode(null, null);
 		NIL.father = NIL.left = NIL.right = NIL; // redo, just to be sure
 		NIL.height = DEPTH_INITIAL;
+		optimization = Optimizations.Lightweight;
 	}
 
 	// TODO FIELDS
@@ -250,6 +251,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 	protected NodeAVL NIL, root;
 	protected Comparator<K> comp;
 	protected MapTreeAVL.BehaviourOnKeyCollision behaviour;
+	protected Optimizations optimization;
 
 	protected Comparator<Entry<K, V>> compEntry;
 
@@ -844,6 +846,81 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 			return null;
 		this.delete(n);
 		return n;
+	}
+
+	@Override
+	public MapTreeAVL<K, V> rangeQuery(K lowerBound, boolean isLowerBoundIncluded, K upperBound,
+			boolean isUpperBoundIncluded) throws IllegalArgumentException {
+		int c;
+		MapTreeAVL<K, V> r;
+		if (lowerBound == null)
+			throw new IllegalArgumentException("Lower bound is null");
+		if (upperBound == null)
+			throw new IllegalArgumentException("Upper bound is null");
+		c = this.comp.compare(lowerBound, upperBound);
+		if (c > 0)
+			throw new IllegalArgumentException("Lower bound is greater than upper bound");
+		if (c == 0) {
+			if (isLowerBoundIncluded || isUpperBoundIncluded) {
+				r = MapTreeAVL.newMap(optimization, behaviour, comp);
+				if (this.containsKey(lowerBound))
+					r.put(lowerBound, this.get(lowerBound));
+				return r;
+			} else
+				throw new IllegalArgumentException("The ma");
+		}
+		r = MapTreeAVL.newMap(optimization, behaviour, comp);
+		if (this.isEmpty())
+			return r;
+		if (size == 1) {
+			if ((comp.compare(lowerBound, root.k) < 0) && (comp.compare(root.k, upperBound) < 0)) {
+				r.put(root.k, root.v);
+			}
+			return r;
+		}
+		// recycle the "get" code
+		if (comp.compare(((NodeAVL) this.peekMaximum()).k, lowerBound) < 0) {
+			NodeAVL n, temp, firstNode;
+			// lower bound is greater: move to the real starting node
+			n = temp = root;
+			// search for the first node
+			firstNode = null;
+			while (firstNode == null && n != NIL) {
+				c = comp.compare(lowerBound, n.k);
+				if (c == 0 && isLowerBoundIncluded) {
+					firstNode = n;
+				} else {
+					temp = n; // temp used as "previous"
+					n = (c < 0) ? n.left : n.right;
+				}
+			}
+			if (firstNode == null) {
+				firstNode = temp;
+				while (firstNode != NIL && (c = comp.compare(firstNode.k, lowerBound)) < 0) {
+					firstNode = successorSorted(firstNode);
+				}
+			}
+			if (firstNode == null || firstNode == NIL)
+				return r; // EMPTY
+			n = firstNode;
+			// add the first node and each subsequent node (lower than upper bound)
+			do {
+				r.put(n.k, n.v);
+				temp = successorSorted(n);
+				if (temp == NIL)
+					n = NIL; // no more nodes available -> stop
+				else {
+					c = comp.compare(temp.k, upperBound);
+					if ((c < 0) || (c == 0 && isUpperBoundIncluded)) {
+						// add n to interval
+						n = temp;
+					} else {// ("n" exceeds the upper bound) or ("n" is equal BUT the flag is false)
+						n = NIL; // -> stop it
+					}
+				}
+			} while (n != NIL);
+		}
+		return r;
 	}
 
 	@Override
@@ -2287,9 +2364,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		 * its base implementation. In case no usefull way could be used, it just use
 		 * the iterator.
 		 */
-		public K pickOne() {
-			return isEmpty() ? null : first();
-		}
+		public K pickOne() { return isEmpty() ? null : first(); }
 	}
 
 	protected class SortedSetEntryWrapper extends SortedSetWrapper<Entry<K, V>> {
