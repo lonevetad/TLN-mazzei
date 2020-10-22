@@ -1,0 +1,2 @@
+S -> NP VP
+VP -> VP ADP | V NP

@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.function.Function;
 
 import dataStructures.MapTreeAVL;
-import dataStructures.SetMapped;
+import tools.SynonymSet.SynonymSetComparator;
 
 /** Default implementation of {@link NodeComparable} useful for */
 public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableDefaultAlghoritms<SynonymSet>
@@ -38,23 +38,26 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	//
 
 	protected final SynonymSet alternatives; // the "node key"
-
 	/**
 	 * A "radix-graph" or similar (range-trees?) would have been better thana simple
 	 * map
 	 */
-	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenBySynonymsBackMap;
+//	protected Map<SynonymSet, NodeComparableSynonymIndexed> childrenBySynonymsBackMap;
+	protected Map<SynonymSet, NodeComparable<SynonymSet>> childrenBySynonymsBackMap;
 	protected Set<NodeComparable<SynonymSet>> childrenBySynonyms; // the "node children"
 
 	protected void instantiatesChildrenStructures() {
 		this.childrenBySynonymsBackMap = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration,
-				SynonymSet.SYNONYM_COMPARATOR);
-		this.childrenBySynonyms = new SetMapped<>(
-				((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
-						.toSetValue(n -> n.getKeyIdentifier()), //
-				// generics type converter, need by the Java Compiler
-				IDENTITY_FUNCTION_JavaCompiler_GENERICS_TOO_RESTRICTIVE)
-						.setReverseMapper(IDENTITY_FUNCTION_REVERSE_MAPPER);
+				SynonymSetComparator.FIRST_DIFFERENT_FIRST);
+		this.childrenBySynonyms =
+//				new SetMapped<>(
+//				((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
+//						.toSetValue(n -> n.getKeyIdentifier()), //
+//				// generics type converter, need by the Java Compiler
+//				IDENTITY_FUNCTION_JavaCompiler_GENERICS_TOO_RESTRICTIVE)
+//						.setReverseMapper(IDENTITY_FUNCTION_REVERSE_MAPPER);
+				((MapTreeAVL<SynonymSet, NodeComparable<SynonymSet>>) this.childrenBySynonymsBackMap)
+						.toSetValue(n -> n.getKeyIdentifier());
 	}
 
 	//
@@ -63,26 +66,70 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	public SynonymSet getKeyIdentifier() { return this.alternatives; }
 
 	@Override
-
 	public Set<NodeComparable<SynonymSet>> getChildrenNC() { return this.childrenBySynonyms; }
 
 	@Override
 	public NodeComparable<SynonymSet> getChildNCByKey(SynonymSet key) {
-		NodeComparableSynonymIndexed c;
-		Entry<SynonymSet, NodeComparableSynonymIndexed> entryIter;
-		Iterator<Entry<SynonymSet, NodeComparableSynonymIndexed>> iterChildren;
+		NodeComparable<SynonymSet> c, bestChild;
+		Entry<SynonymSet, NodeComparable<SynonymSet>> entryIter;
+		Iterator<Entry<SynonymSet, NodeComparable<SynonymSet>>> iterChildren;
+		if (this.childrenBySynonymsBackMap.isEmpty())
+			return null;
 		c = this.childrenBySynonymsBackMap.get(key);
 		if (c != null) // well contained
 			return c;
 		// not fond? -> scan
-		iterChildren = ((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
-				.iterator();
+		iterChildren = ((MapTreeAVL<SynonymSet, NodeComparable<SynonymSet>>) this.childrenBySynonymsBackMap).iterator();
+		// V1
+//		while (iterChildren.hasNext()) {
+//			entryIter = iterChildren.next();
+//			if (entryIter.getKey().areIntersecting(key))
+//				return entryIter.getValue();
+//		}
+		/**
+		 * "Interesting" order:
+		 * <ol>
+		 * <li>intersection size</li>
+		 * <li>lowest missing</li>
+		 * <li>lowest exceeding</li>
+		 * </ol>
+		 */
+		// V2
+		if (!iterChildren.hasNext())
+			return null;
+		int bestMissingElements; // circa l'opposto di "precision"
+		int bestExceedingElements; // circa l'opposto di "recall"
+		int bestIntersSize, intersectionSize, missElem, excElem;
+		SynonymSet synChild;
+		// set the starting point: the first child ever
+		bestChild = iterChildren.next().getValue();
+//		scoreBest= bestChild.scoreKeyCompatibilityWith(key);
+		synChild = bestChild.getKeyIdentifier();
+		bestIntersSize = intersectionSize = synChild.intersectionSize(key);
+		bestMissingElements = synChild.countAlternatives() - intersectionSize;
+		bestExceedingElements = key.countAlternatives() - intersectionSize;
+		// then search for the best
 		while (iterChildren.hasNext()) {
 			entryIter = iterChildren.next();
-			if (entryIter.getKey().areIntersecting(key))
-				return entryIter.getValue();
+			c = entryIter.getValue();
+			synChild = c.getKeyIdentifier();
+			intersectionSize = synChild.intersectionSize(key);
+			missElem = synChild.countAlternatives() - intersectionSize;
+			excElem = key.countAlternatives() - intersectionSize;
+			// first check the "subset" relation
+			if (intersectionSize > bestIntersSize || //
+					intersectionSize == bestIntersSize && ((missElem < bestMissingElements) || //
+							(missElem == bestMissingElements && excElem < bestExceedingElements)//
+					)//
+			) {
+				// update
+				bestChild = c;
+				bestMissingElements = missElem;
+				bestExceedingElements = excElem;
+				bestIntersSize = intersectionSize;
+			}
 		}
-		return null;
+		return bestIntersSize == 0 ? null : bestChild;
 	}
 
 	public NodeComparable<SynonymSet> getChildNCBySingleKey(String key) {
@@ -104,7 +151,7 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	@Override
 	public long scoreKeyCompatibilityWith(SynonymSet anotherKey) {
 		// TODO: use the synonym's comparator or not?
-		return this.alternatives.countAlternatives() - this.alternatives.intersectionSize(anotherKey);
+		return this.alternatives.countDifferenceWith(anotherKey);
 	}
 
 	//

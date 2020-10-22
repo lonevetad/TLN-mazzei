@@ -1,35 +1,24 @@
-<<<<<<< HEAD
-{
-  "docDate": "2020-10-17",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 1125,0 tokens/sec.",
-=======
 START
 start parsifying text:
-fu la spada laser di tuo padre.
+è la spada laser di tuo padre.
 parsed :D
 
 
  JSON:
 {
-  "docDate": "2020-10-19",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 8 tokens at 87,0 tokens/sec.",
->>>>>>> marco
+  "docDate": "2020-10-21",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 9 tokens at 529,4 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
       "characterOffsetEnd": 31,
-<<<<<<< HEAD
       "text": "?? la spada laser di tuo padre.",
-=======
-      "text": "fu la spada laser di tuo padre.",
->>>>>>> marco
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-<<<<<<< HEAD
           "dependent": 2,
           "dependentGloss": "?"
         },
@@ -52,87 +41,41 @@ parsed :D
           "governor": 2,
           "governorGloss": "?",
           "dependent": 4,
-=======
-          "dependent": 1,
-          "dependentGloss": "fu"
-        },
-        {
-          "dep": "det",
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 2,
-          "dependentGloss": "la"
-        },
-        {
-          "dep": "nsubj",
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 3,
->>>>>>> marco
           "dependentGloss": "spada"
         },
         {
           "dep": "compound",
-<<<<<<< HEAD
           "governor": 4,
           "governorGloss": "spada",
           "dependent": 5,
-=======
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 4,
->>>>>>> marco
           "dependentGloss": "laser"
         },
         {
           "dep": "case",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 6,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 5,
->>>>>>> marco
           "dependentGloss": "di"
         },
         {
           "dep": "det:poss",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 7,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 6,
->>>>>>> marco
           "dependentGloss": "tuo"
         },
         {
           "dep": "nmod",
           "governor": 4,
-<<<<<<< HEAD
           "governorGloss": "spada",
           "dependent": 8,
-=======
-          "governorGloss": "laser",
-          "dependent": 7,
->>>>>>> marco
           "dependentGloss": "padre"
         },
         {
           "dep": "punct",
-<<<<<<< HEAD
           "governor": 2,
           "governorGloss": "?",
           "dependent": 9,
-=======
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 8,
->>>>>>> marco
           "dependentGloss": "."
         }
       ],
@@ -141,7 +84,6 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-<<<<<<< HEAD
           "dependent": 2,
           "dependentGloss": "?"
         },
@@ -164,87 +106,41 @@ parsed :D
           "governor": 2,
           "governorGloss": "?",
           "dependent": 4,
-=======
-          "dependent": 1,
-          "dependentGloss": "fu"
-        },
-        {
-          "dep": "det",
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 2,
-          "dependentGloss": "la"
-        },
-        {
-          "dep": "nsubj",
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 3,
->>>>>>> marco
           "dependentGloss": "spada"
         },
         {
           "dep": "compound",
-<<<<<<< HEAD
           "governor": 4,
           "governorGloss": "spada",
           "dependent": 5,
-=======
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 4,
->>>>>>> marco
           "dependentGloss": "laser"
         },
         {
           "dep": "case",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 6,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 5,
->>>>>>> marco
           "dependentGloss": "di"
         },
         {
           "dep": "det:poss",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 7,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 6,
->>>>>>> marco
           "dependentGloss": "tuo"
         },
         {
           "dep": "nmod:di",
           "governor": 4,
-<<<<<<< HEAD
           "governorGloss": "spada",
           "dependent": 8,
-=======
-          "governorGloss": "laser",
-          "dependent": 7,
->>>>>>> marco
           "dependentGloss": "padre"
         },
         {
           "dep": "punct",
-<<<<<<< HEAD
           "governor": 2,
           "governorGloss": "?",
           "dependent": 9,
-=======
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 8,
->>>>>>> marco
           "dependentGloss": "."
         }
       ],
@@ -253,7 +149,6 @@ parsed :D
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
-<<<<<<< HEAD
           "dependent": 2,
           "dependentGloss": "?"
         },
@@ -276,87 +171,41 @@ parsed :D
           "governor": 2,
           "governorGloss": "?",
           "dependent": 4,
-=======
-          "dependent": 1,
-          "dependentGloss": "fu"
-        },
-        {
-          "dep": "det",
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 2,
-          "dependentGloss": "la"
-        },
-        {
-          "dep": "nsubj",
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 3,
->>>>>>> marco
           "dependentGloss": "spada"
         },
         {
           "dep": "compound",
-<<<<<<< HEAD
           "governor": 4,
           "governorGloss": "spada",
           "dependent": 5,
-=======
-          "governor": 3,
-          "governorGloss": "spada",
-          "dependent": 4,
->>>>>>> marco
           "dependentGloss": "laser"
         },
         {
           "dep": "case",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 6,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 5,
->>>>>>> marco
           "dependentGloss": "di"
         },
         {
           "dep": "det:poss",
-<<<<<<< HEAD
           "governor": 8,
           "governorGloss": "padre",
           "dependent": 7,
-=======
-          "governor": 7,
-          "governorGloss": "padre",
-          "dependent": 6,
->>>>>>> marco
           "dependentGloss": "tuo"
         },
         {
           "dep": "nmod:di",
           "governor": 4,
-<<<<<<< HEAD
           "governorGloss": "spada",
           "dependent": 8,
-=======
-          "governorGloss": "laser",
-          "dependent": 7,
->>>>>>> marco
           "dependentGloss": "padre"
         },
         {
           "dep": "punct",
-<<<<<<< HEAD
           "governor": 2,
           "governorGloss": "?",
           "dependent": 9,
-=======
-          "governor": 1,
-          "governorGloss": "fu",
-          "dependent": 8,
->>>>>>> marco
           "dependentGloss": "."
         }
       ],
@@ -364,7 +213,6 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-<<<<<<< HEAD
           "word": "?",
           "originalText": "?",
           "lemma": "?",
@@ -395,39 +243,6 @@ parsed :D
         },
         {
           "index": 3,
-=======
-          "word": "fu",
-          "originalText": "fu",
-          "lemma": "essere",
-          "characterOffsetBegin": 0,
-          "characterOffsetEnd": 2,
-          "pos": "V",
-          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPast|VerbForm\u003dFin",
-          "ner": "O",
-          "full_morpho": "fu essere+v+indic+pass+nil+3+sing",
-          "selected_morpho": "essere+v+indic+pass+nil+3+sing",
-          "guessed_lemma": false,
-          "features": {
-            "Mood": [
-              "Ind"
-            ],
-            "Number": [
-              "Sing"
-            ],
-            "Person": [
-              "3"
-            ],
-            "Tense": [
-              "Past"
-            ],
-            "VerbForm": [
-              "Fin"
-            ]
-          }
-        },
-        {
-          "index": 2,
->>>>>>> marco
           "word": "la",
           "originalText": "la",
           "lemma": "la",
@@ -455,11 +270,7 @@ parsed :D
           }
         },
         {
-<<<<<<< HEAD
           "index": 4,
-=======
-          "index": 3,
->>>>>>> marco
           "word": "spada",
           "originalText": "spada",
           "lemma": "spada",
@@ -481,11 +292,7 @@ parsed :D
           }
         },
         {
-<<<<<<< HEAD
           "index": 5,
-=======
-          "index": 4,
->>>>>>> marco
           "word": "laser",
           "originalText": "laser",
           "lemma": "laser",
@@ -507,11 +314,7 @@ parsed :D
           }
         },
         {
-<<<<<<< HEAD
           "index": 6,
-=======
-          "index": 5,
->>>>>>> marco
           "word": "di",
           "originalText": "di",
           "lemma": "di",
@@ -526,11 +329,7 @@ parsed :D
           "features": {}
         },
         {
-<<<<<<< HEAD
           "index": 7,
-=======
-          "index": 6,
->>>>>>> marco
           "word": "tuo",
           "originalText": "tuo",
           "lemma": "tuo",
@@ -558,11 +357,7 @@ parsed :D
           }
         },
         {
-<<<<<<< HEAD
           "index": 8,
-=======
-          "index": 7,
->>>>>>> marco
           "word": "padre",
           "originalText": "padre",
           "lemma": "padre",
@@ -584,11 +379,7 @@ parsed :D
           }
         },
         {
-<<<<<<< HEAD
           "index": 9,
-=======
-          "index": 8,
->>>>>>> marco
           "word": ".",
           "originalText": ".",
           "lemma": "[PUNCT]",
@@ -606,8 +397,6 @@ parsed :D
     }
   ]
 }
-<<<<<<< HEAD
-=======
 
 
  Now build the tree:
@@ -617,12 +406,12 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= fu, pos= V , lemma=essere , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[3], Tense-[Past], VerbForm-[Fin], children= [
-	NDTTint [gloss= spada, pos= S , lemma=spada , indexID=3, dep= nsubj , isRoot=F, father=1-fu, features= [Gender-[Fem], Number-[Sing], children= [
-		NDTTint [gloss= la, pos= RD , lemma=la , indexID=2, dep= det , isRoot=F, father=3-spada, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
-		NDTTint [gloss= laser, pos= S , lemma=laser , indexID=4, dep= compound , isRoot=F, father=3-spada, features= [Gender-[Masc], Number-[Plur], children= [
-			NDTTint [gloss= padre, pos= S , lemma=padre , indexID=7, dep= nmod , isRoot=F, father=4-laser, features= [Gender-[Masc], Number-[Sing], children= [
-				NDTTint [gloss= di, pos= E , lemma=di , indexID=5, dep= case , isRoot=F, father=7-padre, features= [, children= []
-				NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=6, dep= det:poss , isRoot=F, father=7-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []			]		]	]
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-fu, features= [, children= []]
->>>>>>> marco
+NDTTint [gloss= ?, pos= X , lemma=? , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
+	NDTTint [gloss= ?, pos= X , lemma=? , indexID=1, dep= nummod , isRoot=F, father=2-?, features= [, children= []
+	NDTTint [gloss= spada, pos= S , lemma=spada , indexID=4, dep= dobj , isRoot=F, father=2-?, features= [Gender-[Fem], Number-[Sing], children= [
+		NDTTint [gloss= la, pos= RD , lemma=la , indexID=3, dep= det , isRoot=F, father=4-spada, features= [Definite-[Def], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
+		NDTTint [gloss= laser, pos= S , lemma=laser , indexID=5, dep= compound , isRoot=F, father=4-spada, features= [Gender-[Masc], Number-[Plur], children= []
+		NDTTint [gloss= padre, pos= S , lemma=padre , indexID=8, dep= nmod , isRoot=F, father=4-spada, features= [Gender-[Masc], Number-[Sing], children= [
+			NDTTint [gloss= di, pos= E , lemma=di , indexID=6, dep= case , isRoot=F, father=8-padre, features= [, children= []
+			NDTTint [gloss= tuo, pos= AP , lemma=tuo , indexID=7, dep= det:poss , isRoot=F, father=8-padre, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []		]	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=9, dep= punct , isRoot=F, father=2-?, features= [, children= []]

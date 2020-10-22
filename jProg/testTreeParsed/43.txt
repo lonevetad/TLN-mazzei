@@ -1,46 +1,53 @@
 START
 start parsifying text:
-Io adoro scrivere.
+Lui adora scrivere molto.
 parsed :D
 
 
  JSON:
 {
-  "docDate": "2020-10-19",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 148,1 tokens/sec.",
+  "docDate": "2020-10-21",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 172,4 tokens/sec.",
   "sentences": [
     {
       "index": 0,
       "characterOffsetBegin": 0,
-      "characterOffsetEnd": 18,
-      "text": "io adoro scrivere.",
+      "characterOffsetEnd": 25,
+      "text": "lui adora scrivere molto.",
       "basic-dependencies": [
         {
           "dep": "ROOT",
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "adoro"
+          "dependentGloss": "adora"
         },
         {
           "dep": "nsubj",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 1,
-          "dependentGloss": "io"
+          "dependentGloss": "lui"
         },
         {
           "dep": "xcomp",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 3,
           "dependentGloss": "scrivere"
         },
         {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "adoro",
-          "dependent": 4,
+          "governorGloss": "adora",
+          "dependent": 5,
           "dependentGloss": "."
         }
       ],
@@ -50,27 +57,34 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "adoro"
+          "dependentGloss": "adora"
         },
         {
           "dep": "nsubj",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 1,
-          "dependentGloss": "io"
+          "dependentGloss": "lui"
         },
         {
           "dep": "xcomp",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 3,
           "dependentGloss": "scrivere"
         },
         {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "adoro",
-          "dependent": 4,
+          "governorGloss": "adora",
+          "dependent": 5,
           "dependentGloss": "."
         }
       ],
@@ -80,27 +94,34 @@ parsed :D
           "governor": 0,
           "governorGloss": "ROOT",
           "dependent": 2,
-          "dependentGloss": "adoro"
+          "dependentGloss": "adora"
         },
         {
           "dep": "nsubj",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 1,
-          "dependentGloss": "io"
+          "dependentGloss": "lui"
         },
         {
           "dep": "xcomp",
           "governor": 2,
-          "governorGloss": "adoro",
+          "governorGloss": "adora",
           "dependent": 3,
           "dependentGloss": "scrivere"
         },
         {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
           "dep": "punct",
           "governor": 2,
-          "governorGloss": "adoro",
-          "dependent": 4,
+          "governorGloss": "adora",
+          "dependent": 5,
           "dependentGloss": "."
         }
       ],
@@ -108,23 +129,26 @@ parsed :D
       "tokens": [
         {
           "index": 1,
-          "word": "io",
-          "originalText": "io",
-          "lemma": "io",
+          "word": "lui",
+          "originalText": "lui",
+          "lemma": "lui",
           "characterOffsetBegin": 0,
-          "characterOffsetEnd": 2,
+          "characterOffsetEnd": 3,
           "pos": "PE",
-          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Person\u003d3|PronType\u003dPrs",
           "ner": "O",
-          "full_morpho": "io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
-          "selected_morpho": "io+pron+nom+_+1+sing+strong",
+          "full_morpho": "lui lui+pron+_+m+3+sing+strong",
+          "selected_morpho": "lui+pron+_+m+3+sing+strong",
           "guessed_lemma": false,
           "features": {
+            "Gender": [
+              "Masc"
+            ],
             "Number": [
               "Sing"
             ],
             "Person": [
-              "1"
+              "3"
             ],
             "PronType": [
               "Prs"
@@ -133,26 +157,26 @@ parsed :D
         },
         {
           "index": 2,
-          "word": "adoro",
-          "originalText": "adoro",
+          "word": "adora",
+          "originalText": "adora",
           "lemma": "adorare",
-          "characterOffsetBegin": 3,
-          "characterOffsetEnd": 8,
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 9,
           "pos": "V",
-          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
           "ner": "O",
-          "full_morpho": "adoro adorare+v+indic+pres+nil+1+sing",
-          "selected_morpho": "adorare+v+indic+pres+nil+1+sing",
+          "full_morpho": "adora adorare+v+imp+pres+nil+2+sing adorare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "adorare+v+imp+pres+nil+2+sing",
           "guessed_lemma": false,
           "features": {
             "Mood": [
-              "Ind"
+              "Imp"
             ],
             "Number": [
               "Sing"
             ],
             "Person": [
-              "1"
+              "2"
             ],
             "Tense": [
               "Pres"
@@ -167,8 +191,8 @@ parsed :D
           "word": "scrivere",
           "originalText": "scrivere",
           "lemma": "scrivere",
-          "characterOffsetBegin": 9,
-          "characterOffsetEnd": 17,
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 18,
           "pos": "V",
           "featuresText": "VerbForm\u003dInf",
           "ner": "O",
@@ -183,11 +207,26 @@ parsed :D
         },
         {
           "index": 4,
+          "word": "molto",
+          "originalText": "molto",
+          "lemma": "molto",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 24,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "molto molto+adj+m+sing+pst molto+adv molto+adj+m+sing+pst+ind",
+          "selected_morpho": "molto+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 5,
           "word": ".",
           "originalText": ".",
           "lemma": "[PUNCT]",
-          "characterOffsetBegin": 17,
-          "characterOffsetEnd": 18,
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 25,
           "pos": "FS",
           "featuresText": "",
           "ner": "O",
@@ -209,7 +248,8 @@ built :D
 TreeParsedSentence
 root:
 
-NDTTint [gloss= adoro, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Pres], VerbForm-[Fin], children= [
-	NDTTint [gloss= io, pos= PE , lemma=io , indexID=1, dep= nsubj , isRoot=F, father=2-adoro, features= [Number-[Sing], Person-[1], PronType-[Prs], children= []
-	NDTTint [gloss= scrivere, pos= V , lemma=scrivere , indexID=3, dep= xcomp , isRoot=F, father=2-adoro, features= [VerbForm-[Inf], children= []
-	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=4, dep= punct , isRoot=F, father=2-adoro, features= [, children= []]
+NDTTint [gloss= adora, pos= V , lemma=adorare , indexID=2, dep= ROOT , isRoot=T, father=none :D, features= [Mood-[Imp], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= [
+	NDTTint [gloss= lui, pos= PE , lemma=lui , indexID=1, dep= nsubj , isRoot=F, father=2-adora, features= [Gender-[Masc], Number-[Sing], Person-[3], PronType-[Prs], children= []
+	NDTTint [gloss= scrivere, pos= V , lemma=scrivere , indexID=3, dep= xcomp , isRoot=F, father=2-adora, features= [VerbForm-[Inf], children= [
+		NDTTint [gloss= molto, pos= B , lemma=molto , indexID=4, dep= advmod , isRoot=F, father=3-scrivere, features= [, children= []	]
+	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=5, dep= punct , isRoot=F, father=2-adora, features= [, children= []]

@@ -1,15 +1,19 @@
 package translators.secondWay;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import common.NodeParsedSentence;
 import dataStructures.MapTreeAVL;
 import tools.NodeComparable;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
+import tools.SynonymSet.SynonymSetComparator;
 
 /**
  * Idea: si inizia a tradurre (usando
@@ -34,11 +38,14 @@ import tools.SynonymSet;
  * {@link #transfer(NodeSubtreeDependency)}) on a given parsed-sentence tree to
  * produce a new one, depending on the rules ({@link TransferRule}) which this
  * instance is based on (added via {@link #addRule(TransferRule)}).
+ * <p>
+ * Resemble the "Percolation Table".
  */
 public class TransferTranslationRuleBased {
 
 	public TransferTranslationRuleBased() {
-		rulesGroupedByRoot = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, SynonymSet.SYNONYM_COMPARATOR);
+		rulesGroupedByRoot = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight,
+				SynonymSetComparator.FIRST_DIFFERENT_FIRST);
 //	<TransferTranslationItEng3.ElementGrammarWithAlternatives, List<TransferRule>>		
 	}
 
@@ -66,6 +73,8 @@ public class TransferTranslationRuleBased {
 		List<TransferRule> l;
 		rootRule = rule.lhsTemplate.getKeyIdentifier();
 		l = rulesGroupedByRoot.get(rootRule);
+		System.out.println("adding rule");
+		System.out.println(rule);
 		if (l == null) {
 			l = new ArrayList<>();
 			l.add(rule);
@@ -84,8 +93,10 @@ public class TransferTranslationRuleBased {
 		TransferRule currentRule;
 		rootST = subtreeToTransfer.getKeyIdentifier();
 		l = rulesGroupedByRoot.get(rootST);
-		if (l == null)
+		if (l == null) {
+			System.out.println("NO RULE FOR " + rootST);
 			return null;
+		}
 		scores = new RuleScored[len = l.size()];
 //score all rules, then pick the best fitting (the lowest);
 		while (--len >= 0) {
@@ -117,8 +128,11 @@ public class TransferTranslationRuleBased {
 			if ((temp = scores[i]).scoreDifference < best.scoreDifference)
 				best = temp;
 		}
+		System.out.println("best rule: " + best);
 		return best;
 	}
+
+	public void forEachRule(Consumer<TransferRule> c) { this.rulesGroupedByRoot.forEach((ss, l) -> l.forEach(c)); }
 
 	//
 
@@ -190,18 +204,8 @@ public class TransferTranslationRuleBased {
 		}
 
 		/**
-		 * NOTE: remember to invoke
-		 * {@link TransferRule#manageUntouchedChildredUpontransfer(NodeSubtreeDependency, TransferTranslationRuleBased, NodeSubtreeDependency)}
-		 * on EACH newly created node.
-		 * <p>
-		 * Applying a rule means performing the following steps:
-		 * <ol>
-		 * <li>take a sentence sub-tree to be transfer (by passing the sub-root node as
-		 * argument)</li>
-		 * <li>produce the new subtree by allocating new nodes (this depends on this
-		 * method's implementation).</li>
-		 * <li>wire them up (again, this depends on this method's implementation).</li>
-		 * </ol>
+		 * Invokes
+		 * {@link #implementsTransferRule(TransferTranslationRuleBased, NodeParsedSentence)}
 		 * <br>
 		 * After this (REMEMBER TO WIRE the newly created node), You are obligated to
 		 * perform the following steps:
@@ -213,7 +217,30 @@ public class TransferTranslationRuleBased {
 		 * </ul>
 		 */
 //		* <li>for each newly produced LEAF node {@link TransferRule}</li>
-		public abstract NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+		public NodeParsedSentence applyTransferRule(TransferTranslationRuleBased transferer,
+				NodeParsedSentence originalSubtree) {
+			SubTransferResult str;
+			str = implementsTransferRule(transferer, originalSubtree);
+			str.oldNodesAndTransferred
+					.forEach(p -> manageUntouchedChildredUpontransfer(p.oldNode, transferer, p.newTransferredNode));
+			return str.rootTransferedSubtree;
+		}
+
+		/**
+		 * Applying a rule means performing the following steps:
+		 * <ol>
+		 * <li>take a sentence sub-tree to be transfer (by passing the sub-root node as
+		 * argument)</li>
+		 * <li>produce the new subtree by allocating new nodes (this depends on this
+		 * method's implementation).</li>
+		 * <li>wire them up (again, this depends on this method's implementation).</li>
+		 * <li>create an instance of {@link SubTransferResult}, as required, and put all
+		 * pairs of old and new node created (in case of purely synthetic nodes, i.e.
+		 * nodes created from nothing like: Italian language has "implied subject" in
+		 * some verb and in English is required to be specified).</li>
+		 * </ol>
+		 */
+		public abstract SubTransferResult implementsTransferRule(TransferTranslationRuleBased transferer,
 				NodeParsedSentence originalSubtree);
 
 //		protected final void manageNewlyProducedLeafNodes(NodeSubtreeDependency originalNonleafNode,
@@ -243,9 +270,11 @@ public class TransferTranslationRuleBased {
 			 * transfer it AND wire the newly produced node into the newlyBla's children
 			 * set.
 			 */
+			System.out.println("#starting recursion on originalNode: " + originalNode);
 			originalNode.forEachChildNC(child -> {
 				if (!newlyProducedByTransferNode.containsChildNC(child.getKeyIdentifier())) {
 					NodeComparableSynonymIndexed transferedChild;
+					System.out.println("## recursion on child: " + child);
 					transferedChild = transferer.transfer((NodeParsedSentence) child);
 					newlyProducedByTransferNode.addChildNC(transferedChild);
 				}
@@ -271,7 +300,39 @@ public class TransferTranslationRuleBased {
 			sb.append("++++TransferRule:\n");
 			this.lhsTemplate.toString(sb);
 		}
-	}
+
+		//
+
+		public static class SubTransferResult implements Serializable {
+			private static final long serialVersionUID = -902204796933L;
+			public final NodeParsedSentence rootTransferedSubtree;
+			public final List<PairOldNewNode> oldNodesAndTransferred;
+
+			public SubTransferResult(NodeParsedSentence rootTransferedSubtree) {
+				super();
+				this.rootTransferedSubtree = rootTransferedSubtree;
+				this.oldNodesAndTransferred = new LinkedList<>();
+			}
+
+			public SubTransferResult addPairOldNewNode(NodeParsedSentence oldNode,
+					NodeParsedSentence newTransferredNode) {
+				oldNodesAndTransferred.add(new PairOldNewNode(oldNode, newTransferredNode));
+				return this;
+			}
+
+//
+			public static class PairOldNewNode implements Serializable {
+				private static final long serialVersionUID = 3210511047988L;
+				public final NodeParsedSentence oldNode, newTransferredNode;
+
+				public PairOldNewNode(NodeParsedSentence oldNode, NodeParsedSentence newTransferredNode) {
+					super();
+					this.oldNode = oldNode;
+					this.newTransferredNode = newTransferredNode;
+				}
+			}
+		}
+	} // end class TransferRule
 
 	public static class RuleScored {
 		public static final Comparator<RuleScored> RuleScored_COMPARATOR = (s1, s2) -> {
@@ -290,6 +351,11 @@ public class TransferTranslationRuleBased {
 			super();
 			this.scoreDifference = scoreDifference;
 			this.rule = rule;
+		}
+
+		@Override
+		public String toString() {
+			return "RuleScored [scoreDifference=" + scoreDifference + ",\n\trule=" + rule + "]";
 		}
 	}
 }
