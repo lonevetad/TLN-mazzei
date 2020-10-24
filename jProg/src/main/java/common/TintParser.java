@@ -4,12 +4,26 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
 import tools.JsonParserSimple;
 import tools.OutputStreamCollector;
 
+/**
+ * @ARTICLE{palmeromorettitint, author = {{Palmero Aprosio}, A. and {Moretti},
+ *                              G.}, title = "{Italy goes to Stanford: a
+ *                              collection of CoreNLP modules for Italian}",
+ *                              journal = {ArXiv e-prints}, archivePrefix =
+ *                              "arXiv", eprint = {1609.06204}, primaryClass =
+ *                              "cs.CL", keywords = {Computer Science -
+ *                              Computation and Language}, year = 2016, month =
+ *                              sep, adsurl =
+ *                              {http://adsabs.harvard.edu/abs/2016arXiv160906204P},
+ *                              adsnote = {Provided by the SAO/NASA Astrophysics
+ *                              Data System} }
+ */
 public class TintParser {
 	private static final TintPipeline pipeline;
 
@@ -17,6 +31,9 @@ public class TintParser {
 		pipeline = new TintPipeline();
 		try {
 			pipeline.loadDefaultProperties();
+			Properties p = new Properties();
+			p.put("charset", "utf-8");
+			pipeline.addProperties(p);
 			pipeline.load();
 		} catch (IOException e) {
 			e.printStackTrace();

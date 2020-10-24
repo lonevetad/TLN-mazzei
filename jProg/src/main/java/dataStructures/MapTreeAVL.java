@@ -21,6 +21,7 @@ import dataStructures.mtAvl.MapTreeAVLFull;
 import dataStructures.mtAvl.MapTreeAVLLightweight;
 import dataStructures.mtAvl.MapTreeAVLMinIter;
 import dataStructures.mtAvl.MapTreeAVLQueuable;
+import tools.ClosestMatch;
 
 /**REMOVED COMMENTS <p>
  * There's a bunch of ways to iterate all over this map.
@@ -418,6 +419,17 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 			boolean isUpperBoundIncluded) throws IllegalArgumentException;
 
 	/**
+	 * Search if exists an entry with a compatible key (i.e., the comparator
+	 * provided upon instantiation and {@link #getComparator()}) or, in absence, a
+	 * pair of the closest entries: the closer lower entry and the closer upper
+	 * entry. <br>
+	 * It returns an instance of {@link ClosestMatch}. If the match is exact, then
+	 * the returned instance's method {@link ClosestMatch#isExactMatch()} will
+	 * return <code>true</code>
+	 */
+	public ClosestMatch<Entry<K, V>> closestMatchOf(K key);
+
+	/**
 	 * Merge the smaller tree in the bigger ones. The smaller one will be cleared
 	 * after the call.
 	 * <P>
@@ -492,11 +504,11 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	 */
 	public List<V> toListValue(Function<V, K> keyExtractor);
 
-	public SortedSet<K> toSetKey();
+	public SortedSetEnhanced<K> toSetKey();
 
-	public SortedSet<Entry<K, V>> toSetEntry();
+	public SortedSetEnhanced<Entry<K, V>> toSetEntry();
 
-	public SortedSet<V> toSetValue(Function<V, K> keyExtractor);
+	public SortedSetEnhanced<V> toSetValue(Function<V, K> keyExtractor);
 
 	// ENDCOLLECTION CONVERTITORS
 
@@ -555,9 +567,14 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 
 	/**
 	 * With some particular inputs, the tree could be nearly unbalanced, making some
-	 * operations heavier than the predicted <code>O(log(n))</code>, where <i>n</i>
-	 * is the total size of the tree. <br>
-	 * Three examples making the tree left-tailed:
+	 * operations very heavy, still <code>O(log(n))</code> (where <i>n</i> is the
+	 * total size of the tree) but the worst case has huge coefficients. So,
+	 * recalculating the root while keeping the balance will enhance the worst case
+	 * at the expense of the average, because it sticks to <code>O(log(n))</code>,
+	 * by minimizing the maximum height.<br>
+	 * This method runs on <code>O(n*log2(n))</code> time. <br>
+	 * Three examples making the tree left-tailed (if the elements are added in the
+	 * specified order):
 	 * <ul>
 	 * <li>{ 10, 4, 20, 2, 6, 15, 22, 1, 3, 5, 11, 0 }</li>
 	 * <li>{ 99, 10, 140, 4, 20, 120, 160, 2, 6, 15, 22, 110, 103, 150, 1, 3, 5, 11,
@@ -570,10 +587,81 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	 * 1, 3, 5, 11, 100, 1025, <br>
 	 * 0 }</li>
 	 * </ul>
-	 * <br>
-	 * This way, the maximum height is minimized and so the worst case is
-	 * O(log2(n)). <br>
-	 * This method runs on <code>O(n*log2(n))</code> time.
 	 */
 	public void compact();
+
+	//
+
+	//
+
+	//
+//
+//	/**
+//	 * See {@link MapTreeAVL#closestMatchOf(Object)}. If the match is exact (i.e.
+//	 * this map hold an entry with the given key), then {@link #isExactMatch()} will
+//	 * return <code>true</code> (and {@link #nearestUpper} will be
+//	 * <code>null</code>).
+//	 */
+//	public static class ClosestMatch<Kk, Vv> implements Serializable {
+//		private static final long serialVersionUID = -15432L;
+//
+//		public ClosestMatch(Kk originalValue, Comparator<Kk> keyComparator, Entry<Kk, Vv> nearestLowerOrExact) {
+//			this(originalValue, keyComparator, nearestLowerOrExact, null, true);
+//		}
+//
+//		public ClosestMatch(Kk originalValue, Comparator<Kk> keyComparator, Entry<Kk, Vv> nearestLowerOrExact,
+//				Entry<Kk, Vv> nearestUpper) {
+//			this(originalValue, keyComparator, nearestLowerOrExact, nearestUpper, false
+////					(nearestLowerOrExact == null || nearestUpper == null)
+//			);
+//		}
+//
+//		protected ClosestMatch(Kk originalValue, Comparator<Kk> keyComparator, Entry<Kk, Vv> nearestLowerOrExact,
+//				Entry<Kk, Vv> nearestUpper, boolean isExact) {
+//			super();
+//			this.isExact = isExact;
+//			this.originalValue = originalValue;
+//			this.keyComparator = keyComparator;
+//			this.nearestLowerOrExact = nearestLowerOrExact;
+//			this.nearestUpper = nearestUpper;
+//		}
+//
+//		protected final boolean isExact;
+//		protected final Kk originalValue;
+//		public final Entry<Kk, Vv> nearestLowerOrExact, nearestUpper;
+//		public final Comparator<Kk> keyComparator; // MapTreeAVL<Kk, Vv> mapFromWhichIsComputed; //still not visible to
+//													// "user"
+//
+//		public boolean isExactMatch() { return this.isExact; }
+//
+//		public boolean hasLowerBound() { return this.nearestLowerOrExact != null; }
+//
+//		public boolean hasUpperBound() { return this.nearestUpper != null; }
+//
+//		/** Returns the exact match if any, or <code>null</code> otherwise. */
+//		public Entry<Kk, Vv> exactOrNull() {
+//			return isExact ? (nearestLowerOrExact != null ? nearestLowerOrExact : nearestUpper) : null;
+//		}
+//
+//		public Entry<Kk, Vv> getAvailableMatchLowerFirst() {
+//			return nearestLowerOrExact != null ? nearestLowerOrExact : nearestUpper;
+//		}
+//
+//		public Entry<Kk, Vv> getAvailableMatchUpperFirst() {
+//			return nearestUpper != null ? nearestUpper : nearestLowerOrExact;
+//		}
+//
+//		//
+//
+//		public Entry<Kk, Vv> getClosetsMatch(CloserGetter<Kk> closerGetter) {
+//			Kk closerKey, keyLowerExact;
+//			if (nearestLowerOrExact == null)
+//				return nearestUpper;
+//			if (nearestUpper == null)
+//				return nearestLowerOrExact;
+//			keyLowerExact = nearestLowerOrExact.getKey();
+//			closerKey = closerGetter.getCloserTo(originalValue, keyComparator, keyLowerExact, nearestUpper.getKey());
+//			return (closerKey == keyLowerExact) ? nearestLowerOrExact : nearestUpper;
+//		}
+//	}
 }

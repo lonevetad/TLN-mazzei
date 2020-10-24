@@ -20,7 +20,7 @@ public class MockedData {
 			"Ho imparato a risolvere il cubo di Rubik agilmente durante le scuole superiori.", // 15
 			"Ho poca fantasia.", //
 			"Se io fossi un genio studierei informatica efficacemente.", //
-			"fu la spada laser di tuo padre.", // inizialmente al posto di "fu" c'era "è"
+			"è la spada laser di tuo padre.", // inizialmente al posto di "fu" c'era "è"
 			"Ha fatto una mossa leale.", //
 			"Gli ultimi avanzi della vecchia Repubblica sono stati spazzati via.", // 20
 			"Ho visto cose che voi umani non potreste neanche immaginare.", //
@@ -45,6 +45,6 @@ public class MockedData {
 			"Io adoro follemente l'arte sublime del cucinare pietanze orientali.", // 40
 			"Io sono il tuo padre intelligente.", //
 			"Questa è una frase di esempio.", // "This is a sample sentence",
-			"Io adoro scrivere.", //
+			"Lui adora scrivere molto.", //
 	};
 }

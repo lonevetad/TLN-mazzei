@@ -13,7 +13,10 @@ import tools.SynonymSet;
 
 /**
  * Node of a parsed sentence, holding some informations took from the PoS-Tag
- * analysis and dependency analysis.
+ * analysis and dependency analysis.<br>
+ * Is identified by an OrderedSet of String (a {@link SynonymSet}. Considering
+ * this, some dummy "alternatives" could be used to impose some kind of a order
+ * between children.
  */
 public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 	private static final long serialVersionUID = -3000078540407L;
@@ -27,6 +30,7 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	public NodeParsedSentence(SynonymSet defaultSyn) { super(defaultSyn); }
 
+	/** It does not add children, see {@link NodeComparableSynonymIndexed}. */
 	public NodeParsedSentence(NodeParsedSentence original) { // copy constructor
 		super(original);
 		this.gloss = original.gloss;

@@ -16,6 +16,9 @@ import tools.json.JsonParserJackson;
 import translators.WordTranslatorItEng;
 
 /**
+<<<<<<< HEAD
+ * THE MAIN TESTEEEEEEEER *
+=======
  * THE MAIN TESTER - VERSION 1
  * <p>
  * <ol>
@@ -29,6 +32,7 @@ import translators.WordTranslatorItEng;
  * <li>usando SimpleNLG, si usa il Realizer per generare la frase tradotta</li>
  * <li>visualizzazione della frase tradotta</li>
  * </ol>
+>>>>>>> marco
  */
 public class TestTranslate_TintThenSimplenlg {
 	static final String FOLDER_PATH = "." + File.separator + "translationFirstWay" + File.separator;

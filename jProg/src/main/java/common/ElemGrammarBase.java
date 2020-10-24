@@ -12,7 +12,7 @@ public enum ElemGrammarBase {
 	PUNC("F", "FS", "Punc", "Punct", "PUNC", "PUNCT"), //
 	Verb("V", "VP", "verb"), //
 	Adjective("JJ", "JJR", "JJS", "adj", "amod"), //
-	Noun("NN", "NNS", "NNP", "NNPS", "N", "nsubj", "nsubjpass"), //
+	Noun("NN", "NNS", "NNP", "NNPS", "N", "nsubj", "nsubjpass", "noun", "nobj"), //
 	Adverb("RB", "RBR", "RBS"), //
 	Subject("S", "subj", "nsubj", "nsubjpass"), //
 	Objectt("O", "obj", "dobj", "iobj"), //
@@ -22,17 +22,22 @@ public enum ElemGrammarBase {
 	//
 	;
 
-	public final SynonymSet eg;
+	private final SynonymSet eg;
 
 	private ElemGrammarBase(String... aa) { this(new SynonymSet(aa)); }
 
 	private ElemGrammarBase(SynonymSet eg) { this.eg = eg; }
 
-	public NodeParsedSentence newNSD() { return new NodeParsedSentence(this.eg); }
+	public NodeParsedSentence newNSD() { return new NodeParsedSentence(this.getSynonymsClone()); }
 
 	//
 
 	private static final Map<String, ElemGrammarBase> TAGS_BY_Identifier;
+
+	public SynonymSet getSynonymsClone() { return eg.clone(); }
+
+	public SynonymSet getSynonyms() { return eg; }
+
 	static {
 		ElemGrammarBase[] v;
 		EGBAdderToMap agbAdder;
