@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.function.Function;
 
 import dataStructures.MapTreeAVL;
-import tools.SynonymSet.SynonymSetComparator;
 
 /** Default implementation of {@link NodeComparable} useful for */
 public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableDefaultAlghoritms<SynonymSet>
@@ -30,6 +29,7 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 		instantiatesChildrenStructures();
 	}
 
+	/** It does not add children. */
 	public NodeComparableSynonymIndexed(NodeComparableSynonymIndexed original) {// copy constructor
 		this.alternatives = original.alternatives;
 		instantiatesChildrenStructures();
@@ -48,7 +48,7 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 
 	protected void instantiatesChildrenStructures() {
 		this.childrenBySynonymsBackMap = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration,
-				SynonymSetComparator.FIRST_DIFFERENT_FIRST);
+				SynonymSet.COMPARATOR);
 		this.childrenBySynonyms =
 //				new SetMapped<>(
 //				((MapTreeAVL<SynonymSet, NodeComparableSynonymIndexed>) this.childrenBySynonymsBackMap)
@@ -138,7 +138,15 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 
 	// delegators
 
-	public void addAlternative(String s) { this.alternatives.addAlternative(s); }
+	public NodeComparableSynonymIndexed addAlternative(String s) {
+		this.alternatives.addAlternative(s);
+		return this;
+	}
+
+	public NodeComparableSynonymIndexed addAlternatives(SynonymSet s) {
+		s.forEach(this.alternatives::addAlternative);
+		return this;
+	}
 
 	public void removeAlternative(String t) { this.alternatives.removeAlternative(t); }
 

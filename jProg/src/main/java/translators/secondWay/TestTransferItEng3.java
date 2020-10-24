@@ -19,7 +19,7 @@ public class TestTransferItEng3 {
 //		root.setDep("ROOT"); // D:
 //		root.setLemma("code");
 //		root.addFeatures("Tense", "Inf");
-		root = nnps(ElemGrammarBase.Verb.getElemGrammarBase(), //
+		root = nnps(ElemGrammarBase.Verb.getSynonymsClone(), //
 				"programmare", "V", "ROOT", "programmare", n -> {//
 					n.addFeatures("Tense", "Inf");
 					n.addFeatures("VerbForm", "Inf");
@@ -29,13 +29,14 @@ public class TestTransferItEng3 {
 
 		System.out.println("first root");
 		System.out.println(root);
+		System.out.println("\nstart transferring \n\n");
 		converted = BuilderTransferTranslatorItEng3_ByHand.//
 				TRANSFERER_RULE_BASED.transfer(root);
 		System.out.println("\n\n\n converted");
 		System.out.println(converted);
 
 		System.out.println("\n\n\n--- add a child");
-		subj = nnps(ElemGrammarBase.Subject.getElemGrammarBase(), //
+		subj = nnps(ElemGrammarBase.Subject.getSynonymsClone(), //
 				"Io", "PE", "nsubj", "io", n -> {//
 					n.addFeatures("Person", "1");
 					n.addFeatures("Number", "Sing");
@@ -43,10 +44,12 @@ public class TestTransferItEng3 {
 				});
 		root.addChildNC(subj);
 
+		System.out.println("\n\n what I builtt?");
 		System.out.println(root);
-		System.out.println("\n now produce complex stuffs, getting");
+		System.out.println("transferring");
 		converted = BuilderTransferTranslatorItEng3_ByHand.//
 				TRANSFERER_RULE_BASED.transfer(root);
+		System.out.println("fond:::");
 		System.out.println(converted);
 
 		// System.out.println(converted);
@@ -56,7 +59,7 @@ public class TestTransferItEng3 {
 		obj.addAlternative("obj");
 		obj.addAlternative("vobj");
 		obj.getChildrenNC().clear();
-		root = (NodeParsedSentence) nnps(ElemGrammarBase.Verb.getElemGrammarBase(), //
+		root = (NodeParsedSentence) nnps(ElemGrammarBase.Verb.getSynonymsClone(), //
 				"voglio", "V", "aux", "volere", n -> {//
 					n.addFeatures("Person", "1");
 					n.addFeatures("Number", "Sing");
@@ -64,7 +67,7 @@ public class TestTransferItEng3 {
 					n.addFeatures("VerbForm", "Fin");
 				}).addChildNC(subj//
 						.addChildNC( //
-								nnps(ElemGrammarBase.Adjective.getElemGrammarBase(), //
+								nnps(ElemGrammarBase.Adjective.getSynonymsClone(), //
 										"stanchissimo", "JJ", "adj", "stanco", n -> {//
 											n.addFeatures("Person", "1");
 											n.addFeatures("Number", "Sing");

@@ -28,13 +28,15 @@ public enum ElemGrammarBase {
 
 	private ElemGrammarBase(SynonymSet eg) { this.eg = eg; }
 
-	public NodeParsedSentence newNSD() { return new NodeParsedSentence(this.eg); }
+	public NodeParsedSentence newNSD() { return new NodeParsedSentence(this.getSynonymsClone()); }
 
 	//
 
 	private static final Map<String, ElemGrammarBase> TAGS_BY_Identifier;
 
-	public SynonymSet getElemGrammarBase() { return (SynonymSet) eg.clone(); }
+	public SynonymSet getSynonymsClone() { return eg.clone(); }
+
+	public SynonymSet getSynonyms() { return eg; }
 
 	static {
 		ElemGrammarBase[] v;
