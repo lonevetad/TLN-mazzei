@@ -21,15 +21,38 @@ import dataStructures.SortedSetEnhancedDelegating;
  */
 public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneable {
 
-	protected static final Comparator<SortedSetEnhanced<String>> COMP_SET_STRING = SortedSetEnhanced
-			.newComparatorIntersectThenMissThenExceed(Misc.STRING_COMPARATOR);
-	public static final Comparator<SynonymSet> COMPARATOR = (s1, s2) -> {
+	/**
+	 * Synonyms are set of strings, this comparator is a "low level" comparator used
+	 * in {@link #COMPARATOR_SYNONYM_SET}.
+	 */
+	protected static final Comparator<SortedSetEnhanced<String>> COMP_SET_STRING = //
+//			SortedSetEnhanced.ComparatorFactoriesSSE.CASCADE_OF_INTERSECT_MISS_EXCEED_KEY
+			SortedSetEnhanced.COMPARATOR_FACTORY_PREFERRED//
+					.newComparator(Misc.STRING_COMPARATOR);
+	/** Low-level difference calculator: of set of strings */
+	protected static final DifferenceCalculator<SortedSetEnhanced<String>> DIFF_CALC_SET_STRINGS = SortedSetEnhanced
+			.differenceCalcFromSetComparator(COMP_SET_STRING);
+
+	// THE MAIN STATIC STUFFS
+
+	/** Comparator of this class */
+	public static final Comparator<SynonymSet> COMPARATOR_SYNONYM_SET = (s1, s2) -> {
 		return COMP_SET_STRING.compare(s1.alternatives, s2.alternatives);
 	};
-	public static final DifferenceCalculator<SynonymSet> DIFFERENCE_CALCULATOR = (s1, s2) -> COMP_SET_STRING.compare(s1,
-			s2);
+	/** Difference computer of synonyms. */
+	public static final DifferenceCalculator<SynonymSet> DIFFERENCE_CALCULATOR =
+	// all of the following are the same, equally correct solution
+	/*
+	 * (s1, s2) -> DIFF_CALC_SET_STRINGS .getDifference(s1.alternatives,
+	 * s2.alternatives)
+	 */
+//			DIFF_CALC_SET_STRINGS::getDifference//
+			COMPARATOR_SYNONYM_SET::compare//
+	;
 	public static final CloserGetter<SynonymSet> CLOSER_GETTER = (s1, s2, s3) -> CloserGetter.getCloserTo(s1,
 			DIFFERENCE_CALCULATOR, s2, s3);
+
+	//
 
 	public SynonymSet(String... alternatives) {
 		this();
@@ -94,9 +117,7 @@ public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneabl
 
 	public void toString(StringBuilder sb) {
 		boolean[] b = { false };
-		sb.append("EG: size: ");
-		sb.append(this.backMap.size());
-		sb.append(", a: [");
+		sb.append("Synonyms: [");
 		this.backMap.forEach((k, v) -> {
 			if (b[0]) {
 				sb.append(", ");

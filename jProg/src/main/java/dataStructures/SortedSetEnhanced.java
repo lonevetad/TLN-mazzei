@@ -1,13 +1,22 @@
 package dataStructures;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.SortedSet;
 
+import tools.CloserGetter;
 import tools.ClosestMatch;
+import tools.DifferenceCalculator;
 import translators.secondWay.TransferTranslationRuleBased;
 
 public interface SortedSetEnhanced<E> extends SortedSet<E> {
+
+	//
+
+	// instance stuff
+
+	//
 
 	public Comparator<E> getKeyComparator();
 
@@ -82,6 +91,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	/** Computes the intersection with the given set and returns its size. */
 	public default int intersectionSize(SortedSetEnhanced<E> eg) {
+		int sThis, sEg;
 //		return intersectionWith(eg).countAlternatives();
 		// instead of computing the intersection, just count each "intersecting element"
 		SortedSetEnhanced<E> smallerSet;
@@ -91,13 +101,19 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		 * since iterating is O(n) and "containsKey" is O(log(n)), iterates over the
 		 * smallest set
 		 */
-		if (this.size() <= eg.size()) {
+		sThis = this.size();
+		sEg = eg.size();
+		if (sThis == 0) {
+			return sEg == 0 ? 0 : -sEg; // could be directly -sEg, but i'm afraid of "negative zero" ambiguity
+		} else if (sEg == 0) {
+			return sThis; // the other one is empty ..
+		}
+		if (sThis <= sEg) {
 			smallerSet = this;
 			biggerSetMap = eg;
 		} else {
 			smallerSet = eg;
 			biggerSetMap = this;
-//			eg=this;
 		}
 		smallerSet.forEach((s) -> {
 			if (biggerSetMap.contains(s))
@@ -142,125 +158,220 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	//
 
-	// TODO COMPARATOR
+	// TODO STATIC STUFF
 
 	//
 
 	//
+
+	// TODO METHODS
+
+	public static final ComparatorSSEFactory COMPARATOR_FACTORY_PREFERRED = ComparatorFactoriesSSE.CASCADE_OF_INTERSECT_MISS_EXCEED_KEY;
+
+	public static <T> DifferenceCalculator<SortedSetEnhanced<T>> newDifferenceCalc(Comparator<T> keyComparator) {
+		return differenceCalcFromSetComparator(COMPARATOR_FACTORY_PREFERRED.newComparator(keyComparator));
+	}
+
+	public static <T> DifferenceCalculator<SortedSetEnhanced<T>> differenceCalcFromSetComparator(
+			Comparator<SortedSetEnhanced<T>> sortedSetComparator) {
+		return sortedSetComparator::compare;
+	}
+
+	public static <T> CloserGetter<SortedSetEnhanced<T>> newDefaultCloseGetter(Comparator<T> keyComparator) {
+		return newDefaultCloseGetter(keyComparator, //
+				newDifferenceCalc(keyComparator));
+	}
+
 	/**
-	 * Preferred, since the subset-comparison
-	 * {@link #SYNONYM_COMPARATOR_SUBSET_FIRST_SEQUENCE_THEN} (that resolves the
-	 * case of "none of those two sets is subset of the other") is slower and
-	 * redundant: it computes the intersection and, in case of "non-subset", it
-	 * invokes this comparator, that travels through the set looking for the first,
-	 * decisive, pair of items to determine the comparison. That travel could be
-	 * optimized, but the intersection requires to scan the whole smaller set, so
-	 * that optimization could not benefit in an way.
+	 * Given a comparator of keys and a way to compute of sets .
 	 */
-	public static <T> Comparator<SortedSetEnhanced<T>> newComparatorByKeyOrder(Comparator<T> comp) {
-		return (s1, s2) -> {
-			int c, size1, size2;
-			Iterator<T> i1, i2;
-			if (s1 == s2)
-				return 0;
-			if (s1 == null)
-				return -1;
-			if (s2 == null)
-				return 1;
-			// smallest
-			size1 = s1.size();
-			size2 = s2.size();
-			if (size1 == 0) {
-				return size2 == 0 ? 0 : -size2;
-			} else if (size2 == 0) { return size1; }
+	public static <T> CloserGetter<SortedSetEnhanced<T>> newDefaultCloseGetter(Comparator<T> keyComparator, //
+			DifferenceCalculator<SortedSetEnhanced<T>> setOfKeysDifferenceCalc//
+	) {
+		/*
+		 * (the last one is required to return values that quantifies how much a set is
+		 * different from another one)
+		 */
+//			Comparator<SortedSetEnhanced<T>> setOfKeysComparator //
+		return (orig, o1, o2) -> {
+			int c1, c2;
 			/*
-			 * since synonyms are sortable and this set is sorted, then compare the elements
-			 * in order
+			 * The comparator does not simply returns a value belonging to {-1; 0; 1}, but a
+			 * value representing the real difference from "equal set". So, the difference
+			 * form a set and another one can be computed this way.
 			 */
-			i1 = s1.iterator();
-			i2 = s2.iterator();
-			c = 0;
-			while (i1.hasNext() && i2.hasNext() && //
-			((c = comp.compare(i1.next(), i2.next())) == 0))
-				;
-			return c != 0 ? c : (size1 >= size2 ? size1 - size2 : size2 - size1);
+//			c1 = setOfKeysComparator.compare(orig, o1);
+//			c2 = setOfKeysComparator.compare(orig, o2);
+			c1 = (int) setOfKeysDifferenceCalc.getDifference(orig, o1);
+			c2 = (int) setOfKeysDifferenceCalc.getDifference(orig, o2);
+			/*
+			 * turn them to negative: the interval of negative integers covered by 32-bit
+			 * integer is greater (the double, more or less) than the positive one. (Turning
+			 * to positive a negative value lesser than -(2^31) will result in a wrong
+			 * number.)
+			 */
+			if (c1 > 0) { c1 = -c1; }
+			if (c2 > 0) { c2 = -c2; }
+			return c1 < c2 ? o2 : o1;
 		};
 	}
 
-	/**
-	 * Compares the sets and collapse to <code>0</code> both cases of "equals" and
-	 * "none of them is a subset".
-	 */
-	public static <T> Comparator<SortedSetEnhanced<T>> newComparatorSubsetCheckCollapsingElse(Comparator<T> comp) {
-		return new ComparatorSynonymBySubset<>();
+	// TODO CLASS
+
+	public static interface ComparatorSSEFactory extends Serializable {
+		public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp);
 	}
 
-	public static <T> Comparator<SortedSetEnhanced<T>> newComparatorSubsetFirstKeyorderThen(Comparator<T> comp) {
-		return new ComparatorSynonymBySubset<>() {
+	public static enum ComparatorFactoriesSSE implements ComparatorSSEFactory {
+		/**
+		 * Preferred, since the subset-comparison
+		 * {@link #SYNONYM_COMPARATOR_SUBSET_FIRST_SEQUENCE_THEN} (that resolves the
+		 * case of "none of those two sets is subset of the other") is slower and
+		 * redundant: it computes the intersection and, in case of "non-subset", it
+		 * invokes this comparator, that travels through the set looking for the first,
+		 * decisive, pair of items to determine the comparison. That travel could be
+		 * optimized, but the intersection requires to scan the whole smaller set, so
+		 * that optimization could not benefit in an way.
+		 */
+		KEY_ORDER(ComparatorFactoriesSSE::newComparatorByKeyOrder), //
+
+		/**
+		 * Compares the sets and collapse to <code>0</code> both cases of "equals" and
+		 * "none of them is a subset".
+		 */
+		SUBSET_ORDER_COLLAPSE_ID_AND_NONSUBSET(ComparatorSynonymBySubset::new), //
+
+		SUBSET_FIRST_KEY_THEN(new ComparatorSSEFactory() {
+			private static final long serialVersionUID = -65013455L;
+
 			@Override
-			public int finishCompareOnIntersecting(SortedSetEnhanced<T> s1, SortedSetEnhanced<T> s2) {
-				return newComparatorByKeyOrder(comp).compare(s1, s2);
-			}
-		};
-	}
+			public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> c) {
+				return new ComparatorSynonymBySubset<>(c) {
+					final Comparator<SortedSetEnhanced<T>> copByKey = newComparatorByKeyOrder(comp);
 
-	/**
-	 * More general version than {@link SU} because this one gives precedence on
-	 * subset relation and how close are the arguments, comparing keys only in case
-	 * of a tie.<br>
-	 * In fact, the order of comparing the synonyms is:
-	 * <ol>
-	 * <li>The size of their intersection: it gives one of the fundamental
-	 * informations:
-	 * <ul>
-	 * <li><i> are them the same </i></li>
-	 * <li>or, <i>which one, if any, is the subset of which other ones (and tells
-	 * how many more items are in the superset)</i></li>
-	 * </ul>
-	 * </li>
-	 * <li>in case of <i>not in sub-set relation</i>, then for both given set, count
-	 * how many elements are <b>not</b> present in the intersection computed before.
-	 * If that amount is not equal, then returns the <code>1</code> if the smallest
-	 * is the first set, <code>-1</code> if it's the second set.</li>
-	 * <li>If none of them gives useful informations (so, they fails), then compare
-	 * the items in a sorted way: this will determine if the first set is "the
-	 * smaller". (at least a non-shared item exist, since no one is a subset of the
-	 * other, as checked in step <code>1)</code>).</li>
-	 * <li></li>
-	 * </ol>
-	 */
-	public static <T> Comparator<SortedSetEnhanced<T>> newComparatorIntersectThenMissThenExceed(Comparator<T> comp) {
-		return (s1, s2) -> {
-			int c, c1, c2;
-			if (s1 == s2)
-				return 0;
-			if (s1 == null)
-				return -1;
-			if (s2 == null)
-				return 1;
-			c1 = s1.size();
-			c2 = s2.size();
-			c = s1.intersectionSize(s2);
-			if (c == c1) {
-				return (c == c2) ? 0 : c - c2;
-			} else if (c == c2)
-				return c1 - c;
-			// no one is equal or a subset: everyone has something that the other has not
-//now check the "closest to intersection": which one has fewer elements more to the inters.
-			c1 -= c;
-			c2 -= c;
-			if (c1 == c2) // tie: just compare elements
-				return newComparatorByKeyOrder(comp).compare(s1, s2);
-			else
-				return c2 - c1; // (c1 < c2) ? 1 : -1;
-		};
-	}
+					@Override
+					public int finishCompareOnIntersecting(SortedSetEnhanced<T> s1, SortedSetEnhanced<T> s2) {
+						return copByKey.compare(s1, s2);
+					}
+				};
+			}
+		}), //
+
+		/**
+		 * More general version than {@link SU} because this one gives precedence on
+		 * subset relation and how close are the arguments, comparing keys only in case
+		 * of a tie.<br>
+		 * In fact, the order of comparing the synonyms is:
+		 * <ol>
+		 * <li>The size of their intersection: it gives one of the fundamental
+		 * informations:
+		 * <ul>
+		 * <li><i> are them the same </i></li>
+		 * <li>or, <i>which one, if any, is the subset of which other ones (and tells
+		 * how many more items are in the superset)</i></li>
+		 * </ul>
+		 * </li>
+		 * <li>in case of <i>not in sub-set relation</i>, then for both given set, count
+		 * how many elements are <b>not</b> present in the intersection computed before.
+		 * If that amount is not equal, then returns the <code>1</code> if the smallest
+		 * is the first set, <code>-1</code> if it's the second set.</li>
+		 * <li>If none of them gives useful informations (so, they fails), then compare
+		 * the items in a sorted way: this will determine if the first set is "the
+		 * smaller". (at least a non-shared item exist, since no one is a subset of the
+		 * other, as checked in step <code>1)</code>).</li>
+		 * <li></li>
+		 * </ol>
+		 */
+		CASCADE_OF_INTERSECT_MISS_EXCEED_KEY(new ComparatorSSEFactory() {
+			private static final long serialVersionUID = -65013456L;
+
+			@Override
+			public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp) {
+				return (s1, s2) -> {
+					int c, c1, c2;
+					if (s1 == s2)
+						return 0;
+					if (s1 == null)
+						return -1;
+					if (s2 == null)
+						return 1;
+					c1 = s1.size();
+					c2 = s2.size();
+					c = s1.intersectionSize(s2);
+					if (c == c1) {
+						return (c == c2) ? 0 : c - c2;
+						// it should be faster, in case of "0", than simply returning "c-c2"
+					} else if (c == c2)
+						return c1 - c;
+					/*
+					 * no one is equal or a subset: everyone has something that the other has not
+					 * now check the "closest to intersection": which one has fewer elements more to
+					 * the intersection.
+					 */
+					c1 -= c;
+					c2 -= c;
+					if (c1 == c2) // tie: just compare elements
+						return newComparatorByKeyOrder(comp).compare(s1, s2);
+					else
+						return c1 - c2; // (c1 < c2) ? -1 : 1;
+				};
+			}
+		});
+
+		public final ComparatorSSEFactory factoryDelegate;
+
+		private ComparatorFactoriesSSE(ComparatorSSEFactory factoryDelegate) { this.factoryDelegate = factoryDelegate; }
+
+		@Override
+		public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp) {
+			return this.factoryDelegate.newComparator(comp);
+		}
+
+		// static stuff
+
+		protected static <T> Comparator<SortedSetEnhanced<T>> newComparatorByKeyOrder(Comparator<T> comp) {
+			return (s1, s2) -> {
+				int c, size1, size2;
+				Iterator<T> i1, i2;
+				if (s1 == s2)
+					return 0;
+				if (s1 == null)
+					return -1;
+				if (s2 == null)
+					return 1;
+				// smallest
+				size1 = s1.size();
+				size2 = s2.size();
+				if (size1 == 0) {
+					return size2 == 0 ? 0 : -size2;
+				} else if (size2 == 0) { return size1; }
+				/*
+				 * since synonyms are sortable and this set is sorted, then compare the elements
+				 * in order
+				 */
+				i1 = s1.iterator();
+				i2 = s2.iterator();
+				c = 0;
+				while (i1.hasNext() && i2.hasNext() && //
+				((c = comp.compare(i1.next(), i2.next())) == 0))
+					;
+				return c != 0 ? c : (size1 >= size2 ? size1 - size2 : size2 - size1);
+			};
+		}
+	} // END ENUM
 
 	//
 
 	//
 
 	public static class ComparatorSynonymBySubset<T> implements Comparator<SortedSetEnhanced<T>> {
+		final Comparator<T> comp;
+
+		public ComparatorSynonymBySubset(Comparator<T> comp) {
+			super();
+			this.comp = comp;
+		}
+
 		@Override
 		public int compare(SortedSetEnhanced<T> eg1, SortedSetEnhanced<T> eg2) {
 			int c, size2, intersCount;
@@ -277,29 +388,24 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 			c = eg1.size();
 			size2 = eg2.size();
 			if (c == 0)
-				return size2 == 0 ? 0 : -1;
+				return size2 == 0 ? 0 : -size2;
 			else if (size2 == 0)
-				return 1;
+				return c;
 			// they are not empty ..
 			intersCount = eg1.intersectionSize(eg2);
-			/*
-			 * System.out.println("eg1 size and set: " + c + " - " + eg1 +
-			 * " --- eg2, same: " + size2 + " - " + eg2 + " -----> inters " +
-			 * eg1.intersectionWith(eg2));
-			 */
 			if (intersCount == 0)
 				return finishCompareOnIntersecting(eg1, eg2);
 			if (c == intersCount)
-				return size2 == intersCount ? 0 : -1; // eg2 is equal or superset (eg1 == subset)
+				// eg2 is equal or superset (eg1 == subset) ... if superset -> negative value
+				return size2 == intersCount ? 0 : intersCount - size2;
 			else if (size2 == intersCount)
-				return c == intersCount ? 0 : 1; // eg1 is equal or superset (eg2 == subset)
+				return c - intersCount; // eg1 cannot be equal: it's a superset (eg2 == subset) .. it's a positive value
 			else
 				return finishCompareOnIntersecting(eg1, eg2);
 		}
 
 		/** Override designed */
 		public int finishCompareOnIntersecting(SortedSetEnhanced<T> eg1, SortedSetEnhanced<T> eg2) {
-			// System.out.println("zerooos");
 			return 0; // just a simple intersection
 		}
 	}

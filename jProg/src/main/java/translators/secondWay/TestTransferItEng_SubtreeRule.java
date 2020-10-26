@@ -6,13 +6,17 @@ import common.ElemGrammarBase;
 import common.NodeParsedSentence;
 import tools.SynonymSet;
 
-public class TestTransferItEng3 {
+public class TestTransferItEng_SubtreeRule {
 
 	public static void main(String[] args) { testSingle(); }
 
 	public static void testSingle() {
 		NodeParsedSentence root, converted;
 		NodeParsedSentence subj, obj;
+		System.out.println("rules:");
+		BuilderTransferTranslatorItEng3_ByHand.//
+				TRANSFERER_RULE_BASED.forEachRule(c -> System.out.println(c));
+		System.out.println("\n\n");
 //		root = ElemGrammarBase.Verb.newNSD();
 //		root.setGloss("coding");
 //		root.setPos(pos);
@@ -49,7 +53,7 @@ public class TestTransferItEng3 {
 		System.out.println("transferring");
 		converted = BuilderTransferTranslatorItEng3_ByHand.//
 				TRANSFERER_RULE_BASED.transfer(root);
-		System.out.println("fond:::");
+		System.out.println("found:::");
 		System.out.println(converted);
 
 		// System.out.println(converted);

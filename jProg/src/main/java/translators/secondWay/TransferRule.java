@@ -102,7 +102,7 @@ public abstract class TransferRule {
 		 */
 		System.out.println("#starting recursion on originalNode: " + originalNode);
 		originalNode.forEachChildNC(child -> {
-			if (!newlyProducedByTransferNode.containsChildNC(child.getKeyIdentifier())) {
+			if (!newlyProducedByTransferNode.containsChildNC(child)) {
 				NodeComparableSynonymIndexed transferedChild;
 				System.out.println("## recursion on child: " + child);
 				transferedChild = transferer.transfer((NodeParsedSentence) child);

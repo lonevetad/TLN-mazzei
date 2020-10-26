@@ -1,6 +1,7 @@
 package translators.secondWay;
 
 import java.util.Map.Entry;
+import java.util.function.Consumer;
 
 import common.NodeParsedSentence;
 import dataStructures.MapTreeAVL;
@@ -10,10 +11,12 @@ import tools.NodeComparable;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
 
+/** @deprecated use {@link TransferTranslationRuleBased_V4} */
+@Deprecated
 public class TransferTranslationRuleBased_V3 extends ATransferTranslationRuleBased {
 
 	public TransferTranslationRuleBased_V3() {
-		rulesGivenLHS = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, SynonymSet.COMPARATOR);
+		rulesGivenLHS = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, SynonymSet.COMPARATOR_SYNONYM_SET);
 //		ruleCollectorByLHSAsChild = new NodeParsedSentence("i'm just a root");
 //	<TransferTranslationItEng3.ElementGrammarWithAlternatives, List<TransferRule>>		
 	}
@@ -26,7 +29,11 @@ public class TransferTranslationRuleBased_V3 extends ATransferTranslationRuleBas
 	 * {@link NodeComparable#getKeyIdentifier()}), so a {@link TransferRule} can be
 	 * "transitively" identified by that {@link SynonymSet}.
 	 */
+	// protected MapTreeAVL<SynonymSet, TransferRule> rulesGivenLHS;
 	protected MapTreeAVL<SynonymSet, TransferRule> rulesGivenLHS;
+
+	@Override
+	public void forEachRule(Consumer<TransferRule> c) { this.rulesGivenLHS.forEach((syn, rule) -> c.accept(rule)); }
 
 	@Override
 	public void addRule(TransferRule rule) {
@@ -55,15 +62,19 @@ public class TransferTranslationRuleBased_V3 extends ATransferTranslationRuleBas
 		return rule == null ? null : rule.applyTransferRule(this, rootSubtree);
 	}
 
-	// TODO USE MapTreeAVL's bestMatch to create a comparator or query to extract
-	// rules on rulesGivenLHS
 	@Override
 	protected TransferRule getBestRuleFor(NodeParsedSentence subtreeToTransfer) {
 		ClosestMatch<Entry<SynonymSet, TransferRule>> ruleMatched = this.rulesGivenLHS
 				.closestMatchOf(subtreeToTransfer.getKeyIdentifier());
 		if (ruleMatched == null)
 			return null;
-		return ruleMatched.getClosetsMatch((eo, e1, e2) -> CloserGetter.getCloserTo(eo,
+		System.out.println("____ best closest match:\n\t lower value: ");
+		System.out.println(ruleMatched.nearestLowerOrExact);
+		System.out.print("\t upper value: ");
+		System.out.println(ruleMatched.nearestLowerOrExact);
+		System.out.println();
+		// a "ClosestMatch" could have an exact match or just approximation
+		return ruleMatched.getClosetsMatchToOriginal((eo, e1, e2) -> CloserGetter.getCloserTo(eo,
 				(e11, e22) -> SynonymSet.DIFFERENCE_CALCULATOR.getDifference(e11.getKey(), e22.getKey()), e1, e2))
 				.getValue();
 	}

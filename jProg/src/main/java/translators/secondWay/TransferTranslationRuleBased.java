@@ -36,10 +36,11 @@ import tools.SynonymSet;
  * <p>
  * Resemble the "Percolation Table".
  */
+@Deprecated
 public class TransferTranslationRuleBased extends ATransferTranslationRuleBased {
 
 	public TransferTranslationRuleBased() {
-		rulesGroupedByRoot = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, SynonymSet.COMPARATOR);
+		rulesGroupedByRoot = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, SynonymSet.COMPARATOR_SYNONYM_SET);
 //	<TransferTranslationItEng3.ElementGrammarWithAlternatives, List<TransferRule>>		
 	}
 
@@ -130,6 +131,7 @@ public class TransferTranslationRuleBased extends ATransferTranslationRuleBased 
 		return best;
 	}
 
+	@Override
 	public void forEachRule(Consumer<TransferRule> c) { this.rulesGroupedByRoot.forEach((ss, l) -> l.forEach(c)); }
 
 	//

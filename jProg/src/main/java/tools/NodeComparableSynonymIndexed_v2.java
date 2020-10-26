@@ -1,5 +1,6 @@
 package tools;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -9,10 +10,23 @@ import dataStructures.MapTreeAVL;
  * Enhance {@link NodeComparableSynonymIndexed#getChildNCBySingleKey(String)} at
  * the expense of memory usage and time required for executing
  * {@link #addChildNC(NodeComparable)}.
+ * 
+ * @deprecated because some children may share the same root (and so, same [or
+ *             some] individual synonyms) but different subtrees -> a single
+ *             synonym may identify no better than a {@link List} of stuffs
  */
 //*  @deprecated because {@link #getChildNCByKey(SynonymSet)}
+@Deprecated
 public class NodeComparableSynonymIndexed_v2 extends NodeComparableSynonymIndexed {
 	private static final long serialVersionUID = 58244716398L;
+
+	public NodeComparableSynonymIndexed_v2() { super(); }
+
+	public NodeComparableSynonymIndexed_v2(NodeComparableSynonymIndexed original) { super(original); }
+
+	public NodeComparableSynonymIndexed_v2(String[] aaaa) { super(aaaa); }
+
+	public NodeComparableSynonymIndexed_v2(SynonymSet defaultSyn) { super(defaultSyn); }
 
 	@Override
 	protected void instantiatesChildrenStructures() {
@@ -34,6 +48,11 @@ public class NodeComparableSynonymIndexed_v2 extends NodeComparableSynonymIndexe
 		children.add(child);
 		child.getKeyIdentifier().forEach(syn -> { childrenByEachSynonyms.put(syn, child); });
 		return this;
+	}
+
+	@Override
+	public NodeComparable<SynonymSet> getChildNCMostSimilarTo(SynonymSet key) {
+		return this.getChildNCMostSimilarTo(key, NodeComparableSynonymIndexed_v2::new);
 	}
 
 	@Override
