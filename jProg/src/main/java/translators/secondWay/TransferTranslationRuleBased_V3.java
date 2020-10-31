@@ -5,9 +5,9 @@ import java.util.function.Consumer;
 
 import common.NodeParsedSentence;
 import dataStructures.MapTreeAVL;
+import dataStructures.NodeComparable;
 import tools.CloserGetter;
 import tools.ClosestMatch;
-import tools.NodeComparable;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
 

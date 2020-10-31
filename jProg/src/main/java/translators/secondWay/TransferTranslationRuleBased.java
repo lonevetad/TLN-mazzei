@@ -1,7 +1,6 @@
 package translators.secondWay;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -127,7 +126,7 @@ public class TransferTranslationRuleBased extends ATransferTranslationRuleBased 
 			if ((temp = scores[i]).scoreDifference < best.scoreDifference)
 				best = temp;
 		}
-		System.out.println("best rule: " + best);
+//		System.out.println("best rule: " + best);
 		return best;
 	}
 
@@ -176,30 +175,4 @@ public class TransferTranslationRuleBased extends ATransferTranslationRuleBased 
 //		protected final NodeSubtreeDependency root;
 //	}
 
-	// TODO RULE
-
-	public static class RuleScored {
-		public static final Comparator<RuleScored> RuleScored_COMPARATOR = (s1, s2) -> {
-			if (s1 == s2)
-				return 0;
-			if (s1 == null)
-				return -1;
-			if (s2 == null)
-				return 1;
-			return Long.compare(s1.scoreDifference, s2.scoreDifference);
-		};
-		protected Long scoreDifference;
-		protected TransferRule rule;
-
-		public RuleScored(Long scoreDifference, TransferRule rule) {
-			super();
-			this.scoreDifference = scoreDifference;
-			this.rule = rule;
-		}
-
-		@Override
-		public String toString() {
-			return "RuleScored [scoreDifference=" + scoreDifference + ",\n\trule=" + rule + "]";
-		}
-	}
 }

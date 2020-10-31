@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import common.NodeParsedSentence;
-import tools.NodeComparable;
+import dataStructures.NodeComparable;
 import tools.NodeComparableSynonymIndexed;
 
 /**

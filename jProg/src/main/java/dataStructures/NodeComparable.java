@@ -1,4 +1,4 @@
-package tools;
+package dataStructures;
 
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -8,8 +8,8 @@ import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import dataStructures.MapTreeAVL;
-import dataStructures.SortedSetEnhanced;
+import tools.DifferenceCalculator;
+import tools.Stringable;
 
 /**
  * Node of a tree-like structure (no check if it's a graph or a single rooted
@@ -17,9 +17,11 @@ import dataStructures.SortedSetEnhanced;
  * {@link #computeDissonanceAsLong(NodeComparable)}) to produce a "score": the
  * lower, the better.
  */
-public interface NodeComparable<K> extends Serializable {
+public interface NodeComparable<K> extends Stringable {
 
 	// STATIC STUFFS
+
+	public static final int HEIGHT_OF_NEW_NODE = -1;
 
 	public static final DissonanceWeights WEIGHTS_DEFAULT = new DissonanceWeights() {
 		private static final long serialVersionUID = -5410794L;
@@ -42,8 +44,12 @@ public interface NodeComparable<K> extends Serializable {
 	}
 
 	/** Provides a simple implementation of the {@link NodeComparable}. */
-	public static <K> NodeComparable<K> newDefaultNodeComparable(K value, Comparator<K> comparatorKey) {
+	public static <T> NodeComparable<T> newDefaultNodeComparable(T value, Comparator<T> comparatorKey) {
 		return new DefaultNodeComparable<>(value, comparatorKey);
+	}
+
+	public static <T> DifferenceCalculator<NodeComparable<T>> newDifferenceCalculator(Comparator<T> keyComparator) {
+		return (s1, s2) -> { return s2.computeDissonanceAsLong(s1); };
 	}
 
 	//
@@ -60,6 +66,10 @@ public interface NodeComparable<K> extends Serializable {
 		return newNodeComparatorDefault(getKeyComparator());
 	}
 
+	public default int getHeightNode() { return HEIGHT_OF_NEW_NODE; }
+
+	public NodeComparable<K> setHeightNode(int height);
+
 	/**
 	 * Constructor-designed method, produces a "backing map" for
 	 * {@link #getChildrenNC()}.<br>
@@ -73,7 +83,8 @@ public interface NodeComparable<K> extends Serializable {
 	public default MapTreeAVL<NodeComparable<K>, NodeComparable<K>> newChildrenBackmap(
 			Comparator<NodeComparable<K>> comparatorNode) {
 		MapTreeAVL<NodeComparable<K>, NodeComparable<K>> m;
-		m = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, comparatorNode);
+		m = MapTreeAVL.newMap(MapTreeAVL.Optimizations.FullButHeavyNodes,
+				MapTreeAVL.BehaviourOnKeyCollision.AddItsNotASet, comparatorNode);
 		return m;
 	}
 
@@ -150,18 +161,32 @@ public interface NodeComparable<K> extends Serializable {
 	public void forEachChildNCFIFOOrdering(Consumer<NodeComparable<K>> action);
 
 	public default NodeComparable<K> addChildNC(NodeComparable<K> child) {
+		int nh, childHeight;
 		Set<NodeComparable<K>> children;
 		if (child == null)
 			return this;
+		childHeight = child.getHeightNode();
+		if (childHeight != HEIGHT_OF_NEW_NODE && childHeight < getHeightNode()) { return this; } // no cycles allowed
 		children = getChildrenNC();
 		if (children == null) { return this; }
 		children.add(child);
+		nh = getHeightNode();
+		if (nh != Integer.MAX_VALUE) { nh++; }
+		child.setHeightNode(nh);
 		return this;
+	}
+
+	public default int getTreeSize() {
+		int[] s = { 1 };
+		Set<NodeComparable<K>> children;
+		children = getChildrenNC();
+		if (children != null) { children.forEach(n -> s[0] += n.getTreeSize()); }
+		return s[0];
 	}
 
 	//
 
-	// PUBLIC STUFFS
+	// abstract STUFFS
 
 	//
 
@@ -185,17 +210,18 @@ public interface NodeComparable<K> extends Serializable {
 		return computeDissonanceAsLong(nodeBase, WEIGHTS_DEFAULT);
 	}
 
-	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase, boolean checkRecursion) {
-		return computeDissonanceAsLong(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
-	}
+//	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase, boolean checkRecursion) {
+//		return computeDissonanceAsLong(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
+//	}
+
+//	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
+//	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights) {
+//		return computeDissonanceAsLong(nodeBase, weights, false); // make it fast
+//	}
 
 	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
-	public default long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights) {
-		return computeDissonanceAsLong(nodeBase, weights, false); // make it fast
-	}
-
-	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
-	public long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights, boolean checkRecursion);
+	public long computeDissonanceAsLong(NodeComparable<K> nodeBase, DissonanceWeights weights);
+	// , boolean checkRecursion);
 
 	//
 
@@ -207,18 +233,48 @@ public interface NodeComparable<K> extends Serializable {
 		return computeDissonanceAsBigInt(nodeBase, WEIGHTS_DEFAULT);
 	}
 
+//	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
+//	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, boolean checkRecursion) {
+//		return computeDissonanceAsBigInt(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
+//	}
+
+//	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, DissonanceWeights weights) {
+//		return computeDissonanceAsBigInt(nodeBase, weights, false); // make it fast
+//	}
+
 	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
-	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, boolean checkRecursion) {
-		return computeDissonanceAsBigInt(nodeBase, WEIGHTS_DEFAULT, checkRecursion);
+	public BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, DissonanceWeights weights);
+//	, boolean checkRecursion);
+
+	//
+
+	//
+
+	@Override
+	public default void toString(StringBuilder sb) { this.toString(sb, 0); }
+
+	/** Call <code>super</code> before doing anything. */
+	public default void toStringNonCollectionFields(StringBuilder sb) {
+		sb.append(" --> ");
 	}
 
-	public default BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, DissonanceWeights weights) {
-		return computeDissonanceAsBigInt(nodeBase, weights, false); // make it fast
+	@Override
+	public default void toString(StringBuilder sb, int level) {
+		int lev;
+		K k;
+		addTab(sb, level, false);
+		sb.append("NC: ");
+		k = getKeyIdentifier();
+		if (k instanceof Stringable) {
+			((Stringable) k).toString(sb);
+		} else {
+			sb.append(k);
+		}
+		toStringNonCollectionFields(sb);
+		sb.append(" -----> children:");
+		lev = level + 1;
+		this.forEachChildNC((child) -> child.toString(sb.append('\n'), lev));
 	}
-
-	/** See {@link #computeDissonanceAsLong(NodeComparable)}. */
-	public BigInteger computeDissonanceAsBigInt(NodeComparable<K> nodeBase, DissonanceWeights weights,
-			boolean checkRecursion);
 
 	//
 
@@ -277,71 +333,65 @@ public interface NodeComparable<K> extends Serializable {
 	public static abstract class NodeComparableDefaultAlghoritms<T> implements NodeComparable<T> {
 		private static final long serialVersionUID = -651032512L;
 
+		protected int heightNode = 0;
+
 		@Override
-		public long computeDissonanceAsLong(NodeComparable<T> nodeBase, DissonanceWeights weights,
-				boolean checkRecursion) {
-			return checkRecursion ? computeDissonanceAsLong_WithRecursion(nodeBase, weights, //
-					nodeBase.newChildrenSet()
-					//
-					, weights.weightDepth)
-					: computeDissonanceAsLong_NoRecursion(nodeBase, weights, weights.weightDepth);
+		public int getHeightNode() { return heightNode; }
+
+		@Override
+		public NodeComparable<T> setHeightNode(int height) {
+			this.heightNode = height < 0 ? 0 : height;
+			return this;
+		}
+
+		@Override
+		public int getTreeSize() {
+			int[] s = { 1 };
+			Set<NodeComparable<T>> children;
+			children = getChildrenNC();
+			if (children != null) { children.forEach(n -> s[0] += n.getTreeSize()); }
+			return s[0];
+		}
+
+		protected void getTreeSize(int[] accumulator) {
+			Set<NodeComparable<T>> children;
+			accumulator[0]++;
+			children = getChildrenNC();
+			if (children != null) {
+				children.forEach(n -> ((NodeComparableDefaultAlghoritms<T>) n).getTreeSize(accumulator));
+			}
+		}
+
+		@Override
+		public long computeDissonanceAsLong(NodeComparable<T> nodeBase, DissonanceWeights weights) {
+			return computeDissonanceAsLong_NoRecursion(nodeBase, weights, weights.weightDepth);
 		}
 
 		protected long computeDissonanceAsLong_NoRecursion(NodeComparable<T> nodeBase, DissonanceWeights weights,
 				long exponentialWeightDepth) {
+			SortedSetEnhanced<NodeComparable<T>> childrenBase;
 			long[] dissonance = { Objects.equals(nodeBase.getKeyIdentifier(), this.getKeyIdentifier()) ? 0 : 1 };
+			childrenBase = nodeBase.getChildrenNC();
 			this.forEachChildNC(child -> {
-//				T key;
-				NodeComparable<T> childBase;
-//				key = child.getKeyIdentifier();
-				childBase = nodeBase.getChildNCMostSimilarTo(child);
-//				if (nodeBase.containsChildNC(key)) {
-				if (childBase != null) {
-					// recursion :D
-					dissonance[0] += ((NodeComparableDefaultAlghoritms<T>) child).computeDissonanceAsLong_NoRecursion(
-							childBase, //
-							weights, //
-							exponentialWeightDepth * weights.weightDepth);
-				} else {
-					dissonance[0] += weights.weightMissingNode * exponentialWeightDepth;
+				if (!childrenBase.contains(child)) {// looks for a exact match
+//					dissonance[0]+=
+//				} else {
+					dissonance[0] += weights.weightExceedingNode * child.getTreeSize();
 				}
-			});
-			nodeBase.forEachChildNC(child -> {
-//				T key;
-//				key = child.getKeyIdentifier();
-				if (!this.containsChildNC(child)) {
-					dissonance[0] += weights.weightExceedingNode * exponentialWeightDepth;
-				}
-			});
-			return dissonance[0];
-		}
-
-		protected long computeDissonanceAsLong_WithRecursion(NodeComparable<T> nodeBase, DissonanceWeights weights,
-				SortedSetEnhanced<NodeComparable<T>> nodesVisited, long exponentialWeightDepth) {
-//			if(nodesVisited.containsKey(this.value) || nodesVisited.containsKey(nodeBase).)
-			T thisKey;
-			thisKey = this.getKeyIdentifier();
-			long[] dissonance = { Objects.equals(nodeBase.getKeyIdentifier(), thisKey) ? 0 : 1 };
-//			nodesVisited.put(thisKey, this);
-			nodesVisited.add(this);
-			this.forEachChildNC(child -> {
-//				T key;
-				NodeComparable<T> childBase;
-//				key = child.getKeyIdentifier();
-				childBase = nodeBase.getChildNCMostSimilarTo(child);
-//				if (nodeBase.containsChildNC(key)) {
-				if (childBase != null) {
-					// recursion :D
-					if (!nodesVisited.contains(childBase)) {
-						dissonance[0] += ((DefaultNodeComparable<T>) child).computeDissonanceAsLong_WithRecursion(
-								childBase, //
-								weights, //
-								nodesVisited, //
-								exponentialWeightDepth * weights.weightDepth);
-					}
-				} else {
-					dissonance[0] += weights.weightMissingNode * exponentialWeightDepth;
-				}
+////				T key;
+//				NodeComparable<T> childBase;
+////				key = child.getKeyIdentifier();
+//				childBase = nodeBase.getChildNCMostSimilarTo(child);
+////				if (nodeBase.containsChildNC(key)) {
+//				if (childBase != null) {
+//					// recursion :D
+//					dissonance[0] += ((NodeComparableDefaultAlghoritms<T>) child).computeDissonanceAsLong_NoRecursion(
+//							childBase, //
+//							weights, //
+//							exponentialWeightDepth * weights.weightDepth);
+//				} else {
+//					dissonance[0] += weights.weightMissingNode * exponentialWeightDepth;
+//				}
 			});
 			nodeBase.forEachChildNC(child -> {
 //				T key;
@@ -356,14 +406,14 @@ public interface NodeComparable<K> extends Serializable {
 		//
 
 		@Override
-		public BigInteger computeDissonanceAsBigInt(NodeComparable<T> nodeBase, DissonanceWeights weights,
-				boolean checkRecursion) {
+		public BigInteger computeDissonanceAsBigInt(NodeComparable<T> nodeBase, DissonanceWeights weights) {
 			return checkRecursion ? computeDissonanceAsBigInt_WithRecursion(nodeBase, weights, //
 					nodeBase.newChildrenSet(), BigInteger.valueOf(weights.weightDepth))
-					: computeDissonanceAsBigInt_NoRecursion(nodeBase, weights, BigInteger.valueOf(weights.weightDepth));
+					: computeDissonanceAsBigInt_NoRecursionCheck(nodeBase, weights,
+							BigInteger.valueOf(weights.weightDepth));
 		}
 
-		protected BigInteger computeDissonanceAsBigInt_NoRecursion(NodeComparable<T> nodeBase,
+		protected BigInteger computeDissonanceAsBigInt_NoRecursionCheck(NodeComparable<T> nodeBase,
 				DissonanceWeights weights, BigInteger exponentialWeightDepth) {
 			BigInteger[] dissonance = {
 					Objects.equals(nodeBase.getKeyIdentifier(), this.getKeyIdentifier()) ? BigInteger.ZERO
@@ -377,7 +427,7 @@ public interface NodeComparable<K> extends Serializable {
 				if (childBase != null) {
 					// recursion :D
 					dissonance[0] = dissonance[0].add(((NodeComparableDefaultAlghoritms<T>) child)
-							.computeDissonanceAsBigInt_NoRecursion(childBase, //
+							.computeDissonanceAsBigInt_NoRecursionCheck(childBase, //
 									weights, //
 									exponentialWeightDepth.multiply(weights.weightDepthBigInt))//
 					);
@@ -436,12 +486,20 @@ public interface NodeComparable<K> extends Serializable {
 			});
 			return dissonance[0];
 		}
+
+		@Override
+		public String toString() {
+			StringBuilder sb;
+			sb = new StringBuilder();
+			toString(sb);
+			return sb.toString();
+		}
 	}
 
 	public static class DefaultNodeComparable<T> extends NodeComparableDefaultAlghoritms<T> {
 		private static final long serialVersionUID = 1L;
 		protected T keyIdentifier;
-		protected MapTreeAVL<T, NodeComparable<T>> backMap;
+		protected MapTreeAVL<NodeComparable<T>, NodeComparable<T>> backMap;
 		protected SortedSetEnhanced<NodeComparable<T>> children;
 		protected final Comparator<T> comparatorKey;
 
@@ -449,8 +507,10 @@ public interface NodeComparable<K> extends Serializable {
 			super();
 			this.comparatorKey = comparatorKey;
 			this.keyIdentifier = value;
-			this.backMap = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, comparatorKey);
-			this.children = this.backMap.toSetValue(n -> n.getKeyIdentifier());
+			this.backMap = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, // comparatorKey
+					NodeComparable.newNodeComparatorDefault(comparatorKey));
+//			this.children = this.backMap.toSetValue(n -> n.getKeyIdentifier());
+			this.children = this.backMap.toSetKey();
 		}
 
 		@Override
@@ -487,18 +547,15 @@ public interface NodeComparable<K> extends Serializable {
 		}
 
 		protected Comparator<SortedSetEnhanced<NodeComparable<T>>> newChildrenSetComparator() {
-			return SortedSetEnhanced.ComparatorFactoriesSSE.CASCADE_OF_INTERSECT_MISS_EXCEED_KEY.newComparator(this); // RECURSION
+			return SortedSetEnhanced.COMPARATOR_FACTORY_PREFERRED.newComparator(this); // RECURSION
 		}
 
 		@Override
 		public int compare(NodeComparable<T> n1, NodeComparable<T> n2) {
 			int c;
-			if (n1 == n2)
-				return 0;
-			if (n1 == null)
-				return -1;
-			if (n2 == null)
-				return 1;
+			if (n1 == n2) { return 0; }
+			if (n1 == null) { return -1; }
+			if (n2 == null) { return 1; }
 			c = keyComp.compare(n1.getKeyIdentifier(), n2.getKeyIdentifier());
 			if (c != 0)
 				return c;

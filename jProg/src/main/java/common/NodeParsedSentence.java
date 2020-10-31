@@ -1,5 +1,6 @@
 package common;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -7,22 +8,20 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 
 import dataStructures.MapTreeAVL;
-import edu.emory.mathcs.backport.java.util.Arrays;
-import tools.Misc;
-import tools.NodeComparable;
+import dataStructures.NodeComparable;
+import edu.stanford.nlp.util.Comparators;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
 
 /**
  * Node of a parsed sentence, holding some informations took from the PoS-Tag
- * analysis and dependency analysis.<br>
- * Is identified by an OrderedSet of String (a {@link SynonymSet}. Considering
- * this, some dummy "alternatives" could be used to impose some kind of a order
- * between children.
+ * analysis and dependency analysis.
  */
 public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 	private static final long serialVersionUID = -3000078540407L;
 	public static final Comparator<NodeParsedSentence> COMPARATOR_NODE_NPS = NodeComparableSynonymIndexed.COMPARATOR_NODE::compare;
+
+	public static final Comparator<SynonymSet> getNPSComparatorKey() { return SynonymSet.COMPARATOR_SYNONYM_SET; }
 
 	//
 
@@ -33,7 +32,6 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	public NodeParsedSentence(SynonymSet defaultSyn) { super(defaultSyn); }
 
-	/** It does not add children, see {@link NodeComparableSynonymIndexed}. */
 	public NodeParsedSentence(NodeParsedSentence original) { // copy constructor
 		super(original);
 		this.gloss = original.gloss;
@@ -84,20 +82,28 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	//
 
-	public void setLemma(String lemma) { this.lemma = lemma; }
+	public NodeParsedSentence setLemma(String lemma) {
+		this.lemma = lemma;
+		return this;
+	}
 
-	public void setGloss(String gloss) { this.gloss = gloss; }
+	public NodeParsedSentence setGloss(String gloss) {
+		this.gloss = gloss;
+		return this;
+	}
 
-	public void setDep(String dep) {
+	public NodeParsedSentence setDep(String dep) {
 		super.removeAlternative(this.dep);
 		this.dep = dep;
 		super.addAlternative(dep);
+		return this;
 	}
 
-	public void setPos(String pos) {
+	public NodeParsedSentence setPos(String pos) {
 		super.removeAlternative(this.pos);
 		this.pos = pos;
 		super.addAlternative(pos);
+		return this;
 	}
 
 	//
@@ -113,7 +119,7 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	protected void checkFeatures() {
 		if (features == null)
-			this.features = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.STRING_COMPARATOR);
+			this.features = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Comparators.STRING_COMPARATOR);
 	}
 
 	//

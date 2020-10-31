@@ -2,10 +2,12 @@ package dataStructures.mtAvl;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import dataStructures.MapTreeAVL;
+import tools.Comparators;
 
 public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 	private static final long serialVersionUID = 477874447L;
@@ -178,7 +180,7 @@ public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	protected NodeAVL predecessorSorted(NodeAVL n) { return ((NodeAVL_MinIter) n).nextInOrder; }
+	protected NodeAVL predecessorSorted(NodeAVL n) { return ((NodeAVL_MinIter) n).prevInOrder; }
 
 	/**
 	 * Use with care
@@ -385,5 +387,18 @@ public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 
 		@Override
 		public boolean hasNext() { return (size > 0) && (current != end || jumps == 0); }
+	}
+
+	public static void main(String[] args) {
+		MapTreeAVL<Integer, Integer> m;
+		Set<Integer> s;
+		m = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, Comparators.INTEGER_COMPARATOR);
+		s = m.toSetValue(i -> i);
+		s.add(1);
+		System.out.println("forEach of map");
+		m.forEach((k, v) -> { System.out.println(v); });
+		System.out.println("start forEach");
+		s.forEach(v -> { System.out.println(v); });
+		System.out.println("end forEach");
 	}
 }

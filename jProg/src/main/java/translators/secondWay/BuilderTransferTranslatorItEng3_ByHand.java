@@ -24,8 +24,8 @@ public class BuilderTransferTranslatorItEng3_ByHand extends BuilderTransferTrans
 //		t = new TransferTranslationRuleBased();
 //		t = new TransferTranslationRuleBased_V2();
 //		t = new TransferTranslationRuleBased_V3();
-		t = new TransferTranslationRuleBased_V4();
-
+//		t = new TransferTranslationRuleBased_V4();
+		t = new TransferTranslationRuleBased_V5();
 		// identities
 		for (ElemGrammarBase egb : ElemGrammarBase.values()) {
 			t.addRule(new IdentityTransferRule(egb));

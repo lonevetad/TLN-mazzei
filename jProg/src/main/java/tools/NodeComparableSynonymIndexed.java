@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import dataStructures.MapTreeAVL;
+import dataStructures.NodeComparable;
 import dataStructures.SortedSetEnhanced;
 
 /** Default implementation of {@link NodeComparable} useful for */

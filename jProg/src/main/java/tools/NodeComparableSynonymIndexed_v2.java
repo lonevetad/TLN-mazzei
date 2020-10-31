@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 import dataStructures.MapTreeAVL;
+import dataStructures.NodeComparable;
 
 /**
  * Enhance {@link NodeComparableSynonymIndexed#getChildNCBySingleKey(String)} at

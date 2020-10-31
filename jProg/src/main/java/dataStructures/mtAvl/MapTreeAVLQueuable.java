@@ -16,7 +16,7 @@ public class MapTreeAVLQueuable<K, V> extends MapTreeAVLIndexable<K, V> {
 		super(b, comp);
 		firstInserted = (NodeAVL_Queuable) NIL;
 		((NodeAVL_Queuable) NIL).nextInserted = ((NodeAVL_Queuable) NIL).prevInserted = (NodeAVL_Queuable) NIL;
-		optimization = Optimizations.ToQueueFIFOIterating;
+		optimization = Optimizations.QueueFIFOIteration;
 	}
 
 	protected NodeAVL_Queuable firstInserted; // stack-like

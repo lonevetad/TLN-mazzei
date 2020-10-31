@@ -36,7 +36,7 @@ public class TransferItEngNLGFromEmbedded {
 		SynonymSet rootAllAlternativeNames;
 		DependentTags rootTag;
 		rootTag = DependentTags.getFirstTagMatching(root.getKeyIdentifier());
-		// TODO
+		// TODO THIS WILL BE THE SOLUTION TO BRING TO THE EXAM
 		return null;
 	}
 

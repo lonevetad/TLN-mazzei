@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.SortedSet;
 
+import grammars.transfer.TransferTranslationRuleBased;
 import tools.CloserGetter;
 import tools.ClosestMatch;
 import tools.DifferenceCalculator;
-import translators.secondWay.TransferTranslationRuleBased;
 
 public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
@@ -21,6 +21,8 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 	public Comparator<E> getKeyComparator();
 
 	public SortedSetEnhanced<E> newSortedSetEnhanced(Comparator<E> comp);
+
+	public default SortedSetEnhanced<E> newSortedSetEnhanced() { return this.newSortedSetEnhanced(getKeyComparator()); }
 
 	// add from synonym
 
@@ -69,7 +71,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 			return null;
 		if (eg == this)
 			return this;
-		inters = newSortedSetEnhanced(getKeyComparator());
+		inters = newSortedSetEnhanced();
 		/*
 		 * since iterating is O(n) and "containsKey" is O(log(n)), iterates over the
 		 * smallest set
@@ -115,10 +117,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 			smallerSet = eg;
 			biggerSetMap = this;
 		}
-		smallerSet.forEach((s) -> {
-			if (biggerSetMap.contains(s))
-				countIntersections[0]++;
-		});
+		smallerSet.forEach((s) -> { if (biggerSetMap.contains(s)) { countIntersections[0]++; } });
 		return countIntersections[0];
 	}
 
@@ -166,7 +165,8 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	// TODO METHODS
 
-	public static final ComparatorSSEFactory COMPARATOR_FACTORY_PREFERRED = ComparatorFactoriesSSE.CASCADE_OF_INTERSECT_MISS_EXCEED_KEY;
+	public static final ComparatorSSEFactory COMPARATOR_FACTORY_PREFERRED = //
+			ComparatorFactoriesSSE.KEY_ORDER; // SUBSET_THEN_NON_SHARED_KEYS;
 
 	public static <T> DifferenceCalculator<SortedSetEnhanced<T>> newDifferenceCalc(Comparator<T> keyComparator) {
 		return differenceCalcFromSetComparator(COMPARATOR_FACTORY_PREFERRED.newComparator(keyComparator));
@@ -174,7 +174,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	public static <T> DifferenceCalculator<SortedSetEnhanced<T>> differenceCalcFromSetComparator(
 			Comparator<SortedSetEnhanced<T>> sortedSetComparator) {
-		return sortedSetComparator::compare;
+		return DifferenceCalculator.from(sortedSetComparator);
 	}
 
 	public static <T> CloserGetter<SortedSetEnhanced<T>> newDefaultCloseGetter(Comparator<T> keyComparator) {
@@ -238,9 +238,23 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		/**
 		 * Compares the sets and collapse to <code>0</code> both cases of "equals" and
 		 * "none of them is a subset".
+		 * 
+		 * @deprecated May violates transitivity
+		 * @see {@link #KEY_ORDER} should be used instead for <b>comparison</b> and see
+		 *      {@link #SUBSET_THEN_NON_SHARED_KEYS} to understand more about the
+		 *      violation.
 		 */
+		@Deprecated
 		SUBSET_ORDER_COLLAPSE_ID_AND_NONSUBSET(ComparatorSynonymBySubset::new), //
 
+		/**
+		 * * @deprecated May violates transitivity
+		 * 
+		 * @see {@link #KEY_ORDER} should be used instead for <b>comparison</b> and see
+		 *      {@link #SUBSET_THEN_NON_SHARED_KEYS} to understand more about the
+		 *      violation.
+		 */
+		@Deprecated
 		SUBSET_FIRST_KEY_THEN(new ComparatorSSEFactory() {
 			private static final long serialVersionUID = -65013455L;
 
@@ -281,39 +295,140 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		 * other, as checked in step <code>1)</code>).</li>
 		 * <li></li>
 		 * </ol>
+		 * 
+		 * @deprecated May violates transitivity
+		 * @see {@link #KEY_ORDER} should be used instead for <b>comparison</b> and see
+		 *      {@link #SUBSET_THEN_NON_SHARED_KEYS} to understand more about the
+		 *      violation.
 		 */
+		@Deprecated
 		CASCADE_OF_INTERSECT_MISS_EXCEED_KEY(new ComparatorSSEFactory() {
 			private static final long serialVersionUID = -65013456L;
 
 			@Override
 			public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp) {
-				return (s1, s2) -> {
-					int c, c1, c2;
-					if (s1 == s2)
-						return 0;
-					if (s1 == null)
-						return -1;
-					if (s2 == null)
-						return 1;
-					c1 = s1.size();
-					c2 = s2.size();
-					c = s1.intersectionSize(s2);
-					if (c == c1) {
-						return (c == c2) ? 0 : c - c2;
-						// it should be faster, in case of "0", than simply returning "c-c2"
-					} else if (c == c2)
-						return c1 - c;
-					/*
-					 * no one is equal or a subset: everyone has something that the other has not
-					 * now check the "closest to intersection": which one has fewer elements more to
-					 * the intersection.
-					 */
-					c1 -= c;
-					c2 -= c;
-					if (c1 == c2) // tie: just compare elements
-						return newComparatorByKeyOrder(comp).compare(s1, s2);
-					else
-						return c1 - c2; // (c1 < c2) ? -1 : 1;
+				return new Comparator<SortedSetEnhanced<T>>() {
+					final Comparator<SortedSetEnhanced<T>> compByKeyOrder = //
+//							KEY_ORDER.newComparator(comp);
+							newComparatorByKeyOrder(comp);
+
+					@Override
+					public int compare(SortedSetEnhanced<T> s1, SortedSetEnhanced<T> s2) {
+						int c, c1, c2;
+						if (s1 == s2)
+							return 0;
+						if (s1 == null)
+							return -1;
+						if (s2 == null)
+							return 1;
+						c1 = s1.size();
+						c2 = s2.size();
+						c = s1.intersectionSize(s2);
+						if (c == c1) {
+							return (c == c2) ? 0 : c - c2;
+							// it should be faster, in case of "0", than simply returning "c-c2"
+						} else if (c == c2)
+							return c1 - c;
+						/*
+						 * no one is equal or a subset: everyone has something that the other has not
+						 * now check the "closest to intersection": which one has fewer elements more to
+						 * the intersection.
+						 */
+						c1 -= c;
+						c2 -= c;
+						if (c1 == c2) // tie: just compare elements
+							return compByKeyOrder.compare(s1, s2);
+						else
+							return c1 - c2; // (c1 < c2) ? -1 : 1;
+					}
+				};
+			}
+		}),
+
+		//
+
+		/**
+		 * More stable and reliable than
+		 * {@link #CASCADE_OF_INTERSECT_MISS_EXCEED_KEY}.<br>
+		 * Still, violating the transitivity:
+		 * <p>
+		 * Examples of trees violating the transitivity (node's children are wrapped in
+		 * brackets):
+		 * <ol>
+		 * <li><code>1 {0 5 7}</code></li>
+		 * <li><code>1 {4 8}</code></li>
+		 * <li><code>1 {5 7}</code></li>
+		 * </ol>
+		 * The first tree is greater than the last one since it's a superset, but it's
+		 * lower than the second since no one is superset of the other and the lowest
+		 * key of the first tree (i.e. <code>0</code>) is lower than the lowest key of
+		 * the second tree (i.e. <code>4</code>). For similar reason, the second tree is
+		 * lower than the third.<br>
+		 * This creates a circularity, while a {@link Comparator} requires transitivity
+		 * and non-circularity.
+		 * 
+		 * @deprecated May violates transitivity
+		 * @see {@link #KEY_ORDER} should be used instead for <b>comparison</b>.
+		 */
+		@Deprecated
+		SUBSET_THEN_NON_SHARED_KEYS(new ComparatorSSEFactory() {
+			private static final long serialVersionUID = -65013456L;
+
+			@Override
+			public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp) {
+				return new Comparator<SortedSetEnhanced<T>>() {
+					final Comparator<T> compKey = comp;
+
+					@Override
+					public int compare(SortedSetEnhanced<T> s1, SortedSetEnhanced<T> s2) {
+						int c, c1, c2;
+						SortedSetEnhanced<T> intersect;
+						Iterator<T> i1, i2;
+						T t1, t2;
+						if (s1 == s2)
+							return 0;
+						if (s1 == null)
+							return -1;
+						if (s2 == null)
+							return 1;
+						c1 = s1.size();
+						c2 = s2.size();
+//							c = s1.intersectionSize(s2);
+						intersect = s1.intersectionWith(s2);
+						c = intersect.size();
+						if (c == c1) {
+							return (c == c2) ? 0 : c - c2;
+							// it should be faster, in case of "0", than simply returning "c-c2"
+						} else if (c == c2) { return c1 - c; }
+//							/*
+//							 * no one is equal or a subset: everyone has something that the other has not
+//							 * now check the "closest to intersection": which one has fewer elements more to
+//							 * the intersection.
+//							 */
+						c1 -= c;
+						c2 -= c;
+//							if (c1 == c2) // tie: just compare elements
+//								return compByKeyOrder.compare(s1, s2);
+//							else
+//								return c1 - c2; // (c1 < c2) ? -1 : 1;
+
+						// iterate over the items not in intersection
+//						intersect.iterator();
+						i1 = s1.iterator();
+						i2 = s2.iterator();
+						t1 = t2 = null;
+						do {
+							// pick the first non-shared element from s1
+							while (i1.hasNext() && (intersect.contains(t1 = i1.next()))) {
+								t1 = null; // nullify this one and move to next, if any
+							}
+							// same on s2
+							while (i2.hasNext() && (intersect.contains(t2 = i2.next()))) {
+								t2 = null; // nullify this one and move to next, if any
+							}
+						} while (((c = compKey.compare(t1, t2)) == 0) && i1.hasNext() && i2.hasNext());
+						return c != 0 ? c : (c1 - c2);
+					}
 				};
 			}
 		});

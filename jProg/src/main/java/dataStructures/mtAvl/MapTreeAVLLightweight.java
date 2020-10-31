@@ -851,6 +851,8 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		return n;
 	}
 
+	// TODO range query, closest match, forEachSimilar ... yay complex stuffs
+
 	@Override
 	public MapTreeAVL<K, V> rangeQuery(K lowerBound, boolean isLowerBoundIncluded, K upperBound,
 			boolean isUpperBoundIncluded) throws IllegalArgumentException {
@@ -864,25 +866,20 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		if (c > 0)
 			throw new IllegalArgumentException("Lower bound is greater than upper bound");
 		if (c == 0) {
-			System.out.println("c : " + c);
 			if (isLowerBoundIncluded || isUpperBoundIncluded) {
 				r = MapTreeAVL.newMap(optimization, behaviour, comp);
 				if (this.containsKey(lowerBound))
 					r.put(lowerBound, this.get(lowerBound));
 				return r;
 			} else
-				throw new IllegalArgumentException("The ma");
+				throw new IllegalArgumentException("The interval is empty: same bounds but bot excluded.");
 		}
 		r = MapTreeAVL.newMap(optimization, behaviour, comp);
-		if (this.isEmpty()) {
-			System.out.println(" eheh empty");
-			return r;
-		}
+		if (this.isEmpty()) { return r; }
 		if (size == 1) {
 			if ((comp.compare(lowerBound, root.k) < 0) && (comp.compare(root.k, upperBound) < 0)) {
 				r.put(root.k, root.v);
 			}
-			System.out.println("WTF");
 			return r;
 		}
 		if (comp.compare(((NodeAVL) this.peekMaximum()).k, lowerBound) >= 0 && //
@@ -892,7 +889,6 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 			// lower bound is greater: move to the real starting node
 			n = temp = root;
 			// search for the first node
-			System.out.println("root: " + n.k);
 			firstNode = null;
 			while (firstNode == null && n != NIL) {
 //				System.out.println("while 1 node: " + n);
@@ -905,17 +901,13 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 				}
 			}
 			if (firstNode == null) {
-				System.out.println("first node is null and became temp: " + temp.k);
 				firstNode = temp;
 				while (firstNode != NIL && (c = comp.compare(firstNode.k, lowerBound)) < 0) {
 //					System.out.println("while 2 first node successing it" + firstNode.k);
 					firstNode = successorSorted(firstNode);
 				}
 			}
-			if (firstNode == null || firstNode == NIL) {
-				System.out.println("first node STILL empty");
-				return r; // EMPTY
-			}
+			if (firstNode == null || firstNode == NIL) { return r; }
 			n = firstNode;
 			// add the first node and each subsequent node (lower than upper bound)
 			// BUT FIRST: check the starting node "n" and the upper bound
@@ -939,6 +931,105 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 			} while (n != NIL);
 		}
 		return r;
+	}
+
+	@Override
+	public ClosestMatch<Entry<K, V>> closestMatchOf(K key) {
+		boolean notFound, isExactMatch;
+		int c;
+		NodeAVL n, closestUpper;
+		Comparator<K> co;
+		n = root;
+		if (n == NIL || n == null)
+			return null;
+		closestUpper = null;
+		co = comp;
+		if (notFound = !(isExactMatch = (n.left == NIL && n.right == NIL)) //
+		) {
+			// search for the nearest lower key: scan node by node.
+			do {
+				c = co.compare(key, n.k);
+				if (c == 0) {
+					closestUpper = null;
+					notFound = false;
+//				return new ClosestMatch<>(n);
+					isExactMatch = true;
+				} else {
+					if (c < 0) {
+						// go to the left
+						if (n.left != NIL) {
+							closestUpper = n;
+							n = n.left;
+						} else {
+							// n is at the bottom of a subtree but could have a predecessor. If so -> pred.
+							// == lower bound
+							closestUpper = n;
+							n = predecessorSorted(n);
+							notFound = false;
+							if (n == NIL) {
+								n = null; // cannot return NIL and a "not existing lower bound" must be marked in some
+											// way
+							} // else : n is already the lower bound
+						}
+					} else {
+						// similarly, go to right
+						if (n.right != NIL) {
+							n = n.right;
+						} else {
+							notFound = false;
+							closestUpper = successorSorted(n);
+							if (closestUpper == NIL) {
+								closestUpper = null; // n is lower bound, no upper bound and NIL cannot be returned
+							}
+						}
+					}
+				}
+			} while (notFound);
+		}
+		Entry<K, V> keyWrapper = new EntryImpl<>(key, null);
+		Comparator<Entry<K, V>> ec;
+		ec = (e1, e2) -> { return co.compare(e1.getKey(), e2.getKey()); };
+		return isExactMatch ? new ClosestMatch<>(keyWrapper, ec, n)
+				: new ClosestMatch<>(keyWrapper, ec, n, closestUpper);
+	}
+
+	@Override
+	public void forEachSimilar(K key, Comparator<K> keyComp, Consumer<Entry<K, V>> action) {
+		int c;
+		NodeAVL n, niter, temp;
+		if (keyComp == null) { keyComp = this.getComparator(); }
+		if ((n = root) == null || n == NIL)
+			return;
+		// similar to getNode
+		while (n != NIL && (c = keyComp.compare(key, n.k)) != 0) {
+			n = (c < 0) ? n.left : n.right;
+		}
+		if (n == NIL || n == null)
+			return;
+		/*
+		 * we have the starting point: iterate for each predecessor and successor. To be
+		 * precise: search for the first similar in sequence, than the last, then scan
+		 * the span
+		 */
+		// the start
+		niter = n;
+		while ((temp = predecessorSorted(niter)) != NIL && keyComp.compare(key, temp.k) == 0) {
+			niter = temp;
+		}
+		// the end
+		while ((temp = successorSorted(n)) != NIL && keyComp.compare(key, temp.k) == 0) 
+			n = temp;
+		if (n == niter) {
+			action.accept(niter);
+		} else {
+			// the span
+			do {
+				action.accept(niter);
+			} while ((niter = successorSorted(niter)) != n
+					// just in case
+					&& niter != NIL);
+			action.accept(niter);
+		}
 	}
 
 	@Override
@@ -987,68 +1078,6 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 			} while (notFound && n != NIL);
 		}
 		return prev;
-	}
-
-	@Override
-	public ClosestMatch<Entry<K, V>> closestMatchOf(K key) {
-		boolean notFound, isExactMatch;
-		int c;
-		NodeAVL n, closestUpper;
-		Comparator<K> co;
-		n = root;
-		if (n == NIL || n == null)
-			return null;
-		closestUpper = null;
-		co = comp;
-		if (notFound = !(isExactMatch = (n.left == NIL && n.right == NIL)) //
-		) {
-			/*
-			 * search for the nearest lower key: scan node by node.
-			 */
-			do {
-				c = co.compare(key, n.k);
-				if (c == 0) {
-					closestUpper = null;
-					notFound = false;
-//				return new ClosestMatch<>(n);
-					isExactMatch = true;
-				} else {
-					if (c < 0) {
-						// go to the left
-						if (n.left != NIL) {
-							closestUpper = n;
-							n = n.left;
-						} else {
-							// n is at the bottom of a subtree but could have a predecessor. If so -> pred.
-							// == lower bound
-							closestUpper = n;
-							n = predecessorSorted(n);
-							notFound = false;
-							if (n == NIL) {
-								n = null; // cannot return NIL and a "not existing lower bound" must be marked in some
-											// way
-							} // else : n is already the lower bound
-						}
-					} else {
-						// similarly, go to right
-						if (n.right != NIL) {
-							n = n.right;
-						} else {
-							notFound = false;
-							closestUpper = successorSorted(n);
-							if (closestUpper == NIL) {
-								closestUpper = null; // n is lower bound, no upper bound and NIL cannot be returned
-							}
-						}
-					}
-				}
-			} while (notFound);
-		}
-		Entry<K, V> keyWrapper = new EntryImpl<>(key, null);
-		Comparator<Entry<K, V>> ec;
-		ec = (e1, e2) -> { return co.compare(e1.getKey(), e2.getKey()); };
-		return isExactMatch ? new ClosestMatch<>(keyWrapper, ec, n)
-				: new ClosestMatch<>(keyWrapper, ec, n, closestUpper);
 	}
 
 	// TODO MERGE
