@@ -9,7 +9,7 @@ import java.util.function.BiConsumer;
 
 import dataStructures.MapTreeAVL;
 import dataStructures.NodeComparable;
-import edu.stanford.nlp.util.Comparators;
+import tools.Misc;
 import tools.NodeComparableSynonymIndexed;
 import tools.SynonymSet;
 
@@ -119,7 +119,7 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	protected void checkFeatures() {
 		if (features == null)
-			this.features = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Comparators.STRING_COMPARATOR);
+			this.features = MapTreeAVL.newMap(MapTreeAVL.Optimizations.Lightweight, Misc.STRING_COMPARATOR);
 	}
 
 	//

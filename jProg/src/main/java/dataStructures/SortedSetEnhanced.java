@@ -3,13 +3,20 @@ package dataStructures;
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.SortedSet;
+import java.util.function.Consumer;
 
-import grammars.transfer.TransferTranslationRuleBased;
 import tools.CloserGetter;
 import tools.ClosestMatch;
 import tools.DifferenceCalculator;
+import translators.secondWay.TransferTranslationRuleBased;
 
+/**
+ * A {@link SortedSet} which is enriched with other functionalities.<br>
+ * Also, since it and its elements are sorted, some {@link Comparator}s can be
+ * defined: see {@link ComparatorFactoriesSSE}.
+ */
 public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	//
@@ -22,7 +29,10 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	public SortedSetEnhanced<E> newSortedSetEnhanced(Comparator<E> comp);
 
-	public default SortedSetEnhanced<E> newSortedSetEnhanced() { return this.newSortedSetEnhanced(getKeyComparator()); }
+	/** Just a builder. */
+	public default SortedSetEnhanced<E> newSortedSetEnhanced() {
+		return this.newSortedSetEnhanced(getKeyComparator());
+	}
 
 	// add from synonym
 
@@ -153,6 +163,27 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 	 */
 	public ClosestMatch<E> closestMatchOf(E key);
 
+	/**
+	 * Invokes {@link #forEachSimilar(Object, Comparator, Consumer)} giving
+	 * {@link #getComparator()} as a {@link Comparator}.
+	 * <p>
+	 * Took inspiration from {@link MapTreeAVL#forEachSimilar(Object, Consumer)}.
+	 */
+	public default void forEachSimilar(E key, Consumer<E> action) {
+		forEachSimilar(key, getKeyComparator(), action);
+	}
+
+	/**
+	 * Given a key and a optional {@link Comparator} (which can be the same of the
+	 * one returned by {@link #getKeyComparator()}), runs an action
+	 * ({@link Consumer}) over each {@link Entry} stored which are considered
+	 * compatible.
+	 * <p>
+	 * Took inspiration from
+	 * {@link MapTreeAVL#forEachSimilar(Object, Comparator, Consumer)}.
+	 */
+	public void forEachSimilar(E key, Comparator<E> keyComp, Consumer<E> action);
+
 	//
 
 	//
@@ -216,7 +247,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		};
 	}
 
-	// TODO CLASS
+	// TODO CLASS and ENUM
 
 	public static interface ComparatorSSEFactory extends Serializable {
 		public <T> Comparator<SortedSetEnhanced<T>> newComparator(Comparator<T> comp);
@@ -470,7 +501,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 				while (i1.hasNext() && i2.hasNext() && //
 				((c = comp.compare(i1.next(), i2.next())) == 0))
 					;
-				return c != 0 ? c : (size1 >= size2 ? size1 - size2 : size2 - size1);
+				return c != 0 ? c : size1 - size2; // (size1 >= size2 ? size1 - size2 : size2 - size1);
 			};
 		}
 	} // END ENUM

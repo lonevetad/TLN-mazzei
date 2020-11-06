@@ -318,6 +318,8 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 
 	public int indexOf(Object o);
 
+	// TODO for-each-er and iterators
+
 	/**
 	 * Similar to {@link #forEach(java.util.function.Consumer)}, but allow to
 	 * iterate over the elements in different ways.<br>
@@ -412,6 +414,8 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	 * </ul>
 	 */
 	public Entry<K, V> getLowesCommonAncestor(K k1, K k2);
+
+	// TODO rangeQuery, closestMatch, merge
 
 	/** See {@link #rangeQuery(Object, boolean, Object, boolean)}. */
 	public default MapTreeAVL<K, V> rangeQuery(K lowerBound, K upperBound) throws IllegalArgumentException {

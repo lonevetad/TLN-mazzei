@@ -174,5 +174,4 @@ public class TransferTranslationRuleBased extends ATransferTranslationRuleBased 
 //	public static class SubtreeDependency {
 //		protected final NodeSubtreeDependency root;
 //	}
-
 }

@@ -1,9 +1,12 @@
-package dataStructures;
+package dataStructures.minorUtils;
 
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.SortedSet;
+import java.util.function.Consumer;
+
+import dataStructures.SortedSetEnhanced;
 
 public interface SortedSetEnhancedDelegating<E> extends SortedSetEnhanced<E> {
 
@@ -33,6 +36,15 @@ public interface SortedSetEnhancedDelegating<E> extends SortedSetEnhanced<E> {
 	public default boolean add(E e) { return getDelegator().add(e); }
 
 	@Override
+	public default void clear() { getDelegator().clear(); }
+
+	@Override
+	public default void forEachSimilar(E key, Comparator<E> keyComp, Consumer<E> action) {
+		SortedSet<E> ss = this.getDelegator();
+		if (ss instanceof SortedSetEnhanced<?>) { ((SortedSetEnhanced<E>) ss).forEachSimilar(key, keyComp, action); }
+	}
+
+	@Override
 	public default boolean remove(Object o) { return getDelegator().remove(o); }
 
 	@Override
@@ -46,9 +58,6 @@ public interface SortedSetEnhancedDelegating<E> extends SortedSetEnhanced<E> {
 
 	@Override
 	public default boolean removeAll(Collection<?> c) { return getDelegator().retainAll(c); }
-
-	@Override
-	public default void clear() { getDelegator().clear(); }
 
 	@Override
 	public default Comparator<? super E> comparator() { return getDelegator().comparator(); }

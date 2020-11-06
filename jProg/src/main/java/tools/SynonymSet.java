@@ -21,6 +21,7 @@ import dataStructures.SortedSetEnhancedDelegating;
  */
 public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneable {
 
+	public static final Comparator<String> COMPARATOR_SINGLE_SYNONYM = Misc.STRING_COMPARATOR;
 	/**
 	 * Synonyms are set of strings, this comparator is a "low level" comparator used
 	 * in {@link #COMPARATOR_SYNONYM_SET}.
@@ -28,7 +29,7 @@ public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneabl
 	protected static final Comparator<SortedSetEnhanced<String>> COMP_SET_STRING = //
 //			SortedSetEnhanced.ComparatorFactoriesSSE.CASCADE_OF_INTERSECT_MISS_EXCEED_KEY
 			SortedSetEnhanced.COMPARATOR_FACTORY_PREFERRED//
-					.newComparator(Misc.STRING_COMPARATOR);
+					.newComparator(COMPARATOR_SINGLE_SYNONYM);
 	/** Low-level difference calculator: of set of strings */
 	protected static final DifferenceCalculator<SortedSetEnhanced<String>> DIFF_CALC_SET_STRINGS = SortedSetEnhanced
 			.differenceCalcFromSetComparator(COMP_SET_STRING);

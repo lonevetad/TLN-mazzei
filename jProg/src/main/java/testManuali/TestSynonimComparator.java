@@ -3,8 +3,8 @@ package testManuali;
 import java.util.LinkedList;
 import java.util.List;
 
+import dataStructures.SortedSetEnhanced;
 import tools.SynonymSet;
-import tools.SynonymSet.SynonymSetComparator;
 
 public class TestSynonimComparator {
 
@@ -12,8 +12,10 @@ public class TestSynonimComparator {
 		SynonymSet s;
 		s = new SynonymSet("a");
 
-		System.out.println(SynonymSetComparator.FIRST_DIFFERENT_FIRST.compare(new SynonymSet(), //
-				s));
+		System.out.println(
+				// SynonymSetComparator.FIRST_DIFFERENT_FIRST
+				SortedSetEnhanced.ComparatorFactoriesSSE.SUBSET_THEN_NON_SHARED_KEYS.compare(new SynonymSet(), //
+						s));
 		var i = s.iterator();
 		System.out.println("s stuff");
 		while (i.hasNext())
@@ -25,13 +27,13 @@ public class TestSynonimComparator {
 	public static void main(String[] args) {
 		int c;
 //		Comparator<SynonymSet>
-		SynonymSetComparator co;
+		SortedSetEnhanced.ComparatorFactoriesSSE co;
 //		List<Comparator<SynonymSet>> comps = Arrays.asList(//
 //				SynonymSet.SYNONYM_COMPARATOR, //
 //				SynonymSet.SYNONYM_COMPARATOR_SUBSET_RELATION, //
 //				SynonymSet.SYNONYM_COMPARATOR_SUBSET_FIRST_SEQUENCE_THEN //
 //		);
-		SynonymSetComparator[] comps = SynonymSetComparator.values();
+		SortedSetEnhanced.ComparatorFactoriesSSE[] comps = SortedSetEnhanced.ComparatorFactoriesSSE.values();
 		List<Ex> ex;
 		ex = getTestPairs();
 		System.out.println("START");
@@ -44,7 +46,8 @@ public class TestSynonimComparator {
 			co = comps[i];
 			System.out.println("comp # " + i + " - " + co.name());
 			for (Ex e : ex) {
-				if ((c = co.compare(e.s1, e.s2)) != e.expexted[i]) {
+				if ((c = co.factoryDelegate.newComparator(SynonymSet.COMPARATOR_SINGLE_SYNONYM).compare(e.s1,
+						e.s2)) != e.expexted[i]) {
 					System.out.println("Non matching: got " + c + ", exp: " + e.expexted[i] + ", s1: " + e.s1
 							+ ",,,, s2: " + e.s2 + "\n\n");
 				} /*

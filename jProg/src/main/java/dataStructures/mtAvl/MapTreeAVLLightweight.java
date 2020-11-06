@@ -1017,8 +1017,9 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 			niter = temp;
 		}
 		// the end
-		while ((temp = successorSorted(n)) != NIL && keyComp.compare(key, temp.k) == 0) 
+		while ((temp = successorSorted(n)) != NIL && keyComp.compare(key, temp.k) == 0) {
 			n = temp;
+		}
 		if (n == niter) {
 			action.accept(niter);
 		} else {
@@ -2447,6 +2448,11 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		}
 
 		@Override
+		public void forEachSimilar(K key, Comparator<K> keyComp, Consumer<K> action) {
+			MapTreeAVLLightweight.this.forEachSimilar(key, keyComp, e -> action.accept(e.getKey()));
+		}
+
+		@Override
 		public Iterator<K> iterator() { return MapTreeAVLLightweight.this.iteratorKey(); }
 
 		@Override
@@ -2480,11 +2486,6 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		}
 
 		@Override
-		public ClosestMatch<Entry<K, V>> closestMatchOf(Entry<K, V> key) {
-			return MapTreeAVLLightweight.this.closestMatchOf(key.getKey());
-		}
-
-		@Override
 		public Comparator<? super Entry<K, V>> comparator() { return MapTreeAVLLightweight.this.compEntry; }
 
 		@Override
@@ -2513,6 +2514,21 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		public void forEach(Consumer<? super Entry<K, V>> action) { MapTreeAVLLightweight.this.forEach(action); }
 
 		@Override
+		public void forEachSimilar(Entry<K, V> key, Comparator<Entry<K, V>> keyComp, Consumer<Entry<K, V>> action) {
+			MapTreeAVLLightweight.this.forEachSimilar(key.getKey(), //
+//					MapTreeAVLLightweight.this.com
+					((k1, k2) -> {
+						return keyComp.compare(MapTreeAVLLightweight.this.getNode(k1),
+								MapTreeAVLLightweight.this.getNode(k2));
+					}), action);
+		}
+
+		@Override
+		public ClosestMatch<Entry<K, V>> closestMatchOf(Entry<K, V> key) {
+			return MapTreeAVLLightweight.this.closestMatchOf(key.getKey());
+		}
+
+		@Override
 		public Iterator<Entry<K, V>> iterator() { return MapTreeAVLLightweight.this.iterator(); }
 
 		@Override
@@ -2524,6 +2540,27 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 
 	protected class SortedSetValueWrapper extends SortedSetWrapper<V> {
 		// implements SortedSet<K> {
+
+		/**
+		 * Cannot be efficient as other set implementations (like those returned by
+		 * {@link MapTreeAVL#keySet()} and {@link MapTreeAVL#entrySet()}) due to the
+		 * lack of efficiency caused by "value-based" search (opposite of "key-based" ).
+		 * <p>
+		 * {@inheritDoc}
+		 */
+		@SuppressWarnings("unchecked")
+		@Override
+		public void forEachSimilar(V key, Comparator<V> keyComp, Consumer<V> action) {
+			Consumer<Entry<K, V>> entryConsumer;
+			if (root == NIL)
+				return;
+			entryConsumer = e -> { if (keyComp.compare(key, e.getValue()) == 0) { action.accept(e.getValue()); } };
+			try {
+				MapTreeAVLLightweight.this.forEachSimilar((K) key, entryConsumer);
+			} catch (ClassCastException cce) {
+				MapTreeAVLLightweight.this.forEach(entryConsumer);
+			}
+		}
 
 		protected SortedSetValueWrapper(Function<V, K> keyExtractor) {
 			super();
@@ -2606,6 +2643,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 
 		@Override
 		public V last() { return MapTreeAVLLightweight.this.peekMaximum().getValue(); }
+
 	}
 
 	// TODO submaps
