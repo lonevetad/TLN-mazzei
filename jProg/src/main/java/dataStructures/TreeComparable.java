@@ -70,6 +70,8 @@ public class TreeComparable<K> implements Stringable {
 		}
 	}
 
+	public long computeDifference(TreeComparable<K> t) { return this.root.computeDissonanceAsLong(t.root); }
+
 	//
 
 	//

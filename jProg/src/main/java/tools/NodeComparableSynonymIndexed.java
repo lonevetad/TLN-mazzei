@@ -233,9 +233,8 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	public void toString(StringBuilder sb) { this.toString(sb, 0); }
 
 	/** Call <code>super</code> before doing anything. */
-	protected void toStringNonCollectionFields(StringBuilder sb) {
-		sb.append(" --> ");
-	}
+	@Override
+	public void toStringNonCollectionFields(StringBuilder sb) { sb.append(" --> "); }
 
 	@Override
 	public void toString(StringBuilder sb, int level) {

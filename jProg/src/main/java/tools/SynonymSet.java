@@ -4,12 +4,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import java.util.SortedSet;
 import java.util.function.Consumer;
 
 import dataStructures.MapTreeAVL;
 import dataStructures.SortedSetEnhanced;
-import dataStructures.SortedSetEnhancedDelegating;
+import dataStructures.minorUtils.SortedSetEnhancedDelegating;
 
 // TODO GENERALIZE TO A SORTED-SET
 /**
@@ -71,7 +70,7 @@ public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneabl
 	protected SortedSetEnhanced<String> alternatives; // THE ALTERNATIVEEEEEEEEEES
 
 	@Override
-	public SortedSet<String> getDelegator() { return alternatives; }
+	public SortedSetEnhanced<String> getDelegator() { return alternatives; }
 
 	@Override
 	public Comparator<String> getKeyComparator() { return Misc.STRING_COMPARATOR; }

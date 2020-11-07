@@ -2,6 +2,7 @@ package dataStructures.treeSimilStrat;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.function.BiConsumer;
 
 import dataStructures.NodeComparable;
 import dataStructures.SortedSetEnhanced;
@@ -48,15 +49,30 @@ public class DissonanceTreeAlgo_AP_TED_Plus<T> implements DissonanceTreeAlgorith
 	 * <p>
 	 * F-y: { F_v : exists x . (x elementof y && (not (v elementof y)) && p(x) ==
 	 * p(v) } <br>
-	 * That means, the result of {@link}
+	 * That means, the result of
+	 * {@link NodeComparable#removePath(NodeComparable, java.util.List)} could be
+	 * useful and fits (because it doesn't return ALL possible subtrees [could lead
+	 * to the Power Set], but just those trees already present which does not share
+	 * anything with the path).
 	 * <p>
 	 * I condense the cost for left, right and inner path into the same concept.
-	 * Further developments could make this difference
+	 * Further developments could make this difference.
 	 */
-	protected long cost(NodeAlteringCosts<T> nodeAlteringCost, NodeComparable<T> f, NodeComparable<T> g) {
-		// may use NodeComparable.removePath to implement "F-y"
-
-		return 0;
+	protected long cost(NodeAlteringCosts<T> nodeAlteringCost, NodeComparable<T> ff, NodeComparable<T> gg) {
+		// may use NodeComparable.removePath to implement "F-y", also
+		// NodeComparable.forEachPath
+		long[] cost = { -1 };
+		BiConsumer<NodeComparable<T>, NodeComparable<T>> whatToDo;
+		whatToDo = (f, g) -> {
+			f.forEachPathNode(gamma -> {
+				SortedSetEnhanced<NodeComparable<T>> e;
+				e = NodeComparable.removePath(f, gamma);
+				// TODO
+			});
+		};
+		whatToDo.accept(ff, gg);
+		whatToDo.accept(gg, ff);
+		return cost[0];
 	}
 
 	/**
@@ -97,7 +113,7 @@ public class DissonanceTreeAlgo_AP_TED_Plus<T> implements DissonanceTreeAlgorith
 //			currentNode=(NodeComparable<T>) nodeAndChildrenIterator[0];
 //			iter=(Iterator<NodeComparable<T>>) nodeAndChildrenIterator[1];
 //			if(iter!=null&&iter.hasNext()) {
-//				todo
+//				todo7
 //			} else todo
 //		}
 

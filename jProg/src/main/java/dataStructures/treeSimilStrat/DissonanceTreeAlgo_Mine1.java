@@ -9,17 +9,12 @@ import dataStructures.minorUtils.DissonanceWeights;
 
 /** @deprecated use {@link DissonanceTreeAlgo_Zhang_Shasha} instead. */
 @Deprecated
-public class DissonanceTreeAlgo_Mine1<T> implements DissonanceTreeAlgorithm<T> {
+public class DissonanceTreeAlgo_Mine1<T> extends ADissonanceTreeAlgo_Mine<T> {
 
 	@Override
 	public long computeDissonance(NodeAlteringCosts<T> nodeAlteringCost, NodeComparable<T> t1,
 			NodeComparable<T> nodeBase) {
-		DissonanceWeights w;
-		w = new DissonanceWeights();
-		w.setWeightDepth(1);
-		w.setWeightMissingNode((int) nodeAlteringCost.insertNodeCost(t1));
-		w.setWeightExceedingNode((int) nodeAlteringCost.deleteNodeCost(t1));
-		return computeDissonance(w, t1, nodeBase);
+		return computeDissonance(this.weigtsFrom(nodeAlteringCost, t1), t1, nodeBase);
 	}
 
 	public long computeDissonance(DissonanceWeights weights, NodeComparable<T> t1, NodeComparable<T> nodeBase) {

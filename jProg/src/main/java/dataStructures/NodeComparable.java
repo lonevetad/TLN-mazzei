@@ -13,7 +13,6 @@ import java.util.function.Function;
 
 import dataStructures.MapTreeAVL.ForEachMode;
 import dataStructures.minorUtils.DissonanceWeights;
-import dataStructures.treeSimilStrat.DissonanceTreeAlgo_Mine1;
 import dataStructures.treeSimilStrat.DissonanceTreeAlgo_Mine2;
 import dataStructures.treeSimilStrat.DissonanceTreeAlgo_Zhang_Shasha;
 import dataStructures.treeSimilStrat.DissonanceTreeAlgorithm;
@@ -179,6 +178,11 @@ public interface NodeComparable<K> extends Stringable {
 
 	public void forEachChildNCFIFOOrdering(Consumer<NodeComparable<K>> action);
 
+	/**
+	 * See {@link #forEachPathNode(Consumer)}, but the returned list is determined
+	 * by a given, high order function to convert a node to something else (like
+	 * itself).
+	 */
 	public default <I> void forEachPathOfSomething(Function<NodeComparable<K>, I> nodeValueGetter,
 			Consumer<List<I>> pathConsumer) {
 		SortedSetEnhanced<NodeComparable<K>> children;
@@ -208,12 +212,20 @@ public interface NodeComparable<K> extends Stringable {
 		recursiveFunc.accept(this); // I'm the root
 	}
 
-	public default void forEachPathKey(Consumer<List<K>> pathConsumer) {
-		forEachPathOfSomething(n -> n.getKeyIdentifier(), pathConsumer);
-	}
-
+	/**
+	 * Iterates over all possible <i>root-to-leaf</i> path.<br>
+	 * BEWARE: the {@link List} is cached, so do NOT collect the instances provided
+	 * by the {@link Consumer} because they are literally the same.<br>
+	 * This calls {@link #forEachPathOfSomething(Function, Consumer)} passing an
+	 * identity function to provide {@link NodeComparable}.
+	 */
 	public default void forEachPathNode(Consumer<List<NodeComparable<K>>> pathConsumer) {
 		forEachPathOfSomething(n -> n, pathConsumer);
+	}
+
+	/** See {@link #forEachPathNode(Consumer)}. */
+	public default void forEachPathKey(Consumer<List<K>> pathConsumer) {
+		forEachPathOfSomething(n -> n.getKeyIdentifier(), pathConsumer);
 	}
 
 	public default Iterator<List<NodeComparable<K>>> iteratorPathNodes() {
@@ -295,7 +307,9 @@ public interface NodeComparable<K> extends Stringable {
 
 	/** Call <code>super</code> before doing anything. */
 	public default void toStringNonCollectionFields(StringBuilder sb) {
-		sb.append(" --> ");
+		sb.append(", father: [");
+		sb.append(this.getFather() == null ? null : getFather().getKeyIdentifier());
+		sb.append("] --> ");
 	}
 
 	@Override
@@ -311,9 +325,10 @@ public interface NodeComparable<K> extends Stringable {
 			sb.append(k);
 		}
 		toStringNonCollectionFields(sb);
-		sb.append(" -----> children:");
+		sb.append(", children: [");
 		lev = level + 1;
 		this.forEachChildNC((child) -> child.toString(sb.append('\n'), lev));
+		sb.append(']');
 	}
 
 	//
@@ -432,8 +447,8 @@ public interface NodeComparable<K> extends Stringable {
 
 		@Override
 		public long computeDissonanceAsLong(NodeComparable<T> nodeBase, DissonanceWeights weights) {
-			return new DissonanceTreeAlgo_Mine1<T>().computeDissonance(weights, this, nodeBase);
-//			return computeDissonanceAsLong_NoRecursionCheck(nodeBase, weights, weights.getWeightDepth());
+			return new DissonanceTreeAlgo_Zhang_Shasha<T>().computeDissonance(NodeAlteringCosts.newDefaultNAC(), this,
+					nodeBase);
 		}
 
 //		protected long computeDissonanceAsLong_NoRecursionCheck(NodeComparable<T> nodeBase, DissonanceWeights weights,
@@ -544,6 +559,8 @@ public interface NodeComparable<K> extends Stringable {
 //			this.children = this.backMap.toSetValue(n -> n.getKeyIdentifier());
 			this.children = this.backMap.toSetKey();
 			this.dissonanceComputator = new DissonanceTreeAlgo_Zhang_Shasha<>();
+//			this.dissonanceComputator = new DissonanceTreeAlgo_Mine3_AllPathBruteForce<>();
+//			this.dissonanceComputator = new DissonanceTreeAlgo_Mine4_AllPathBruteForce<>();
 		}
 
 		@Override
@@ -648,14 +665,14 @@ public interface NodeComparable<K> extends Stringable {
 			this.path.add(item);
 			nt = new NodeTraversing(node);
 			this.stackNodes.addFirst(nt);
-			this.hasNext = false;
+			this.hasNext = true;
 			// inductive case: all of descendants
 			// check if it's possible to descend more
 			while (!(node.isLeafNC() || (children = node.getChildrenNC()).isEmpty())) {
 				nt.iteratorChildren = children.iterator();
 				// descend, going down to another level
 				node = nt.iteratorChildren.next();
-				this.hasNext |= nt.iteratorChildren.hasNext();
+//				this.hasNext |= nt.iteratorChildren.hasNext();
 				// preparing the next node
 				nt = new NodeTraversing(node);
 				this.stackNodes.addFirst(nt);

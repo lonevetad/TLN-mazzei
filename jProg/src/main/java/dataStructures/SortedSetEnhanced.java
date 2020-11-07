@@ -4,13 +4,16 @@ import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.SortedSet;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 import tools.CloserGetter;
 import tools.ClosestMatch;
+import tools.Comparators;
 import tools.DifferenceCalculator;
-import translators.secondWay.TransferTranslationRuleBased;
+import translators.secondWay.ATransferTranslationRuleBased;
 
 /**
  * A {@link SortedSet} which is enriched with other functionalities.<br>
@@ -27,7 +30,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	public Comparator<E> getKeyComparator();
 
-	public SortedSetEnhanced<E> newSortedSetEnhanced(Comparator<E> comp);
+	public default SortedSetEnhanced<E> newSortedSetEnhanced(Comparator<E> comp) { return newDefaultSet(comp); }
 
 	/** Just a builder. */
 	public default SortedSetEnhanced<E> newSortedSetEnhanced() {
@@ -39,7 +42,7 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 	/**
 	 * Computes if there are at least one "alternatives" in common (i.e., those
 	 * ElementGrammarWithAlternatives are applicable in the context of
-	 * {@link TransferTranslationRuleBased}).
+	 * {@link ATransferTranslationRuleBased}).
 	 */
 	public default boolean areIntersecting(SortedSetEnhanced<E> eg) {
 		int s1, s2;
@@ -94,10 +97,25 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 			biggerSetMap = this;
 //			eg=this;
 		}
+//		System.out.println("\n\n start adding into:");
+//		this.forEach(System.out::println);
+//		System.out.println("and");
+//		eg.forEach(System.out::println);
+//		System.out.println("--- add to intersection");
+//		System.out.println(this.getClass().getName());
+//		System.out.println("...ORIGINAL INTERSECTION " + inters.size());
+//		inters.forEach(System.out::println);
+//		System.out.println("-----");
 		smallerSet.forEach((elem) -> {
-			if (biggerSetMap.contains(elem))
+//			System.out.println(" - " + elem);
+			if (biggerSetMap.contains(elem)) {
+//				System.out.println("added------------");
 				inters.add(elem);
+			}
 		});
+//		System.out.println("...and the intersection is ...." + inters.size());
+//		inters.forEach(System.out::println);
+//		System.out.println("....");
 		return inters;
 	}
 
@@ -129,6 +147,47 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		}
 		smallerSet.forEach((s) -> { if (biggerSetMap.contains(s)) { countIntersections[0]++; } });
 		return countIntersections[0];
+	}
+
+	/** A.k.a. {@link #symmetricDifference(SortedSetEnhanced)}. */
+	public default SortedSetEnhanced<E> disjunctiveUnion(SortedSetEnhanced<E> eg) {
+		return symmetricDifference(eg);
+	}
+
+	/**
+	 * A.k.a. {@link #disjunctiveUnion(SortedSetEnhanced)}. Returns all elements of
+	 * both sets (this one and the given one) that are NOT shared.
+	 */
+	public default SortedSetEnhanced<E> symmetricDifference(SortedSetEnhanced<E> eg) {
+		SortedSetEnhanced<E> smallerSet, symmDiff;
+		SortedSetEnhanced<E> biggerSetMap;
+		if (eg == null)
+			return null;
+		if (eg == this)
+			return this;
+		symmDiff = newSortedSetEnhanced();
+		/*
+		 * since iterating is O(n) and "containsKey" is O(log(n)), iterates over the
+		 * smallest set
+		 */
+		if (this.size() <= eg.size()) {
+			smallerSet = this;
+			biggerSetMap = eg;
+		} else {
+			smallerSet = eg;
+			biggerSetMap = this;
+		}
+		// first fill the bigger
+		biggerSetMap.forEach(symmDiff::add);
+		// then scratch out the shared elements
+		smallerSet.forEach((elem) -> {
+			if (symmDiff.contains(elem)) {
+				symmDiff.remove(elem);
+			} else {
+				symmDiff.add(elem);
+			}
+		});
+		return symmDiff;
 	}
 
 	/**
@@ -198,6 +257,28 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 
 	public static final ComparatorSSEFactory COMPARATOR_FACTORY_PREFERRED = //
 			ComparatorFactoriesSSE.KEY_ORDER; // SUBSET_THEN_NON_SHARED_KEYS;
+
+	public static <T> SortedSetEnhanced<T> newDefaultSet(Comparator<T> itemsComparator) {
+		MapTreeAVL<T, T> t;
+		t = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, itemsComparator);
+		return t.toSetKey();
+	}
+
+	public static <K, T> SortedSetEnhanced<T> newDefaultSetIndexedBy(Function<T, K> keyExtractor,
+			Comparator<K> keysComparator) {
+		MapTreeAVL<T, T> t;
+		Objects.requireNonNull(keyExtractor, "A key extractor must be provided");
+		t = MapTreeAVL.newMap(MapTreeAVL.Optimizations.MinMaxIndexIteration, (i1, i2) -> {
+			if (i1 == i2)
+				return 0;
+			if (i1 == null)
+				return -1;
+			if (i2 == null)
+				return 1;
+			return keysComparator.compare(keyExtractor.apply(i1), keyExtractor.apply(i2));
+		});
+		return t.toSetKey();
+	}
 
 	public static <T> DifferenceCalculator<SortedSetEnhanced<T>> newDifferenceCalc(Comparator<T> keyComparator) {
 		return differenceCalcFromSetComparator(COMPARATOR_FACTORY_PREFERRED.newComparator(keyComparator));
@@ -554,5 +635,13 @@ public interface SortedSetEnhanced<E> extends SortedSet<E> {
 		public int finishCompareOnIntersecting(SortedSetEnhanced<T> eg1, SortedSetEnhanced<T> eg2) {
 			return 0; // just a simple intersection
 		}
+	}
+
+	public static void main(String[] args) {
+		SortedSetEnhanced<Integer> s;
+		s = newDefaultSet(Comparators.INTEGER_COMPARATOR);
+		System.out.println("start");
+		s.forEach(i -> System.out.println(i));
+		System.out.println("end");
 	}
 }

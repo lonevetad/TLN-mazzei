@@ -8,9 +8,9 @@ import tools.SynonymSet;
 
 public class TestTransferItEng_SubtreeRule {
 
-	public static void main(String[] args) { testSingle(); }
-
-	public static void testSingle() {
+	public static void main(String[] args) {
+//		testSingle(); }
+//	public static void testSingle() {
 		NodeParsedSentence root, converted;
 		NodeParsedSentence subj, obj;
 		System.out.println("START \nby listing rules:");
