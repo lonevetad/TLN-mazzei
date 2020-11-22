@@ -1,0 +1,332 @@
+parsing:
+A me piace il colore giallo.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 280,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 28,
+      "text": "A me piace il colore giallo.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "piace"
+        },
+        {
+          "dep": "case",
+          "governor": 2,
+          "governorGloss": "me",
+          "dependent": 1,
+          "dependentGloss": "A"
+        },
+        {
+          "dep": "nmod:a",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 2,
+          "dependentGloss": "me"
+        },
+        {
+          "dep": "det",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 4,
+          "dependentGloss": "il"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 5,
+          "dependentGloss": "colore"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "colore",
+          "dependent": 6,
+          "dependentGloss": "giallo"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "piace",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "A",
+          "originalText": "A",
+          "lemma": "a",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "A a+prep",
+          "selected_morpho": "a+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "me",
+          "originalText": "me",
+          "lemma": "me",
+          "characterOffsetBegin": 2,
+          "characterOffsetEnd": 4,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "me me+pron+nom+_+1+sing+strong me+pron+acc+_+1+sing+strong",
+          "selected_morpho": "me+pron+nom+_+1+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "piace",
+          "originalText": "piace",
+          "lemma": "piacere",
+          "characterOffsetBegin": 5,
+          "characterOffsetEnd": 10,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "piace piacere+v+indic+pres+nil+3+sing",
+          "selected_morpho": "piacere+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "il",
+          "originalText": "il",
+          "lemma": "il",
+          "characterOffsetBegin": 11,
+          "characterOffsetEnd": 13,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "il il+art+m+sing",
+          "selected_morpho": "il+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "colore",
+          "originalText": "colore",
+          "lemma": "colore",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 20,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "colore colore+n+m+sing",
+          "selected_morpho": "colore+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "giallo",
+          "originalText": "giallo",
+          "lemma": "giallo",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 27,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "giallo giallo+adj+m+sing+pst giallo+n+m+sing",
+          "selected_morpho": "giallo+adj+m+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 28,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 33 milliseconds.

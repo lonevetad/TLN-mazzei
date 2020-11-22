@@ -1,4 +1,6 @@
-package tools;
+package tools.impl;
+
+import tools.CloserGetter;
 
 public class CloserGetters {
 	public static final CloserGetter<Integer> INTEGER_CLOSER_GETTER = (n, n1, n2) -> CloserGetter.getCloserTo(n,

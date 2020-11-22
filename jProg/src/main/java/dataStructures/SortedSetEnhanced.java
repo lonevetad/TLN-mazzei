@@ -13,7 +13,7 @@ import tools.CloserGetter;
 import tools.ClosestMatch;
 import tools.Comparators;
 import tools.DifferenceCalculator;
-import translators.secondWay.ATransferTranslationRuleBased;
+import translators.v2.ATransferTranslationRuleBased;
 
 /**
  * A {@link SortedSet} which is enriched with other functionalities.<br>

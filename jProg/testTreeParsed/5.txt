@@ -6,8 +6,8 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-21",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 1000,0 tokens/sec.",
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 21 tokens at 500,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -901,12 +901,7 @@ NDTTint [gloss= parer, pos= S , lemma=parer , indexID=3, dep= ROOT , isRoot=T, f
 	NDTTint [gloss= nave, pos= S , lemma=nave , indexID=7, dep= conj , isRoot=F, father=3-parer, features= [Gender-[Fem], Number-[Sing], children= [
 		NDTTint [gloss= una, pos= RI , lemma=una , indexID=6, dep= det , isRoot=F, father=7-nave, features= [Definite-[Ind], Gender-[Fem], Number-[Sing], PronType-[Art], children= []
 		NDTTint [gloss= cotale, pos= A , lemma=cotale , indexID=8, dep= amod , isRoot=F, father=7-nave, features= [Gender-[Masc], Number-[Sing], children= []	]
-	NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= conj , isRoot=F, father=3-parer, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= [
-		NDTTint [gloss= superflua, pos= A , lemma=superfluo , indexID=15, dep= xcomp , isRoot=F, father=10-renderebbe, features= [Gender-[Fem], Number-[Sing], children= [
-			NDTTint [gloss= quest', pos= DD , lemma=questo , indexID=11, dep= det , isRoot=F, father=15-superflua, features= [Gender-[Masc], Number-[Sing], PronType-[Dem], children= []
-			NDTTint [gloss= altra, pos= A , lemma=altro , indexID=12, dep= amod , isRoot=F, father=15-superflua, features= [Gender-[Fem], Number-[Sing], children= []
-			NDTTint [gloss= po', pos= B , lemma=po' , indexID=14, dep= advmod , isRoot=F, father=15-superflua, features= [, children= [
-				NDTTint [gloss= un, pos= RI , lemma=un , indexID=13, dep= det , isRoot=F, father=14-po', features= [Definite-[Ind], Gender-[Masc], Number-[Sing], PronType-[Art], children= []			]		]	]
+	NDTTint [gloss= renderebbe, pos= V , lemma=rendere , indexID=10, dep= conj , isRoot=F, father=3-parer, features= [Mood-[Cnd], Number-[Sing], Person-[3], Tense-[Pres], VerbForm-[Fin], children= []
 	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=16, dep= punct , isRoot=F, father=3-parer, features= [, children= []
 	NDTTint [gloss= ?, pos= X , lemma=? , indexID=18, dep= conj , isRoot=F, father=3-parer, features= [, children= [
 		NDTTint [gloss= non, pos= BN , lemma=non , indexID=17, dep= neg , isRoot=F, father=18-?, features= [PronType-[Neg], children= []

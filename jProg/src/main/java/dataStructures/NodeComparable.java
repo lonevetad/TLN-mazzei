@@ -61,6 +61,7 @@ public interface NodeComparable<K> extends Stringable {
 		if (child == null)
 			return this;
 		childHeight = child.getHeightNode();
+		if (getHeightNode() == HEIGHT_OF_NEW_NODE) { this.setHeightNode(0); }
 		if (childHeight != HEIGHT_OF_NEW_NODE && childHeight < getHeightNode()) { return this; } // no cycles allowed
 		children = getChildrenNC();
 		if (children == null) { return this; }
@@ -133,8 +134,9 @@ public interface NodeComparable<K> extends Stringable {
 	}
 
 	/**
-	 * in future releases, the score (compute
-	 * througj{@link #computeDissonanceAsLong(NodeComparable)}
+	 * In future releases or subclasses, the score (compute through
+	 * {@link #computeDissonanceAsLong(NodeComparable)}) may require to take in
+	 * advice the keys to score a difference.
 	 */
 	public default long scoreKeyCompatibilityWith(K anotherKey) { return 1; }
 
@@ -404,7 +406,7 @@ public interface NodeComparable<K> extends Stringable {
 	public static abstract class NodeComparableDefaultAlghoritms<T> implements NodeComparable<T> {
 		private static final long serialVersionUID = -651032512L;
 
-		protected int heightNode = 0;
+		protected int heightNode = HEIGHT_OF_NEW_NODE;
 		protected NodeComparable<T> father;
 
 		@Override

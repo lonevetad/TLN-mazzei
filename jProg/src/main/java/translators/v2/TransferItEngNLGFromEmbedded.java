@@ -1,4 +1,4 @@
-package translators.secondWay;
+package translators.v2;
 
 import java.util.Map;
 import java.util.function.Function;

@@ -9,9 +9,16 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public final class Iterables {
+
+	// INTERFACES
+
 	public static interface ForEacher<T> {
 		public void forEach(Consumer<T> action);
 	}
+
+	//
+
+	// ACTUAL METHODS
 
 	//
 
@@ -55,11 +62,11 @@ public final class Iterables {
 
 	//
 
-	public static <T> Iterable<T> of(Collection<T> c) { return c; }
+	public static <T> IterableSized<T> of(Collection<T> c) { return IterableSized.from(c); }
 
-	public static <T> Iterable<T> of(T[] array) { return Arrays.asList(array); }
+	public static <T> IterableSized<T> of(T[] array) { return IterableSized.from(array); }
 
-	public static <T> Iterable<T> of(Stream<T> c) { return c.collect(Collectors.toList()); }
+	public static <T> IterableSized<T> of(Stream<T> c) { return IterableSized.from(c.collect(Collectors.toList())); }
 
-	public static <K, V> Iterable<K> of(Map<K, V> c) { return c.keySet(); }
+	public static <K, V> IterableSized<K> of(Map<K, V> c) { return IterableSized.from(c.keySet()); }
 }

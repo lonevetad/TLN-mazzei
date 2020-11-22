@@ -1,0 +1,191 @@
+parsing:
+Invia la lettera.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 4 tokens at 266,7 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 17,
+      "text": "Invia la lettera.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Invia"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "lettera",
+          "dependent": 2,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nmod",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 3,
+          "dependentGloss": "lettera"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Invia"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "lettera",
+          "dependent": 2,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nmod",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 3,
+          "dependentGloss": "lettera"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 1,
+          "dependentGloss": "Invia"
+        },
+        {
+          "dep": "det",
+          "governor": 3,
+          "governorGloss": "lettera",
+          "dependent": 2,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "nmod",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 3,
+          "dependentGloss": "lettera"
+        },
+        {
+          "dep": "punct",
+          "governor": 1,
+          "governorGloss": "Invia",
+          "dependent": 4,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Invia",
+          "originalText": "Invia",
+          "lemma": "Invia",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 5,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "Invia inviare+v+imp+pres+nil+2+sing inviare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 8,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "lettera",
+          "originalText": "lettera",
+          "lemma": "lettera",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 16,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "lettera lettera+n+f+sing",
+          "selected_morpho": "lettera+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 17,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 38 milliseconds.

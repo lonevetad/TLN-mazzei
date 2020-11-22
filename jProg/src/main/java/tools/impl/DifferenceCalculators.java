@@ -1,4 +1,6 @@
-package tools;
+package tools.impl;
+
+import tools.DifferenceCalculator;
 
 public class DifferenceCalculators {
 	public static final DifferenceCalculator<Integer> INTEGER_DIFFERENCE_CALC = (n1, n2) -> n1 - n2;

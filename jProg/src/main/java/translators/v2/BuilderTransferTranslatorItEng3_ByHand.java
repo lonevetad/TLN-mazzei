@@ -1,4 +1,4 @@
-package translators.secondWay;
+package translators.v2;
 
 import common.ElemGrammarBase;
 import common.NodeParsedSentence;

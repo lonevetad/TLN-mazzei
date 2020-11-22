@@ -91,11 +91,13 @@ public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 		n = (NodeAVL_MinIter) nnn;
 		k = n.k;
 		v = n.v;
-		if (root == NIL) {
+		if (root == NIL || size == 0) {
 			size = 1;
 			root = n;
 			minValue = n;
 			n.nextInOrder = n.prevInOrder = n;// self linking
+			NIL.father = NIL.left = NIL.right = NIL;
+			((NodeAVL_MinIter) NIL).nextInOrder = ((NodeAVL_MinIter) NIL).prevInOrder = (NodeAVL_MinIter) NIL;
 			return null;
 		}
 //else
@@ -380,13 +382,12 @@ public class MapTreeAVLMinIter<K, V> extends MapTreeAVLIndexable<K, V> {
 
 		@Override
 		protected void restart() {
-			jumps = 0;
-			canRemove = false;
+			super.restart();
 			current = end = normalOrder ? minValue : minValue.prevInOrder;
 		}
 
 		@Override
-		public boolean hasNext() { return (size > 0) && (current != end || jumps == 0); }
+		public boolean hasNext() { return (!isEmpty) && (size > 0) && (current != end || jumps == 0); }
 	}
 
 	public static void main(String[] args) {

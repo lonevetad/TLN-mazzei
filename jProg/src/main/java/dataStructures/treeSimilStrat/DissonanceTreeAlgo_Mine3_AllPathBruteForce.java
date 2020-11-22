@@ -9,6 +9,7 @@ import dataStructures.NodeComparable;
 import testManuali.TreeCompInteger;
 import tools.EditDistance;
 import tools.EditDistance.EqualityChecker;
+import tools.impl.EditDistanceLevenshtein;
 
 /**
  * Simple idea: map each tree to a set of all root-to-leaf path; then sum up the
@@ -49,6 +50,8 @@ public class DissonanceTreeAlgo_Mine3_AllPathBruteForce<T> extends ADissonanceTr
 		long[] cost = { -1 };
 		Comparator<NodeComparable<T>> nodeComparatorOnlyByKey;
 		EqualityChecker<NodeComparable<T>> equalityCheckerKey;
+		EditDistance ed;
+		ed = new EditDistanceLevenshtein();
 		nodeComparatorOnlyByKey = (n1, n2) -> {
 			return n1.getKeyComparator().compare(n1.getKeyIdentifier(), n2.getKeyIdentifier());
 		};
@@ -57,7 +60,7 @@ public class DissonanceTreeAlgo_Mine3_AllPathBruteForce<T> extends ADissonanceTr
 			long betterCost = -1, diff;
 			Iterator<List<NodeComparable<T>>> gpi = gg.iteratorPathNodes();
 			while (betterCost != 0 && gpi.hasNext()) {
-				diff = EditDistance.editDistance(l, gpi.next(), equalityCheckerKey);
+				diff = ed.editDistance(l, gpi.next(), equalityCheckerKey);
 				if (betterCost == -1 || diff < betterCost) { betterCost = diff; }
 			}
 			if (betterCost < 0)

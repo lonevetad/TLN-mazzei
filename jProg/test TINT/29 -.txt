@@ -1,0 +1,697 @@
+parsing:
+La partenza fu ardua considerando la complesso dell'esercizio assegnato e la documentazione scarna.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 15 tokens at 1363,6 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 99,
+      "text": "La partenza fu ardua considerando la complesso dell\u0027esercizio assegnato e la documentazione scarna.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "ardua"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "partenza",
+          "dependent": 1,
+          "dependentGloss": "La"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 2,
+          "dependentGloss": "partenza"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 3,
+          "dependentGloss": "fu"
+        },
+        {
+          "dep": "advcl",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 5,
+          "dependentGloss": "considerando"
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 6,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "considerando",
+          "dependent": 7,
+          "dependentGloss": "complesso"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 8,
+          "dependentGloss": "dell\u0027"
+        },
+        {
+          "dep": "nmod",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 9,
+          "dependentGloss": "esercizio"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 10,
+          "dependentGloss": "assegnato"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 11,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "det",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 12,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "conj",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 13,
+          "dependentGloss": "documentazione"
+        },
+        {
+          "dep": "amod",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 14,
+          "dependentGloss": "scarna"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 15,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "ardua"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "partenza",
+          "dependent": 1,
+          "dependentGloss": "La"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 2,
+          "dependentGloss": "partenza"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 3,
+          "dependentGloss": "fu"
+        },
+        {
+          "dep": "advcl",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 5,
+          "dependentGloss": "considerando"
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 6,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "considerando",
+          "dependent": 7,
+          "dependentGloss": "complesso"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 8,
+          "dependentGloss": "dell\u0027"
+        },
+        {
+          "dep": "nmod:dell\u0027",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 9,
+          "dependentGloss": "esercizio"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 10,
+          "dependentGloss": "assegnato"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 11,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "det",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 12,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "conj:e",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 13,
+          "dependentGloss": "documentazione"
+        },
+        {
+          "dep": "amod",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 14,
+          "dependentGloss": "scarna"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 15,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "ardua"
+        },
+        {
+          "dep": "det",
+          "governor": 2,
+          "governorGloss": "partenza",
+          "dependent": 1,
+          "dependentGloss": "La"
+        },
+        {
+          "dep": "nsubjpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 2,
+          "dependentGloss": "partenza"
+        },
+        {
+          "dep": "auxpass",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 3,
+          "dependentGloss": "fu"
+        },
+        {
+          "dep": "advcl",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 5,
+          "dependentGloss": "considerando"
+        },
+        {
+          "dep": "det",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 6,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "considerando",
+          "dependent": 7,
+          "dependentGloss": "complesso"
+        },
+        {
+          "dep": "case",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 8,
+          "dependentGloss": "dell\u0027"
+        },
+        {
+          "dep": "nmod:dell\u0027",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 9,
+          "dependentGloss": "esercizio"
+        },
+        {
+          "dep": "acl",
+          "governor": 9,
+          "governorGloss": "esercizio",
+          "dependent": 10,
+          "dependentGloss": "assegnato"
+        },
+        {
+          "dep": "cc",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 11,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "det",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 12,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 5,
+          "governorGloss": "considerando",
+          "dependent": 13,
+          "dependentGloss": "documentazione"
+        },
+        {
+          "dep": "conj:e",
+          "governor": 7,
+          "governorGloss": "complesso",
+          "dependent": 13,
+          "dependentGloss": "documentazione"
+        },
+        {
+          "dep": "amod",
+          "governor": 13,
+          "governorGloss": "documentazione",
+          "dependent": 14,
+          "dependentGloss": "scarna"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "ardua",
+          "dependent": 15,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "La",
+          "originalText": "La",
+          "lemma": "la",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "La la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "partenza",
+          "originalText": "partenza",
+          "lemma": "partenza",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 11,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "partenza partenza+n+f+sing",
+          "selected_morpho": "partenza+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "fu",
+          "originalText": "fu",
+          "lemma": "essere",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 14,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPast|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "fu essere+v+indic+pass+nil+3+sing",
+          "selected_morpho": "essere+v+indic+pass+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "ardua",
+          "originalText": "ardua",
+          "lemma": "arduare",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 20,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ardua arduo+adj+f+sing+pst",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "considerando",
+          "originalText": "considerando",
+          "lemma": "considerare",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 33,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dGer",
+          "ner": "O",
+          "full_morpho": "considerando considerare+v+gerundio+pres+nil+nil+nil",
+          "selected_morpho": "considerare+v+gerundio+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Ger"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 34,
+          "characterOffsetEnd": 36,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "complesso",
+          "originalText": "complesso",
+          "lemma": "complesso",
+          "characterOffsetBegin": 37,
+          "characterOffsetEnd": 46,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "complesso complesso+adj+m+sing+pst complesso+n+m+sing",
+          "selected_morpho": "complesso+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "dell\u0027",
+          "originalText": "dell\u0027",
+          "lemma": "dell\u0027",
+          "characterOffsetBegin": 47,
+          "characterOffsetEnd": 52,
+          "pos": "E+RD",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "dell\u0027 dell\u0027~dell\u0027+prep/la~det+art+f+sing dell\u0027~dell\u0027+prep/il~det+art+m+sing",
+          "selected_morpho": "dell\u0027~dell\u0027+prep/la~det+art+f+sing",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 9,
+          "word": "esercizio",
+          "originalText": "esercizio",
+          "lemma": "esercizio",
+          "characterOffsetBegin": 52,
+          "characterOffsetEnd": 61,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "esercizio esercizio+n+m+sing",
+          "selected_morpho": "esercizio+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "assegnato",
+          "originalText": "assegnato",
+          "lemma": "assegnare",
+          "characterOffsetBegin": 62,
+          "characterOffsetEnd": 71,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "assegnato assegnare+v+part+pass+m+nil+sing assegnato+adj+m+sing+pst",
+          "selected_morpho": "assegnare+v+part+pass+m+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": "e",
+          "originalText": "e",
+          "lemma": "e",
+          "characterOffsetBegin": 72,
+          "characterOffsetEnd": 73,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "e e+conj",
+          "selected_morpho": "e+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 12,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 74,
+          "characterOffsetEnd": 76,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 13,
+          "word": "documentazione",
+          "originalText": "documentazione",
+          "lemma": "documentazione",
+          "characterOffsetBegin": 77,
+          "characterOffsetEnd": 91,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "documentazione documentazione+n+f+sing",
+          "selected_morpho": "documentazione+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 14,
+          "word": "scarna",
+          "originalText": "scarna",
+          "lemma": "scarno",
+          "characterOffsetBegin": 92,
+          "characterOffsetEnd": 98,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "scarna scarno+adj+f+sing+pst",
+          "selected_morpho": "scarno+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 15,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 98,
+          "characterOffsetEnd": 99,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 21 milliseconds.

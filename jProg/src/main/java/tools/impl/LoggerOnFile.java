@@ -1,9 +1,11 @@
-package tools;
+package tools.impl;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import tools.LoggerMessages;
 
 public class LoggerOnFile implements LoggerMessages {
 	private static final long serialVersionUID = 5401484L;

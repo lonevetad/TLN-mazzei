@@ -6,8 +6,8 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-21",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 451,6 tokens/sec.",
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 14 tokens at 1166,7 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -624,8 +624,5 @@ NDTTint [gloss= avida, pos= V , lemma=avidare , indexID=1, dep= ROOT , isRoot=T,
 		NDTTint [gloss= vero, pos= A , lemma=vero , indexID=7, dep= amod , isRoot=F, father=6-amore, features= [Gender-[Masc], Number-[Sing], children= []	]
 	NDTTint [gloss= ,, pos= FF , lemma=[PUNCT] , indexID=8, dep= punct , isRoot=F, father=1-avida, features= [, children= []
 	NDTTint [gloss= ma, pos= CC , lemma=ma , indexID=9, dep= cc , isRoot=F, father=1-avida, features= [, children= []
-	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= [
-		NDTTint [gloss= sedativi, pos= A , lemma=sedativo , indexID=11, dep= xcomp , isRoot=F, father=10-ingoiai, features= [Gender-[Masc], Number-[Plur], children= [
-			NDTTint [gloss= diva, pos= S , lemma=diva , indexID=13, dep= nmod , isRoot=F, father=11-sedativi, features= [Gender-[Fem], Number-[Sing], children= [
-				NDTTint [gloss= da, pos= E , lemma=da , indexID=12, dep= case , isRoot=F, father=13-diva, features= [, children= []			]		]	]
+	NDTTint [gloss= ingoiai, pos= V , lemma=ingoiare , indexID=10, dep= conj , isRoot=F, father=1-avida, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Past], VerbForm-[Fin], children= []
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=14, dep= punct , isRoot=F, father=1-avida, features= [, children= []]

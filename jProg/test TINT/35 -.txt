@@ -1,0 +1,345 @@
+parsing:
+Io ho infornato una torta gustosa.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.1 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.1 sec. for 7 tokens at 88,6 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 34,
+      "text": "Io ho infornato una torta gustosa.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "infornato"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 1,
+          "dependentGloss": "Io"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 2,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 4,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 5,
+          "dependentGloss": "torta"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 6,
+          "dependentGloss": "gustosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "infornato"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 1,
+          "dependentGloss": "Io"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 2,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 4,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 5,
+          "dependentGloss": "torta"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 6,
+          "dependentGloss": "gustosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 3,
+          "dependentGloss": "infornato"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 1,
+          "dependentGloss": "Io"
+        },
+        {
+          "dep": "aux",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 2,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "det",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 4,
+          "dependentGloss": "una"
+        },
+        {
+          "dep": "amod",
+          "governor": 6,
+          "governorGloss": "gustosa",
+          "dependent": 5,
+          "dependentGloss": "torta"
+        },
+        {
+          "dep": "dobj",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 6,
+          "dependentGloss": "gustosa"
+        },
+        {
+          "dep": "punct",
+          "governor": 3,
+          "governorGloss": "infornato",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Io",
+          "originalText": "Io",
+          "lemma": "io",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "Io io+pron+nom+_+1+sing+strong io+pron+nom+_+1+sing+strong",
+          "selected_morpho": "io+pron+nom+_+1+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "ho",
+          "originalText": "ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 5,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "infornato",
+          "originalText": "infornato",
+          "lemma": "infornare",
+          "characterOffsetBegin": 6,
+          "characterOffsetEnd": 15,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "infornato infornare+v+part+pass+m+nil+sing",
+          "selected_morpho": "infornare+v+part+pass+m+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "una",
+          "originalText": "una",
+          "lemma": "una",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 19,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "una una+pron+_+f+3+sing+ind una+art+f+sing",
+          "selected_morpho": "una+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "torta",
+          "originalText": "torta",
+          "lemma": "torto",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 25,
+          "pos": "A",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "torta torcere+v+part+pass+f+nil+sing torta+n+f+sing torto+adj+f+sing+pst",
+          "selected_morpho": "torto+adj+f+sing+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "gustosa",
+          "originalText": "gustosa",
+          "lemma": "gustosa",
+          "characterOffsetBegin": 26,
+          "characterOffsetEnd": 33,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "gustosa gustoso+adj+f+sing+pst",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 34,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 99 milliseconds.

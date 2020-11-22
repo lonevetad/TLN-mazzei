@@ -10,10 +10,10 @@ import java.util.function.Consumer;
 
 import dataStructures.NodeComparable;
 import dataStructures.SortedSetEnhanced;
-import dataStructures.mtAvl.MapTreeAVLLightweight;
 import tools.Comparators;
 import tools.EditDistance;
 import tools.EditDistance.EqualityChecker;
+import tools.impl.EditDistanceLevenshtein;
 
 /**
  * Suffers from the same problems of
@@ -29,7 +29,9 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 		Comparator<List<T>> listComparator;
 		EqualityChecker<T> equalityCheckerKey;
 		SortedSetEnhanced<List<T>> fpaths, gpaths, sharedPath;
-//		nodeComparatorOnlyByKey = (n1, n2) -> {
+		EditDistance ed;
+		ed = new EditDistanceLevenshtein();
+		// nodeComparatorOnlyByKey = (n1, n2) -> {
 //			return n1.getKeyComparator().compare(n1.getKeyIdentifier(), n2.getKeyIdentifier());
 //		};
 		listComparator = Comparators.newListComparator(ff.getKeyComparator());
@@ -66,7 +68,6 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 				gggg.remove(l);
 			});
 		}
-//		System.out.println("intersection removed");
 		// recycle "fpaths" as "minor set", "gpaths" -> greatest, "sharedPath" -> "temp"
 		if (fpaths.size() > gpaths.size()) {
 			sharedPath = fpaths;
@@ -75,7 +76,6 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 		}
 		// iterates over the longest to allocate less iterators
 		betterCost = new long[] { 0 };
-//		System.out.println("HERE WE GO");
 		{ // Java's Compiler wants final variables inside lambdas ...
 			final SortedSetEnhanced<List<T>> ffff;
 			ffff = fpaths;
@@ -86,7 +86,7 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 				fpi = ffff.iterator();
 				while (betterCost[0] != 0 && // should never be 0 but ...
 				fpi.hasNext()) {
-					diff = EditDistance.editDistance(l, fpi.next(), equalityCheckerKey);
+					diff = ed.editDistance(l, fpi.next(), equalityCheckerKey);
 					if (betterCost[0] == -1 || diff < betterCost[0]) { betterCost[0] = diff; }
 				}
 				if (betterCost[0] < 0)
@@ -117,6 +117,8 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 		Comparator<List<NodeComparable<T>>> listComparator;
 		EqualityChecker<NodeComparable<T>> equalityCheckerKey;
 		SortedSetEnhanced<List<NodeComparable<T>>> fpaths, gpaths, sharedPath;
+		EditDistance ed;
+		ed = new EditDistanceLevenshtein();
 		nodeComparatorOnlyByKey = (n1, n2) -> {
 			return n1.getKeyComparator().compare(n1.getKeyIdentifier(), n2.getKeyIdentifier());
 		};
@@ -130,15 +132,15 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 		// shared paths does not contribute to calculating the cost
 		sharedPath = fpaths.intersectionWith(gpaths);
 
-		System.out.println("intersection got");
-		sharedPath.forEach(l -> System.out.println("p: " + Arrays.toString(l.toArray())));
-		System.out.println("print by tree shape");
-		MapTreeAVLLightweight.SortedSetWrapper ssw_sp;
-		ssw_sp = (MapTreeAVLLightweight.SortedSetWrapper) sharedPath;
-		System.out.println(ssw_sp.getBackTree());
-		System.out.println("foreaching");
-		sharedPath.forEach(l -> System.out.println(l));
-		System.out.println("\n\n");
+//		System.out.println("intersection got");
+//		sharedPath.forEach(l -> System.out.println("p: " + Arrays.toString(l.toArray())));
+//		System.out.println("print by tree shape");
+//		MapTreeAVLLightweight.SortedSetWrapper ssw_sp;
+//		ssw_sp = (MapTreeAVLLightweight.SortedSetWrapper) sharedPath;
+//		System.out.println(ssw_sp.getBackTree());
+//		System.out.println("foreaching");
+//		sharedPath.forEach(l -> System.out.println(l));
+//		System.out.println("\n\n");
 
 		{ // Java's Compiler wants final variables inside lambdas ...
 			final SortedSetEnhanced<List<NodeComparable<T>>> ffff, gggg, sp;
@@ -174,7 +176,7 @@ public class DissonanceTreeAlgo_Mine4_AllPathBruteForce<T> extends DissonanceTre
 				fpi = ffff.iterator();
 				while (betterCost[0] != 0 && // should never be 0 but ...
 				fpi.hasNext()) {
-					diff = EditDistance.editDistance(l, fpi.next(), equalityCheckerKey);
+					diff = ed.editDistance(l, fpi.next(), equalityCheckerKey);
 					if (betterCost[0] == -1 || diff < betterCost[0]) { betterCost[0] = diff; }
 				}
 				if (betterCost[0] < 0)

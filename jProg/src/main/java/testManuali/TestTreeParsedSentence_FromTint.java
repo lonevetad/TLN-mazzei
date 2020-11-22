@@ -10,8 +10,7 @@ import common.TintParser.TintParsedAndJSON;
 import common.TintParserOutput;
 import tools.JsonParserSimple;
 import tools.LoggerMessages;
-import tools.LoggerOnFile;
-import tools.MockedData;
+import tools.impl.LoggerOnFile;
 import tools.json.JsonParserJackson;
 
 /**

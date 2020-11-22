@@ -285,12 +285,11 @@ public class MapTreeAVLQueuable<K, V> extends MapTreeAVLIndexable<K, V> {
 
 		@Override
 		protected void restart() {
-			jumps = 0;
-			canRemove = false;
+			super.restart();
 			current = end = normalOrder ? firstInserted : firstInserted.prevInserted;
 		}
 
 		@Override
-		public boolean hasNext() { return (size > 0) && (current != end || jumps == 0); }
+		public boolean hasNext() { return (!isEmpty) && (size > 0) && (current != end || jumps == 0); }
 	}
 }

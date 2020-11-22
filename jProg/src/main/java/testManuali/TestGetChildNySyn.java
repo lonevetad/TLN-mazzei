@@ -46,7 +46,7 @@ public class TestGetChildNySyn {
 		System.out.println("now querying");
 		for (var st : TESTS) {
 			System.out.println("\n querying with: " + st);
-			System.out.println(n.getChildNCByKey(st));
+			System.out.println(n.getChildNCMostSimilarTo(st));
 		}
 	}
 }

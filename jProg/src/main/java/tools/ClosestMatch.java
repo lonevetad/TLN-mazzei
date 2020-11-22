@@ -86,7 +86,8 @@ public class ClosestMatch<K> implements Serializable {
 	}
 
 	public <T> ClosestMatch<T> convertTo(Comparator<T> newKeyComparator, Function<K, T> converter) {
-		return new ClosestMatch<T>(converter.apply(originalValue), newKeyComparator,
-				converter.apply(nearestLowerOrExact), converter.apply(nearestUpper), isExact);
+		return new ClosestMatch<T>(converter.apply(originalValue), newKeyComparator, //
+				converter.apply(nearestLowerOrExact), //
+				converter.apply(nearestUpper), isExact);
 	}
 }

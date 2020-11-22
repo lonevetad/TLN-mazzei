@@ -6,8 +6,8 @@ parsed :D
 
  JSON:
 {
-  "docDate": "2020-10-21",
-  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 884,6 tokens/sec.",
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 23 tokens at 1150,0 tokens/sec.",
   "sentences": [
     {
       "index": 0,
@@ -1028,8 +1028,5 @@ NDTTint [gloss= riusciti, pos= V , lemma=riuscire , indexID=3, dep= ROOT , isRoo
 					NDTTint [gloss= lontano, pos= A , lemma=lontano , indexID=15, dep= amod , isRoot=F, father=16-Agosto, features= [Gender-[Masc], Number-[Sing], children= []
 					NDTTint [gloss= 2016, pos= N , lemma=2016 , indexID=17, dep= nummod , isRoot=F, father=16-Agosto, features= [, children= []				]			]		]	]
 	NDTTint [gloss= mentre, pos= CC , lemma=mentre , indexID=18, dep= cc , isRoot=F, father=3-riusciti, features= [, children= []
-	NDTTint [gloss= festeggiavo, pos= V , lemma=festeggiare , indexID=19, dep= conj , isRoot=F, father=3-riusciti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= [
-		NDTTint [gloss= matrimonio, pos= S , lemma=matrimonio , indexID=22, dep= dobj , isRoot=F, father=19-festeggiavo, features= [Gender-[Masc], Number-[Sing], children= [
-			NDTTint [gloss= il, pos= RD , lemma=il , indexID=20, dep= det , isRoot=F, father=22-matrimonio, features= [Definite-[Def], Gender-[Masc], Number-[Sing], PronType-[Art], children= []
-			NDTTint [gloss= mio, pos= AP , lemma=mio , indexID=21, dep= det:poss , isRoot=F, father=22-matrimonio, features= [Gender-[Masc], Number-[Sing], Poss-[Yes], PronType-[Prs], children= []		]	]
+	NDTTint [gloss= festeggiavo, pos= V , lemma=festeggiare , indexID=19, dep= conj , isRoot=F, father=3-riusciti, features= [Mood-[Ind], Number-[Sing], Person-[1], Tense-[Imp], VerbForm-[Fin], children= []
 	NDTTint [gloss= ., pos= FS , lemma=[PUNCT] , indexID=23, dep= punct , isRoot=F, father=3-riusciti, features= [, children= []]

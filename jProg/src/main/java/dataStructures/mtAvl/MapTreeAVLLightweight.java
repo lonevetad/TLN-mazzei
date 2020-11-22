@@ -1013,23 +1013,26 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		 */
 		// the start
 		niter = n;
-		while ((temp = predecessorSorted(niter)) != NIL && keyComp.compare(key, temp.k) == 0) {
+		while ((temp = predecessorSorted(niter)) != NIL && temp != n && keyComp.compare(key, temp.k) == 0) {
 			niter = temp;
 		}
 		// the end
-		while ((temp = successorSorted(n)) != NIL && keyComp.compare(key, temp.k) == 0) {
+		while ((temp = successorSorted(n)) != NIL && temp != niter && keyComp.compare(key, temp.k) == 0) {
 			n = temp;
 		}
 		if (n == niter) {
 			action.accept(niter);
 		} else {
 			// the span
+			// niter == start ; n == end
+			temp = niter;
 			do {
-				action.accept(niter);
-			} while ((niter = successorSorted(niter)) != n
+				action.accept(temp);
+			} while ((temp = successorSorted(temp)) != n // until the end (excluded for now)
+					&& temp != niter // do not go back to the start
 					// just in case
 					&& niter != NIL);
-			action.accept(niter);
+			action.accept(n); // do the end
 		}
 	}
 
@@ -1275,6 +1278,10 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 
 	// minor methods
 
+	/**
+	 * Warning: may return the first element of the sequence (since it's the
+	 * "successor") in some subclasses and overrides.
+	 */
 	protected NodeAVL successorSorted(NodeAVL n) {
 		if (n == NIL)
 			return n;
@@ -1291,6 +1298,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		return n.father;
 	}
 
+	/** See {@link #successorSorted(NodeAVL)} for the warning. */
 	protected NodeAVL predecessorSorted(NodeAVL n) {
 		if (n == NIL)
 			return n;
@@ -1307,9 +1315,15 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		return n.father;
 	}
 
-	protected NodeAVL successorForIterator(NodeAVL n) { return successorSorted(n); }
+	/** See {@link #successorSorted(NodeAVL)} for the warning. */
+	protected NodeAVL successorForIterator(NodeAVL n) {
+		return successorSorted(n);
+	}
 
-	protected NodeAVL predecessorForIterator(NodeAVL n) { return predecessorSorted(n); }
+	/** See {@link #successorSorted(NodeAVL)} for the warning. */
+	protected NodeAVL predecessorForIterator(NodeAVL n) {
+		return predecessorSorted(n);
+	}
 
 	@Override
 	public boolean containsValue(Object value) {
@@ -1485,7 +1499,7 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		sb.append(", v: ");
 		sb.append(m.getValue()).append(')');
 
-		sb.append('\n');
+		sb.append('\n').append('\n');
 //		toString(sb, root, 0);
 		forEachAndDepth((nnn, level) -> {
 			NodeAVL node = (MapTreeAVLLightweight<K, V>.NodeAVL) nnn;
@@ -1739,7 +1753,8 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 
 		@Override
 		public String toString() {
-			return String.valueOf(k) + "-" + String.valueOf(v) + ",h:" + height + ",f:" + String.valueOf(father.k);
+			return "k:" + String.valueOf(k) + " - v:" + String.valueOf(v) + ",h:" + height + ",f:"
+					+ String.valueOf(father.k);
 		}
 	}
 
@@ -2415,9 +2430,15 @@ public class MapTreeAVLLightweight<K, V> implements MapTreeAVL<K, V> {
 		@Override
 		public Comparator<? super K> comparator() { return MapTreeAVLLightweight.this.comp; }
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public boolean add(K e) {
-			MapTreeAVLLightweight.this.put(e, null);
+			V v = null;
+			try {
+				v = (V) e;
+			} catch (Exception exc) { /* nothing to do here */
+			}
+			MapTreeAVLLightweight.this.put(e, v);
 			return false;
 		}
 

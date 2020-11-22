@@ -72,6 +72,8 @@ public class SynonymSet implements SortedSetEnhancedDelegating<String>, Cloneabl
 	@Override
 	public SortedSetEnhanced<String> getDelegator() { return alternatives; }
 
+	public SortedSetEnhanced<String> getAlternatives() { return alternatives; }
+
 	@Override
 	public Comparator<String> getKeyComparator() { return Misc.STRING_COMPARATOR; }
 

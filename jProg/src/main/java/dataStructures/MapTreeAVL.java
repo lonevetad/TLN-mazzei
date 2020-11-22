@@ -106,7 +106,14 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	 * </ul>
 	 */
 	public static enum BehaviourOnKeyCollision {
-		KeepPrevious, Replace, AddItsNotASet/* it's senseless */
+		KeepPrevious, Replace,
+		/**
+		 * Peculiar behavior that means that pairs of key and value with the same key
+		 * are added to this map. <br>
+		 * (The newly added pair is put onto the left of the yet existing key[s], so
+		 * they are considered "lower". That keeps an inverse chronological order.)
+		 */
+		AddItsNotASet/* it's senseless */
 	}
 
 	/**
@@ -333,17 +340,41 @@ public interface MapTreeAVL<K, V> extends Serializable, SortedMap<K, V>, Functio
 	public void forEachAndDepth(EntryDepthConsumer<K, V> action);
 
 	/**
-	 * Invokes {@link #forEachSimilar(Object, Comparator, Consumer)} giving
-	 * {@link #getComparator()} as a {@link Comparator}.
+	 * Invokes {@link #forEachSimilar(Object, Comparator, Consumer)} giving as a
+	 * {@link Comparator} the one returned by {@link #getComparator()}.
 	 */
 	public default void forEachSimilar(K key, Consumer<Entry<K, V>> action) {
 		forEachSimilar(key, getComparator(), action);
 	}
 
 	/**
-	 * Given a key and a optional {@link Comparator} (which can be the same of the
-	 * one returned by {@link #getComparator()}), runs an action ({@link Consumer})
-	 * over each {@link Entry} stored which are considered compatible.
+	 * Given a key (first parameter) and a optional {@link Comparator} (which can be
+	 * the same of the one returned by {@link #getComparator()}), runs an action
+	 * ({@link Consumer}) over each {@link Entry} stored which are considered
+	 * compatible.<br>
+	 * <b>BEWARE</b>: the given Comparator should NOT have a totally different logic
+	 * than the one defined by the Comparator provided upon creating this map,
+	 * because the behavior of this method could be unpredictable (or just running
+	 * on one element, or more, or no one). See the next paragraph.
+	 * <p>
+	 * Usually, there are two use cases (not mutually exclusive) which this
+	 * iteration could run on more than one element:
+	 * <ul>
+	 * <li>The option {@link BehaviourOnKeyCollision#AddItsNotASet} has been set
+	 * upon instantiating this map.</li>
+	 * <li>The given Consumer generate a less restrictive partition of the key's
+	 * domain than the one provided upon building this map. That means that
+	 * theoretically more elements could be considered "equal" under the given
+	 * Comparator rather then the one returned by {@link #getComparator()}.<br>
+	 * As an example: imagine that a Person is identified by a pair of
+	 * {@link String}, i.e. the <i>first name</i> and <i>last name</i>, so that pair
+	 * is this map's key. Assume that the map's Comparator compares firstly the
+	 * <i>last name</i>s, then the <i>first name</i>. If You provide a Comparator
+	 * that compares only the <i>last name</i> then some Persons could be considered
+	 * similar: they just need to share <i>last name</i> (like siblings, father and
+	 * children, etc). So, under that second Comparator all of "similar" Person will
+	 * be consumed by the given {@link Consumer}.</li>
+	 * </ul>
 	 */
 	public void forEachSimilar(K key, Comparator<K> keyComp, Consumer<Entry<K, V>> action);
 

@@ -11,16 +11,26 @@ import java.nio.charset.StandardCharsets;
 import edu.stanford.nlp.pipeline.Annotation;
 import eu.fbk.dh.tint.runner.TintPipeline;
 import eu.fbk.dh.tint.runner.TintRunner;
-import tools.MockedData;
 
 public class TestPipline {
 	public static void main(String[] args) {
 		// Initialize the Tint pipeline
 		OutputStream os;
 		String[] textes;
+		String folderName;
+		File folderFile;
 		TintPipeline pipeline = new TintPipeline();
 		os = System.out;
 
+		folderName = "test TINT" + File.separator;
+		folderFile = new File(folderName);
+		if (!folderFile.exists()) {
+			try {
+				folderFile.mkdirs();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		// Load the default properties
 		// see
 		// https://github.com/dhfbk/tint/blob/master/tint-runner/src/main/resources/default-config.properties
@@ -51,7 +61,7 @@ public class TestPipline {
 				// Get the JSON
 				// (optionally getting the original Stanford CoreNLP Annotation as return value)
 				InputStream stream = new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
-				os = new FileOutputStream(new File("test TINT" + File.separator + i++ + " -.txt"));
+				os = new FileOutputStream(new File(folderName + i++ + " -.txt"));
 				os.write(("parsing:\n" + text + "\n\n").getBytes());
 				os.flush();
 				startTime = System.currentTimeMillis();

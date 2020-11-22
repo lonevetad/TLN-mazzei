@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import dataStructures.SortedSetEnhanced;
+import tools.Comparators;
 import tools.SynonymSet;
 
 public class TestSynonimComparator {
@@ -14,8 +15,9 @@ public class TestSynonimComparator {
 
 		System.out.println(
 				// SynonymSetComparator.FIRST_DIFFERENT_FIRST
-				SortedSetEnhanced.ComparatorFactoriesSSE.SUBSET_THEN_NON_SHARED_KEYS.compare(new SynonymSet(), //
-						s));
+				SortedSetEnhanced.ComparatorFactoriesSSE.SUBSET_THEN_NON_SHARED_KEYS
+						.newComparator(Comparators.STRING_COMPARATOR).compare(new SynonymSet(), //
+								s));
 		var i = s.iterator();
 		System.out.println("s stuff");
 		while (i.hasNext())

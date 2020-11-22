@@ -1,4 +1,4 @@
-package translators.mainTransl;
+package translators;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,18 +8,17 @@ import common.TintParser;
 import common.TintParser.TintParsedAndJSON;
 import simplenlg.framework.DocumentElement;
 import simplenlg.phrasespec.SPhraseSpec;
+import testManuali.MockedData;
 import tools.JsonParserSimple;
 import tools.LoggerMessages;
-import tools.LoggerOnFile;
-import tools.MockedData;
+import tools.impl.LoggerOnFile;
 import tools.json.JsonParserJackson;
-import translators.WordTranslatorItEng;
+import translators.mainTransl.TranslatorTransferItEng;
+import translators.v1.TransferTranslationItEng_V1;
+import translators.v2.TransferTranslationRuleBased_V5;
 
 /**
-<<<<<<< HEAD
- * THE MAIN TESTEEEEEEEER *
-=======
- * THE MAIN TESTER - VERSION 1
+ * <<<<<<< HEAD THE MAIN TESTEEEEEEEER * ======= THE MAIN TESTER - VERSION 1
  * <p>
  * <ol>
  * <li>legge da file la frase</li>
@@ -32,13 +31,20 @@ import translators.WordTranslatorItEng;
  * <li>usando SimpleNLG, si usa il Realizer per generare la frase tradotta</li>
  * <li>visualizzazione della frase tradotta</li>
  * </ol>
->>>>>>> marco
+ * >>>>>>> marco
  */
 public class TestTranslate_TintThenSimplenlg {
 	static final String FOLDER_PATH = "." + File.separator + "translationFirstWay" + File.separator;
 
+	static final ITranslator[] translatorsVersions = { // 0 index always hold the final version
+			new TranslatorTransferItEng(), //
+			new TransferTranslationItEng_V1(), //
+			new TransferTranslationRuleBased_V5() //
+	};
+
 	public static void main(String[] args) throws IOException {
 //		int sentenceIndex;
+		int translatorIndex;
 		WordTranslatorItEng dictionary;
 		TintParsedAndJSON parsedAndJson;
 		JsonParserSimple jsonParser;
@@ -48,6 +54,7 @@ public class TestTranslate_TintThenSimplenlg {
 		LoggerMessages log;
 
 		System.out.println("start test");
+		translatorIndex = 0;
 		folder = new File(FOLDER_PATH);
 		if (!folder.exists()) { folder.mkdirs(); }
 		//
@@ -57,6 +64,7 @@ public class TestTranslate_TintThenSimplenlg {
 		jsonParser = new JsonParserJackson();
 //		sentenceIndex = 19;
 //		sentenceIndex = MockedData.SENTENCES.length - 1; // 2
+
 		for (int sentenceIndex : new int[] { 18, 19, 20 }) {
 //		for (int sentenceIndex = 0; sentenceIndex < MockedData.SENTENCES.length; sentenceIndex++) {
 			log = new LoggerOnFile(FOLDER_PATH + sentenceIndex + ".txt");
@@ -70,16 +78,16 @@ public class TestTranslate_TintThenSimplenlg {
 			log.logAndPrint(String.valueOf(treeParsedSent));
 			//
 			log.logAndPrint("\n\n\n now translating into SimpleNLP");
-			SPhraseSpec rootClause = TransferTranslationItEng.transferTranslateItEng(treeParsedSent, dictionary);
+			SPhraseSpec rootClause = translatorsVersions[translatorIndex].translateItEng(treeParsedSent, dictionary);
 
 			log.logAndPrint("nlp future input:");
 			log.logAndPrint(String.valueOf(rootClause));
-			DocumentElement sentence = TransferTranslationItEng.NLG_FACTORY.createSentence(rootClause);
+			DocumentElement sentence = BasicStuffTranslators.NLG_FACTORY_IT.createSentence(rootClause);
 			log.logAndPrint("\n\n\n\n sentence created:");
 			log.logAndPrint(String.valueOf(sentence));
 
 			log.logAndPrint("\n\n\n realize translation");
-			String translated = TransferTranslationItEng.REALISER.realiseSentence(sentence);
+			String translated = BasicStuffTranslators.REALISER_IT.realiseSentence(sentence);
 			log.logAndPrint("translated:");
 			log.logAndPrint(translated);
 		}

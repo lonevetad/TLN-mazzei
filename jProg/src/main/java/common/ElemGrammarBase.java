@@ -18,7 +18,7 @@ public enum ElemGrammarBase {
 	Objectt("O", "obj", "dobj", "iobj"), //
 	Aux("aux", "auxpass"), //
 	Det("det"), //
-	Comp("comp", "xcomp")
+	Complement("comp", "xcomp", "cop"/* sure? */)
 	//
 	;
 
@@ -37,6 +37,16 @@ public enum ElemGrammarBase {
 	public SynonymSet getSynonymsClone() { return eg.clone(); }
 
 	public SynonymSet getSynonyms() { return eg; }
+
+	public boolean containsDependencyItem(String dep) { return eg.contains(dep); }
+
+	public boolean containsPosTag(String pos) { return eg.contains(pos); }
+
+	//
+
+	//
+
+	//
 
 	static {
 		ElemGrammarBase[] v;

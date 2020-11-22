@@ -1,0 +1,507 @@
+parsing:
+Ho visto cose che voi umani non potreste neanche immaginare.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 1571,4 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 60,
+      "text": "Ho visto cose che voi umani non potreste neanche immaginare.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 3,
+          "dependentGloss": "cose"
+        },
+        {
+          "dep": "dobj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 4,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 5,
+          "dependentGloss": "voi"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "voi",
+          "dependent": 6,
+          "dependentGloss": "umani"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 7,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 8,
+          "dependentGloss": "potreste"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 9,
+          "dependentGloss": "neanche"
+        },
+        {
+          "dep": "acl:relcl",
+          "governor": 3,
+          "governorGloss": "cose",
+          "dependent": 10,
+          "dependentGloss": "immaginare"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 3,
+          "dependentGloss": "cose"
+        },
+        {
+          "dep": "dobj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 4,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 5,
+          "dependentGloss": "voi"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "voi",
+          "dependent": 6,
+          "dependentGloss": "umani"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 7,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 8,
+          "dependentGloss": "potreste"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 9,
+          "dependentGloss": "neanche"
+        },
+        {
+          "dep": "acl:relcl",
+          "governor": 3,
+          "governorGloss": "cose",
+          "dependent": 10,
+          "dependentGloss": "immaginare"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "visto"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 3,
+          "dependentGloss": "cose"
+        },
+        {
+          "dep": "dobj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 4,
+          "dependentGloss": "che"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 5,
+          "dependentGloss": "voi"
+        },
+        {
+          "dep": "amod",
+          "governor": 5,
+          "governorGloss": "voi",
+          "dependent": 6,
+          "dependentGloss": "umani"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 7,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 8,
+          "dependentGloss": "potreste"
+        },
+        {
+          "dep": "neg",
+          "governor": 10,
+          "governorGloss": "immaginare",
+          "dependent": 9,
+          "dependentGloss": "neanche"
+        },
+        {
+          "dep": "acl:relcl",
+          "governor": 3,
+          "governorGloss": "cose",
+          "dependent": 10,
+          "dependentGloss": "immaginare"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "visto",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ho",
+          "originalText": "Ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "visto",
+          "originalText": "visto",
+          "lemma": "vistare",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 8,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "visto vistare+v+indic+pres+nil+1+sing visto+n+m+sing",
+          "selected_morpho": "vistare+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "cose",
+          "originalText": "cose",
+          "lemma": "cosa",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 13,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "cose cosa+n+f+plur",
+          "selected_morpho": "cosa+n+f+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "che",
+          "originalText": "che",
+          "lemma": "che",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 17,
+          "pos": "PR",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "che che+conj",
+          "selected_morpho": "che+conj",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": "voi",
+          "originalText": "voi",
+          "lemma": "voi",
+          "characterOffsetBegin": 18,
+          "characterOffsetEnd": 21,
+          "pos": "PE",
+          "featuresText": "Number\u003dPlur|Person\u003d2|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "voi voi+n+m+sing voi+pron+nom+_+2+plur+strong voi+pron+nom+_+2+plur+strong",
+          "selected_morpho": "voi+pron+nom+_+2+plur+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Plur"
+            ],
+            "Person": [
+              "2"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "umani",
+          "originalText": "umani",
+          "lemma": "umano",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 27,
+          "pos": "A",
+          "featuresText": "Gender\u003dMasc|Number\u003dPlur",
+          "ner": "O",
+          "full_morpho": "umani umano+adj+m+plur+pst",
+          "selected_morpho": "umano+adj+m+plur+pst",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Plur"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 28,
+          "characterOffsetEnd": 31,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "potreste",
+          "originalText": "potreste",
+          "lemma": "potere",
+          "characterOffsetBegin": 32,
+          "characterOffsetEnd": 40,
+          "pos": "VM",
+          "featuresText": "Mood\u003dCnd|Number\u003dPlur|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "potreste potere+v+cond+pres+nil+2+plur",
+          "selected_morpho": "potere+v+cond+pres+nil+2+plur",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Cnd"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "neanche",
+          "originalText": "neanche",
+          "lemma": "neanche",
+          "characterOffsetBegin": 41,
+          "characterOffsetEnd": 48,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "neanche neanche+adv",
+          "selected_morpho": "neanche+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "immaginare",
+          "originalText": "immaginare",
+          "lemma": "immaginare",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 59,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "immaginare immaginare+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "immaginare+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 59,
+          "characterOffsetEnd": 60,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 14 milliseconds.

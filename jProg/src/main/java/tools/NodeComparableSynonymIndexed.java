@@ -104,9 +104,18 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	public NodeComparable<SynonymSet> getChildNCMostSimilarTo(NodeComparable<SynonymSet> copy) {
 		ClosestMatch<Entry<NodeComparable<SynonymSet>, NodeComparable<SynonymSet>>> cm;
 		ClosestMatch<NodeComparable<SynonymSet>> cmN;
+		if (this.childrenBySynonymsBackMap.isEmpty())
+			return null;
 		cm = this.childrenBySynonymsBackMap.closestMatchOf(copy);
+		if (cm == null) {
+			System.out.println("TRYING TO FIND copy " + copy);
+			System.out.println("HERE:");
+			this.childrenBySynonymsBackMap.forEach((n, nn) -> System.out.println(n));
+			throw new RuntimeException("cm = this.childrenBySynonymsBackMap.closestMatchOf(copy); ---> null in "
+					+ this.getClass().getName());
+		}
 		// but the closest match needs to be conferted .. .-.
-		cmN = cm.convertTo(COMPARATOR_NODE, Entry::getKey/* e -> e.getKey() */);
+		cmN = cm.convertTo(COMPARATOR_NODE, e -> e == null ? null : e.getKey()); // Entry::getKey
 		// ready to get the real closest match
 		return cmN.getClosetsMatchToOriginal(CLOSER_GETTER_NCSI);
 	}
@@ -216,7 +225,8 @@ public class NodeComparableSynonymIndexed extends NodeComparable.NodeComparableD
 	@Override
 	public long scoreKeyCompatibilityWith(SynonymSet anotherKey) {
 		// TODO: use the synonym's comparator or not?
-		return this.alternatives.countDifferenceWith(anotherKey);
+		// return this.alternatives.countDifferenceWith(anotherKey);
+		return this.alternatives.intersectionSize(anotherKey);
 	}
 
 	//

@@ -1,0 +1,505 @@
+parsing:
+Ora so come ci si sente ad essere un divano.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 11 tokens at 2200,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 44,
+      "text": "Ora so come ci si sente ad essere un divano.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 1,
+          "dependentGloss": "Ora"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 3,
+          "dependentGloss": "come"
+        },
+        {
+          "dep": "advmod",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 4,
+          "dependentGloss": "ci"
+        },
+        {
+          "dep": "expl:impers",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 5,
+          "dependentGloss": "si"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "sente"
+        },
+        {
+          "dep": "mark",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 7,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "cop",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 8,
+          "dependentGloss": "essere"
+        },
+        {
+          "dep": "det",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 9,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 10,
+          "dependentGloss": "divano"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 1,
+          "dependentGloss": "Ora"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 3,
+          "dependentGloss": "come"
+        },
+        {
+          "dep": "advmod",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 4,
+          "dependentGloss": "ci"
+        },
+        {
+          "dep": "expl:impers",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 5,
+          "dependentGloss": "si"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "sente"
+        },
+        {
+          "dep": "mark",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 7,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "cop",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 8,
+          "dependentGloss": "essere"
+        },
+        {
+          "dep": "det",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 9,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 10,
+          "dependentGloss": "divano"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "so"
+        },
+        {
+          "dep": "advmod",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 1,
+          "dependentGloss": "Ora"
+        },
+        {
+          "dep": "mark",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 3,
+          "dependentGloss": "come"
+        },
+        {
+          "dep": "advmod",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 4,
+          "dependentGloss": "ci"
+        },
+        {
+          "dep": "expl:impers",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 5,
+          "dependentGloss": "si"
+        },
+        {
+          "dep": "ccomp",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 6,
+          "dependentGloss": "sente"
+        },
+        {
+          "dep": "mark",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 7,
+          "dependentGloss": "ad"
+        },
+        {
+          "dep": "cop",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 8,
+          "dependentGloss": "essere"
+        },
+        {
+          "dep": "det",
+          "governor": 10,
+          "governorGloss": "divano",
+          "dependent": 9,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 6,
+          "governorGloss": "sente",
+          "dependent": 10,
+          "dependentGloss": "divano"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "so",
+          "dependent": 11,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ora",
+          "originalText": "Ora",
+          "lemma": "ora",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 3,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "Ora ora+adv ora+n+f+sing orare+v+imp+pres+nil+2+sing orare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "ora+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 2,
+          "word": "so",
+          "originalText": "so",
+          "lemma": "sapere",
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 6,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "so sapere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "sapere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "come",
+          "originalText": "come",
+          "lemma": "come",
+          "characterOffsetBegin": 7,
+          "characterOffsetEnd": 11,
+          "pos": "CS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": "come come+adv",
+          "selected_morpho": "come+adv",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 4,
+          "word": "ci",
+          "originalText": "ci",
+          "lemma": "ci",
+          "characterOffsetBegin": 12,
+          "characterOffsetEnd": 14,
+          "pos": "PC",
+          "featuresText": "Clitic\u003dYes|Gender\u003dFem|Number\u003dPlur|Person\u003d1|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "ci ci+adv ci+pron+acc+f+1+plur+clit ci+pron+acc+m+1+plur+clit",
+          "selected_morpho": "ci+pron+acc+f+1+plur+clit",
+          "guessed_lemma": false,
+          "features": {
+            "Clitic": [
+              "Yes"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Plur"
+            ],
+            "Person": [
+              "1"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "si",
+          "originalText": "si",
+          "lemma": "si",
+          "characterOffsetBegin": 15,
+          "characterOffsetEnd": 17,
+          "pos": "PC",
+          "featuresText": "Clitic\u003dYes|Person\u003d3|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "si si+pron+accdat+_+3+_+clit si+pron+acc+m+3+sing+clit",
+          "selected_morpho": "si+pron+accdat+_+3+_+clit",
+          "guessed_lemma": false,
+          "features": {
+            "Clitic": [
+              "Yes"
+            ],
+            "Person": [
+              "3"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 6,
+          "word": "sente",
+          "originalText": "sente",
+          "lemma": "sentire",
+          "characterOffsetBegin": 18,
+          "characterOffsetEnd": 23,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d3|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "sente sentire+v+indic+pres+nil+3+sing",
+          "selected_morpho": "sentire+v+indic+pres+nil+3+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "ad",
+          "originalText": "ad",
+          "lemma": "ad",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 26,
+          "pos": "E",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "ad ad+prep",
+          "selected_morpho": "ad+prep",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 8,
+          "word": "essere",
+          "originalText": "essere",
+          "lemma": "essere",
+          "characterOffsetBegin": 27,
+          "characterOffsetEnd": 33,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "essere essere+n+m+sing essere+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "essere+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 34,
+          "characterOffsetEnd": 36,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": "divano",
+          "originalText": "divano",
+          "lemma": "divano",
+          "characterOffsetBegin": 37,
+          "characterOffsetEnd": 43,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "divano divano+n+m+sing",
+          "selected_morpho": "divano+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 11,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 43,
+          "characterOffsetEnd": 44,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 12 milliseconds.

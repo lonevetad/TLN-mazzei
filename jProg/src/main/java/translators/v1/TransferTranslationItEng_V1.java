@@ -1,6 +1,5 @@
-package translators.mainTransl;
+package translators.v1;
 
-import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
@@ -12,32 +11,27 @@ import simplenlg.features.Feature;
 import simplenlg.features.Form;
 import simplenlg.features.Tense;
 import simplenlg.framework.NLGElement;
-import simplenlg.framework.NLGFactory;
 import simplenlg.framework.PhraseElement;
-import simplenlg.lexicon.Lexicon;
-import simplenlg.lexicon.XMLLexicon;
 import simplenlg.phrasespec.NPPhraseSpec;
 import simplenlg.phrasespec.PPPhraseSpec;
 import simplenlg.phrasespec.SPhraseSpec;
 import simplenlg.phrasespec.VPPhraseSpec;
-import simplenlg.realiser.english.Realiser;
-import tools.Misc;
+import translators.BasicStuffTranslators;
+import translators.ITranslator;
 
 /** First non-naive version of a translator. */
-public class TransferTranslationItEng {
-	public static final Lexicon LEXICON = new XMLLexicon(Paths.get(Misc.RESOURCE_PATH + "LexiconIt.txt").toUri());
-	public static final NLGFactory NLG_FACTORY = new NLGFactory(LEXICON);
-	public static final Realiser REALISER = new Realiser(LEXICON);
+public class TransferTranslationItEng_V1 implements ITranslator {
 
-	public static SPhraseSpec transferTranslateItEng(SentenceParsed t, Function<String, String> wordTranslator) {
+	@Override
+	public SPhraseSpec translateItEng(SentenceParsed t, Function<String, String> wordTranslator) {
 		SPhraseSpec rootOfPhrase;
-		rootOfPhrase = NLG_FACTORY.createClause();
+		rootOfPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createClause();
 		System.out.println("\n\n\n t.root è .. " + t.getRoot());
 		translateSentenceTree(wordTranslator, t.getRoot(), rootOfPhrase);
 		return rootOfPhrase;
 	}
 
-	protected static void translateSentenceTree(Function<String, String> wordTranslator,
+	protected void translateSentenceTree(Function<String, String> wordTranslator,
 			SentenceParsed.NodeParsedSentFromTint subtreeRoot, final PhraseElement subPhraseRoot) {
 //main stuffs
 //		boolean tempCacheFlag;
@@ -60,7 +54,7 @@ public class TransferTranslationItEng {
 		translatedNodeGloss = wordTranslator.apply(nodeLemma);
 // first of all, check if the root is the "nominal modifier" or "direct object"
 		if ("nmod".equals(depNodeType) || "dobj".equals(depNodeType)) {
-			nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+			nounPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createNounPhrase(translatedNodeGloss);
 		} else if ("ROOT".equals(depNodeType)) {
 			String subTreeRootPos = subtreeRoot.getPos();
 			switch (subTreeRootPos) {
@@ -68,7 +62,7 @@ public class TransferTranslationItEng {
 			case "VP":
 			case "VB":
 			case "VBD": {
-				verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
+				verbPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createVerbPhrase(translatedNodeGloss);
 				break;
 			}
 			case "N":
@@ -76,7 +70,7 @@ public class TransferTranslationItEng {
 			case "NNS":
 			case "NNP":
 			case "NNPS": {
-				nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+				nounPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createNounPhrase(translatedNodeGloss);
 				break;
 			}
 			default:
@@ -99,7 +93,7 @@ public class TransferTranslationItEng {
 				if ("nsubj".equals(childDepNodeType)) {
 					if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeLemma); } // c&p
 					if (verbPhrase == null)
-						verbPhrase = NLG_FACTORY.createVerbPhrase();
+						verbPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createVerbPhrase();
 					verbPhrase.setVerb(translatedNodeGloss);
 					setVerbFeatures(verbPhrase, subtreeRoot.getFeatures(), false);
 					System.out.println("\n\n####");
@@ -119,15 +113,16 @@ public class TransferTranslationItEng {
 				}
 				if ("aux".equals(childDepNodeType)) {
 					if (verbPhrase == null)
-						verbPhrase = NLG_FACTORY.createVerbPhrase(translatedNodeGloss);
+						verbPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createVerbPhrase(translatedNodeGloss);
 					setVerbFeatures(verbPhrase, child.getFeatures(), true);
 					System.out.println("\n####2 now verbPhrase is: " + verbPhrase);
 				}
 				if ("auxpass".equals(childDepNodeType)) { verbPhrase.setFeature(Feature.PASSIVE, true); }
-				if ("cop".equals(childDepNodeType)) {
+				if ("cop".equals(childDepNodeType)) { // TODO LOOK AT ME FOR VERB
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getLemma()); } // c&p
 					if (verbPhrase == null)
-						verbPhrase = NLG_FACTORY.createVerbPhrase(wordTranslator.apply(child.getLemma()));
+						verbPhrase = BasicStuffTranslators.NLG_FACTORY_IT
+								.createVerbPhrase(wordTranslator.apply(child.getLemma()));
 					setVerbFeatures(verbPhrase, child.getFeatures(), false);
 				}
 				if (verbPhrase != null && "advmod".equals(childDepNodeType)) {
@@ -138,7 +133,7 @@ public class TransferTranslationItEng {
 					// are there other "det:??" ?
 					if (nounPhrase == null) {
 						if (translatedNodeGloss == null) { translatedNodeGloss = wordTranslator.apply(nodeLemma); } // c&p
-						nounPhrase = NLG_FACTORY.createNounPhrase(translatedNodeGloss);
+						nounPhrase = BasicStuffTranslators.NLG_FACTORY_IT.createNounPhrase(translatedNodeGloss);
 					}
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
 					nounPhrase.setDeterminer(translatedChildGloss);
@@ -151,7 +146,8 @@ public class TransferTranslationItEng {
 				}
 				if ("case".equals(childDepNodeType)) {
 					if (translatedChildGloss == null) { translatedChildGloss = wordTranslator.apply(child.getGloss()); } // c&p
-					prepositionPhrase = NLG_FACTORY.createPrepositionPhrase(translatedChildGloss);
+					prepositionPhrase = BasicStuffTranslators.NLG_FACTORY_IT
+							.createPrepositionPhrase(translatedChildGloss);
 					NLGElement father;
 					if (nounPhrase != null)
 						father = nounPhrase;
@@ -171,7 +167,8 @@ public class TransferTranslationItEng {
 					if (nounPhrase == null) {
 						if (prepositionPhrase == null) {
 							System.out.println("OMG prepositionPhrase is null");
-							prepositionPhrase = NLG_FACTORY.createPrepositionPhrase(translatedNodeGloss);
+							prepositionPhrase = BasicStuffTranslators.NLG_FACTORY_IT
+									.createPrepositionPhrase(translatedNodeGloss);
 						}
 						prepositionPhrase.addPreModifier(translatedChildGloss);
 					} else {

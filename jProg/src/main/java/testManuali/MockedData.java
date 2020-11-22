@@ -1,4 +1,4 @@
-package tools;
+package testManuali;
 
 public class MockedData {
 	public static final String[] SENTENCES = new String[] { //

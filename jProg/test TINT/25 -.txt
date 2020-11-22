@@ -1,0 +1,325 @@
+parsing:
+Tu sei un mago, Harry.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 7 tokens at 2333,3 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 22,
+      "text": "Tu sei un mago, Harry.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "mago"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 1,
+          "dependentGloss": "Tu"
+        },
+        {
+          "dep": "cop",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 2,
+          "dependentGloss": "sei"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 3,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "nmod",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 6,
+          "dependentGloss": "Harry"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "mago"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 1,
+          "dependentGloss": "Tu"
+        },
+        {
+          "dep": "cop",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 2,
+          "dependentGloss": "sei"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 3,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "nmod",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 6,
+          "dependentGloss": "Harry"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 4,
+          "dependentGloss": "mago"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 1,
+          "dependentGloss": "Tu"
+        },
+        {
+          "dep": "cop",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 2,
+          "dependentGloss": "sei"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 3,
+          "dependentGloss": "un"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 5,
+          "dependentGloss": ","
+        },
+        {
+          "dep": "nmod",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 6,
+          "dependentGloss": "Harry"
+        },
+        {
+          "dep": "punct",
+          "governor": 4,
+          "governorGloss": "mago",
+          "dependent": 7,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Tu",
+          "originalText": "Tu",
+          "lemma": "tu",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "PE",
+          "featuresText": "Number\u003dSing|Person\u003d2|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "Tu tu+pron+nom+_+2+sing+strong tu+pron+nom+_+2+sing+strong",
+          "selected_morpho": "tu+pron+nom+_+2+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "sei",
+          "originalText": "sei",
+          "lemma": "essere",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 6,
+          "pos": "V",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "sei essere+v+indic+pres+nil+2+sing sei+adj+_+_+pst+num sei+adj+_+_+pst+num",
+          "selected_morpho": "essere+v+indic+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "un",
+          "originalText": "un",
+          "lemma": "un",
+          "characterOffsetBegin": 7,
+          "characterOffsetEnd": 9,
+          "pos": "RI",
+          "featuresText": "Definite\u003dInd|Gender\u003dMasc|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "un un+art+m+sing",
+          "selected_morpho": "un+art+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Ind"
+            ],
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "mago",
+          "originalText": "mago",
+          "lemma": "mago",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 14,
+          "pos": "S",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "mago mago+n+m+sing",
+          "selected_morpho": "mago+n+m+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": ",",
+          "originalText": ",",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 14,
+          "characterOffsetEnd": 15,
+          "pos": "FF",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ", [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "Harry",
+          "originalText": "Harry",
+          "lemma": "Harry",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 21,
+          "pos": "SP",
+          "featuresText": "",
+          "ner": "PER",
+          "full_morpho": "Harry",
+          "selected_morpho": "",
+          "guessed_lemma": true,
+          "features": {}
+        },
+        {
+          "index": 7,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 21,
+          "characterOffsetEnd": 22,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 10 milliseconds.

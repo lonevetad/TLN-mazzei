@@ -43,7 +43,6 @@ public class SentenceParsed implements Stringable {
 	}
 
 	protected void buildFromTint(SentenceTint sentence, SentenceTint.DependencyTypeProduced dtp) {
-
 		SentenceDependencyTint[] dependencies;
 //		Map<String, SentenceDependencyTint> allParts;
 		Map<String, NodeParsedSentFromTint> allPartsAsNode; // indexed by gloss
@@ -153,6 +152,7 @@ public class SentenceParsed implements Stringable {
 
 		public String getGlossFather() { return glossFather; }
 
+		@Override
 		public NodeParsedSentFromTint getFather() { return father; }
 
 		public Map<Integer, NodeParsedSentFromTint> getChildren() { return children; }

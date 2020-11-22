@@ -1,6 +1,6 @@
 package translators;
 
-import tools.MockedData;
+import testManuali.MockedData;
 
 public class TranslatorBasic {
 

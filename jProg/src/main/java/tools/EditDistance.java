@@ -1,10 +1,11 @@
 package tools;
 
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
-public class EditDistance {
+import dataStructures.CollectionAlteringCosts;
+
+public interface EditDistance {
 	public static interface EqualityChecker<T> {
 		public boolean isEqual(T e1, T e2);
 
@@ -13,53 +14,8 @@ public class EditDistance {
 		}
 	}
 
-	/** It uses the Levenshtein distance. */
-	public static <T> int editDistance(T[] firstSequence, T[] secondSequence, EqualityChecker<T> equalityChecker) {
-		boolean isRowHoldingResult;
-		int lf, ls, m, t;
-		int[] row, prevRow, temp;
-		T elemFromFirst;
-		lf = firstSequence.length;
-		ls = secondSequence.length;
-		if (ls == 0)
-			return lf;
-		else if (lf == 0)
-			return ls;
-		// let the second sequence be the longest to optimize the memory usage
-		if (lf < ls) { // swap
-			T[] tt;
-			t = lf;
-			lf = ls;
-			ls = t;
-			tt = firstSequence;
-			firstSequence = secondSequence;
-			secondSequence = tt;
-		}
-		row = new int[ls + 1];
-		prevRow = new int[ls + 1];
-		for (int c = 0; c <= ls; c++) {
-			prevRow[c] = c;
-		}
-		isRowHoldingResult = true;
-		for (int r = 1; r <= lf; r++) {
-			row[0] = r;
-			elemFromFirst = firstSequence[r - 1];
-			for (int c = 1; c <= ls; c++) {
-				if (equalityChecker.isEqual(elemFromFirst, secondSequence[c - 1])) {
-					row[c] = prevRow[c - 1];
-				} else {
-					m = row[c - 1]; // insert
-					m = (m < (t = prevRow[c]) ? m : t); // remove
-					row[c] = (m < (t = prevRow[c - 1]) ? m : t) + 1; // replace and then set the value
-				}
-			}
-			// swap
-			temp = prevRow;
-			prevRow = row;
-			row = temp;
-			isRowHoldingResult = !isRowHoldingResult;
-		}
-		return prevRow[ls];
+	public default <T> int editDistance(T[] firstSequence, T[] secondSequence, EqualityChecker<T> equalityChecker) {
+		return editDistance(firstSequence, secondSequence, equalityChecker, CollectionAlteringCosts.newDefaultCAC());
 	}
 
 //	/**
@@ -67,60 +23,21 @@ public class EditDistance {
 //	 * {@link #editDistance(Object[], Object[], EqualityChecker)} should be used
 //	 * instead.
 //	 */
-	public static <T> int editDistance(List<T> firstSequence, List<T> secondSequence,
+	public default <T> int editDistance(List<T> firstSequence, List<T> secondSequence,
 			EqualityChecker<T> equalityChecker) {
-		boolean isRowHoldingResult;
-		int lf, ls, m, t;
-		int[] row, prevRow, temp;
-		Iterator<T> iterFirst, iterSecond;
-		T elemFromFirst;
-		lf = firstSequence.size();
-		ls = secondSequence.size();
-		if (ls == 0)
-			return lf;
-		else if (lf == 0)
-			return ls;
-		// let the second sequence be the longest to optimize the memory usage
-		if (lf < ls) { // swap
-			List<T> tt;
-			t = lf;
-			lf = ls;
-			ls = t;
-			tt = firstSequence;
-			firstSequence = secondSequence;
-			secondSequence = tt;
-		}
-		row = new int[ls + 1];
-		prevRow = new int[ls + 1];
-		for (int c = 0; c <= ls; c++) {
-			prevRow[c] = c;
-		}
-		isRowHoldingResult = true;
-		iterFirst = firstSequence.iterator();
-		for (int r = 1; r <= lf; r++) {
-			row[0] = r;
-			elemFromFirst = iterFirst.next(); // firstSequence.get(r - 1);
-			iterSecond = secondSequence.iterator();
-			for (int c = 1; c <= ls; c++) {
-				if (equalityChecker.isEqual(elemFromFirst, iterSecond.next())) { // secondSequence.get(c - 1)
-					row[c] = prevRow[c - 1];
-				} else {
-					m = row[c - 1]; // insert
-					m = (m < (t = prevRow[c]) ? m : t); // remove
-					row[c] = (m < (t = prevRow[c - 1]) ? m : t) + 1; // replace and then set the value
-				}
-			}
-			// swap
-			temp = prevRow;
-			prevRow = row;
-			row = temp;
-			isRowHoldingResult = !isRowHoldingResult;
-		}
-		return prevRow[ls];
+		return editDistance(IterableSized.from(firstSequence), IterableSized.from(secondSequence), equalityChecker);
 	}
 
-	/** Only insertion, deletion and substitution are the allowed operations. */
-	public static <T> int levenshtein(T[] firstSequence, T[] secondSequence, EqualityChecker<T> equalityChecker) {
-		return editDistance(firstSequence, secondSequence, equalityChecker);
+	public default <T> int editDistance(IterableSized<T> firstSequence, IterableSized<T> secondSequence,
+			EqualityChecker<T> equalityChecker) {
+		return editDistance(firstSequence, secondSequence, equalityChecker, CollectionAlteringCosts.newDefaultCAC());
 	}
+
+	//
+
+	public <T> int editDistance(T[] firstSequence, T[] secondSequence, EqualityChecker<T> equalityChecker,
+			CollectionAlteringCosts<T> cac);
+
+	public <T> int editDistance(IterableSized<T> firstSequence, IterableSized<T> secondSequence,
+			EqualityChecker<T> equalityChecker, CollectionAlteringCosts<T> cac);
 }

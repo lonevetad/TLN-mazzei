@@ -1,4 +1,4 @@
-package translators.secondWay;
+package translators.v2;
 
 import java.io.Serializable;
 import java.util.LinkedList;

@@ -1,0 +1,240 @@
+parsing:
+Lui adora scrivere molto.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 5 tokens at 625,0 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 25,
+      "text": "Lui adora scrivere molto.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adora"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 1,
+          "dependentGloss": "Lui"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 3,
+          "dependentGloss": "scrivere"
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adora"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 1,
+          "dependentGloss": "Lui"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 3,
+          "dependentGloss": "scrivere"
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "adora"
+        },
+        {
+          "dep": "nsubj",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 1,
+          "dependentGloss": "Lui"
+        },
+        {
+          "dep": "xcomp",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 3,
+          "dependentGloss": "scrivere"
+        },
+        {
+          "dep": "advmod",
+          "governor": 3,
+          "governorGloss": "scrivere",
+          "dependent": 4,
+          "dependentGloss": "molto"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "adora",
+          "dependent": 5,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Lui",
+          "originalText": "Lui",
+          "lemma": "lui",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 3,
+          "pos": "PE",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Person\u003d3|PronType\u003dPrs",
+          "ner": "O",
+          "full_morpho": "Lui lui+pron+_+m+3+sing+strong",
+          "selected_morpho": "lui+pron+_+m+3+sing+strong",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "PronType": [
+              "Prs"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "adora",
+          "originalText": "adora",
+          "lemma": "adorare",
+          "characterOffsetBegin": 4,
+          "characterOffsetEnd": 9,
+          "pos": "V",
+          "featuresText": "Mood\u003dImp|Number\u003dSing|Person\u003d2|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "adora adorare+v+imp+pres+nil+2+sing adorare+v+indic+pres+nil+3+sing",
+          "selected_morpho": "adorare+v+imp+pres+nil+2+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Imp"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "2"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "scrivere",
+          "originalText": "scrivere",
+          "lemma": "scrivere",
+          "characterOffsetBegin": 10,
+          "characterOffsetEnd": 18,
+          "pos": "V",
+          "featuresText": "VerbForm\u003dInf",
+          "ner": "O",
+          "full_morpho": "scrivere scrivere+v+infinito+pres+nil+nil+nil",
+          "selected_morpho": "scrivere+v+infinito+pres+nil+nil+nil",
+          "guessed_lemma": false,
+          "features": {
+            "VerbForm": [
+              "Inf"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "molto",
+          "originalText": "molto",
+          "lemma": "molto",
+          "characterOffsetBegin": 19,
+          "characterOffsetEnd": 24,
+          "pos": "B",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "molto molto+adj+m+sing+pst molto+adv molto+adj+m+sing+pst+ind",
+          "selected_morpho": "molto+adv",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 5,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 25,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 16 milliseconds.
