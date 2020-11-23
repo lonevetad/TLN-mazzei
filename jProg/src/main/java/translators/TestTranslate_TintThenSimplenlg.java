@@ -18,7 +18,7 @@ import translators.v1.TransferTranslationItEng_V1;
 import translators.v2.TransferTranslationRuleBased_V5;
 
 /**
- * <<<<<<< HEAD THE MAIN TESTEEEEEEEER * ======= THE MAIN TESTER - VERSION 1
+ * ======= THE MAIN TESTER
  * <p>
  * <ol>
  * <li>legge da file la frase</li>
@@ -31,7 +31,6 @@ import translators.v2.TransferTranslationRuleBased_V5;
  * <li>usando SimpleNLG, si usa il Realizer per generare la frase tradotta</li>
  * <li>visualizzazione della frase tradotta</li>
  * </ol>
- * >>>>>>> marco
  */
 public class TestTranslate_TintThenSimplenlg {
 	static final String FOLDER_PATH = "." + File.separator + "translationFirstWay" + File.separator;
@@ -65,8 +64,8 @@ public class TestTranslate_TintThenSimplenlg {
 //		sentenceIndex = 19;
 //		sentenceIndex = MockedData.SENTENCES.length - 1; // 2
 
-		for (int sentenceIndex : new int[] { 18, 19, 20 }) {
-//		for (int sentenceIndex = 0; sentenceIndex < MockedData.SENTENCES.length; sentenceIndex++) {
+//		for (int sentenceIndex : new int[] { 18, 19, 20 }) {
+		for (int sentenceIndex = 0; sentenceIndex < MockedData.SENTENCES.length; sentenceIndex++) {
 			log = new LoggerOnFile(FOLDER_PATH + sentenceIndex + ".txt");
 			log.logAndPrint("\n\n\n--------------------------------\n start parsing :D");
 			text = MockedData.SENTENCES[sentenceIndex];

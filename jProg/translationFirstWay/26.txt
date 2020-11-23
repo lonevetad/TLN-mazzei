@@ -18,16 +18,16 @@ NDTTint [gloss= padre, pos= S , lemma=padre , indexID=4, dep= ROOT , isRoot=T, f
 
  now translating into SimpleNLP
 nlp future input:
-{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[father:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[father:NOUN], specifier=WordElement[your:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
+{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
 
 
 
 
  sentence created:
-{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[father:VERB], number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, complements=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[father:NOUN], specifier=WordElement[your:DETERMINER], number=SINGULAR, gender=NEUTER, acronym=false, discourse_function=OBJECT, person=THIRD, possessive=false, raised=false, elided=false, adjective_ordering=true}}], progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, subjects=[{realisation=null, category=NOUN_PHRASE, features={head=WordElement[I:PRONOUN], number=SINGULAR, gender=NEUTER, acronym=false, person=FIRST, possessive=false, raised=false, elided=false, adjective_ordering=true}}], clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
+{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={number=SINGULAR, negated=false, perfect=false, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
 
 
 
  realize translation
 translated:
-I father your father.
+

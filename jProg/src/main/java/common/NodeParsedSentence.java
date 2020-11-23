@@ -47,6 +47,7 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 	protected String lemma;
 	protected String dep; // "dependency tag", inspired from Tint's "dependency". USEFUL FOR CONVERSION ""
 	protected String pos; // "PoS tag", inspired from Tint's "tokens".
+	protected String fullMorpho;
 	protected Map<String, String[]> features;
 
 	@Override
@@ -78,9 +79,13 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 
 	public String getPos() { return pos; }
 
+	public String getFullMorpho() { return fullMorpho; }
+
 	public Map<String, String[]> getFeatures() { return features; }
 
 	//
+
+	public void setFullMorpho(String fullMorpho) { this.fullMorpho = fullMorpho; }
 
 	public NodeParsedSentence setLemma(String lemma) {
 		this.lemma = lemma;
@@ -100,7 +105,9 @@ public class NodeParsedSentence extends NodeComparableSynonymIndexed {
 	}
 
 	public NodeParsedSentence setPos(String pos) {
+		int indexPlus;
 		super.removeAlternative(this.pos);
+		if ((indexPlus = pos.indexOf('+')) >= 0) { pos = pos.substring(0, indexPlus); }
 		this.pos = pos;
 		super.addAlternative(pos);
 		return this;

@@ -395,4 +395,4 @@ parsing:
 }
 
 
-took 11 milliseconds.
+took 9 milliseconds.

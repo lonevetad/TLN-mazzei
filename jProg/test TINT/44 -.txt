@@ -1,0 +1,482 @@
+parsing:
+Ho ascoltato la lezione e non ho capito niente.
+
+{
+  "docDate": "2020-11-22",
+  "timings": "Annotation pipeline timing information:\r\nItalianTokenizerAnnotator: 0.0 sec.\r\nPOSTaggerAnnotator: 0.0 sec.\r\nDigiMorphAnnotator: 0.0 sec.\r\nDigiLemmaAnnotator: 0.0 sec.\r\nNERCombinerAnnotator: 0.0 sec.\r\nDependencyParseAnnotator: 0.0 sec.\r\nStanfordToConllDepsAnnotator: 0.0 sec.\r\nTOTAL: 0.0 sec. for 10 tokens at 1111,1 tokens/sec.",
+  "sentences": [
+    {
+      "index": 0,
+      "characterOffsetBegin": 0,
+      "characterOffsetEnd": 47,
+      "text": "Ho ascoltato la lezione e non ho capito niente.",
+      "basic-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ascoltato"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "lezione",
+          "dependent": 3,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 4,
+          "dependentGloss": "lezione"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 5,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "neg",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 7,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "conj",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 8,
+          "dependentGloss": "capito"
+        },
+        {
+          "dep": "dobj",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 9,
+          "dependentGloss": "niente"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 10,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ascoltato"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "lezione",
+          "dependent": 3,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 4,
+          "dependentGloss": "lezione"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 5,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "neg",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 7,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "conj:e",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 8,
+          "dependentGloss": "capito"
+        },
+        {
+          "dep": "dobj",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 9,
+          "dependentGloss": "niente"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 10,
+          "dependentGloss": "."
+        }
+      ],
+      "collapsed-ccprocessed-dependencies": [
+        {
+          "dep": "ROOT",
+          "governor": 0,
+          "governorGloss": "ROOT",
+          "dependent": 2,
+          "dependentGloss": "ascoltato"
+        },
+        {
+          "dep": "aux",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 1,
+          "dependentGloss": "Ho"
+        },
+        {
+          "dep": "det",
+          "governor": 4,
+          "governorGloss": "lezione",
+          "dependent": 3,
+          "dependentGloss": "la"
+        },
+        {
+          "dep": "dobj",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 4,
+          "dependentGloss": "lezione"
+        },
+        {
+          "dep": "cc",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 5,
+          "dependentGloss": "e"
+        },
+        {
+          "dep": "neg",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 6,
+          "dependentGloss": "non"
+        },
+        {
+          "dep": "aux",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 7,
+          "dependentGloss": "ho"
+        },
+        {
+          "dep": "conj:e",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 8,
+          "dependentGloss": "capito"
+        },
+        {
+          "dep": "dobj",
+          "governor": 8,
+          "governorGloss": "capito",
+          "dependent": 9,
+          "dependentGloss": "niente"
+        },
+        {
+          "dep": "punct",
+          "governor": 2,
+          "governorGloss": "ascoltato",
+          "dependent": 10,
+          "dependentGloss": "."
+        }
+      ],
+      "parse": "SENTENCE_SKIPPED_OR_UNPARSABLE",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "Ho",
+          "originalText": "Ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 2,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "Ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 2,
+          "word": "ascoltato",
+          "originalText": "ascoltato",
+          "lemma": "ascoltare",
+          "characterOffsetBegin": 3,
+          "characterOffsetEnd": 12,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "ascoltato ascoltare+v+part+pass+m+nil+sing",
+          "selected_morpho": "ascoltare+v+part+pass+m+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 3,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 13,
+          "characterOffsetEnd": 15,
+          "pos": "RD",
+          "featuresText": "Definite\u003dDef|Gender\u003dFem|Number\u003dSing|PronType\u003dArt",
+          "ner": "O",
+          "full_morpho": "la la+pron+accdat+_+3+_+clit la+art+f+sing",
+          "selected_morpho": "la+art+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Definite": [
+              "Def"
+            ],
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "PronType": [
+              "Art"
+            ]
+          }
+        },
+        {
+          "index": 4,
+          "word": "lezione",
+          "originalText": "lezione",
+          "lemma": "lezione",
+          "characterOffsetBegin": 16,
+          "characterOffsetEnd": 23,
+          "pos": "S",
+          "featuresText": "Gender\u003dFem|Number\u003dSing",
+          "ner": "O",
+          "full_morpho": "lezione lezione+n+f+sing",
+          "selected_morpho": "lezione+n+f+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Fem"
+            ],
+            "Number": [
+              "Sing"
+            ]
+          }
+        },
+        {
+          "index": 5,
+          "word": "e",
+          "originalText": "e",
+          "lemma": "e",
+          "characterOffsetBegin": 24,
+          "characterOffsetEnd": 25,
+          "pos": "CC",
+          "featuresText": "_",
+          "ner": "O",
+          "full_morpho": "e e+conj",
+          "selected_morpho": "e+conj",
+          "guessed_lemma": false,
+          "features": {}
+        },
+        {
+          "index": 6,
+          "word": "non",
+          "originalText": "non",
+          "lemma": "non",
+          "characterOffsetBegin": 26,
+          "characterOffsetEnd": 29,
+          "pos": "BN",
+          "featuresText": "PronType\u003dNeg",
+          "ner": "O",
+          "full_morpho": "non non+adv",
+          "selected_morpho": "non+adv",
+          "guessed_lemma": false,
+          "features": {
+            "PronType": [
+              "Neg"
+            ]
+          }
+        },
+        {
+          "index": 7,
+          "word": "ho",
+          "originalText": "ho",
+          "lemma": "avere",
+          "characterOffsetBegin": 30,
+          "characterOffsetEnd": 32,
+          "pos": "VA",
+          "featuresText": "Mood\u003dInd|Number\u003dSing|Person\u003d1|Tense\u003dPres|VerbForm\u003dFin",
+          "ner": "O",
+          "full_morpho": "ho avere+v+indic+pres+nil+1+sing",
+          "selected_morpho": "avere+v+indic+pres+nil+1+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Mood": [
+              "Ind"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "1"
+            ],
+            "Tense": [
+              "Pres"
+            ],
+            "VerbForm": [
+              "Fin"
+            ]
+          }
+        },
+        {
+          "index": 8,
+          "word": "capito",
+          "originalText": "capito",
+          "lemma": "capire",
+          "characterOffsetBegin": 33,
+          "characterOffsetEnd": 39,
+          "pos": "V",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Tense\u003dPast|VerbForm\u003dPart",
+          "ner": "O",
+          "full_morpho": "capito capire+v+part+pass+m+nil+sing capitare+v+indic+pres+nil+1+sing",
+          "selected_morpho": "capire+v+part+pass+m+nil+sing",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Tense": [
+              "Past"
+            ],
+            "VerbForm": [
+              "Part"
+            ]
+          }
+        },
+        {
+          "index": 9,
+          "word": "niente",
+          "originalText": "niente",
+          "lemma": "niente",
+          "characterOffsetBegin": 40,
+          "characterOffsetEnd": 46,
+          "pos": "PI",
+          "featuresText": "Gender\u003dMasc|Number\u003dSing|Person\u003d3|PronType\u003dInd",
+          "ner": "O",
+          "full_morpho": "niente niente+adv niente+pron+_+m+3+sing+ind",
+          "selected_morpho": "niente+pron+_+m+3+sing+ind",
+          "guessed_lemma": false,
+          "features": {
+            "Gender": [
+              "Masc"
+            ],
+            "Number": [
+              "Sing"
+            ],
+            "Person": [
+              "3"
+            ],
+            "PronType": [
+              "Ind"
+            ]
+          }
+        },
+        {
+          "index": 10,
+          "word": ".",
+          "originalText": ".",
+          "lemma": "[PUNCT]",
+          "characterOffsetBegin": 46,
+          "characterOffsetEnd": 47,
+          "pos": "FS",
+          "featuresText": "",
+          "ner": "O",
+          "full_morpho": ". [PUNCT]",
+          "selected_morpho": "[PUNCT]",
+          "guessed_lemma": true,
+          "features": {}
+        }
+      ]
+    }
+  ]
+}
+
+
+took 16 milliseconds.

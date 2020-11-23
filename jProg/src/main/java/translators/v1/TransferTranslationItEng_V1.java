@@ -233,7 +233,7 @@ public class TransferTranslationItEng_V1 implements ITranslator {
 			System.out.println("no feature for verb: " + verbPhrase.getVerb().toString());
 			return; // no feature to put, weirdly
 		}
-		if (isPerfectForm) { verbPhrase.setFeature(Feature.PERFECT, true); }
+		if (isPerfectForm) { verbPhrase.setFeature(Feature.PERFECT, true); } // quando è un "aux"
 		feature = features.get("Tense");
 		if (feature != null) {
 			tenseFeature = feature[0];

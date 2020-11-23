@@ -8,7 +8,7 @@ parsed tree:
 TreeParsedSentence
 root:
 
-NDTTint [gloss= ricordati, pos= V+PC , lemma=ricordare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
+NDTTint [gloss= ricordati, pos= V , lemma=ricordare , indexID=1, dep= ROOT , isRoot=T, father=none :D, features= [, children= [
 	NDTTint [gloss= morire, pos= V , lemma=morire , indexID=4, dep= ccomp , isRoot=F, father=1-ricordati, features= [VerbForm-[Inf], children= [
 		NDTTint [gloss= che, pos= CS , lemma=che , indexID=2, dep= mark , isRoot=F, father=4-morire, features= [, children= []
 		NDTTint [gloss= devi, pos= VM , lemma=deviare , indexID=3, dep= aux , isRoot=F, father=4-morire, features= [Mood-[Ind], Number-[Sing], Person-[2], Tense-[Pres], VerbForm-[Fin], children= []	]
@@ -17,17 +17,3 @@ NDTTint [gloss= ricordati, pos= V+PC , lemma=ricordare , indexID=1, dep= ROOT , 
 
 
  now translating into SimpleNLP
-nlp future input:
-{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[die:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}
-
-
-
-
- sentence created:
-{realisation=null, category=SENTENCE, features={textComponents=[{realisation=null, category=CLAUSE, features={expletive_subject=false, verb_phrase={realisation=null, category=VERB_PHRASE, features={head=WordElement[die:VERB], number=SINGULAR, negated=false, perfect=true, form=NORMAL, person=THIRD, progressive=false, realise_auxiliary=true, elided=false, passive=false, tense=PRESENT}}, clause_status=MATRIX, suppressed_complementiser=false, elided=false, complementiser=WordElement[that:COMPLEMENTISER]}}]}}
-
-
-
- realize translation
-translated:
-Haves died.

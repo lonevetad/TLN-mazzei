@@ -286,6 +286,7 @@ public class SentenceParsed implements Stringable {
 			super.setLemma(token.lemma);
 			token.features.forEach((featureName, featureVal) -> { super.addFeatures(featureName, featureVal); });
 			super.setPos(token.pos);
+			super.setFullMorpho(token.full_morpho);
 		}
 	}
 

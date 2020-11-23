@@ -18,8 +18,10 @@ public enum ElemGrammarBase {
 	Objectt("O", "obj", "dobj", "iobj"), //
 	Aux("aux", "auxpass"), //
 	Det("det"), //
-	Complement("comp", "xcomp", "cop"/* sure? */)
-	//
+	Complement("comp", "xcomp", "cop"/* sure? */), //
+	Conjugation("and", "cc", "CC"), //
+	Negation("not", "neg", "BN") //
+	// conjugation
 	;
 
 	private final SynonymSet eg;

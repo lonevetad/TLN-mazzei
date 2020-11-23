@@ -17,7 +17,6 @@ import tools.OutputStreamCollector;
 public class TParsingJacksonDeserialization {
 
 	public static void main(String[] args) {
-		OutputStream os;
 		String[] textes;
 		OutputStreamCollector toJsonCollector;
 		textes = MockedData.SENTENCES;
